@@ -1,6 +1,7 @@
 import { viteBundler } from '@vuepress/bundler-vite'
 import { defineUserConfig } from 'vuepress'
 import { plumeTheme } from 'vuepress-theme-plume'
+import notes from './notes/index.js'
 
 export default defineUserConfig({
   base: '/ajohn.top/',
@@ -11,6 +12,7 @@ export default defineUserConfig({
   bundler: viteBundler(),
 
   theme: plumeTheme({
+    notes,
     // 添加您的部署域名
     // hostname: 'https://your_site_url',
 

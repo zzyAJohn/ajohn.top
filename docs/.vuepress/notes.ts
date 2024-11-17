@@ -6,8 +6,14 @@ const demoNote = defineNoteConfig({
   sidebar: ['', 'foo', 'bar'],
 })
 
+const leetcodeNote = defineNoteConfig({
+  dir: 'leetcode',
+  link: '/leetcode',
+  sidebar: ['', '1'],
+})
+
 export const notes = defineNotesConfig({
   dir: 'notes',
   link: '/',
-  notes: [demoNote],
+  notes: [demoNote, leetcodeNote],
 })
