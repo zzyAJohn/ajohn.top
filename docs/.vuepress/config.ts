@@ -5,7 +5,7 @@ import { plumeTheme } from 'vuepress-theme-plume'
 export default defineUserConfig({
   base: '/ajohn.top/',
   lang: 'zh-CN',
-  title: 'My Vuepress Site',
+  title: 'AJohn Blog',
   description: '',
 
   bundler: viteBundler(),
