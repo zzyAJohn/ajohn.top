@@ -14,7 +14,7 @@ export default defineUserConfig({
   theme: plumeTheme({
     notes,
     // 添加您的部署域名
-    // hostname: 'https://your_site_url',
+    hostname: 'https://ajohn.top',
 
     plugins: {
       /**
