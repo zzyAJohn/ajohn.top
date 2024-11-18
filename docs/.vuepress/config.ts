@@ -1,7 +1,7 @@
 import { viteBundler } from '@vuepress/bundler-vite'
 import { defineUserConfig } from 'vuepress'
 import { plumeTheme } from 'vuepress-theme-plume'
-import notes from './notes/index.js'
+import notes from './notes/index'
 
 export default defineUserConfig({
   base: '/ajohn.top/',
