@@ -4,7 +4,7 @@ import { plumeTheme } from 'vuepress-theme-plume'
 import notes from './notes/index'
 
 export default defineUserConfig({
-  base: '/ajohn.top/',
+  base: '/',
   lang: 'zh-CN',
   title: 'AJohn Blog',
   description: '',
