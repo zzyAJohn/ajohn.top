@@ -26,4 +26,8 @@ permalink: /article/bytzx028/
 
 ![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-11-18/202411181723160.png)
 
-遇到一个bug：推送文件后 Pages 页面的自定义域会被清空，导致博客 404 ，现在通过在 blog_pages 上传一个 CNAME 文件来尝试解决
+遇到一个bug：推送文件后 Pages 页面的自定义域会被清空，导致博客 404 ，现在通过在 `blog_pages` 分支手动上传一个 `CNAME` 文件来尝试解决。
+
+好景不长， `blog_pages` 分支在更新博客推送到仓库后会重新编译部署页面，将手动上传的 `CNAME` 文件给清理掉。好在翻看别人的配置后发现**在`.github\workflows\deploy.yml`中加入一行 `fqdn: ajohn.top`** 似乎可以自动生成 `CNAME` ，经过验证猜想正确，~~终于弄好了，又是被自己菜哭的一天~~。
+
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-11-18/202411181859527.png)
