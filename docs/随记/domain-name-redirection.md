@@ -25,3 +25,5 @@ permalink: /article/bytzx028/
 
 
 ![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-11-18/202411181723160.png)
+
+遇到一个bug：推送文件后 Pages 页面的自定义域会被清空，导致博客 404 ，现在通过在 blog_pages 上传一个 CNAME 文件来尝试解决
