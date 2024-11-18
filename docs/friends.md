@@ -13,5 +13,10 @@ list:
     name: YOAKE
     link: https://github.com/YOYOYOAKE
     avatar: https://github.com/YOYOYOAKE.png
-    desc: YOYOYOAKE
+    desc: Birds are born with no shackles.
+  -
+    name: Moiads
+    link: https://moiads.xyz/
+    avatar: https://github.com/moiseak.png
+    desc: 不要温和地走进那个良夜。
 ---
