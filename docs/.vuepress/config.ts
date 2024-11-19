@@ -8,7 +8,10 @@ export default defineUserConfig({
   lang: 'zh-CN',
   title: 'AJohn Blog',
   description: '',
-
+  head: [
+    ['link', { rel: 'icon', href: 'https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-11-19/202411191424086.png' }]
+  ],
+ 
   bundler: viteBundler(),
 
   theme: plumeTheme({
