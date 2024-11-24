@@ -9,7 +9,7 @@ export default defineUserConfig({
   title: 'AJohn Blog',
   description: '',
   head: [
-    ['link', { rel: 'icon', href: 'https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-11-19/202411191424086.png' }]
+    ['link', { rel: 'icon', href: 'https://cdn.jsdelivr.net/gh/zzyAJohn/Image/blog-favicon.png' }]
   ],
  
   bundler: viteBundler(),
