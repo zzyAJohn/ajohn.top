@@ -3,5 +3,13 @@ import { defineNoteConfig } from 'vuepress-theme-plume'
 export default defineNoteConfig({
   dir: 'read',
   link: '/read/',
-  sidebar: 'auto',
+  sidebar: [
+    'README.md',
+    {
+      text: '在读',
+      items: [
+        'weicheng.md',
+      ]
+    },
+  ]
 })
