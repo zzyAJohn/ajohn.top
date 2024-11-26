@@ -8,7 +8,8 @@ export default defineNoteConfig({
     {
       text: '题单',
       items: [
-        '2024-10-26-1.md',
+        '1.sliding-window.md',
+        '2.binary-algorithm.md',
       ]
     },
   ]
