@@ -20,5 +20,7 @@ permalink: /leetcode/
 >
 >TopK里秀DP
 
+>根据[灵神](https://space.bilibili.com/206214)的题单做的个人笔记，仅学习使用，不做任何商业用途
+
 - [1.【题单】滑动窗口与双指针（定长/不定长/至多/至少/恰好/单序列/双序列/三指针）](./1.sliding-window.md)
 - [2.【题单】二分算法（二分答案/最小化最大值/最大化最小值/第K小））](./2.binary-algorithm.md)
