@@ -13,13 +13,14 @@ permalink: /article/z3du3x1x/
 
 ## 一、下载数据集
 
-[CIFAR-10 数据集和CIFAR-100 数据集](https://www.cs.toronto.edu/~kriz/cifar.html)网站（打不开使用美国节点）
+[CIFAR-10 和 CIFAR-100 数据集网站](https://www.cs.toronto.edu/~kriz/cifar.html)（打不开使用美国节点）
 
-或直接下载[CIFAR-10 数据集](https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz)和[CIFAR-100 数据集](https://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz)压缩包
+在 ACT 目录下执行下面命令
+```bash
+wget -P ./data/cifar100 https://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz
+```
 
-`wget -P ./data/cifar100 https://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz`
-
-或者在本地下载，手动拖到 ACT/data/cifar100 目录下
+如果服务器下载速度较慢，可以点击在本地下载[CIFAR-10 数据集](https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz)和[CIFAR-100 数据集](https://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz)压缩包，下载完成后，上传到 ACT/data/cifar100 目录下
 
 无需解压，运行代码时会自动解压数据集
 
@@ -137,39 +138,58 @@ ImportError: /lib/x86_64-linux-gnu/libstdc++.so.6: version GLIBCXX_3.4.29' not f
 ```
 :::
 
-
+这个是默认路径下的libstdc++.so.6缺少GLIBCXX_3.4.29
 
 使用指令先看下系统目前都有哪些版本的
 
-`strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX`
+```bash
+strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
+```
 
 我的只到3.4.28，所以确定是缺少GLIBCXX_3.4.29
 
 使用指令来查看当前系统中其它的同类型文件，找到一个版本比较高的
 
-`sudo find / -name "libstdc++.so.6*"`
+```bash
+sudo find / -name "libstdc++.so.6*"
+```
 
+我选择的是/home/ubuntu/.conda/envs/lcnl2/lib/libstdc++.so.6.0.29，使用指令看看其是否包含3.4.29
 
-使用之前的指令看看其是否包含3.4.29
+```bash
+strings /home/ubuntu/.conda/envs/lcnl2/lib/libstdc++.so.6.0.29 | grep GLIBCXX
+```
 
-`strings /home/ubuntu/.conda/envs/lcnl2/lib/libstdc++.so.6.0.29 | grep GLIBCXX`
-
+发现存在GLIBCXX_3.4.29，接下来就是建立新的链接到这个文件上
 
 开始干活：
 
-`sudo cp /home/ubuntu/.conda/envs/lcnl2/lib/libstdc++.so.6.0.29 /usr/lib/x86_64-linux-gnu/`
+复制
 
-`sudo rm /usr/lib/x86_64-linux-gnu/libstdc++.so.6`
+```bash
+sudo cp /home/ubuntu/.conda/envs/lcnl2/lib/libstdc++.so.6.0.29 /usr/lib/x86_64-linux-gnu/
+```
+删除之前链接
+```bash
+sudo rm /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+```
 
-`sudo ln -s /home/ubuntu/.conda/envs/lcnl2/lib/libstdc++.so.6.0.29 /usr/lib/x86_64-linux-gnu/libstdc++.so.6`
+创建新的链接
+```bash
+sudo ln -s /home/ubuntu/.conda/envs/lcnl2/lib/libstdc++.so.6.0.29 /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+```
 
 检查
 
-`ll /usr/lib/x86_64-linux-gnu/libstd*`
+```bash
+ll /usr/lib/x86_64-linux-gnu/libstd*
+```
 
-`strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX`
+```bash
+strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
+```
 
-[参考链接](https://blog.csdn.net/weixin_39379635/article/details/129159713)
+参考链接：[如何解决version `GLIBCXX_3.4.29‘ not found的问题](https://blog.csdn.net/weixin_39379635/article/details/129159713)
 
 ### 4.2 AttributeError: module 'numpy' has no attribute 'int'.
 
