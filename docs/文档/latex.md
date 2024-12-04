@@ -1,7 +1,7 @@
 ---
 title: Latex
 tags:
-  - Help
+  - Document
 createTime: 2024/12/04 15:07:28
 permalink: /article/fzug0yef/
 ---
