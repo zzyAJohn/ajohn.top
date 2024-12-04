@@ -1,5 +1,8 @@
 ---
 title: 重生之我是力扣大佬
+tags:
+    - Leetcode
+    - Python
 createTime: 2024/10/26 21:36:40
 permalink: /leetcode/
 ---

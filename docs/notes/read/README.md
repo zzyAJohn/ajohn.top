@@ -1,5 +1,7 @@
 ---
 title: Read
+tags:
+  - Book
 createTime: 2024/11/21 11:02:29
 permalink: /read/
 ---
