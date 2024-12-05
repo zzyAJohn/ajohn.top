@@ -14,5 +14,11 @@ export default defineNoteConfig({
         '2024-11-12-recursion.md',
       ]
     },
+    {
+      text: 'Lab',
+      items: [
+        'lab05.md',
+      ]
+    },
   ]
 })
