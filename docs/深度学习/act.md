@@ -8,8 +8,25 @@ createTime: 2024/12/3 15:23:38
 permalink: /article/z3du3x1x/
 ---
 
->记录 [ACT](https://github.com/shtdusb/ACT?tab=readme-ov-file) 的环境配置过程
+记录 [ACT](https://github.com/shtdusb/ACT) 的 conda 环境配置过程
 
+操作系统配置
+- 操作系统：Ubuntu20.04-桌面版
+- 基础架构：GPU驱动 510.73.05、cuda 11.5<!-- more -->
+- 基础软件：miniconda 4.12.0、cudnn 8.3.0
+- 基础环境：opencv、torch-1.10、tensorflow-2.6.0
+- 开发工具：pycharm-community-2022.1
+- 3D可视化：TurboVNC
+
+资源配置
+- 类型：RTX3090
+- GPU信息：1卡 * 24GB显存
+- 规格：10核 32GB内存
+
+存储/带宽配置
+- 系统存储：高效云盘 80GB
+- 数据存储：高效云盘 20GB
+- 网络带宽：100mb/s
 
 ## 一、下载数据集
 
