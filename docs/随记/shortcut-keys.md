@@ -6,7 +6,7 @@ createTime: 2024/11/07 00:00:00
 permalink: /article/ayskep62/
 ---
 
->记录一些vscode快捷键
+记录一些vscode快捷键<!-- more -->
 
 **home:移动到代码首行**
 

@@ -6,7 +6,7 @@ createTime: 2024/12/04 15:07:28
 permalink: /article/fzug0yef/
 ---
 
->贴上我常用的 latex 公式，方便写文时使用
+贴上我常用的 latex 公式，方便写文时使用<!-- more -->
 
 
 | 公式 | 代码 |

@@ -4,7 +4,7 @@ createTime: 2024/11/18 17:10:13
 permalink: /article/bytzx028/
 ---
 
-通过域名重定向，把博客地址重定向到 `https://ajohn.top/`
+通过域名重定向，把博客地址重定向到 `https://ajohn.top/`<!-- more -->
 
 1. 首先去域名服务商添加解析记录。创建 A 记录，将顶点域指向 GitHub Pages 的 IP 地址，这四个 IP 是由 GitHub 提供的，[点击查看详情](https://docs.github.com/zh/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)。创建 CNAME 记录，将 `www.ajohn.top` 指向 `zzyajohn.github.io` 。
 
