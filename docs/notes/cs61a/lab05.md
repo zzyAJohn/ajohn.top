@@ -11,7 +11,7 @@ permalink: /cs61a/va2a24a4/
 Starter Files
 Download [lab05.zip](https://cs61a.org/lab/lab05/lab05.zip).
 
-如果官方链接失效，你也可以通过我的 github 仓库[CS61A_Fall2024](https://github.com/zzyAJohn/CS61A_Fall2024)来获取我的代码。
+如果官方链接失效，你也可以通过我的 github 仓库 [CS61A_Fall2024](https://github.com/zzyAJohn/CS61A_Fall2024)来获取我的代码。
 
 请注意，该代码包含答案，因此如果你想独立完成请务必提前将 lab05.py 中的答案删除！
 
