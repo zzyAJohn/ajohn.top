@@ -20,5 +20,11 @@ export default defineNoteConfig({
         'lab05.md',
       ]
     },
+    {
+      text: 'Homework',
+      items: [
+        'hw05.md',
+      ]
+    },
   ]
 })
