@@ -23,9 +23,18 @@ permalink: /cs61a/
 
 因为是课程笔记，所以基础知识不再赘述，仅记录一些有意思的想法
 
-实验，作业答案可见本博客：
+实验，作业，项目可见本博客：
+
+Lab:
 - [Lab 5: Mutability, Iterators](./lab05.md)
 
-我的 github 仓库 [CS61A_Fall2024](https://github.com/zzyAJohn/CS61A_Fall2024)，存放了本课程的配套lab、hw和proj代码
+Homework:
+- [Homework 5: Generators](./hw05.md)
+
+你也可以通过我的 github 仓库 [CS61A_Fall2024](https://github.com/zzyAJohn/CS61A_Fall2024)来获取我的代码。
+
+::: important 重要
+请注意，该代码包含答案，因此如果你想独立完成请务必提前将对应 python 文件中的答案删除！
+:::
 
 END.
