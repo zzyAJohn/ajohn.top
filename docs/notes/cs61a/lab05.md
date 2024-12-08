@@ -23,7 +23,7 @@ Consult the drop-down if you need a refresher on mutability. It's okay to skip d
 
 ### Q1: WWPD: List-Mutation
 
-Important: For all WWPD questions, type if you believe the answer is , if it errors, and if nothing is displayed.Function<function...>ErrorNothing
+**Important**: For all WWPD questions, type Function if you believe the answer is <function...>, Error if it errors, and Nothing if nothing is displayed.
 
 Use Ok to test your knowledge with the following "What Would Python Display?" questions:
 
@@ -175,11 +175,11 @@ OK is up to date
 :::
 
 ### Q2: Insert Items
-Write a function that takes in a list , a value , and a value . It modified in place by inserting just after each value equal to in . It returns .sbeforeaftersafterbeforess
+Write a function that takes in a list s, a value before, and a value after. It modified s in place by inserting after just after each value equal to before in s. It returns s.
 
-Important: No new lists should be created.
+**Important**: No new lists should be created.
 
-Note: If the values passed into and are equal, make sure you're not creating an infinitely long list while iterating through it. If you find that your code is taking more than a few seconds to run, the function may be in an infinite loop of inserting new values.beforeafter
+Note: If the values passed into before and after are equal, make sure you're not creating an infinitely long list while iterating through it. If you find that your code is taking more than a few seconds to run, the function may be in an infinite loop of inserting new values.
 
 ```py
 def insert_items(s, before, after):
@@ -258,11 +258,12 @@ def insert_items(s, before, after):
 
 
 ### Q3: Group By
-Write a function that takes a list and a function , and returns a dictionary that groups the elements of based on the result of applying .sfnsfn
+Write a function that takes a list s and a function fn, and returns a dictionary that groups the elements of s based on the result of applying fn.
 
-The dictionary should have one key for each unique result of applying to elements of .fns
-The value for each key should be a list of all elements in that, when passed to , produce that key value.sfn
-In other words, for each element in , determine and add to the list corresponding to in the dictionary.esfn(e)efn(e)
+- The dictionary should have one key for each unique result of applying fn to elements of s.
+- The value for each key should be a list of all elements in s that, when passed to fn, produce that key value.
+
+In other words, for each element e in s, determine fn(e) and add e to the list corresponding to fn(e) in the dictionary.
 
 ```py
 def group_by(s, fn):
@@ -317,10 +318,9 @@ def group_by(s, fn):
 Consult the drop-down if you need a refresher on iterators. It's okay to skip directly to the questions and refer back here should you get stuck.
 
 ### Q4: WWPD: Iterators
+**Important**: Enter StopIteration if a StopIteration exception occurs, Error if you believe a different error occurs, and Iterator if the output is an iterator object.
 
-Important: Enter if a exception occurs, if you believe a different error occurs, and if the output is an iterator object.StopIterationStopIterationErrorIterator
-
-Important: Python's built-in function , , and return iterators, not lists.mapfilterzip
+**Important**: Python's built-in function map, filter, and zip return iterators, not lists.
 
 Use Ok to test your knowledge with the following "What Would Python Display?" questions:
 ```bash
@@ -502,12 +502,12 @@ OK is up to date
 :::
 
 ### Q5: Count Occurrences
+Implement count_occurrences, which takes an iterator t, an integer n, and a value x. It returns the number of elements in the first n elements of t that are equal to x.
 
-Implement , which takes an iterator , an integer , and a value . It returns the number of elements in the first elements of that are equal to .count_occurrencestnxntx
+You can assume that t has at least n elements.
 
-You can assume that has at least elements.tn
+**Important**: You should call next on t exactly n times. If you need to iterate through more than n elements, think about how you can optimize your solution.
 
-Important: You should call on exactly times. If you need to iterate through more than elements, think about how you can optimize your solution.nexttnn
 ```bash
 def count_occurrences(t, n, x):
     """Return the number of times that x is equal to one of the
@@ -572,9 +572,9 @@ def count_occurrences(t, n, x):
 :::
 
 ### Q6: Repeated
-Implement , which takes in an iterator and an integer greater than 1. It returns the first value in that appears times in a row. You may assume that there is an element of repeated at least times in a row.repeatedtktktk
+Implement repeated, which takes in an iterator t and an integer k greater than 1. It returns the first value in t that appears k times in a row. You may assume that there is an element of t repeated at least k times in a row.
 
-Important: Call on only the minimum number of times required. If you are receiving a exception, your function is calling too many times.nexttStopIterationrepeatednext
+**Important**: Call next on t only the minimum number of times required. If you are receiving a StopIteration exception, your repeated function is calling next too many times.
 
 ```py
 def repeated(t, k):
@@ -772,15 +772,13 @@ OK is up to date
 
 This does NOT submit the assignment! When you are satisfied with your score, submit the assignment to Gradescope to receive credit for it.
 
-Submit Assignment
+## Submit Assignment
 If you are in a regular section of CS 61A, fill out this lab attendance and feedback form. (If you are in the mega section, you don't need to fill out the form.)
 
 Then, submit this assignment by uploading any files you've edited to the appropriate Gradescope assignment. Lab 00 has detailed instructions.
 
 ## Optional Questions
-
 These questions are optional. If you don't complete them, you will still receive credit for this assignment. They are great practice, so do them anyway!
-
 
 ### Q7: Sprout Leaves
 Define a function sprout_leaves that takes in a tree, t, and a list of leaves, leaves. It produces a new tree that is identical to t, but where each old leaf node has new branches, one for each leaf in leaves.
