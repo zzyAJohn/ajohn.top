@@ -105,12 +105,6 @@ interpreter!
 >>> # If the code would error, type Error
 >>> s = [6, 7, 8]
 >>> print(s.append(6))
-? [6, 7, 8, 6]
--- Not quite. Try again! --
-
-? Nothing
--- Not quite. Try again! --
-
 ? None
 -- OK! --
 
@@ -143,38 +137,14 @@ interpreter!
 -- OK! --
 
 >>> b is s
-? True
--- Not quite. Try again! --
-
-? None
--- Not quite. Try again! --
-
 ? False
 -- OK! --
 
 >>> a.pop()
-? [9, 7]
--- Not quite. Try again! --
-
-? None
--- Not quite. Try again! --
-
 ? 8
 -- OK! --
 
 >>> a + b
-? [9, 7, 8, 9, 7, 8]
--- Not quite. Try again! --
-
-? Nothing
--- Not quite. Try again! --
-
-? None
--- Not quite. Try again! --
-
-? [9, 7, 9, 7]
--- Not quite. Try again! --
-
 ? [9, 7, 9, 7, 8]
 -- OK! --  
 
@@ -189,24 +159,6 @@ interpreter!
 
 >>> s.extend([s.append(9), s.append(10)])
 >>> s
-? [3, 4, 5, 9, 10]
--- Not quite. Try again! --
-
-? Error
-? Error
--- Not quite. Try again! --
--- Not quite. Try again! --
-
-
-? [3, 4, 5, None, None]
-? [3, 4, 5, None, None]
--- Not quite. Try again! --
-
--- Not quite. Try again! --
-
-? [3, 4, 5, 9, 10, None, None]
-
-? [3, 4, 5, 9, 10, None, None]
 ? [3, 4, 5, 9, 10, None, None]
 -- OK! --
 
@@ -456,9 +408,6 @@ interpreter!
 >>> s = [1, 2, 3, 4]
 >>> t = iter(s)
 >>> next(s)
-? 1
--- Not quite. Try again! --
-
 ? Error
 -- OK! --  
 
@@ -471,16 +420,10 @@ interpreter!
 -- OK! --
 
 >>> next(iter(s))
-? 3
--- Not quite. Try again! --
-
 ? 1
 -- OK! --
 
 >>> next(iter(s))
-? 2
--- Not quite. Try again! --
-
 ? 1
 -- OK! --
 
@@ -514,15 +457,6 @@ interpreter!
 -- OK! --
 
 >>> next(r_iter)
-? 1
--- Not quite. Try again! --
-
-? None
--- Not quite. Try again! --
-
-? Error
--- Not quite. Try again! --
-
 ? StopIteration
 -- OK! --
 
