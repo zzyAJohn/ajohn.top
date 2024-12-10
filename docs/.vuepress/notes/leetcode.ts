@@ -30,7 +30,7 @@ export default defineNoteConfig({
       text: '三、单调栈',
       prefix: '3.monotonic-stack', 
       items: [
-        'temp.md',
+        '1.monotonic-stack',
       ]
     },
     {
