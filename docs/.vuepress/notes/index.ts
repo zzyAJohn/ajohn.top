@@ -1,6 +1,7 @@
 import { defineNotesConfig } from 'vuepress-theme-plume'
 import leetcode from './leetcode'
 import cs61a from './cs61a'
+import cs61b from './cs61b'
 import read from './read'
 
 export default defineNotesConfig({
@@ -11,6 +12,7 @@ export default defineNotesConfig({
   notes: [ 
     leetcode,
     cs61a,
+    cs61b,
     read,
   ]
 })
