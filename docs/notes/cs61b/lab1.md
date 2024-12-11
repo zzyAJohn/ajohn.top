@@ -6,7 +6,7 @@ permalink: /cs61b/m9ov5uds/
 
 安装 JDK、git、IntelliJ 和 CS61B 插件，网上有很多教程，故不在此赘述，[参考教程](https://sp21.datastructur.es/materials/lab/lab1setup/lab1setup)。
 
-本文重点介绍如何获取作业文件，以及上传到 github 仓库进行检查作业的相关操作。
+本文重点介绍如何获取 CS61B 的作业文件，以及上传到 github 仓库从而进行检查作业的相关操作。
 
 你也可以通过我的 github 仓库 [CS61B_SP21](https://github.com/zzyAJohn/CS61B_SP21)来获取我的代码。
 
