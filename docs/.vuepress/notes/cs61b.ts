@@ -11,11 +11,12 @@ export default defineNoteConfig({
 
     //   ]
     // },
-    // {
-    //   text: 'Lab',
-    //   items: [
-    //   ]
-    // },
+    {
+      text: 'Lab',
+      items: [
+        'lab1.md',
+      ]
+    },
     // {
     //   text: 'Homework',
     //   items: [
