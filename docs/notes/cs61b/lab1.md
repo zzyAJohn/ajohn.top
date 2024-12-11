@@ -27,13 +27,14 @@ git clone https://github.com/zzyAJohn/CS61B_SP21.git
 git remote add skeleton https://github.com/Berkeley-CS61B/skeleton-sp21.git
 ```
 
+查看是否添加成功
 ```bash
 git remote -v
 ```
 ![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-11/202412111918757.png)
 
 
-从远程 “pull” 获取起始代码，它的作用是从名为 skeleton 的存储库中获取所有远程文件，并将其复制到当前文件夹中。
+4. 从远程 “pull” 获取起始代码，它的作用是从名为 skeleton 的存储库中获取所有远程文件，并将其复制到当前文件夹中。
 ```bash
 git pull skeleton master
 ```
@@ -47,12 +48,16 @@ git pull --rebase --allow-unrelated-histories skeleton master
 
 ## B. 在 IntelliJ 中运行代码
 
-打开 IntelliJ，==进入 lab1 目录==，运行您的 HelloNumbers.java，您应该会看到一些漂亮的数字打印出来！你好 Numbers！
+打开 IntelliJ，==进入 lab1 目录==，运行您的 HelloNumbers.java，您应该会看到一些漂亮的数字打印出来！
+
+你好 Numbers！
 
 ![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-11/202412111924795.png)
 
 
-## C. 设置 Snaps(可选，我没选)
+## C. 设置 Snaps(可选)
+
+Berkeley用来收集信息改善教学的，我选择跳过。
 
 Snaps 存储库将作为您工作的安全备份，以防您忘记实际使用 git 进行手动提交。您将在每个项目后推送您的 Snaps 存储库，这将允许我们发布统计数据，例如学生完成每个项目（或每个项目的每个部分）所花费的平均时间。它还将使我们能够识别项目中比我们预期的更令人困惑或更耗时的部分。它还将使我们能够了解我们分配的工作量是否过高，这样如果我们给您带来了超负荷，我们可以降低课程难度。
 
@@ -139,7 +144,9 @@ git commit -m "Merge branch 'main' of https://github.com/zzyAJohn/CS61B_SP21"
 ```
 
 4. 将本地的更改推送到远程仓库
-
+```bash
+git push origin main
+```
 ![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-11/202412111940776.png)
 
 
@@ -164,6 +171,13 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
+
+Git 告诉你的是，你更改了 lab1/Collatz.java 文件的某些内容，而 GitHub 尚未记录。
+
+确保它显示 `modified:   lab1/Collatz.java`，而不仅仅是 `Collatz.java`。
+
+如果它显示 `Collatz.java`，您应该使用 `cd` 到上一级目录。
+
 
 2. 暂存lab1下改动的文件
 ```bash
