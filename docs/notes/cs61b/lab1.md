@@ -62,8 +62,44 @@ Berkeley用来收集信息改善教学的，我选择跳过。
 Snaps 存储库将作为您工作的安全备份，以防您忘记实际使用 git 进行手动提交。您将在每个项目后推送您的 Snaps 存储库，这将允许我们发布统计数据，例如学生完成每个项目（或每个项目的每个部分）所花费的平均时间。它还将使我们能够识别项目中比我们预期的更令人困惑或更耗时的部分。它还将使我们能够了解我们分配的工作量是否过高，这样如果我们给您带来了超负荷，我们可以降低课程难度。
 
 
-## D. 编程练习
+## D. 把初始化作业推送到云端仓库
+现在，我们要把本地从 skeleton 拉取的作业等资源同步到云端，因为我新建 github 仓库时增加了一个 reademe，导致本地和云端冲突，我的解决如下：
 
+1. 使用下面命令检查状态
+```bash
+git status
+```
+
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-11/202412111937483.png)
+
+可以看到，我有 45 个未上传的文件和 1 个冲突的文件
+
+2. 使用下面命令，允许合并历史不相关的提交
+```bash
+git pull origin main --allow-unrelated-histories
+```
+
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-11/202412111939639.png)
+
+
+3. Git 会提示你解决冲突，本地提交合并
+```bash
+git commit -m "Merge branch 'main' of https://github.com/zzyAJohn/CS61B_SP21"
+```
+
+4. 将本地的更改推送到远程仓库
+```bash
+git push origin main
+```
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-11/202412111940776.png)
+
+现在，你的远端应该有所有作业的初始版本
+
+
+## E. 编程练习
+::: important 重要
+在做编程练习前，请确保你已经把初始作业推送到你的远程仓库了，如果没有，请先推送完再来做这个练习。
+:::
 Open the file called `Collatz.java`. Try running it and you’ll see the number 5 get printed.
 
 This program is supposed to print the Collatz sequence starting from a given number. The Collatz sequence is defined as follows:
@@ -116,42 +152,8 @@ public class Collatz {
 :::
 
 
-## E. 将您的工作推送到 GitHub
+## F. 将您的工作推送到 GitHub
 
-### 预备工作
-在推送之前，请检查本地从 skeleton 拉取的作业等资源是否同步到云端，因为我新建github仓库时增加了一个reademe，导致本地和云端冲突，我的解决如下：
-
-1. 使用下面命令检查状态
-```bash
-git status
-```
-
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-11/202412111937483.png)
-
-可以看到，我有 45 个未上传的文件和 1 个冲突的文件
-
-2. 使用下面命令，允许合并历史不相关的提交
-```bash
-git pull origin main --allow-unrelated-histories
-```
-
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-11/202412111939639.png)
-
-
-3. Git 会提示你解决冲突，本地提交合并
-```bash
-git commit -m "Merge branch 'main' of https://github.com/zzyAJohn/CS61B_SP21"
-```
-
-4. 将本地的更改推送到远程仓库
-```bash
-git push origin main
-```
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-11/202412111940776.png)
-
-
-
-### 上传lab1
 1. 进入本地 CS61B_SP21 目录，输入以下命令以确认您位于正确的目录中。
 
 ```bash
@@ -215,7 +217,7 @@ To https://github.com/zzyAJohn/CS61B_SP21.git
    51ff170..060fe39  main -> main
 ```
 
-## F. 提交实验 1
+## G. 提交 lab1
 
 使用 [Gradescope](https://www.gradescope.com/) 提交您的作业。
 
