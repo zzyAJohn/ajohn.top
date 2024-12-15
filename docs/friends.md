@@ -15,7 +15,7 @@ list:
     avatar: https://github.com/YOYOYOAKE.png
     desc: Birds are born with no shackles.
   -
-    name: Moiads
+    name: Zephyr
     link: https://moiads.xyz/
     avatar: https://github.com/moiseak.png
     desc: 不要温和地走进那个良夜。
