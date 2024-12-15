@@ -8,6 +8,7 @@ export default defineNoteConfig({
     {
       text: '课程笔记',
       items: [
+        '1.Intro, Hello World Java.md',
         '2.Defining and Using Classes.md',
       ]
     },

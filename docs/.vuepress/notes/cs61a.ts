@@ -26,5 +26,11 @@ export default defineNoteConfig({
         'hw05.md',
       ]
     },
+    {
+      text: 'Project',
+      items: [
+        'ants.md',
+      ]
+    },
   ]
 })

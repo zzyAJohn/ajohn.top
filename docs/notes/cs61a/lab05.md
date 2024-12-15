@@ -83,7 +83,7 @@ ______
 
 ::: warning 答案警告
 ```bash
-PS D:\Github\CS61A_Fall2020\lab\lab05> python ok -q list-mutation -u 
+PS D:\Github\CS61A_Fall2024\lab\lab05> python ok -q list-mutation -u 
 =====================================================================
 Assignment: Lab 5
 OK, version v1.18.1
@@ -385,7 +385,7 @@ ______
 ::: warning 答案警告
 
 ```bash
-PS D:\Github\CS61A_Fall2020\lab\lab05> python ok -q iterators-wwpd -u 
+PS D:\Github\CS61A_Fall2024\lab\lab05> python ok -q iterators-wwpd -u 
 =====================================================================
 Assignment: Lab 5
 OK, version v1.18.1
@@ -651,7 +651,7 @@ python ok --score
 
 我的得分：
 ```bash
-PS D:\Github\CS61A_Fall2020\lab\lab05> python ok --score 
+PS D:\Github\CS61A_Fall2024\lab\lab05> python ok --score 
 =====================================================================
 Assignment: Lab 5
 OK, version v1.18.1
