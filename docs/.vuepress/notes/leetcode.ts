@@ -31,6 +31,7 @@ export default defineNoteConfig({
       prefix: '3.monotonic-stack', 
       items: [
         '1.monotonic-stack',
+        '2.rectangular-area',
       ]
     },
     {
