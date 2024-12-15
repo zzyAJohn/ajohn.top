@@ -5,22 +5,23 @@ export default defineNoteConfig({
   link: '/cs61b/',
   sidebar: [
     'README.md',
-    // {
-    //   text: '课程笔记',
-    //   items: [
-
-    //   ]
-    // },
+    {
+      text: '课程笔记',
+      items: [
+        '2.Defining and Using Classes.md',
+      ]
+    },
     {
       text: 'Lab',
       items: [
         'lab1.md',
       ]
     },
-    // {
-    //   text: 'Homework',
-    //   items: [
-    //   ]
-    // },
+    {
+      text: 'Project',
+      items: [
+        '2048.md',
+      ]
+    },
   ]
 })
