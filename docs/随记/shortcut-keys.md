@@ -1,12 +1,12 @@
 ---
-title: Shortcut keys
+title: VSCode 快捷键
 tags:
-    - Vscode
+    - VSCode
 createTime: 2024/11/07 00:00:00
 permalink: /article/ayskep62/
 ---
 
-记录一些vscode快捷键<!-- more -->
+记录一些 VSCode 快捷键<!-- more -->
 
 **home:移动到代码首行**
 
