@@ -14,7 +14,9 @@ permalink: /article/z3du3x1x/
 <!-- more -->
 ---
 
->本文用于记录复现 [ACT](https://openreview.net/forum?id=bRYbhQLYx3) 的 实验过程和结果，代码见 [github仓库](https://github.com/shtdusb/ACT)。
+>本文用于记录复现 [ACT](https://openreview.net/forum?id=bRYbhQLYx3) 在 cifar100 上的实验过程和结果，代码见 [github仓库](https://github.com/shtdusb/ACT)。
+>
+>在 web 上的实验过程和结果可见 [Enhancing Robustness in Learning with Noisy Labels: An Asymmetric Co-Training Approach 2](./act2.md)
 
 ## 零、资源
 操作系统配置
@@ -44,9 +46,18 @@ permalink: /article/z3du3x1x/
 wget -P ./data/cifar100 https://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz
 ```
 
-如果服务器下载速度较慢，可以点击在本地下载[CIFAR-10 数据集](https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz)和[CIFAR-100 数据集](https://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz)压缩包，下载完成后，上传到 ACT/data/cifar100 目录下
+如果服务器下载速度较慢，可以点击在本地下载[CIFAR-10 数据集](https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz)和[CIFAR-100 数据集](https://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz)压缩包，下载完成后，上传到 `ACT/data/cifar100` 目录下
 
-无需解压，运行代码时会自动解压数据集
+
+解压数据集
+```bash
+cd /path/to/data/cifar100
+tar -xzvf cifar-100-python.tar.gz
+```
+
+解压后如图所示
+
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-16/202412161358510.png)
 
 ## 二、环境配置
 
