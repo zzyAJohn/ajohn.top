@@ -137,14 +137,14 @@ pip install easydict
 
 ## 三、运行程序
 
-启动！
+启动！1 个 epoch 需要 40 秒，150 个 epoch 接近 100 分钟。
 ```bash
 python main.py --gpu 0  --noise-type symmetric --closeset-ratio 0.2 --dataset cifar100nc
 ```
 经历了数不清的失败后，小宝贝终于跑起来了！
 ![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-04/202412041942237.png)
 
-更多命令可参考 五、实验结果
+更多命令可参考 [六、实验结果](#六实验结果)。
 
 可以下载 nvitop 查看占用
 ```bash
