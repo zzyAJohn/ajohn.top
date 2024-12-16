@@ -51,7 +51,7 @@ wget -P ./data/cifar100 https://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz
 
 解压数据集
 ```bash
-cd /path/to/data/cifar100
+cd ./data/cifar100
 tar -xzvf cifar-100-python.tar.gz
 ```
 
