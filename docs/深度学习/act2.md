@@ -1,5 +1,9 @@
 ---
 title: 'Enhancing Robustness in Learning with Noisy Labels: An Asymmetric Co-Training Approach 2'
+tags:
+    - Deep Learning
+    - LNL
+    - Python
 createTime: 2024/12/16 12:23:09
 permalink: /article/r0g0ypv4/
 ---
@@ -13,9 +17,15 @@ permalink: /article/r0g0ypv4/
 
 >本文用于记录复现 [ACT](https://openreview.net/forum?id=bRYbhQLYx3) 的 web 数据集 实验过程和结果，代码见 [github仓库](https://github.com/shtdusb/ACT)。
 
-前置配置请查阅 [Enhancing Robustness in Learning with Noisy Labels: An Asymmetric Co-Training Approach](./act.md)
+前置配置请查阅上一篇博客：
+
+[Enhancing Robustness in Learning with Noisy Labels: An Asymmetric Co-Training Approach](./act.md)
 
 ## 一、下载数据集
+
+[数据集来源](https://github.com/NUST-Machine-Intelligence-Laboratory/weblyFG-dataset)
+
+WebFG-496 包含 200 个“鸟”（Web-bird） 子类别、100 个“飞机”（Web-aircraft）子类别和“汽车”（Web-car）的 196 个子类别。它总共有 53339 张 Web 训练图像。
 
 在 `ACT/data` 目录下执行下面命令
 ```bash
@@ -81,7 +91,9 @@ tar -xzvf web-aircraft.tar.gz
 
 ## 二、环境配置
 
-前置配置请查阅上一篇博客 [Enhancing Robustness in Learning with Noisy Labels: An Asymmetric Co-Training Approach](./act.md)
+前置配置请查阅上一篇博客：
+
+[Enhancing Robustness in Learning with Noisy Labels: An Asymmetric Co-Training Approach](./act.md)
 
 激活
 
@@ -91,7 +103,7 @@ conda activate act
 
 ## 三、运行程序
 
-启动！
+启动！1 个 epoch 需要 4 分钟，100 个 epoch 接近 7h，~~一训一个不吱声~~。
 ```bash
 python main_web.py --gpu 0 --dataset web-aircraft --model Resnet50 --batch-size 16 --closeset-ratio 0
 ```
