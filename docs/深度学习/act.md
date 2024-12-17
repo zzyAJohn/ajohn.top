@@ -10,7 +10,7 @@ permalink: /article/z3du3x1x/
 
 一种非对称协同训练（ACT）方法，可用于减轻标签噪声的有害影响。
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-17/202412172028143.png))
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-17/202412172028143.png) 
 <!-- more -->
 ---
 
