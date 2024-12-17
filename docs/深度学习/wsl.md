@@ -7,6 +7,8 @@ createTime: 2024/12/16 20:50:52
 permalink: /article/lo7fbj1s/
 ---
 
+>开发人员可以通过适用于 Linux 的 Windows 子系统 (WSL)，直接在 Windows 上使用 Linux 系统的一切
+
 ## 0.前置配置
 
 ### 0.1 开启CPU虚拟化
@@ -201,4 +203,4 @@ cat /usr/local/cuda-11.8/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 与在 VSCode 中连接远程服务器的方法相同，点击左下角 `打开远程窗口`，选择 `连接到 WSL`即可。
 
 
-参考链接：[如何解决version `GLIBCXX_3.4.29‘ not found的问题](https://blog.csdn.net/imok1234567/article/details/136820228)
+参考链接：[超详细wsl2安装深度学习环境2024最新版(cuda11.8+torch2.2)](https://blog.csdn.net/imok1234567/article/details/136820228)
