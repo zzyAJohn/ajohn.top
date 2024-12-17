@@ -2,8 +2,8 @@
 title: 'Enhancing Robustness in Learning with Noisy Labels: An Asymmetric Co-Training Approach'
 tags:
     - Deep Learning
-    - Python
     - LNL
+    - Python
 createTime: 2024/12/3 15:23:38
 permalink: /article/z3du3x1x/
 ---
@@ -37,8 +37,14 @@ permalink: /article/z3du3x1x/
 - 数据存储：高效云盘 20GB
 - 网络带宽：100Mbps
 
-## 一、下载数据集
+## 一、下载代码和数据集
+### 1.1 代码
+找一个目录克隆仓库
+```bash
+git clone https://github.com/shtdusb/ACT
+```
 
+### 1.2 数据集
 [CIFAR-10 和 CIFAR-100 数据集网站](https://www.cs.toronto.edu/~kriz/cifar.html)（打不开使用美国节点）
 
 在 ACT 目录下执行下面命令
@@ -231,7 +237,7 @@ strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
 ### 4.2 AttributeError: module 'numpy' has no attribute 'int'.
 
 ::: caution AttributeError: module 'numpy' has no attribute 'int'.
-```
+```bash
 (act) ubuntu@ml-ubuntu20-04-desktop-v3-2-32gb-25m:~/ajohn-lab/ACT$ python main.py --gpu 0  --noise-type symmetric --closeset-ratio 0.2 --dataset cifar100nc
 Namespace(log=None, gpu='0', seed=123, batch_size=128, lr=0.001, lr_decay='cosine:20,5e-4,100', weight_decay=0.0005, opt='sgd', warmup_epochs=20, warmup_lr=0.001, lr1=0.001, epochs=100, save_weights=False, dataset='cifar100nc', noise_type='symmetric', closeset_ratio=0.2, database='./dataset', model='CNN', ablation=False, method='ours', tau=0.025)
 Available GPUs Index : 0
@@ -392,15 +398,16 @@ from torch.utils.data import DataLoader
 
 ## 六、实验结果
 
+::: important 重要
+**注：本章实验结果为本人真实实验，引用请注明出处**
+:::
+
 | CIFAR100N | CIFAR100N | CIFAR100N | CIFAR80N | CIFAR80N | CIFAR80N |
 | :-----: | :-----: | :------: | :-----: | :-----: | :------: |
 | Sym-20% | Sym-80% | Asym-40% | Sym-20% | Sym-80% | Asym-40% |
 | 60.41 | ~~15.6170~~ | 60.8660 | 66.3820 | / | 63.2590 |
 
 上表展示了合成数据集（即CIFAR100N和CIFAR80N）在各种噪声类型（即对称和非对称）和噪声率（即20%、40%和80%）下的比较结果。与 CIFAR100N 相比，CIFAR80N 无疑更具挑战性，因为它是为了模拟闭集和开集噪声标签同时存在的现实世界情况而生成的。
-
-**注：以上实验结果为本人真实实验，引用请注明出处**
-
 
 
 ### 6.1 CIFAR100N
