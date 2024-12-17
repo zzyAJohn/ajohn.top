@@ -196,7 +196,7 @@ cat /usr/local/cuda-11.8/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 
 ## 6.torch 安装
 
-这部分可参考特定本博客中特定博文创建 conda 虚拟环境
+这部分可参考本博客中特定博文创建 conda 虚拟环境
 
 ## 7.在 VSCode 中连接 WSL
 
