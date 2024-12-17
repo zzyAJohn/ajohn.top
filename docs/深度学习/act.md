@@ -172,11 +172,49 @@ print(f"Using device: {device}")
 
 ## 四、遇到的问题
 
-### 4.1 version 'GLIBCXX_3.4.29' not found
+### 4.1 No module named 'data.Clothing1M'
+::: caution No module named 'data.Clothing1M'
+```bash
+(act) root@DESKTOP-5UQUCK2:/ajohn-lab-github/ACT# python main.py --gpu 0  --noise-type symmetric --closeset-ratio 0.2 --dataset cifar100nc
+Traceback (most recent call last):
+  File "/ajohn-lab-github/ACT/main.py", line 21, in <module>
+    from data.Clothing1M import *
+ModuleNotFoundError: No module named 'data.Clothing1M'
+(act) root@DESKTOP-5UQUCK2:/ajohn-lab-github/ACT# 
+```
+:::
+
+这里直接把 `main.py` 中的 `from data.Clothing1M import` 注释掉即可
+```py
+import os
+import sys
+import argparse
+import math
+import time
+import json
+import copy
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from tqdm import tqdm
+from utils import *
+from loss import *
+from utils.builder import *
+from utils.plotter import *
+from model.MLPHeader import MLPHead
+from util import *
+from utils.eval import *
+from model.ResNet32 import resnet32
+from model.SevenCNN import CNN
+from data.Clothing1M import * # [!code --]
+from utils.ema import EMA
+import matplotlib
+```
+### 4.2 version 'GLIBCXX_3.4.29' not found （可能遇不到）
 
 
 ::: caution version 'GLIBCXX_3.4.29' not found
-```
+```bash
 ImportError: /lib/x86_64-linux-gnu/libstdc++.so.6: version GLIBCXX_3.4.29' not found (required by /home/wuye/anaconda3/envs/tf2/lib/python3.8/site-packages/google/protobuf/pyext/_message.cpython-38-x86_64-linux-gnu.so)
 ```
 :::
@@ -234,7 +272,7 @@ strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
 
 参考链接：[如何解决version `GLIBCXX_3.4.29‘ not found的问题](https://blog.csdn.net/weixin_39379635/article/details/129159713)
 
-### 4.2 AttributeError: module 'numpy' has no attribute 'int'.
+### 4.3 AttributeError: module 'numpy' has no attribute 'int'.
 
 ::: caution AttributeError: module 'numpy' has no attribute 'int'.
 ```bash
@@ -290,10 +328,10 @@ ranges = {
         }
 ```
 
-### 4.3 NameError: name 'DataLoader' is not defined
+### 4.4 NameError: name 'DataLoader' is not defined
 
 ::: caution NameError: name 'DataLoader' is not defined
-```
+```bash
 (act) ubuntu@ml-ubuntu20-04-desktop-v3-2-32gb-25m:~/ajohn-lab/ACT$ python main.py --gpu 0  --noise-type symmetric --closeset-ratio 0.2 --dataset cifar100nc
 Namespace(log=None, gpu='0', seed=123, batch_size=128, lr=0.001, lr_decay='cosine:20,5e-4,100', weight_decay=0.0005, opt='sgd', warmup_epochs=20, warmup_lr=0.001, lr1=0.001, epochs=100, save_weights=False, dataset='cifar100nc', noise_type='symmetric', closeset_ratio=0.2, database='./dataset', model='CNN', ablation=False, method='ours', tau=0.025)
 Available GPUs Index : 0
