@@ -35,6 +35,13 @@ export default defineNoteConfig({
       ]
     },
     {
+      text: '四、网格图',
+      prefix: '4.grid-chart', 
+      items: [
+        '1.DFS',
+      ]
+    },
+    {
       text: '八、常用数据结构',
       prefix: '8.common-data-structures', 
       items: [
