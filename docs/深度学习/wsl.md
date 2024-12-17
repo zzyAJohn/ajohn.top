@@ -203,6 +203,10 @@ cat /usr/local/cuda-11.8/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 与在 VSCode 中连接远程服务器的方法相同，点击左下角 `打开远程窗口`，选择 `连接到 WSL`即可。
 
 
-tips：最好不要在本地 `git clone` github 的仓库然后拖到 wsl 中，Windows 和 linux 之间的换行符不同，Git 可能会误判某些文件有修改。
+tips：
+
+1. 最好不要在本地 `git clone` github 的仓库然后拖到 wsl 中，Windows 和 linux 之间的换行符不同，Git 可能会误判某些文件有修改。
+
+2. 如果 VSCode 里面 git clone 出现网络问题，可以在 win 下使用 cmd 进入 wsl 下载，亲测好用
 
 参考链接：[超详细wsl2安装深度学习环境2024最新版(cuda11.8+torch2.2)](https://blog.csdn.net/imok1234567/article/details/136820228)
