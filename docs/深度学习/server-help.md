@@ -380,6 +380,8 @@ cat /usr/local/cuda-11.8/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 
 ### 4.1 `/home/zzy` 文件夹
 
+这是系统给每个用户生成的默认用户目录
+
 你可以使用下面两条命令的任何一条进入你的用户目录
 ```bash
 cd /home/zzy
@@ -396,9 +398,9 @@ ls
 出现：
 ```bash
 zzy@user:~$ ls
-anaconda3
+zzy@user:~$ ls
 ```
-这是预装的 Anaconda，你已经在上面测试过了，可以正常使用
+什么也没有，也请不要在这里放东西！
 
 ### 4.2 `/mnt/data/zzy` 文件夹
 ::: tip 提示
