@@ -23,12 +23,12 @@ df -h
 `/mnt/data` 路径下是8t机械硬盘
 
 
-## 为所有用户预装一个Anaconda
+## 为所有用户配置 conda
 
-复制 Anaconda 目录到 /etc/skel/
+<!-- 复制 Anaconda 目录到 /etc/skel/
 ```bash
 sudo cp -r /home/user/anaconda3 /etc/skel/
-```
+``` -->
 
 环境变量
 ```bash
@@ -38,8 +38,25 @@ sudo vim /etc/skel/.bashrc
 在文件末尾添加 Anaconda 环境变量设置：
 ```bash
 # Anaconda setup
-export PATH=/home/$USER/anaconda3/bin:$PATH
+export PATH=/home/user/anaconda3/bin:$PATH
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/user/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/user/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/user/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/user/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 ```
+
+
 
 确认权限
 ```bash
