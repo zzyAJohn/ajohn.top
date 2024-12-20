@@ -151,11 +151,37 @@ sudo userdel -r zzy
 
 
 ## 5.新用户使用教程
-请允许我先带你熟悉你的 linux 环境
-
 假定你的用户名是 `zzy`
 
-那么：
+在VSCode中选择连接主机，输入
+```bash
+sh zzy@10.162.32.65
+```
+
+输入你的初始密码，完成登录
+
+使用快捷键 `Ctrl + ~` 打开一个终端
+
+请先修改你的密码，使用：
+```bash
+passwd
+```
+
+出现：
+```bash
+zzy@user:~$ passwd
+Changing password for zzy.
+Current password: # 输入当前密码，回车确认
+New password: # 输入新密码，回车确认
+Retype new password: # 确认新密码，回车确认
+passwd: password updated successfully
+zzy@user:~$ 
+```
+
+
+接下来，请允许我先带你熟悉你的 linux 环境
+
+
 - 你的用户路径是 `/home/zzy` （其他人无法访问），该路径下只有一个我帮你预装好的 Anaconda 文件夹。
 
 - 你的代码和数据集路径是 `/mnt/data/zzy`（其他人无法访问），该路径是一个独属于你的空文件夹，你可以在这里放任何你想放的东西，~~泰裤辣！~~详细介绍请看下文中对 `/mnt/data/zzy` 路径的介绍。
@@ -445,7 +471,8 @@ conda deactivate
 (base) zzy@user:~$ conda deactivate
 zzy@user:~$ 
 ```
-使用下面命令进入你的文件夹，并使用ls查看有什么
+
+使用下面命令进入你的文件夹，并使用 `ls` 命令查看有什么
 ```bash
 cd /mnt/data/zzy
 ```
