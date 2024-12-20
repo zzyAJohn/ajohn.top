@@ -96,21 +96,27 @@ bash: cd: zzy: Permission denied
 
 ### 新建用户
 创建用户 
+```bash
 sudo useradd -m -s /bin/bash zzy
+```
 
 用户自己可以访问，其他人无法访问
+```bash
 sudo chmod 700 /home/zzy
-
+```
 在 /mnt/data 下创建用户对应的文件夹
+```bash
 sudo mkdir /mnt/data/zzy
-
+```
 确保用户只能访问自己的文件夹，用户 zzy 只能访问 /mnt/data/zzy 目录，其他用户无法访问。
+```bash
 sudo chown zzy:zzy /mnt/data/zzy
-
+```
 只有该目录的拥有者可以读取、写入和执行
+```bash
 sudo chmod 700 /mnt/data/zzy
-
-设置密码
+```
+给用户初始化密码
 ```bash
 sudo passwd zzy
 ```
@@ -151,14 +157,24 @@ sudo userdel -r zzy
 
 
 ## 5.新用户使用教程
-假定你的用户名是 `zzy`
 
-在VSCode中选择连接主机，输入
+打开VSCode
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-20/202412201402272.png)
+
+点击左下角的 `打开远程窗口` （蓝色矩形区域）
+
+选择连接到主机
+
+假定你的用户名是 `zzy`，请在下文中修改成你的用户名！
+
+输入
 ```bash
-sh zzy@10.162.32.65
+ssh zzy@10.162.32.65
 ```
 
 输入你的初始密码，完成登录
+
+如果出现无法建立连接，请查看这篇博客 [VSCode 连接不上远程服务器的解决方法](../随记/vscode-ssh.md)
 
 使用快捷键 `Ctrl + ~` 打开一个终端
 
