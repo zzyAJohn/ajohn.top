@@ -240,7 +240,7 @@ zzy@user:~$ conda activate zzy_env
 CondaError: Run 'conda init' before 'conda activate'
 ``` -->
 
-我们使用下面的命令来初始化 `conda` 环境
+<!-- 我们使用下面的命令来初始化 `conda` 环境
 ```bash
 conda init
 ```
@@ -262,9 +262,9 @@ no change     /home/user/anaconda3/etc/profile.d/conda.csh
 modified      /home/zzy/.bashrc
 
 ==> For changes to take effect, close and re-open your current shell. <==
-```
+``` -->
 
-==新建一个终端==，激活我们的 `zzy_env` 环境：（一定要新打开一个，原先的终端没有更新）
+激活我们的 `zzy_env` 环境
 ```bash
 conda activate zzy_env
 ```
