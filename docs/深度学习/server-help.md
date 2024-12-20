@@ -52,49 +52,15 @@ zzy@user:~$
 修改成功
 
 
-## 3.熟悉工作环境 
-接下来，请允许我先带你熟悉你的 linux 环境
-
-每个新用户都有两个文件夹可以使用，分别是 `/home/zzy` 和 `/mnt/data/zzy`。
-
-在日常使用中，你不需要打开 `/home/zzy` 文件夹，因为你的所有东西应该存放在 `/mnt/data/zzy` 路径下。
-
-- 你的用户路径是 `/home/zzy` （其他人无法访问你的文件夹，你也无法访问其他用户的文件夹），该路径下只有一个我帮你预装好的 Anaconda 文件夹。
-::: tip 提示
-`/home` 目录挂载在2t的固态硬盘下，为了避免占用系统盘，请不要在这里存放你的代码和数据集。
+## 3.测试工作环境 
+::: important 重要
+conda, cuda, cudnn 我已经为所有用户安装好了，你只需要测试一下能否正常使用即可
 :::
+接下来，请允许我先带你测试你的 linux 环境
 
-- 你应该把你的代码和数据集放在 `/mnt/data/zzy`（其他人无法访问你的文件夹，你也无法访问其他用户的文件夹），该路径是一个独属于你的空文件夹，你可以在这里放任何你想放的东西，~~泰裤辣~~！
-::: tip 提示
-`/mnt/data` 目录挂载在8t的机械硬盘下。请把代码和数据集放在机械硬盘中！
-:::
+### 3.1 测试conda
 
-
-我们只需要用到这两个文件夹，其他的文件夹你都没有权限的（~~不信你可以试试~~）。
-
-
-### 3.1 `/home/zzy` 文件夹
-
-你可以使用下面两条命令的任何一条进入你的用户目录
-```bash
-cd /home/zzy
-```
-```bash
-cd ~
-```
-
-使用ls查看你的文件夹
-```bash
-ls
-```
-
-出现：
-```bash
-zzy@user:~$ ls
-anaconda3
-```
-
-每个新用户我会帮你预装好 `Anaconda`，环境变量也改好了，你可以直接使用conda命令查看能否正常使用
+每个新用户我会帮你预装好 `Anaconda`，环境变量也改好了，你可以直接使用 `conda` 命令查看能否正常使用
 
 运行
 ```bash
@@ -261,6 +227,7 @@ base                     /home/user/anaconda3
 zzy_env                  /home/zzy/.conda/envs/zzy_env
 ```
 
+你可以创建多个不同名称的环境，这些环境只有你可以使用
 <!-- 启动你的 `conda` 环境： -->
 
 <!-- ```bash
@@ -273,7 +240,7 @@ zzy@user:~$ conda activate zzy_env
 CondaError: Run 'conda init' before 'conda activate'
 ``` -->
 
-我们使用下面的命令来初始化conda
+我们使用下面的命令来初始化 `conda` 环境
 ```bash
 conda init
 ```
@@ -339,21 +306,105 @@ zlib                      1.2.13               h5eee18b_1
 (zzy_env) zzy@user:~$ 
 ```
 
+### 3.2 测试 cuda
 
-### 3.2 `/mnt/data/zzy` 文件夹
+使用下面命令查看cuda版本，下载pytorch时请注意对应下载命令（可以低于11.8）
+```bash
+nvcc -V
+```
+可以看到，我们是cuda_11.8
+```bash
+(zzy_env) zzy@user:~$ nvcc -V
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2022 NVIDIA Corporation
+Built on Wed_Sep_21_10:33:58_PDT_2022
+Cuda compilation tools, release 11.8, V11.8.89
+Build cuda_11.8.r11.8/compiler.31833905_0
+(zzy_env) zzy@user:~$ 
+```
+::: tip 提示
+下面只是举个例子，你可以不操作
+:::
+比如，安装 Pytorch 命令可以[参考Pytorch官网](https://pytorch.org/get-started/locally/)
+
+```bash
+conda install pytorch==2.5.0 torchvision==0.20.0 torchaudio==2.5.0  pytorch-cuda=11.8 -c pytorch -c nvidia
+```
+
+~~漫长的等待后~~，检查使用 cuda 的 Pytorch 是否安装成功
+
+```bash
+python -c "import torch; print(torch.cuda.is_available())"
+```
+输出：`True`
+
+
+### 3.3 测试cudnn
+输入下面命令：
+```bash
+cat /usr/local/cuda-11.8/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
+```
+
+出现：
+```bash
+(zzy_env) zzy@user:~$ cat /usr/local/cuda-11.8/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
+#define CUDNN_MAJOR 8
+#define CUDNN_MINOR 9
+#define CUDNN_PATCHLEVEL 7
+--
+#define CUDNN_VERSION (CUDNN_MAJOR * 1000 + CUDNN_MINOR * 100 + CUDNN_PATCHLEVEL)
+
+/* cannot use constexpr here since this is a C-only file */
+(zzy_env) zzy@user:~$ 
+```
+
+
+## 4.存储路径
+
+每个新用户都有两个文件夹可以使用，分别是 `/home/zzy` 和 `/mnt/data/zzy`。
+
+在日常使用中，你不需要打开 `/home/zzy` 文件夹，因为你的所有东西应该存放在 `/mnt/data/zzy` 路径下。
+
+- 你的用户路径是 `/home/zzy` （其他人无法访问你的文件夹，你也无法访问其他用户的文件夹），该路径下只有一个我帮你预装好的 Anaconda 文件夹。
+::: tip 提示
+`/home` 目录挂载在2t的固态硬盘下，为了避免占用系统盘，请不要在这里存放你的代码和数据集。
+:::
+
+- 你应该把你的代码和数据集放在 `/mnt/data/zzy`（其他人无法访问你的文件夹，你也无法访问其他用户的文件夹），该路径是一个独属于你的空文件夹，你可以在这里放任何你想放的东西，~~泰裤辣~~！
+::: tip 提示
+`/mnt/data` 目录挂载在8t的机械硬盘下。请把代码和数据集放在机械硬盘中！
+:::
+
+
+我们只需要用到这两个文件夹，其他的文件夹你都没有权限的（~~不信你可以试试~~）。
+
+### 4.1 `/home/zzy` 文件夹
+
+你可以使用下面两条命令的任何一条进入你的用户目录
+```bash
+cd /home/zzy
+```
+```bash
+cd ~
+```
+
+使用ls查看你的文件夹
+```bash
+ls
+```
+
+出现：
+```bash
+zzy@user:~$ ls
+anaconda3
+```
+这是预装的 Anaconda，你已经在上面测试过了，可以正常使用
+
+### 4.2 `/mnt/data/zzy` 文件夹
 ::: tip 提示
 你的代码和数据集请放在对应的 `/mnt/data/zzy` 下
 :::
-使用下面命令可以退出当前conda环境
-```bash
-conda deactivate
-```
-出现：
-```bash
-(zzy_env) zzy@user:~$ conda deactivate
-(base) zzy@user:~$ conda deactivate
-zzy@user:~$ 
-```
+
 
 使用下面命令进入你的文件夹，并使用 `ls` 命令查看有什么
 ```bash
@@ -366,9 +417,19 @@ zzy@user:/mnt/data/zzy$ ls
 zzy@user:/mnt/data/zzy$ 
 ```
 
-## 4.其他命令
+## 5.其他命令
 
 下面介绍一些常用的命令，知道可以跳过
+
+退出当前conda环境
+```bash
+conda deactivate
+```
+```bash
+(zzy_env) zzy@user:~$ conda deactivate
+(base) zzy@user:~$ conda deactivate
+zzy@user:~$ 
+```
 
 创建目录命令
 ```bash
