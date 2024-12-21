@@ -12,21 +12,22 @@ permalink: /article/bes1sa4i/
 **预祝大家的深度学习之旅一切顺利！**<!-- more -->
 
 ## 1.连接远程服务器
+::: tip 提示
+我们使用用户名 `zzy` 来做演示，请在下文中修改成你的用户名！用户名是你的名字缩写
+:::
+
 打开VSCode
 ![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-20/202412201402272.png)
 
 点击左下角的 `打开远程窗口` （蓝色矩形区域）
+
 
 选择连接到主机，输入
 ```bash
 ssh zzy@10.162.32.65
 ```
 
-::: tip 提示
-我们使用用户名 `zzy` 来做演示，请在下文中修改成你的用户名！用户名是你的名字缩写
-:::
-
-输入你的初始密码，完成登录
+选择 linux-继续-输入你的初始密码，完成登录
 
 如果出现无法建立连接，请查看这篇博客 [VSCode 连接不上远程服务器的解决方法](../随记/vscode-ssh.md)
 
@@ -423,6 +424,11 @@ zzy@user:/mnt/data/zzy$
 
 下面介绍一些常用的命令，知道可以跳过
 
+pip默认源更换为清华镜像
+```bash
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
 退出当前conda环境
 ```bash
 conda deactivate
@@ -454,4 +460,48 @@ rm -r test
 zzy@user:/mnt/data/zzy$ rm -r test
 zzy@user:/mnt/data/zzy$ ls
 zzy@user:/mnt/data/zzy$ 
+```
+
+## 6.git的使用
+查看git版本
+```bash
+git --version
+```
+出现：
+```bash
+user@user:~$ 
+git version 2.34.1
+user@user:~$ 
+```
+推送文件时出现：
+```bash
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: no email was given and auto-detection is disabled
+2024-12-20 18:22:56.874 [info] > git config --get-all user.name [1ms]
+2024-12-20 18:22:56.883 [info] > git config --get commit.template [3ms]
+2024-12-20 18:22:56.883 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2024-12-20 18:22:56.887 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/mnt/data/zzy/ajohn-act/.git/refs/remotes/origin/master'
+2024-12-20 18:22:56.888 [info] > git rev-parse refs/remotes/origin/master [1ms]
+2024-12-20 18:22:56.895 [info] > git status -z -uall [4ms]
+2024-12-20 18:22:56.896 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [2ms]
+```
+
+设置全局用户名和电子邮件：
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+```
+只为当前仓库设置用户名和电子邮件：
+```bash
+git config user.name "Your Name"
+git config user.email "you@example.com"
 ```
