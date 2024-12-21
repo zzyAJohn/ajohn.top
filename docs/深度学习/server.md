@@ -2,7 +2,7 @@
 title: Ubuntu 深度学习服务器配置
 tags:
     - Deep Learning
-createTime: 2024/12/19 13:38:48
+createTime: 2024/12/21 16:38:48
 permalink: /article/bbaesj4i/
 ---
 
