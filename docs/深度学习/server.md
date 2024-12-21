@@ -1,36 +1,448 @@
 ---
-title: Ubuntu深度学习服务器配置
+title: Ubuntu 深度学习服务器配置
 tags:
     - Deep Learning
 createTime: 2024/12/19 13:38:48
 permalink: /article/bbaesj4i/
 ---
 
-本篇博客主要记录Ubuntu深度学习服务器配置部分过程<!-- more -->
-## 网络
+本篇博客主要记录Ubuntu深度学习服务器配置部分过程
+
+在昨天12月20日下午本来一切配置妥当，但是晚上输入 `nvidia-smi` 突然报错
+
+原因可能是没有把自动更新关掉，系统自动更新了NVIDIA库文件，和驱动不匹配，我尝试更新驱动，失败了，导致服务器差点成砖了，后续重装了四次系统，终于在12月21日下午4点恢复正常使用，在此记录下，可为以后的服务器管理员重装作参考
+
+<!-- more -->
+```bash
+(base) zzy@user:/home/user/Downloads$ ls
+Anaconda3-2024.10-1-Linux-x86_64.sh  cudnn-linux-x86_64-8.9.7.29_cuda11-archive         NVIDIA-Linux-x86_64-550.142.run
+cuda_11.8.0_520.61.05_linux.run      cudnn-linux-x86_64-8.9.7.29_cuda11-archive.tar.xz
+(base) zzy@user:/home/user/Downloads$ 
+```
+
+## 1. 重装系统 Ubuntu20.04
+
+下载Ubuntu20.04 刻录到u盘
+
+插上u盘，开机后一直按 del，主板选择u盘启动
+
+## 2. 安装 NVIDIA 显卡驱动
+
+这一步最麻烦（
+
+按照网上的教程来做，但是网上的教程有个坑点就是顺序存在一定问题，在下载了 `nvidia` 驱动后并没有直接安装，而是先禁用了本身的集显 `nouveau` 后就重启了，导致启动后黑屏无法进入图形化界面。我一开始不知道，试了好几次，因为这个重装了三次系统...
+
+正确顺序应该是，将 `nouveau` 禁用加入到黑名单后，**不要**立即重启，下载并安装好对应的显卡驱动了再重启这样使用的就是显卡驱动而非自带的 `nouveau` 了，[这里](https://blog.csdn.net/weixin_44169087/article/details/137455044)介绍了在禁用nouveau但没安装显卡驱动直接重启时如何恢复。
+
+安装前需要安装依赖
+```bash
+sudo apt-get update #更新软件列表
+#安装编译依赖
+sudo apt-get install g++
+sudo apt-get install gcc
+sudo apt-get install make
+```
+### 2.1 下载 NVIDIA 驱动
+下载 NVIDIA 驱动，服务器使用的是 2080ti
+
+[进入官网下载](https://www.nvidia.cn/drivers/lookup/)
+
+选择如图所示：
+
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-21/202412212118150.png)
+
+下好的文件应该是 `NVIDIA-Linux-x86_64-550.142.run`
+
+### 2.2 删除 NVIDIA 相关
+在安装驱动之前，先将之前已经安装过与Nvidia相关的内容删除
+```bash
+sudo apt-get remove --purge nvidia*
+```
+
+### 2.3 禁用 nouveau
+首先明确：nouveau是通用的驱动程序，也就是集显，在安装NVIDIA驱动以前需要禁止系统自带显卡驱动nouveau：可以先通过指令
+lsmod | grep nouveau
+查看nouveau驱动的启用情况，如果有输出表示nouveau驱动正在工作，如果没有内容输出则表示已经禁用了nouveau。
+
+```bash
+sudo vim /etc/modprobe.d/blacklist.conf 
+```
+
+在打开的blacklist.conf末尾添加如下，保存文本关闭
+```bash
+blacklist nouveau
+options nouveau modeset=0
+```
+在终端输入如下内容，进行更新，这一步一定要小心，千万不要重启服务器！！网上的教程是错误的！！启动后黑屏无法进入图形化界面，更别说安装NVIDIA驱动了！！
+ 
+```bash
+sudo update-initramfs -u
+```
+
+### 2.4 安装 lightdm
+
+```bash
+sudo apt-get install lightdm
+```
+这一步也可以不安装lightdm，使用ubuntu20.04、22.04自带的gdm3显示管理器，直观的区别就是gdm3的登陆窗口在显示器正中间，而lightdm登录窗口在偏左边，正常使用没有区别。
+
+
+### 2.5 停止当前的显示服务器，
+
+为了安装新的Nvidia驱动程序，需要停止当前的显示服务器。最简单的方法是使用telinit命令更改为运行级别3。在终端输入以下linux命令后，显示服务器将停止。
+```bash
+sudo telinit 3
+```
+
+这时候会结束图形界面，转到只有命令行的界面，先输入你的用户名和密码登录
+
+禁用X-window服务
+```bash
+sudo /etc/init.d/gdm3 stop
+```
+
+赋予可执行权限：
+```bash
+sudo chmod 777 NVIDIA-Linux-x86_64-550.142.run
+```
+
+### 2.6 准备安装驱动
+安装 NVIDIA 驱动：
+```bash
+sudo ./NVIDIA-Linux-x86_64-*.run –no-opengl-files
+```
+
+会弹出一些选择的窗口，一路默认
+
+
+
+参考：
+[ubuntu20.04禁用nouveau后黑屏的解决办法](https://blog.csdn.net/weixin_44169087/article/details/137455044)
+[ubuntu20.04安装nvidia显卡驱动](https://blog.csdn.net/qq_29750461/article/details/128348569?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171213425216800197082114%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=171213425216800197082114&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-128348569-null-null.142%5Ev100%5Epc_search_result_base9&utm_term=ubuntu20.04%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85&spm=1018.2226.3001.4187)
+
+输入：
+```bash
+nivdia-smi
+```
+
+出现：
+```bash
+user@user:~$ nvidia-smi
+Sat Dec 21 17:02:48 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.142                Driver Version: 550.142        CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 2080 Ti     Off |   00000000:01:00.0 Off |                  N/A |
+| 22%   21C    P8             21W /  250W |       6MiB /  22528MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA GeForce RTX 2080 Ti     Off |   00000000:41:00.0 Off |                  N/A |
+| 22%   23C    P8              3W /  250W |       6MiB /  22528MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA GeForce RTX 2080 Ti     Off |   00000000:81:00.0 Off |                  N/A |
+| 22%   24C    P8              1W /  250W |       6MiB /  22528MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA GeForce RTX 2080 Ti     Off |   00000000:C1:00.0  On |                  N/A |
+| 22%   23C    P8             23W /  250W |     144MiB /  22528MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A      1415      G   /usr/lib/xorg/Xorg                              4MiB |
+|    1   N/A  N/A      1415      G   /usr/lib/xorg/Xorg                              4MiB |
+|    2   N/A  N/A      1415      G   /usr/lib/xorg/Xorg                              4MiB |
+|    3   N/A  N/A      1415      G   /usr/lib/xorg/Xorg                             72MiB |
+|    3   N/A  N/A      2067      G   /usr/bin/gnome-shell                           68MiB |
++-----------------------------------------------------------------------------------------+
+user@user:~$ 
+```
+
+
+
+## 3. 配置网络
+
+### 3.1 网卡改名（其实可以不改）
+查看当前ip
+```bash
+ip a
+```
+
+这是改名后正常的样子，没改名之前是叫eno4，我试了其实也可以正常用
+```bash
+user@user:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether b4:2e:99:df:df:75 brd ff:ff:ff:ff:ff:ff
+    altname eno3
+    altname enp66s0
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether b4:2e:99:df:df:76 brd ff:ff:ff:ff:ff:ff
+    altname eno4
+    altname enp68s0
+    inet 10.162.32.65/21 brd 10.162.39.255 scope global noprefixroute eth1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::b62e:99ff:fedf:df76/64 scope link 
+       valid_lft forever preferred_lft forever
+user@user:~$ 
+```
+
+
+现在来改名，修改配置文件
+```bash
+sudo nano /etc/default/grub # 我比较喜欢用vim, vi也可以
+```
+
+找到
+```bash
+GRUB_CMDLINE_LINUX=""
+```
+
+改成：
+```bash
+GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"
+```
+
+保存配置：
+```bash
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+重启服务器
+
+查看
+```bash
+ip a
+```
+
+出现
+```bash
+user@user:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+    link/ether b4:2e:99:df:df:75 brd ff:ff:ff:ff:ff:ff
+    altname eno3
+    altname enp66s0
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether b4:2e:99:df:df:76 brd ff:ff:ff:ff:ff:ff
+    altname eno4
+    altname enp68s0
+    inet 10.162.32.65/21 brd 10.162.39.255 scope global noprefixroute eth1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::b62e:99ff:fedf:df76/64 scope link 
+       valid_lft forever preferred_lft forever
+user@user:~$ 
+```
+
+在rjsupplicant目录联网：
+```bash
+sudo bash ./rjsupplicant.sh -a 1 -n eth0 -d 1 -u 用户名 -p 密码
+```
+
 运行rj.sh
 ```bash
 bash rj.sh
 ```
 
-## 硬盘
-查看已挂载文件系统的磁盘使用情况
+参考：[Linux下使用锐捷客户端连接网络，以及遇到的问题](https://blog.csdn.net/weixin_44012745/article/details/114787967)
+
+### 3.2 静态ip
+
+服务器默认使用的是dhcp，会导致连不上ssh，因此我们要使用静态 ip
+
+
+修改etc里面的netplan文件夹，里面有一个很长的yaml文件
+
+
+```bash
+sudo vim /etc/netplan/01-network-manager-all.yaml
+```
+
+改成这个样子：
+```bash
+# Let NetworkManager manage all devices on this system
+network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    eth1:
+      dhcp4: false
+      addresses: [10.162.32.65/21]
+      gateway4: 10.162.32.1
+      nameservers:
+        addresses: [8.8.8.8, 8.8.4.4]
+```
+
+保存配置：
+```bash
+sudo netplan apply
+```
+
+### 3.3 启用ssh
+
+```bash
+sudo apt-get update
+sudo apt-get install openssh-server
+```
+
+查询SSH服务状态：
+```bash
+sudo systemctl status ssh
+```
+
+出现：
+```bash
+user@user:~$ sudo systemctl status ssh
+● ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (/lib/systemd/system/ssh.service; enabled; vendor preset: enabled)
+     Active: active (running) since Sat 2024-12-21 15:22:09 CST; 5h 25min ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 4242 (sshd)
+      Tasks: 1 (limit: 154319)
+     Memory: 4.3M
+     CGroup: /system.slice/ssh.service
+             └─4242 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+
+12月 21 15:57:29 user sshd[22259]: Accepted password for wmq from 10.162.32.196 port 4669 ssh2
+12月 21 15:57:29 user sshd[22259]: pam_unix(sshd:session): session opened for user wmq by (uid=0)
+12月 21 16:09:47 user sshd[28304]: Accepted password for wmq from 10.162.32.94 port 56211 ssh2
+12月 21 16:09:47 user sshd[28304]: pam_unix(sshd:session): session opened for user wmq by (uid=0)
+12月 21 16:10:12 user sshd[28680]: Accepted password for wmq from 10.162.32.94 port 56259 ssh2
+12月 21 16:10:12 user sshd[28680]: pam_unix(sshd:session): session opened for user wmq by (uid=0)
+12月 21 16:11:15 user sshd[29075]: Accepted password for user from 10.162.32.196 port 8286 ssh2
+12月 21 16:11:15 user sshd[29075]: pam_unix(sshd:session): session opened for user user by (uid=0)
+12月 21 16:18:20 user sshd[31481]: Accepted password for user from 10.162.32.196 port 10660 ssh2
+12月 21 16:18:20 user sshd[31481]: pam_unix(sshd:session): session opened for user user by (uid=0)
+user@user:~$ 
+```
+
+
+
+## 4. 挂载机械硬盘
+
+目的：把 8t 的机械盘挂到目录 `/mnt/data` 下，用于我们的用户存放数据集和代码，便于管理
+
+还有一个好处就是重装系统的时候机械盘的数据不会丢失
+
+我们使用的系统盘是 2t 的固态，已经默认配好了，还有 8t 的机械需要更改挂载路径
+
+使用命令查看挂载情况：
+```bash
+lsblk
+```
+
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-21/202412212131404.png)
+
+可以看到，我们的 `sda1` 位于 `/media/user/afdb377b-dod3-48dc-8fe3-001c1370db65` 路径下
+
+先取消挂载
+```bash
+sudo umount /media/user/afdb377b-dod3-48dc-8fe3-001c1370db65
+```
+
+创建目标路径：
+```bash
+sudo mkdir -p /mnt/data
+```
+
+挂载到 `/mnt/data`：
+```bash
+sudo mount /dev/sda1 /mnt/data
+```
+
+
+```bash
+blkid
+```
+
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-21/202412212134195.jpg)
+
+查看挂载情况：
+```bash
+df -Th
+```
+
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-21/202412212135880.png)
+
+可以看到，已经切换成功了，设置开机自动挂载
+
+写入 `/etc/fstab`，要先切换到 root 权限：
+```bash
+sudo -i
+sudo echo "/dev/sda1 /mnt/data ext4 defaults  0 0" >> /etc/fstab
+```
+
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-21/202412212138327.png)
+
+
+输入命令验证一下，如果没有输出就是成功了
+```bash
+mount -a
+```
+
+
+<!-- 查看已挂载文件系统的磁盘使用情况
 ```bash
 df -h
 ```
 `/` 下是2t固态
 
-`/mnt/data` 路径下是8t机械硬盘
+`/mnt/data` 路径下是8t机械硬盘 -->
 
 
-## 为所有用户配置 conda
+
+下面来安装深度学习环境
+
+
+
+## 5. Anaconda
+
+### 5.1 下载 Anaconda
+[Anaconda官网地址](https://repo.anaconda.com/archive/)
+```bash
+wget https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
+```
+
+慢的话可以去[清华源](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/)下载
+
+
+下载好后安装：
+```bash
+sh Anaconda3-2024.10-1-Linux-x86_64.sh
+```
+
+
+
+
+
+### 5.2 配置全局 conda
 
 <!-- 复制 Anaconda 目录到 /etc/skel/
 ```bash
 sudo cp -r /home/user/anaconda3 /etc/skel/
 ``` -->
 
-环境变量
+`/etc/skel/` 下的 `.bashrc` 可以在新建用户时为其加入默认环境变量
 ```bash
 sudo vim /etc/skel/.bashrc
 ```
@@ -57,6 +469,163 @@ unset __conda_setup
 ```
 
 
+## 6. cuda
+
+### 6.1 apt 换源
+
+apt 换源，打开配置文件
+```bash
+sudo vim /etc/apt/sources.list
+```
+
+i进入编辑模式，将原有软件源开头全部用 # 注释掉，然后将以下代码复制进去，然后按esc推出编辑模式，输入:wq保存并退出，
+
+```bash
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
+deb http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
+```
+
+
+更新软件包
+```bash
+sudo apt update
+```
+
+<!-- 安装 gcc
+```bash
+sudo apt install build-essential
+``` -->
+
+### 6.2 下载 cuda 11.8
+
+下载 cuda 11.8，地址为 [Installer for Linux Ubuntu 20.04 x86_64](https://developer.nvidia.com/cuda-11-8-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=20.04&target_type=runfile_local)
+
+```bash
+wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda_11.8.0_520.61.05_linux.run
+sudo sh cuda_11.8.0_520.61.05_linux.run
+```
+
+编辑环境变量
+```bash
+sudo vim ~/.bashrc
+```
+
+按 `i` 进入编辑模式，在末尾将以下代码复制进去，然后按`esc`推出编辑模式，输入`:wq`保存并退出 
+```bash
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.8/lib64
+export PATH=$PATH:/usr/local/cuda-11.8/bin
+export CUDA_HOME=$CUDA_HOME:/usr/local/cuda-11.8
+```
+
+刷新环境变量
+```bash
+source  ~/.bashrc
+```
+
+查看cuda是否已经安装成功
+```bash
+nvcc -V
+```
+
+出现：
+```bash
+user@user:~$ nvcc -V
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2022 NVIDIA Corporation
+Built on Wed_Sep_21_10:33:58_PDT_2022
+Cuda compilation tools, release 11.8, V11.8.89
+Build cuda_11.8.r11.8/compiler.31833905_0
+user@user:~$ 
+```
+
+### 6.3 不兼容
+
+如果执行 `sudo sh cuda_11.8.0_520.61.05_linux.run` 时提示 `gcc` 不兼容，可以使用 `gcc-9`
+```bash
+sudo apt install gcc-9 g++-9
+```
+
+设置为默认 gcc 版本
+```bash
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 100
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 100
+```
+
+检查 gcc 版本是否成功切换
+```bash
+gcc --version
+```
+
+### 6.4 配置全局 cuda
+
+修改 `/etc/profile` 文件，它是一个全局配置文件，所有用户登录时都会读取这个文件
+```bash
+sudo vim /etc/profile
+```
+在文件末尾添加CUDA环境变量配置：
+```bash
+# CUDA setup
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.8/lib64
+export PATH=$PATH:/usr/local/cuda-11.8/bin
+export CUDA_HOME=/usr/local/cuda-11.8
+```
+
+刷新环境变量
+```bash
+source  ~/.bashrc
+```
+
+
+
+## 7.安装 cudnn
+
+[cuDNN 官网历史版本](https://developer.nvidia.cn/rdp/cudnn-archive)
+
+
+选择 `下载 cuDNN v8.9.7 (2023 年 12 月 5 日), 适用于 CUDA 11.x` 下面的 `Local Installers for Windows and Linux, Ubuntu(x86_64, armsbsa)` 中的 [Local Installer for Linux x86_64 (Tar)](https://developer.nvidia.com/downloads/compute/cudnn/secure/8.9.7/local_installers/11.x/cudnn-linux-x86_64-8.9.7.29_cuda11-archive.tar.xz/)
+
+下载 cudnn 需要邮箱验证
+
+解压并复制文件
+```bash
+sudo tar -xvf cudnn-linux-x86_64-8.9.7.29_cuda11-archive.tar.xz
+cd cudnn-linux-x86_64-8.9.7.29_cuda11-archive/
+sudo cp -r lib/* /usr/local/cuda-11.8/lib64/
+sudo cp -r include/* /usr/local/cuda-11.8/include/
+sudo chmod a+r /usr/local/cuda-11.8/lib64/libcudnn*
+sudo chmod a+r /usr/local/cuda-11.8/include/cudnn*
+```
+
+验证是否成功安装
+
+```bash
+cat /usr/local/cuda-11.8/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
+```
+
+出现：
+```bash
+zzy@user:~$ cat /usr/local/cuda-11.8/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
+#define CUDNN_MAJOR 8
+#define CUDNN_MINOR 9
+#define CUDNN_PATCHLEVEL 7
+--
+#define CUDNN_VERSION (CUDNN_MAJOR * 1000 + CUDNN_MINOR * 100 + CUDNN_PATCHLEVEL)
+
+/* cannot use constexpr here since this is a C-only file */
+zzy@user:~$ 
+```
+
+因为 cudnn 是直接复制到 cuda 目录的，所以不需要进行配置
+
+至此，你已经完成了环境配置，下面是一些创建用户的命令
+
+
+<!-- ## 用户配置
+
+
+
 
 确认权限
 ```bash
@@ -73,21 +642,9 @@ sudo useradd -m -s /bin/bash zzy
 ```bash
 su - newuser
 conda --version
-```
+``` -->
 
-## 把cuda放进全局变量
 
-修改 /etc/profile 文件，它是一个全局配置文件，所有用户登录时都会读取这个文件
-```bash
-sudo vim /etc/profile
-```
-在文件末尾添加CUDA环境变量配置：
-```bash
-# CUDA setup
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.8/lib64
-export PATH=$PATH:/usr/local/cuda-11.8/bin
-export CUDA_HOME=/usr/local/cuda-11.8
-```
 
 <!-- ### 新建组
 sudo groupadd test_group
@@ -114,7 +671,14 @@ bash: cd: zzy: Permission denied -->
 
 
 
-## 新建用户
+
+## 8. 管理员常用命令
+
+### 8.1 新建用户
+::: tip 提示
+注意将 `zzy` 改成你要新建的用户名
+:::
+
 创建用户 
 ```bash
 sudo useradd -m -s /bin/bash zzy
@@ -156,7 +720,7 @@ su - zzy
 ```bash
 su - user
 ``` -->
-## 删除用户
+### 8.2 删除用户
 查找并结束该用户的进程
 ```bash
 ps -u zzy
@@ -184,6 +748,20 @@ sudo userdel -r zzy
 
 <!-- source ~/.bashrc -->
 
+
+## 9. 其他
+### 9.1 为所有用户安装git
+```bash
+sudo apt update
+sudo apt install git
+```
+
+出现：
+```bash
+user@user:~$ git --version
+git version 2.34.1
+user@user:~$ 
+```
 
 参考资料：
 - [揭秘Ubuntu深度学习服务器配置：新手如何成为专家？](https://blog.csdn.net/qq_30091945/article/details/124555932)
