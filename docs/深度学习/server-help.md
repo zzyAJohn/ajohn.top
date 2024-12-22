@@ -57,11 +57,10 @@ zzy@user:~$
 ::: important 重要
 conda, cuda, cudnn 我已经为所有用户安装好了，你只需要测试一下能否正常使用即可
 :::
-接下来，请允许我先带你测试你的 linux 环境
 
 ### 3.1 测试conda
 
-每个新用户我会帮你预装好 `Anaconda`，环境变量也改好了，你可以直接使用 `conda` 命令查看能否正常使用
+使用 `conda` 命令查看能否正常使用
 
 运行
 ```bash
@@ -137,9 +136,9 @@ base                     /home/user/anaconda3
 
 zzy@user:~$ 
 ```
-
+::: important 重要
 请不要使用 `base` 环境
-
+:::
 创建环境请使用下面命令，`zzy_env` 是你的环境名，后面可以指定你需要的 `python` 版本
 ```bash
 conda create -n zzy_env python=3.9 -y
@@ -227,8 +226,9 @@ zzy@user:~$ conda env list
 base                     /home/user/anaconda3
 zzy_env                  /home/zzy/.conda/envs/zzy_env
 ```
-
+::: tip 提示
 你可以创建多个不同名称的环境，这些环境只有你可以使用
+:::
 <!-- 启动你的 `conda` 环境： -->
 
 <!-- ```bash
@@ -271,7 +271,7 @@ conda activate zzy_env
 ```
 出现 `(zzy_env)` 即进入成功
 ```bash
-(base) zzy@user:~$ conda activate zzy_env
+zzy@user:~$ conda activate zzy_env
 (zzy_env) zzy@user:~$ 
 ```
 可以使用下面的命令查看你当前环境都安装了什么
@@ -366,9 +366,9 @@ cat /usr/local/cuda-11.8/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 
 在日常使用中，你不需要打开 `/home/zzy` 文件夹，因为你的所有东西应该存放在 `/mnt/data/zzy` 路径下。
 
-- 你的用户路径是 `/home/zzy` （其他人无法访问你的文件夹，你也无法访问其他用户的文件夹），该路径下只有一个我帮你预装好的 Anaconda 文件夹。
+- 你的用户路径是 `/home/zzy` （其他人无法访问你的文件夹，你也无法访问其他用户的文件夹）。
 ::: tip 提示
-`/home` 目录挂载在2t的固态硬盘下，为了避免占用系统盘，请不要在这里存放你的代码和数据集。
+`/home` 目录挂载在2t的固态硬盘下，为了避免占用系统盘，以及重装系统时这里的文件会丢失，请不要在这里存放重要文件！
 :::
 
 - 你应该把你的代码和数据集放在 `/mnt/data/zzy`（其他人无法访问你的文件夹，你也无法访问其他用户的文件夹），该路径是一个独属于你的空文件夹，你可以在这里放任何你想放的东西，~~泰裤辣~~！
@@ -401,7 +401,7 @@ ls
 zzy@user:~$ ls
 zzy@user:~$ ls
 ```
-什么也没有，也请不要在这里放东西！
+什么也没有
 
 ### 4.2 `/mnt/data/zzy` 文件夹
 ::: tip 提示
@@ -424,10 +424,10 @@ zzy@user:/mnt/data/zzy$
 
 下面介绍一些常用的命令，知道可以跳过
 
-pip默认源更换为清华镜像
+<!-- pip默认源更换为清华镜像
 ```bash
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-```
+``` -->
 
 退出当前conda环境
 ```bash
