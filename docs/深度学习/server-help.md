@@ -439,6 +439,11 @@ conda deactivate
 zzy@user:~$ 
 ```
 
+删除conda环境
+```bash
+conda env remove -n zzy_env
+```
+
 创建目录命令
 ```bash
 mkdir test
