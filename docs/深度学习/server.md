@@ -6,11 +6,11 @@ createTime: 2024/12/21 16:38:48
 permalink: /article/bbaesj4i/
 ---
 
-本篇博客主要记录Ubuntu深度学习服务器配置部分过程
+本篇博客主要记录 Ubuntu 深度学习服务器配置~~从删库到跑路~~
 
 在昨天12月20日下午本来一切配置妥当，但是晚上输入 `nvidia-smi` 突然报错
 
-原因可能是没有把自动更新关掉，系统自动更新了NVIDIA库文件，和驱动不匹配，我尝试更新驱动，失败了，导致服务器差点成砖了，后续重装了四次系统，终于在12月21日下午4点恢复正常使用，在此记录下，可为以后的服务器管理员重装作参考
+原因可能是没有把自动更新关掉，系统自动更新了 NVIDIA 库文件，和驱动不匹配，我尝试更新驱动，失败了，导致服务器差点成砖了，后续重装了四次系统，终于在12月21日下午4点恢复正常使用，在此记录下，可为以后的服务器管理员重装作参考
 
 <!-- more -->
 ```bash
@@ -22,156 +22,120 @@ cuda_11.8.0_520.61.05_linux.run      cudnn-linux-x86_64-8.9.7.29_cuda11-archive.
 
 ## 1. 重装系统 Ubuntu20.04
 
-下载Ubuntu20.04 刻录到u盘
+准备：一个u盘，一台能联网的windows电脑
 
-插上u盘，开机后一直按 del，主板选择u盘启动
+### 1.1 下载 Ubuntu20.04 
 
-## 2. 安装 NVIDIA 显卡驱动
+下载地址：[Ubuntu 20.04.6 LTS (Focal Fossa)](https://releases.ubuntu.com/focal/)
 
-这一步最麻烦（
-
-按照网上的教程来做，但是网上的教程有个坑点就是顺序存在一定问题，在下载了 `nvidia` 驱动后并没有直接安装，而是先禁用了本身的集显 `nouveau` 后就重启了，导致启动后黑屏无法进入图形化界面。我一开始不知道，试了好几次，因为这个重装了三次系统...
-
-正确顺序应该是，将 `nouveau` 禁用加入到黑名单后，**不要**立即重启，下载并安装好对应的显卡驱动了再重启这样使用的就是显卡驱动而非自带的 `nouveau` 了，[这里](https://blog.csdn.net/weixin_44169087/article/details/137455044)介绍了在禁用nouveau但没安装显卡驱动直接重启时如何恢复。
-
-安装前需要安装依赖
-```bash
-sudo apt-get update #更新软件列表
-#安装编译依赖
-sudo apt-get install g++
-sudo apt-get install gcc
-sudo apt-get install make
-```
-### 2.1 下载 NVIDIA 驱动
-下载 NVIDIA 驱动，服务器使用的是 2080ti
-
-[进入官网下载](https://www.nvidia.cn/drivers/lookup/)
-
-选择如图所示：
-
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-21/202412212118150.png)
-
-下好的文件应该是 `NVIDIA-Linux-x86_64-550.142.run`
-
-### 2.2 删除 NVIDIA 相关
-在安装驱动之前，先将之前已经安装过与Nvidia相关的内容删除
-```bash
-sudo apt-get remove --purge nvidia*
-```
-
-### 2.3 禁用 nouveau
-首先明确：nouveau是通用的驱动程序，也就是集显，在安装NVIDIA驱动以前需要禁止系统自带显卡驱动nouveau：可以先通过指令
-lsmod | grep nouveau
-查看nouveau驱动的启用情况，如果有输出表示nouveau驱动正在工作，如果没有内容输出则表示已经禁用了nouveau。
-
-```bash
-sudo vim /etc/modprobe.d/blacklist.conf 
-```
-
-在打开的blacklist.conf末尾添加如下，保存文本关闭
-```bash
-blacklist nouveau
-options nouveau modeset=0
-```
-在终端输入如下内容，进行更新，这一步一定要小心，千万不要重启服务器！！网上的教程是错误的！！启动后黑屏无法进入图形化界面，更别说安装NVIDIA驱动了！！
- 
-```bash
-sudo update-initramfs -u
-```
-
-### 2.4 安装 lightdm
-
-```bash
-sudo apt-get install lightdm
-```
-这一步也可以不安装lightdm，使用ubuntu20.04、22.04自带的gdm3显示管理器，直观的区别就是gdm3的登陆窗口在显示器正中间，而lightdm登录窗口在偏左边，正常使用没有区别。
+往下拉，选择 `ubuntu-20.04.6-desktop-amd64.iso	2023-03-16 15:58	4.1G	Desktop image for 64-bit PC (AMD64) computers (standard download)` 下载到你的windows电脑
 
 
-### 2.5 停止当前的显示服务器，
+### 1.2 下载 软碟通软件
+下载软碟通软件（UltralSO），这个百度即可。
 
-为了安装新的Nvidia驱动程序，需要停止当前的显示服务器。最简单的方法是使用telinit命令更改为运行级别3。在终端输入以下linux命令后，显示服务器将停止。
-```bash
-sudo telinit 3
-```
+下载安装之后，提示要注册，这个可以不必管它，直接试用即可。
+::: iportant 重要
+如果你的u盘有重要文件，请先备份！
+:::
+### 1.3 刻录到u盘
 
-这时候会结束图形界面，转到只有命令行的界面，先输入你的用户名和密码登录
+在左侧打开 Ubuntu 镜像：
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221113181.png)
 
-禁用X-window服务
-```bash
-sudo /etc/init.d/gdm3 stop
-```
+启动-写入硬盘镜像，磁盘启动器选择自己U盘，映像文件选择 Ubuntu 系统镜像，写入方式选择 USB-HDD+，点击写入即可。
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221113911.png)
 
-赋予可执行权限：
-```bash
-sudo chmod 777 NVIDIA-Linux-x86_64-550.142.run
-```
+刻录校验不选
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221121124.png)
 
-### 2.6 准备安装驱动
-安装 NVIDIA 驱动：
-```bash
-sudo ./NVIDIA-Linux-x86_64-*.run –no-opengl-files
-```
+等待十分钟左右，u盘变成：
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221123252.jpg)
 
-会弹出一些选择的窗口，一路默认
+### 1.3 u盘启动
+
+给服务器插上u盘，开机后疯狂按 `del`，直到左下角出现变化，好像是什么正在进入设置，反正左下角有变化就是成功了不用按了
 
 
+进入主板：
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221125254.jpg)
 
-参考：
-[ubuntu20.04禁用nouveau后黑屏的解决办法](https://blog.csdn.net/weixin_44169087/article/details/137455044)
-[ubuntu20.04安装nvidia显卡驱动](https://blog.csdn.net/qq_29750461/article/details/128348569?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171213425216800197082114%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=171213425216800197082114&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-128348569-null-null.142%5Ev100%5Epc_search_result_base9&utm_term=ubuntu20.04%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85&spm=1018.2226.3001.4187)
+按小键盘的 `→` 移动到 `Boot`
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221126172.jpg)
 
-输入：
-```bash
-nivdia-smi
-```
+按 `↓` 移动到 `Boot Option #1` 按 `-` 可以切换启动项，直到启动项是u盘即可：
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221126366.jpg)
 
-出现：
-```bash
-user@user:~$ nvidia-smi
-Sat Dec 21 17:02:48 2024       
-+-----------------------------------------------------------------------------------------+
-| NVIDIA-SMI 550.142                Driver Version: 550.142        CUDA Version: 12.4     |
-|-----------------------------------------+------------------------+----------------------+
-| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
-|                                         |                        |               MIG M. |
-|=========================================+========================+======================|
-|   0  NVIDIA GeForce RTX 2080 Ti     Off |   00000000:01:00.0 Off |                  N/A |
-| 22%   21C    P8             21W /  250W |       6MiB /  22528MiB |      0%      Default |
-|                                         |                        |                  N/A |
-+-----------------------------------------+------------------------+----------------------+
-|   1  NVIDIA GeForce RTX 2080 Ti     Off |   00000000:41:00.0 Off |                  N/A |
-| 22%   23C    P8              3W /  250W |       6MiB /  22528MiB |      0%      Default |
-|                                         |                        |                  N/A |
-+-----------------------------------------+------------------------+----------------------+
-|   2  NVIDIA GeForce RTX 2080 Ti     Off |   00000000:81:00.0 Off |                  N/A |
-| 22%   24C    P8              1W /  250W |       6MiB /  22528MiB |      0%      Default |
-|                                         |                        |                  N/A |
-+-----------------------------------------+------------------------+----------------------+
-|   3  NVIDIA GeForce RTX 2080 Ti     Off |   00000000:C1:00.0  On |                  N/A |
-| 22%   23C    P8             23W /  250W |     144MiB /  22528MiB |      0%      Default |
-|                                         |                        |                  N/A |
-+-----------------------------------------+------------------------+----------------------+
-                                                                                         
-+-----------------------------------------------------------------------------------------+
-| Processes:                                                                              |
-|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
-|        ID   ID                                                               Usage      |
-|=========================================================================================|
-|    0   N/A  N/A      1415      G   /usr/lib/xorg/Xorg                              4MiB |
-|    1   N/A  N/A      1415      G   /usr/lib/xorg/Xorg                              4MiB |
-|    2   N/A  N/A      1415      G   /usr/lib/xorg/Xorg                              4MiB |
-|    3   N/A  N/A      1415      G   /usr/lib/xorg/Xorg                             72MiB |
-|    3   N/A  N/A      2067      G   /usr/bin/gnome-shell                           68MiB |
-+-----------------------------------------------------------------------------------------+
-user@user:~$ 
-```
+按 `f10` 保存，之后会自己启动 ubuntu，什么都不要按：
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221129971.jpg)
+
+### 1.4 安装 Ubuntu
+选择 `Install Ubuntu`
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221129758.jpg)
 
 
+默认英语，直接 `Continue`：
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221129104.jpg)
 
-## 3. 配置网络
+默认 `Normal installation` 直接 `Continue`：
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221130356.jpg)
 
-### 3.1 网卡改名（其实可以不改）
+选择 `Erase disk and install Ubuntu`
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221131358.jpg)
+
+选择 2t 盘
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221131569.jpg)
+
+`Continue`
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221132621.jpg)
+
+随便点个国内点，默认上海就行，`Continue`
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221132013.jpg)
+
+设置主机名和管理员，`Continue`
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221132952.jpg)
+
+### 1.5 2t固态启动
+之后会自动重启，出现：
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221133079.jpg)
+
+提示你弹出u盘，然后按回车，这时候又会重启，疯狂按 `del`，去修改启动项为2t盘（修改启动方式上面教过了，不再赘述）
+
+启动成功：
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221134189.jpg)
+
+
+### 1.6 关闭自动更新
+
+1. 把那该死的自动更新关掉！
+
+- 修改配置文件/etc/apt/apt.conf.d/10periodic
+
+  将“1”改为“0”，保存即可
+
+- 修改配置文件/etc/apt/apt.conf.d/20auto-upgrades
+
+  将“1”改为“0”，保存即可
+- 系统设置-->软件和更新-->更新，将“自动检查更新”和“有新版本时通知我”设置为“从不“，关闭对话框完成设置。
+
+2. 设置永不息屏
+
+## 2. 配置网络
+
+::: important 重要
+我建议你做完 2.1 连上网之后，先去做 3 安装驱动，第三章最容易出问题导致重装系统，如果第三章没问题了，再配置 2.2 和 2.3 也是可以的
+:::
+
+### 2.1 联网
+
+[下载锐捷linux版](https://its.wust.edu.cn/info.jsp?urltype=news.NewsContentUrl&wbtreeid=1241&wbnewsid=2351)
+
+下载解压后，使用u盘拷到服务器上
+
+服务器网线接口应该使用：
+
+此处有图！
+
 查看当前ip
 ```bash
 ip a
@@ -201,6 +165,7 @@ user@user:~$ ip a
 user@user:~$ 
 ```
 
+网卡改名（其实可以不改）
 
 现在来改名，修改配置文件
 ```bash
@@ -265,7 +230,7 @@ bash rj.sh
 
 参考：[Linux下使用锐捷客户端连接网络，以及遇到的问题](https://blog.csdn.net/weixin_44012745/article/details/114787967)
 
-### 3.2 静态ip
+### 2.2 静态ip
 
 服务器默认使用的是dhcp，会导致连不上ssh，因此我们要使用静态 ip
 
@@ -297,7 +262,7 @@ network:
 sudo netplan apply
 ```
 
-### 3.3 启用ssh
+### 2.3 启用ssh
 
 ```bash
 sudo apt-get update
@@ -335,6 +300,155 @@ user@user:~$ sudo systemctl status ssh
 12月 21 16:18:20 user sshd[31481]: pam_unix(sshd:session): session opened for user user by (uid=0)
 user@user:~$ 
 ```
+
+
+## 3. 安装 NVIDIA 显卡驱动
+
+这一步最麻烦（
+
+按照网上的教程来做，但是网上的教程有个坑点就是顺序存在一定问题，在下载了 `nvidia` 驱动后并没有直接安装，而是先禁用了本身的集显 `nouveau` 后就重启了，导致启动后黑屏无法进入图形化界面。我一开始不知道，试了好几次，因为这个重装了三次系统...
+
+正确顺序应该是，将 `nouveau` 禁用加入到黑名单后，**不要**立即重启，下载并安装好对应的显卡驱动了再重启这样使用的就是显卡驱动而非自带的 `nouveau` 了，[这里](https://blog.csdn.net/weixin_44169087/article/details/137455044)介绍了在禁用nouveau但没安装显卡驱动直接重启时如何恢复。
+
+安装前需要安装依赖
+```bash
+sudo apt-get update #更新软件列表
+#安装编译依赖
+sudo apt-get install g++
+sudo apt-get install gcc
+sudo apt-get install make
+```
+### 3.1 下载 NVIDIA 驱动
+
+
+下载 NVIDIA 驱动，服务器使用的是 2080ti
+
+[进入官网下载](https://www.nvidia.cn/drivers/lookup/)
+
+选择如图所示：
+
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-21/202412212118150.png)
+
+下好的文件应该是 `NVIDIA-Linux-x86_64-550.142.run`
+
+### 3.2 删除 NVIDIA 相关
+在安装驱动之前，先将之前已经安装过与Nvidia相关的内容删除
+```bash
+sudo apt-get remove --purge nvidia*
+```
+
+### 3.3 禁用 nouveau
+首先明确：nouveau是通用的驱动程序，也就是集显，在安装NVIDIA驱动以前需要禁止系统自带显卡驱动nouveau：可以先通过指令
+lsmod | grep nouveau
+查看nouveau驱动的启用情况，如果有输出表示nouveau驱动正在工作，如果没有内容输出则表示已经禁用了nouveau。
+
+```bash
+sudo vim /etc/modprobe.d/blacklist.conf 
+```
+
+在打开的blacklist.conf末尾添加如下，保存文本关闭
+```bash
+blacklist nouveau
+options nouveau modeset=0
+```
+在终端输入如下内容，进行更新，这一步一定要小心，千万不要重启服务器！！网上的教程是错误的！！启动后黑屏无法进入图形化界面，更别说安装NVIDIA驱动了！！
+ 
+```bash
+sudo update-initramfs -u
+```
+
+### 3.4 安装 lightdm
+
+```bash
+sudo apt-get install lightdm
+```
+这一步也可以不安装lightdm，使用ubuntu20.04、22.04自带的gdm3显示管理器，直观的区别就是gdm3的登陆窗口在显示器正中间，而lightdm登录窗口在偏左边，正常使用没有区别。
+
+
+### 3.5 停止当前的显示服务器，
+
+为了安装新的Nvidia驱动程序，需要停止当前的显示服务器。最简单的方法是使用telinit命令更改为运行级别3。在终端输入以下linux命令后，显示服务器将停止。
+```bash
+sudo telinit 3
+```
+
+这时候会结束图形界面，转到只有命令行的界面，先输入你的用户名和密码登录
+
+禁用X-window服务
+```bash
+sudo /etc/init.d/gdm3 stop
+```
+
+赋予可执行权限：
+```bash
+sudo chmod 777 NVIDIA-Linux-x86_64-550.142.run
+```
+
+### 3.6 准备安装驱动
+安装 NVIDIA 驱动：
+```bash
+sudo ./NVIDIA-Linux-x86_64-*.run –no-opengl-files
+```
+
+会弹出一些选择的窗口：
+```bash
+The distribution-provided pre-install script failed! Are you sure you want to continue? 选择 yes 继续
+Would you like to register the kernel module souces with DKMS? This will allow DKMS to automatically build a new module, if you install a different kernel later? 选择 No 继续
+Would you like to run the nvidia-xconfigutility to automatically update your x configuration so that the NVIDIA x driver will be used when you restart x? Any pre-existing x confile will be backed up. 选择 NO 继续
+安装过程中会询问是否安装32位的，选择 NO 继续
+```
+
+
+
+输入：
+```bash
+nivdia-smi
+```
+
+出现：
+```bash
+user@user:~$ nvidia-smi
+Sat Dec 21 17:02:48 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.142                Driver Version: 550.142        CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 2080 Ti     Off |   00000000:01:00.0 Off |                  N/A |
+| 22%   21C    P8             21W /  250W |       6MiB /  22528MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA GeForce RTX 2080 Ti     Off |   00000000:41:00.0 Off |                  N/A |
+| 22%   23C    P8              3W /  250W |       6MiB /  22528MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA GeForce RTX 2080 Ti     Off |   00000000:81:00.0 Off |                  N/A |
+| 22%   24C    P8              1W /  250W |       6MiB /  22528MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA GeForce RTX 2080 Ti     Off |   00000000:C1:00.0  On |                  N/A |
+| 22%   23C    P8             23W /  250W |     144MiB /  22528MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A      1415      G   /usr/lib/xorg/Xorg                              4MiB |
+|    1   N/A  N/A      1415      G   /usr/lib/xorg/Xorg                              4MiB |
+|    2   N/A  N/A      1415      G   /usr/lib/xorg/Xorg                              4MiB |
+|    3   N/A  N/A      1415      G   /usr/lib/xorg/Xorg                             72MiB |
+|    3   N/A  N/A      2067      G   /usr/bin/gnome-shell                           68MiB |
++-----------------------------------------------------------------------------------------+
+user@user:~$ 
+```
+
+
+
 
 
 
@@ -431,9 +545,23 @@ wget https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
 sh Anaconda3-2024.10-1-Linux-x86_64.sh
 ```
 
+配置环境变量
 
+修改
+```bash
+sudo vim ~/.bashrc
+```
+在最下面添加：
+```bash
+export PATH=/home/user/anaconda3/bin:$PATH
+```
 
+更新环境变量
+```bash
+source ~/.bashrc
+```
 
+使用conda能找到命令就是成功了
 
 ### 5.2 配置全局 conda
 
@@ -748,5 +876,73 @@ git version 2.34.1
 user@user:~$ 
 ```
 
+
+## 10. 总结
+
+### 10.1 问题
+在重启ubuntu的过程中发现2种情况的黑屏：
+
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221044073.jpg)
+
+1. 在grub引导菜单选择ubuntu后进入黑屏后，左上角有 `-` 光标一直在闪烁，操作无反应且一直进不去系统。
+
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221040405.jpg)
+
+2. 在grub引导菜单选择 `Advanced options for Ubuntu`，以救援模式启动:
+
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221047821.jpg)
+
+卡在这里操作无反应且一直进不去系统，如下图所示的报错
+
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221040576.jpg)
+
+### 10.2 原因分析
+
+这两种错误都是由于安装的NVIDIA显卡驱动与ubuntu自带的 nouveau 发生了冲突导致的
+
+
+下面教你怎么进入单用户模式：
+
+1. 我尝试了这个方法没用，你看一下就行：
+
+在第二行按e进入编辑
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221047821.jpg)
+
+
+出现：
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221052287.jpg)
+
+`ro` 后面改成 `rw single quiet splash nomodeset init=/bin/bash`
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221054139.jpg)
+
+可以出现命令行，但是按什么键都没有反应
+
+2. 你需要按照这个方法：
+
+尝试在第一行按e进入编辑
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221047821.jpg)
+
+
+
+
+出现：
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221059286.jpg)
+
+
+`ro` 后面改成 `rw single init=/bin/bash`：
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221101863.jpg)
+
+出现：
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-22/202412221100630.jpg)
+
+
+这时候就可以敲命令了，~~不过最后还是没救回来~~。
+
+---
+
 参考资料：
+- [ubuntu20.04禁用nouveau后黑屏的解决办法](https://blog.csdn.net/weixin_44169087/article/details/137455044)
+- [ubuntu20.04安装nvidia显卡驱动](https://blog.csdn.net/qq_29750461/article/details/128348569?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171213425216800197082114%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=171213425216800197082114&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-128348569-null-null.142%5Ev100%5Epc_search_result_base9&utm_term=ubuntu20.04%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85&spm=1018.2226.3001.4187) 注意这个博客的顺序是错误的！
 - [揭秘Ubuntu深度学习服务器配置：新手如何成为专家？](https://blog.csdn.net/qq_30091945/article/details/124555932)
+- [解决Ubuntu安装NVIDIA显卡驱动导致的黑屏问题](https://blog.csdn.net/Fengdf666/article/details/135888549?spm=1001.2101.3001.6650.6&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-6-135888549-blog-132233930.235%5Ev43%5Epc_blog_bottom_relevance_base7&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-6-135888549-blog-132233930.235%5Ev43%5Epc_blog_bottom_relevance_base7&utm_relevant_index=13)
+- [Ubuntu 20.04安装显卡驱动、CUDA、Miniconda和Pytorch（2024.09最新）-Ubuntu从零搭建深度学习环境](https://blog.csdn.net/sdbyp/article/details/139853774) 注意这个博客的顺序是错误的！
