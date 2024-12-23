@@ -1,5 +1,5 @@
 ---
-title: 实验室服务器新用户使用教程（实验室自用）
+title: 实验室服务器新用户使用教程（用户篇）
 tags:
     - Deep Learning
     - SSH
