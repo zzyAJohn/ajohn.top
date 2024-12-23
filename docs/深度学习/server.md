@@ -1,5 +1,5 @@
 ---
-title: Ubuntu 深度学习服务器配置
+title: Ubuntu 深度学习服务器配置（管理员篇）
 tags:
     - Deep Learning
 createTime: 2024/12/21 16:38:48
