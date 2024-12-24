@@ -6,6 +6,8 @@ createTime: 2024/12/16 10:24:05
 permalink: /article/ayx5589t/
 ---
 
+省流：打开 `C:\Users\AJohn\.ssh\` 路径，直接删除 `known_hosts` 文件。
+
 正常用了一段时间，突然 VSCode 连接不上远程服务器了，疯狂重连 + 重启服务器 + 重装服务器系统皆未解决，最后发现是本地存储密钥不一致导致的。<!-- more -->
 
 使用 VSCode 连接远程服务器 ubuntu@36.103.199.74 出现下面报错：
