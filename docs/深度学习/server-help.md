@@ -420,7 +420,35 @@ zzy@user:/mnt/data/zzy$ ls
 zzy@user:/mnt/data/zzy$ 
 ```
 
-## 5.其他命令
+## 5. 使用GPU
+::: important 重要
+请按照申请的型号使用 gpu，一共有 0, 1, 2, 3 四张卡
+:::
+如果你的代码没有 gpu 设置，可以在你的主代码中加入下面 python 代码：
+::: tip 提示
+如果变量名 `args` 不一样，把它修改成你代码中使用的变量名
+:::
+```python
+# 解析 GPU 配置
+str_ids = args.gpu.split(',')  # 获取 GPU IDs（支持多个 GPU）
+gpu_ids = []  # 用于存储有效的 GPU ID
+for str_id in str_ids:
+    gid = int(str_id)
+    if gid >= 0:  # 只有有效的 GPU ID（大于等于0）才会被添加
+        gpu_ids.append(gid)
+
+# 设置 GPU 使用
+if len(gpu_ids) > 0:
+    torch.cuda.set_device(gpu_ids[0])  # 设置当前使用的 GPU（如果有多个 GPU，默认先使用第一个）
+print('-----------当前使用的gpu型号是: {}--------------'.format(gpu_ids))  # 打印使用的 GPU ID
+```
+
+在参数中添加 python 代码：
+```python
+parser.add_argument('--gpu', default='0', type=str, help='gpu ids: e.g. 0  0,1,2  0,2')  # 设置你申请的 GPU ID
+```
+
+## 6.其他命令
 
 下面介绍一些常用的命令，知道可以跳过
 
@@ -467,7 +495,7 @@ zzy@user:/mnt/data/zzy$ ls
 zzy@user:/mnt/data/zzy$ 
 ```
 
-## 6.git的使用
+## 7.git的使用
 查看git版本
 ```bash
 git --version
