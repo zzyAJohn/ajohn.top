@@ -2,7 +2,7 @@
 title: Minecraft 服务器搭建
 tags:
     - Game
-    - Minecraft
+    - Linux
 createTime: 2024/12/28 11:16:38
 permalink: /article/31au2d1x/
 ---
@@ -11,7 +11,7 @@ permalink: /article/31au2d1x/
 ## 1. 购买云服务器
 
 
-配置可以参考如下我使用的：
+我使用的是阿里云的服务器，配置参考如下：
 
 ### 1.1 服务器详情
 ```
