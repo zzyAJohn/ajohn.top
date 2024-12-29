@@ -18,6 +18,7 @@ export default defineNoteConfig({
       text: 'Lab',
       items: [
         'lab05.md',
+        'lab06.md',
       ]
     },
     {
