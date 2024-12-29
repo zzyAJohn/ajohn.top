@@ -25,6 +25,7 @@ export default defineNoteConfig({
       text: 'Homework',
       items: [
         'hw05.md',
+        'hw06.md',
       ]
     },
     {
