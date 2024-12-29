@@ -42,10 +42,12 @@ CS61 系列是伯克利 CS 专业的入门课，其中：
 实验，作业，项目可见本博客：
 
 Lab:
-- [Lab 5: Mutability, Iterators](./lab05.md)
+- [Lab 5: Mutability, Iterators](./lab/lab05.md)
+- [Lab 6: OOP](./lab/lab06.md)
 
 Homework:
-- [Homework 5: Generators](./hw05.md)
+- [Homework 5: Generators](./homework/hw05.md)
+- [Homework 6: OOP, Linked Lists](./homework/hw06.md)
 
 你也可以通过我的 github 仓库 [CS61A_Fall2024](https://github.com/zzyAJohn/CS61A_Fall2024)来获取我的代码。
 

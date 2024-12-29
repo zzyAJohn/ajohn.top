@@ -1,5 +1,5 @@
 ---
-title: lab00
+title: Lab 0
 tags:
   - CS61A
   - Berkeley
