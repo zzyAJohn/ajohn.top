@@ -9,6 +9,7 @@ export default defineNoteConfig({
       text: '在读',
       items: [
         'weicheng.md',
+        'How to Win Friends & Influence People.md',
       ]
     },
   ]
