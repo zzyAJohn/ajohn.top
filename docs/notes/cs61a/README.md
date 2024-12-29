@@ -46,6 +46,7 @@ Lab:
 - [Lab 6: OOP](./lab/lab06.md)
 
 Homework:
+- [Homework 1: Functions, Control](./homework/hw01.md)
 - [Homework 5: Generators](./homework/hw05.md)
 - [Homework 6: OOP, Linked Lists](./homework/hw06.md)
 
