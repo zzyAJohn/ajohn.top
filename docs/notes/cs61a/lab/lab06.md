@@ -15,7 +15,7 @@ Download [lab06.zip](https://cs61a.org/lab/lab06/lab06.zip).
 如果官方链接失效，你也可以通过我的 github 仓库 [CS61A_Fall2024](https://github.com/zzyAJohn/CS61A_Fall2024)来获取我的代码。
 
 ::: tip 提示
-初始代码可以在 github 仓库历史 Commits 中的 Commits on Dec 29, 2024 的 initial lab06 找到
+初始代码可以在 github 仓库历史 Commits 中的 Commits on Dec 29, 2024 的 `initial lab06` 找到
 :::
 
 ## Q1: Bank Account
