@@ -81,7 +81,7 @@ ______
 ______
 ```
 
-::: warning 答案警告
+::: warning 以下内容包含答案
 ```bash
 PS D:\Github\CS61A_Fall2024\lab\lab05> python ok -q list-mutation -u 
 =====================================================================
@@ -216,7 +216,7 @@ Use Ok to test your code:
 python ok -q insert_items
 ```
 
-::: warning 答案警告
+::: warning 以下内容包含答案
 ```py
 def insert_items(s, before, after):
     """Insert after into s after each occurrence of before and then return s.
@@ -292,7 +292,7 @@ Use Ok to test your code:
 python ok -q group_by
 ```
 
-::: warning 答案警告
+::: warning 以下内容包含答案
 ```py
 def group_by(s, fn):
     """Return a dictionary of lists that together contain the elements of s.
@@ -382,7 +382,7 @@ ______
 ______
 ```
 
-::: warning 答案警告
+::: warning 以下内容包含答案
 
 ```bash
 PS D:\Github\CS61A_Fall2024\lab\lab05> python ok -q iterators-wwpd -u 
@@ -538,7 +538,7 @@ Use Ok to test your code:
 python ok -q count_occurrences
 ```
 
-::: warning 答案警告
+::: warning 以下内容包含答案
 ```py
 def count_occurrences(t, n, x):
     """Return the number of times that x is equal to one of the
@@ -605,7 +605,7 @@ Use Ok to test your code:
 python ok -q repeated
 ```
 
-::: warning 答案警告
+::: warning 以下内容包含答案
 ```py
 def repeated(t, k):
     """Return the first value in iterator t that appears k times in a row,
@@ -846,7 +846,7 @@ Use Ok to test your code:
 python ok -q sprout_leaves
 ```
 
-::: warning 答案警告
+::: warning 以下内容包含答案
 ```py
 def sprout_leaves(t, leaves):
     """Sprout new leaves containing the labels in leaves at each leaf of
@@ -919,7 +919,7 @@ Use Ok to test your code:
 ```bash
 python ok -q partial_reverse
 ```
-::: warning 答案警告
+::: warning 以下内容包含答案
 ```py
 def partial_reverse(s, start):
     """Reverse part of a list in-place, starting with start up to the end of
