@@ -39,6 +39,7 @@ export default defineNoteConfig({
       prefix: '4.grid-chart', 
       items: [
         '1.DFS',
+        '2.BFS',
       ]
     },
     {
