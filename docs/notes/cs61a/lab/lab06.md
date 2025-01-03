@@ -18,7 +18,11 @@ Download [lab06.zip](https://cs61a.org/lab/lab06/lab06.zip).
 初始代码可以在 github 仓库历史 Commits 中的 Commits on Dec 29, 2024 的 `initial lab06` 找到
 :::
 
-## Q1: Bank Account
+## Required Questions
+
+## Object-Oriented Programming
+
+### Q1: Bank Account
 扩展 `BankAccount` 类以包含 `transactions` 属性。此属性应为一个列表，用于跟踪账户上进行的每笔交易。每当调用 `deposit` 或 `withdraw` 方法时，都应创建一个新的 `Transaction` 实例并将其添加到列表中，**即使操作未成功**。
 
 `Transaction` 类应具有以下属性：
@@ -231,7 +235,7 @@ class BankAccount(Transaction): # [!code ++]
         return self.balance
 ```
 :::
-## Q2: Email
+### Q2: Email
 电子邮件系统有三个类：`Email` 、`Server` 和 `Client` 。`Client` 可以 `compose` 电子邮件，并将其 `send` 到 `Server` 。然后 `Server` 将其发送到另一个 `Client` 的 `inbox` 。为了实现这一点， `Server` 有一个名为 `clients` 的字典，它将 `Client` 的名称映射到 `Client` 实例。
 
 假设客户端永远不会更改其使用的服务器，并且它只使用该服务器撰写电子邮件。
@@ -369,7 +373,7 @@ class Client:
         self.server.send(email)
 ```
 :::
-## Q3: Mint
+### Q3: Mint
 铸币厂是铸造硬币的地方。在这个问题中，您将实现一个可以输出具有正确年份和价值的 `Coin` 的 `Mint` 类。
 
 - 每个 `Mint` 实例都有一个 `year` 。 `update` 方法将实例的 `year` 设置为 `Mint` 类的 `present_year` 类属性。
@@ -501,3 +505,127 @@ class Dime(Coin):
     cents = 10
 ```
 :::
+
+## Check Your Score Locally
+您可以通过运行 
+```bash
+python3 ok --score
+```
+在本地检查此作业每个问题的得分
+
+这不会提交作业！当您对分数满意时，请将作业提交给 Gradescope 以获得学分。
+```bash
+PS D:\Github\CS61A_Fall2024\lab\lab06> python ok --score
+=====================================================================
+Assignment: Lab 6
+OK, version v1.18.1
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Scoring tests
+
+---------------------------------------------------------------------
+Doctests for BankAccount
+
+>>> from lab06 import *
+>>> a = BankAccount('Eric')
+>>> a.deposit(100)    # Transaction 0 for a
+100
+>>> b = BankAccount('Erica')
+>>> a.withdraw(30)    # Transaction 1 for a
+70
+>>> a.deposit(10)     # Transaction 2 for a
+80
+>>> b.deposit(50)     # Transaction 0 for b
+50
+>>> b.withdraw(10)    # Transaction 1 for b
+40
+>>> a.withdraw(100)   # Transaction 3 for a
+'Insufficient funds'
+>>> len(a.transactions)
+4
+>>> len([t for t in a.transactions if t.changed()])
+3
+>>> for t in a.transactions:
+...     print(t.report())
+0: increased 0->100
+1: decreased 100->70
+2: increased 70->80
+3: no change
+>>> b.withdraw(100)   # Transaction 2 for b
+'Insufficient funds'
+>>> b.withdraw(30)    # Transaction 3 for b
+10
+>>> for t in b.transactions:
+...     print(t.report())
+0: increased 0->50
+1: decreased 50->40
+2: no change
+3: decreased 40->10
+Score: 1.0/1
+
+---------------------------------------------------------------------
+Doctests for Client
+
+>>> from lab06 import *
+>>> s = Server()
+>>> a = Client(s, 'Alice')
+>>> b = Client(s, 'Bob')
+>>> a.compose('Hello, World!', 'Bob')
+>>> b.inbox[0].msg
+'Hello, World!'
+>>> a.compose('CS 61A Rocks!', 'Bob')
+>>> len(b.inbox)
+2
+>>> b.inbox[1].msg
+'CS 61A Rocks!'
+>>> b.inbox[1].sender.name
+'Alice'
+Score: 1.0/1
+
+---------------------------------------------------------------------
+Doctests for Mint
+
+>>> from lab06 import *
+>>> mint = Mint()
+>>> mint.year
+2024
+>>> dime = mint.create(Dime)
+>>> dime.year
+2024
+>>> Mint.present_year = 2104  # Time passes
+>>> nickel = mint.create(Nickel)
+>>> nickel.year     # The mint has not updated its stamp yet
+2024
+>>> nickel.worth()  # 5 cents + (80 - 50 years)
+35
+>>> mint.update()   # The mint's year is updated to 2104
+>>> Mint.present_year = 2179     # More time passes
+>>> mint.create(Dime).worth()    # 10 cents + (75 - 50 years)
+35
+>>> Mint().create(Dime).worth()  # A new mint has the current year
+10
+>>> dime.worth()     # 10 cents + (155 - 50 years)
+115
+>>> Dime.cents = 20  # Upgrade all dimes!
+>>> dime.worth()     # 20 cents + (155 - 50 years)
+125
+Score: 1.0/1
+
+---------------------------------------------------------------------
+Point breakdown
+    BankAccount: 1.0/1
+    Client: 1.0/1
+    Mint: 1.0/1
+
+Score:
+    Total: 3.0
+
+Backup... 100% complete
+Backup past deadline by 78 days, 1 hour, 33 minutes, and 27 seconds
+Backup successful for user: zhiyong947@gmail.com
+URL: https://okpy.org/cal/cs61a/fa24/lab06/backups/9O6W7J
+
+OK is up to date
+PS D:\Github\CS61A_Fall2024\lab\lab06> 
+```
