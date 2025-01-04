@@ -1,23 +1,31 @@
 ---
-title: Ubuntu 深度学习服务器配置（管理员篇）
+title: 深度学习服务器配置（管理员篇）
 tags:
+    - Linux
     - Deep Learning
+    - Document
 createTime: 2024/12/21 16:38:48
 permalink: /article/bbaesj4i/
 ---
 
-本篇博客主要记录 Ubuntu 深度学习服务器配置~~从删库到跑路~~
+本篇博客主要记录 Ubuntu 深度学习服务器配置 ~~以及从删库到跑路~~
 
-在昨天12月20日下午本来一切配置妥当，但是晚上输入 `nvidia-smi` 突然报错
+PS ：在昨天12月20日下午本来一切配置妥当，但是晚上输入 `nvidia-smi` 突然报错
 
-原因可能是没有把自动更新关掉，系统自动更新了 NVIDIA 库文件，和驱动不匹配，我尝试更新驱动，失败了，导致服务器差点成砖了，后续重装了四次系统，终于在12月21日下午4点恢复正常使用，在此记录下，可为以后的服务器管理员重装作参考
+原因可能是没有把自动更新关掉，系统自动更新了 NVIDIA 库文件，和驱动不匹配
+
+我尝试更新驱动，失败了，导致服务器差点成砖了，后续重装了四次系统，终于在12月21日下午4点恢复正常使用
+
+特此记录，可为以后的服务器管理员重装作参考
 
 <!-- more -->
+
+---
+2025.1.4 更新：又重装了，这次把需要下载的东西都备份到机械硬盘 `/mnt/data/bak` 文件夹下了，万一下次需要重装，直接 cp 到 `/home/user/Downloads` 就可以了
 ```bash
-(base) zzy@user:/home/user/Downloads$ ls
+zzy@user:/mnt/data/bak$ ls
 Anaconda3-2024.10-1-Linux-x86_64.sh  cudnn-linux-x86_64-8.9.7.29_cuda11-archive         NVIDIA-Linux-x86_64-550.142.run
-cuda_11.8.0_520.61.05_linux.run      cudnn-linux-x86_64-8.9.7.29_cuda11-archive.tar.xz
-(base) zzy@user:/home/user/Downloads$ 
+cuda_11.8.0_520.61.05_linux.run      cudnn-linux-x86_64-8.9.7.29_cuda11-archive.tar.xz  rjsupplicant
 ```
 
 ## 1. 重装系统 Ubuntu20.04
@@ -130,7 +138,7 @@ cuda_11.8.0_520.61.05_linux.run      cudnn-linux-x86_64-8.9.7.29_cuda11-archive.
 
 [下载锐捷linux版](https://its.wust.edu.cn/info.jsp?urltype=news.NewsContentUrl&wbtreeid=1241&wbnewsid=2351)
 
-下载解压后，使用u盘拷到服务器上
+下载解压后，使用u盘拷到服务器上（2025.1.4 更新 现在可以直接使用机械硬盘中的存档文件夹 rjsupplicant ）
 
 服务器网线接口应该使用：
 
@@ -141,7 +149,7 @@ cuda_11.8.0_520.61.05_linux.run      cudnn-linux-x86_64-8.9.7.29_cuda11-archive.
 ip a
 ```
 
-这是改名后正常的样子，没改名之前是叫eno4，我试了其实也可以正常用
+这是改名前的样子，没改名之前是叫 eno4，我试了其实也可以正常用（无所谓，改吧）
 ```bash
 user@user:~$ ip a
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
@@ -150,22 +158,19 @@ user@user:~$ ip a
        valid_lft forever preferred_lft forever
     inet6 ::1/128 scope host 
        valid_lft forever preferred_lft forever
-2: eth0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
+2: eno3: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000
     link/ether b4:2e:99:df:df:75 brd ff:ff:ff:ff:ff:ff
-    altname eno3
     altname enp66s0
-3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+3: eno4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
     link/ether b4:2e:99:df:df:76 brd ff:ff:ff:ff:ff:ff
-    altname eno4
     altname enp68s0
-    inet 10.162.32.65/21 brd 10.162.39.255 scope global noprefixroute eth1
-       valid_lft forever preferred_lft forever
-    inet6 fe80::b62e:99ff:fedf:df76/64 scope link 
+    inet 10.162.32.65/21 brd 10.162.39.255 scope global dynamic noprefixroute eno4
+       valid_lft 8882sec preferred_lft 8882sec
+    inet6 fe80::9deb:a543:3b5f:f2b8/64 scope link noprefixroute 
        valid_lft forever preferred_lft forever
 user@user:~$ 
-```
 
-网卡改名（其实可以不改）
+```
 
 现在来改名，修改配置文件
 ```bash
@@ -186,15 +191,15 @@ GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"
 ```bash
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
-
-重启服务器
-
-查看
+::: warning 注意
+保存后重启服务器
+:::
+再次查看网卡
 ```bash
 ip a
 ```
 
-出现
+出现 eth0 和 eth1 表示成功，这里注意到 eth1 下有 ip 地址，我们使用 eth1
 ```bash
 user@user:~$ ip a
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
@@ -218,24 +223,24 @@ user@user:~$ ip a
 user@user:~$ 
 ```
 
-在rjsupplicant目录联网：
+在 rjsupplicant 目录联网：
 ```bash
-sudo bash ./rjsupplicant.sh -a 1 -n eth0 -d 1 -u 用户名 -p 密码
+sudo bash ./rjsupplicant.sh -a 1 -n eth0 -d 1 -u 用户名 -p 密码 # 你的学号和教务密码
 ```
 
-运行rj.sh
+~~因为懒~~方便起见，我将上述命令写入到 `rj.sh` 文件了，你也可以直接运行 `rj.sh`
 ```bash
 bash rj.sh
 ```
 
-参考：[Linux下使用锐捷客户端连接网络，以及遇到的问题](https://blog.csdn.net/weixin_44012745/article/details/114787967)
+
 
 ### 2.2 静态ip
 
-服务器默认使用的是dhcp，会导致连不上ssh，因此我们要使用静态 ip
+服务器默认使用的是 dhcp，会导致连不上 ssh ，因此我们要使用静态 ip
 
 
-修改etc里面的netplan文件夹，里面有一个很长的yaml文件
+修改 etc 里面的 netplan 文件夹，里面有一个很长前缀名的 yaml 文件
 
 
 ```bash
@@ -264,6 +269,9 @@ sudo netplan apply
 
 ### 2.3 启用ssh
 
+允许用户远程连接服务器
+
+更新 apt 并下载 openssh-server
 ```bash
 sudo apt-get update
 sudo apt-get install openssh-server
@@ -321,7 +329,7 @@ sudo apt-get install make
 ### 3.1 下载 NVIDIA 驱动
 
 
-下载 NVIDIA 驱动，服务器使用的是 2080ti
+下载 NVIDIA 驱动，服务器使用的是 2080ti（2025.1.4 更新 现在可以直接使用机械硬盘 `/mnt/data/bak` 中的存档文件 `NVIDIA-Linux-x86_64-550.142.run` ）
 
 [进入官网下载](https://www.nvidia.cn/drivers/lookup/)
 
@@ -357,7 +365,7 @@ options nouveau modeset=0
 sudo update-initramfs -u
 ```
 
-### 3.4 安装 lightdm
+### 3.4 安装 lightdm（跳过）
 
 ```bash
 sudo apt-get install lightdm
@@ -365,9 +373,9 @@ sudo apt-get install lightdm
 这一步也可以不安装lightdm，使用ubuntu20.04、22.04自带的gdm3显示管理器，直观的区别就是gdm3的登陆窗口在显示器正中间，而lightdm登录窗口在偏左边，正常使用没有区别。
 
 
-### 3.5 停止当前的显示服务器，
+### 3.5 停止当前的显示服务器
 
-为了安装新的Nvidia驱动程序，需要停止当前的显示服务器。最简单的方法是使用telinit命令更改为运行级别3。在终端输入以下linux命令后，显示服务器将停止。
+为了安装新的Nvidia驱动程序，需要停止当前的显示服务器。最简单的方法是使用 telinit 命令更改为运行级别3。在终端输入以下 linux 命令后，显示服务器将停止。
 ```bash
 sudo telinit 3
 ```
@@ -390,16 +398,39 @@ sudo chmod 777 NVIDIA-Linux-x86_64-550.142.run
 sudo ./NVIDIA-Linux-x86_64-*.run –no-opengl-files
 ```
 
-会弹出一些选择的窗口：
+会弹出一些选择的窗口，一直选择 Continue ：
 ```bash
 The distribution-provided pre-install script failed! Are you sure you want to continue? 选择 yes 继续
 Would you like to register the kernel module souces with DKMS? This will allow DKMS to automatically build a new module, if you install a different kernel later? 选择 No 继续
 Would you like to run the nvidia-xconfigutility to automatically update your x configuration so that the NVIDIA x driver will be used when you restart x? Any pre-existing x confile will be backed up. 选择 NO 继续
 安装过程中会询问是否安装32位的，选择 NO 继续
+The distribution-provided pre-install script failed! Are you sure you want to continue? 
+
+选择 yes 继续。
+
+Would you like to register the kernel module souces with DKMS? This will allow DKMS to automatically build a new module, if you install a different kernel later? 选择 No 继续。
+
+问题大概是：Nvidia's 32-bit compatibility libraries?选择 No 继续。
+
+Would you like to run the nvidia-xconfigutility to automatically update your x configuration so that the NVIDIA x driver will be used when you restart x? Any pre-existing x confile will be backed up.选择 Yes 继续
 ```
 
+~~多试几次总能行的（~~
 
+输入：
+```bash
+lsmod | grep nouveau
+```
+再次检查 nouveau 是否已经禁用，没有输出说明已经禁用了
 
+输入：
+```bash
+sudo service gdm3 start
+```
+重启x-window服务
+::: warning 注意
+重启服务器
+:::
 输入：
 ```bash
 nivdia-smi
@@ -446,10 +477,6 @@ Sat Dec 21 17:02:48 2024
 +-----------------------------------------------------------------------------------------+
 user@user:~$ 
 ```
-
-
-
-
 
 
 ## 4. 挂载机械硬盘
@@ -515,16 +542,6 @@ mount -a
 ```
 
 
-<!-- 查看已挂载文件系统的磁盘使用情况
-```bash
-df -h
-```
-`/` 下是2t固态
-
-`/mnt/data` 路径下是8t机械硬盘 -->
-
-
-
 下面来安装深度学习环境
 
 
@@ -532,7 +549,7 @@ df -h
 ## 5. Anaconda
 
 ### 5.1 下载 Anaconda
-[Anaconda官网地址](https://repo.anaconda.com/archive/)
+[Anaconda官网地址](https://repo.anaconda.com/archive/) （2025.1.4 更新 现在可以直接使用机械硬盘 `/mnt/data/bak` 中的存档文件 `Anaconda3-2024.10-1-Linux-x86_64.sh` ）
 ```bash
 wget https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
 ```
@@ -561,7 +578,7 @@ export PATH=/home/user/anaconda3/bin:$PATH
 source ~/.bashrc
 ```
 
-使用conda能找到命令就是成功了
+使用 conda 能找到命令就是成功了
 
 ### 5.2 配置全局 conda
 
@@ -606,14 +623,10 @@ deb http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe m
 sudo apt update
 ```
 
-<!-- 安装 gcc
-```bash
-sudo apt install build-essential
-``` -->
 
 ### 6.2 下载 cuda 11.8
 
-下载 cuda 11.8，地址为 [Installer for Linux Ubuntu 20.04 x86_64](https://developer.nvidia.com/cuda-11-8-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=20.04&target_type=runfile_local)
+下载 cuda 11.8，地址为 [Installer for Linux Ubuntu 20.04 x86_64](https://developer.nvidia.com/cuda-11-8-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=20.04&target_type=runfile_local) （2025.1.4 更新 现在可以直接使用机械硬盘 `/mnt/data/bak` 中的存档文件 `cuda_11.8.0_520.61.05_linux.run` ）
 
 ```bash
 wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda_11.8.0_520.61.05_linux.run
@@ -653,7 +666,7 @@ Build cuda_11.8.r11.8/compiler.31833905_0
 user@user:~$ 
 ```
 
-### 6.3 不兼容
+### 6.3 不兼容(这步可以跳过，没有这个问题了)
 
 如果执行 `sudo sh cuda_11.8.0_520.61.05_linux.run` 时提示 `gcc` 不兼容，可以使用 `gcc-9`
 ```bash
@@ -694,12 +707,12 @@ source  ~/.bashrc
 
 ## 7.安装 cudnn
 
-[cuDNN 官网历史版本](https://developer.nvidia.cn/rdp/cudnn-archive)
+[cuDNN 官网历史版本](https://developer.nvidia.cn/rdp/cudnn-archive) （2025.1.4 更新 现在可以直接使用机械硬盘 `/mnt/data/bak` 中的存档文件 `cudnn-linux-x86_64-8.9.7.29_cuda11-archive.tar.xz` ）
 
 
 选择 `下载 cuDNN v8.9.7 (2023 年 12 月 5 日), 适用于 CUDA 11.x` 下面的 `Local Installers for Windows and Linux, Ubuntu(x86_64, armsbsa)` 中的 [Local Installer for Linux x86_64 (Tar)](https://developer.nvidia.com/downloads/compute/cudnn/secure/8.9.7/local_installers/11.x/cudnn-linux-x86_64-8.9.7.29_cuda11-archive.tar.xz/)
 
-下载 cudnn 需要邮箱验证
+下载 cudnn 的时候 NVIDIA 会需要你使用邮箱验证
 
 解压并复制文件
 ```bash
@@ -817,7 +830,20 @@ sudo chmod 700 /mnt/data/zzy
 ```bash
 sudo passwd zzy
 ```
+::: tip 提示
+如果用户的文件夹已经存在，需要把这些文件重新赋予给用户：
 
+文件所有权赋予zzy
+
+```bash
+sudo chown -R zzy:zzy /mnt/data/zzy/*
+```
+仅 zzy 可读取、写入和执行
+
+```bash
+sudo chmod -R 700 /mnt/data/zzy/*
+```
+:::
 <!-- 新建zzy
 ```bash
 sudo useradd -m -d /home/zzy zzy
@@ -940,7 +966,8 @@ user@user:~$
 
 ---
 
-参考资料：
+## 参考资料：
+- [Linux下使用锐捷客户端连接网络，以及遇到的问题](https://blog.csdn.net/weixin_44012745/article/details/114787967)
 - [ubuntu20.04禁用nouveau后黑屏的解决办法](https://blog.csdn.net/weixin_44169087/article/details/137455044)
 - [ubuntu20.04安装nvidia显卡驱动](https://blog.csdn.net/qq_29750461/article/details/128348569?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171213425216800197082114%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=171213425216800197082114&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-128348569-null-null.142%5Ev100%5Epc_search_result_base9&utm_term=ubuntu20.04%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85&spm=1018.2226.3001.4187) 注意这个博客的顺序是错误的！
 - [揭秘Ubuntu深度学习服务器配置：新手如何成为专家？](https://blog.csdn.net/qq_30091945/article/details/124555932)
