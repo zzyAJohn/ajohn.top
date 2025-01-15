@@ -1,9 +1,9 @@
 ---
 title: 深度学习服务器配置（管理员篇）
 tags:
+    - Document
     - Linux
     - Deep Learning
-    - Document
 createTime: 2024/12/21 16:38:48
 permalink: /article/bbaesj4i/
 ---
