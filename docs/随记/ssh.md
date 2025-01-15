@@ -1,7 +1,8 @@
 ---
 title: 通过 SSH 密钥登录服务器
 tags:
-    - ssh
+    - SSH
+    - Linux
 createTime: 2025/01/15 11:28:00
 permalink: /article/1y2edp62/
 ---
