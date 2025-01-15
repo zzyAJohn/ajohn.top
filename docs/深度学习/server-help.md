@@ -1,8 +1,9 @@
 ---
-title: 实验室服务器新用户使用教程（用户篇）
+title: 实验室服务器使用教程（用户篇）
 tags:
+    - Document
+    - Linux
     - Deep Learning
-    - SSH
 createTime: 2024/12/20 14:10:48
 permalink: /article/bes1sa4i/
 ---
