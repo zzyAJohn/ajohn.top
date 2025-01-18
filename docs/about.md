@@ -3,6 +3,7 @@ permalink: /about/
 title: About
 draft: true
 readingTime: False
+contributors: False
 ---
 
 Hey，我是 AJohn，你也可以叫我阿囧。
