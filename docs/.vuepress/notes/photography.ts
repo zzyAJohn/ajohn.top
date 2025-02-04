@@ -12,5 +12,11 @@ export default defineNoteConfig({
         'tittle-tattle.md',
       ]
     },
+    {
+      text: '插件安装',
+      items: [
+        'dr5.md',
+      ]
+    },
   ]
 })
