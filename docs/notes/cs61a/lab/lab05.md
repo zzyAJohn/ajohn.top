@@ -20,13 +20,11 @@ Download [lab05.zip](https://cs61a.org/lab/lab05/lab05.zip).
 ## Required Questions
 
 ## Mutability
-Consult the drop-down if you need a refresher on mutability. It's okay to skip directly to the questions and refer back here should you get stuck.
-
 ### Q1: WWPD: List-Mutation
-
-**Important**: For all WWPD questions, type Function if you believe the answer is <function...>, Error if it errors, and Nothing if nothing is displayed.
-
-Use Ok to test your knowledge with the following "What Would Python Display?" questions:
+::: tip 提示
+对于所有 WWPD 问题，如果您认为答案是 `<function...>` ，则输入 `Function` ；如果答案错误，则输入 `Error` ；如果没有显示任何内容，则输入 `Nothing` 。
+:::
+使用 Ok 来通过以下“Python 会显示什么？”问题测试您的知识：
 
 ```bash
 python ok -q list-mutation -u
@@ -106,61 +104,61 @@ interpreter!
 >>> # If the code would error, type Error
 >>> s = [6, 7, 8]
 >>> print(s.append(6))
-? None
+? None # [!code ++]
 -- OK! --
 
 >>> s    
-? [6, 7, 8, 6]
+? [6, 7, 8, 6] # [!code ++]
 -- OK! --
 
 >>> s.insert(0, 9)
 >>> s
-? [9, 6, 7, 8, 6] 
+? [9, 6, 7, 8, 6] # [!code ++]
 -- OK! --
 
 >>> x = s.pop(1)
 >>> s
-? [9, 7, 8, 6]    
+? [9, 7, 8, 6] # [!code ++]
 -- OK! --
 
 >>> s.remove(x)
 >>> s
-? [9, 7, 8]    
+? [9, 7, 8] # [!code ++]
 -- OK! --
 
 >>> a, b = s, s[:]
 >>> a is s
-? True
+? True # [!code ++]
 -- OK! --
 
 >>> b == s
-? True
+? True # [!code ++]
 -- OK! --
 
 >>> b is s
-? False
+? False # [!code ++]
 -- OK! --
 
 >>> a.pop()
-? 8
+? 8 # [!code ++]
 -- OK! --
 
 >>> a + b
-? [9, 7, 9, 7, 8]
+? [9, 7, 9, 7, 8] # [!code ++]
 -- OK! --  
 
 >>> s = [3]
 >>> s.extend([4, 5])
 >>> s
-? [3, 4, 5]
+? [3, 4, 5] # [!code ++]
 -- OK! --
 >>> a
-? [9, 7]
+? [9, 7] # [!code ++]
 -- OK! --
 
 >>> s.extend([s.append(9), s.append(10)])
 >>> s
-? [3, 4, 5, 9, 10, None, None]
+? [3, 4, 5, 9, 10, None, None] # [!code ++]
 -- OK! --
 
 ---------------------------------------------------------------------
@@ -176,12 +174,13 @@ OK is up to date
 :::
 
 ### Q2: Insert Items
-Write a function that takes in a list s, a value before, and a value after. It modified s in place by inserting after just after each value equal to before in s. It returns s.
-
-**Important**: No new lists should be created.
-
-Note: If the values passed into before and after are equal, make sure you're not creating an infinitely long list while iterating through it. If you find that your code is taking more than a few seconds to run, the function may be in an infinite loop of inserting new values.
-
+编写一个函数，接受列表 `s` 、 `before` 值和 `after` 值。它通过在 `s` 中每个等于 `before` 的值之后插入 `after` 来修改 `s` 。它返回 `s` 。
+::: important 重要
+不应创建新列表。
+:::
+::: tip 提示
+如果传入 `before` 和 `after` 的值相等，请确保在迭代过程中不会创建无限长的列表。如果您发现代码运行时间超过几秒钟，则该函数可能处于插入新值的无限循环中。
+:::
 ```py
 def insert_items(s, before, after):
     """Insert after into s after each occurrence of before and then return s.
@@ -244,27 +243,27 @@ def insert_items(s, before, after):
     True
     """
     "*** YOUR CODE HERE ***" 
-    i = 0
-    end = len(s)
-    while i < end:
-        if s[i] == before:
-            s.insert(i + 1, after)
-            end += 1
-            i += 1
-        i += 1
-    return s
+    i = 0 # [!code ++]
+    end = len(s) # [!code ++]
+    while i < end: # [!code ++]
+        if s[i] == before: # [!code ++]
+            s.insert(i + 1, after) # [!code ++]
+            end += 1 # [!code ++]
+            i += 1 # [!code ++]
+        i += 1 # [!code ++]
+    return s # [!code ++]
 ```
 :::
 
 
 
 ### Q3: Group By
-Write a function that takes a list s and a function fn, and returns a dictionary that groups the elements of s based on the result of applying fn.
+编写一个函数，该函数接受列表 `s` 和函数 `fn` ，并返回一个字典，该字典根据应用 `fn` 的结果对 `s` 的元素进行分组。
 
-- The dictionary should have one key for each unique result of applying fn to elements of s.
-- The value for each key should be a list of all elements in s that, when passed to fn, produce that key value.
+- 该字典应该为将 `fn` 应用于 `s` 元素的每个唯一结果都有一个键。
+- 每个键的值应该是 `s` 中所有元素的列表，当传递给 `fn` 时，会产生该键值。
 
-In other words, for each element e in s, determine fn(e) and add e to the list corresponding to fn(e) in the dictionary.
+换句话说，对于 `s` 中的每个元素 `e` ，确定 `fn(e)` 并将 `e` 添加到字典中与 `fn(e)` 对应的列表中。
 
 ```py
 def group_by(s, fn):
@@ -305,25 +304,25 @@ def group_by(s, fn):
     {9: [-3, 3], 4: [-2, 2], 1: [-1, 1], 0: [0]}
     """
     grouped = {}
-    for num in s:
-        key = fn(num)
+    for num in s: # [!code ++]
+        key = fn(num) # [!code ++]
         if key in grouped:
-            grouped[key].append(num)
+            grouped[key].append(num) # [!code ++]
         else:
-            grouped[key] = [num]
+            grouped[key] = [num] # [!code ++]
     return grouped
 ```
 :::
 
 ## Iterators
-Consult the drop-down if you need a refresher on iterators. It's okay to skip directly to the questions and refer back here should you get stuck.
-
 ### Q4: WWPD: Iterators
-**Important**: Enter StopIteration if a StopIteration exception occurs, Error if you believe a different error occurs, and Iterator if the output is an iterator object.
-
-**Important**: Python's built-in function map, filter, and zip return iterators, not lists.
-
-Use Ok to test your knowledge with the following "What Would Python Display?" questions:
+::: tip 提示
+如果发生 `StopIteration` 异常，则输入 `StopIteration` ；如果您认为发生了其他错误，则输入 `Error` ；如果输出是迭代器对象，则输入 `Iterator` 。
+:::
+::: tip 提示
+Python 的内置函数 `map` 、 `filter` 和 `zip` 返回迭代器，而不是列表。
+:::
+使用 Ok 来通过以下“Python 会显示什么？”问题测试您的知识：
 ```bash
 python ok -q iterators-wwpd -u
 ```
@@ -409,31 +408,31 @@ interpreter!
 >>> s = [1, 2, 3, 4]
 >>> t = iter(s)
 >>> next(s)
-? Error
+? Error # [!code ++]
 -- OK! --  
 
 >>> next(t)
-? 1
+? 1 # [!code ++]
 -- OK! --
 
 >>> next(t)
-? 2
+? 2 # [!code ++]
 -- OK! --
 
 >>> next(iter(s))
-? 1
+? 1 # [!code ++]
 -- OK! --
 
 >>> next(iter(s))
-? 1
+? 1 # [!code ++]
 -- OK! --
 
 >>> next(t)
-? 3
+? 3 # [!code ++]
 -- OK! --
 
 >>> next(t)
-? 4
+? 4 # [!code ++]
 -- OK! --
 
 ---------------------------------------------------------------------
@@ -446,19 +445,19 @@ interpreter!
 >>> r = range(6)
 >>> r_iter = iter(r)
 >>> next(r_iter)
-? 0
+? 0 # [!code ++]
 -- OK! --
 
 >>> [x + 1 for x in r]
-? [1, 2, 3, 4, 5, 6]
+? [1, 2, 3, 4, 5, 6] # [!code ++]
 -- OK! --
 
 >>> [x + 1 for x in r_iter]
-? [2, 3, 4, 5, 6]
+? [2, 3, 4, 5, 6] # [!code ++]
 -- OK! --
 
 >>> next(r_iter)
-? StopIteration
+? StopIteration # [!code ++]
 -- OK! --
 
 ---------------------------------------------------------------------
@@ -470,24 +469,24 @@ interpreter!
 
 >>> map_iter = map(lambda x : x + 10, range(5))
 >>> next(map_iter)
-? 10
+? 10 # [!code ++]
 -- OK! --
 
-? 11
+? 11 # [!code ++]
 -- OK! --
 
 >>> list(map_iter)
-? [12, 13, 14]
+? [12, 13, 14] # [!code ++]
 -- OK! --
 
 >>> for e in filter(lambda x : x % 4 == 0, range(1000, 1008)):
 ...     print(e)
-(line 1)? 1000
-(line 2)? 1004
+(line 1)? 1000 # [!code ++]
+(line 2)? 1004 # [!code ++]
 -- OK! --
 
 >>> [x + y for x, y in zip([1, 2, 3], [4, 5, 6])]
-? [5, 7, 9]
+? [5, 7, 9] # [!code ++]
 -- OK! --
 
 ---------------------------------------------------------------------
@@ -503,13 +502,14 @@ OK is up to date
 :::
 
 ### Q5: Count Occurrences
-Implement count_occurrences, which takes an iterator t, an integer n, and a value x. It returns the number of elements in the first n elements of t that are equal to x.
+实现 `count_occurrences` ，它接受一个迭代器 `t` 、一个整数 `n` 和一个值 `x` 。它返回 `t` 的前 `n` 个元素中等于 `x` 的元素数。
 
-You can assume that t has at least n elements.
+您可以假设 `t` 至少有 `n` 个元素。
 
-**Important**: You should call next on t exactly n times. If you need to iterate through more than n elements, think about how you can optimize your solution.
-
-```bash
+::: tip 提示
+您应该对 `t` 调用 `next` 恰好 `n` 次。如果您需要迭代超过 `n` 个元素，请考虑如何优化您的解决方案。
+:::
+```py
 def count_occurrences(t, n, x):
     """Return the number of times that x is equal to one of the
     first n elements of iterator t.
@@ -534,7 +534,7 @@ def count_occurrences(t, n, x):
     "*** YOUR CODE HERE ***"
 ```
 Use Ok to test your code:
-```
+```bash
 python ok -q count_occurrences
 ```
 
@@ -562,21 +562,22 @@ def count_occurrences(t, n, x):
     2
     """
     "*** YOUR CODE HERE ***"
-    i = 0
-    res = 0
-    while i < n:
-        if next(t) == x:
-            res += 1
-        i += 1
-    return res
+    i = 0 # [!code ++]
+    res = 0 # [!code ++]
+    while i < n: # [!code ++]
+        if next(t) == x: # [!code ++]
+            res += 1 # [!code ++]
+        i += 1 # [!code ++]
+    return res # [!code ++]
 ```
 :::
 
 ### Q6: Repeated
-Implement repeated, which takes in an iterator t and an integer k greater than 1. It returns the first value in t that appears k times in a row. You may assume that there is an element of t repeated at least k times in a row.
+实现 `repeat` ，它接受迭代器 `t` 和大于 1 的整数 `k` 。它返回 `t` 中连续出现 `k` 次的第一个值。您可以假设 `t` 中有一个元素连续重复至少 `k` 次。
 
-**Important**: Call next on t only the minimum number of times required. If you are receiving a StopIteration exception, your repeated function is calling next too many times.
-
+::: tip 提示
+仅按所需的最少次数对 `t` 调用 `next` 。如果您收到 `StopIteration` 异常，则您的 `repeat` 函数调用 `next` 的次数过多。
+:::
 ```py
 def repeated(t, k):
     """Return the first value in iterator t that appears k times in a row,
@@ -628,22 +629,22 @@ def repeated(t, k):
     """
     assert k > 1
     "*** YOUR CODE HERE ***"
-    res = 1
-    before = next(t)
-    while 1:
-        now = next(t)
-        if now == before:
-            res += 1
-            if res == k:
-                return before
-        else:
-            res = 1
-            before = now
+    res = 1 # [!code ++]
+    before = next(t) # [!code ++]
+    while 1: # [!code ++]
+        now = next(t) # [!code ++]
+        if now == before: # [!code ++]
+            res += 1 # [!code ++]
+            if res == k: # [!code ++]
+                return before # [!code ++]
+        else: # [!code ++]
+            res = 1 # [!code ++]
+            before = now # [!code ++]
 ```
 :::
 
 ## Check Your Score Locally
-You can locally check your score on each question of this assignment by running
+您可以通过运行来在本地检查此作业的每个问题的分数：
 
 ```bash
 python ok --score
@@ -771,20 +772,15 @@ URL: https://okpy.org/cal/cs61a/fa24/lab05/backups/NpDOp8
 OK is up to date
 ```
 
-This does NOT submit the assignment! When you are satisfied with your score, submit the assignment to Gradescope to receive credit for it.
-
-## Submit Assignment
-If you are in a regular section of CS 61A, fill out this lab attendance and feedback form. (If you are in the mega section, you don't need to fill out the form.)
-
-Then, submit this assignment by uploading any files you've edited to the appropriate Gradescope assignment. Lab 00 has detailed instructions.
+这不会提交作业！当您对分数满意时，请将作业提交给 Gradescope 以获得学分。
 
 ## Optional Questions
-These questions are optional. If you don't complete them, you will still receive credit for this assignment. They are great practice, so do them anyway!
+这些问题是可选的。如果您不完成它们，您仍将获得此作业的学分。它们是很好的练习，所以无论如何都要完成它们！
 
 ### Q7: Sprout Leaves
-Define a function sprout_leaves that takes in a tree, t, and a list of leaves, leaves. It produces a new tree that is identical to t, but where each old leaf node has new branches, one for each leaf in leaves.
+定义一个函数 `sprout_leaves` ，该函数接受一棵树 `t` 和一个叶子列表 `leaves` 。它生成一棵与 `t` 相同的新树，但每个旧叶子节点都有新分支，每个分支对应于 `leaves` 中的每片叶子。
 
-For example, say we have the tree t = tree(1, [tree(2), tree(3, [tree(4)])]):
+例如，假设我们有树 `t = tree(1, [tree(2), tree(3, [tree(4)])])`:
 
 ```
   1
@@ -794,7 +790,7 @@ For example, say we have the tree t = tree(1, [tree(2), tree(3, [tree(4)])]):
     4
 ```
 
-If we call sprout_leaves(t, [5, 6]), the result is the following tree:
+如果我们调用 `sprout_leaves(t, [5, 6])` ，结果是以下树：
 
 ```
        1
@@ -841,7 +837,7 @@ def sprout_leaves(t, leaves):
     """
     "*** YOUR CODE HERE ***"
 ```
-Use Ok to test your code:
+使用 Ok 来测试你的代码：
 ```bash
 python ok -q sprout_leaves
 ```
@@ -882,23 +878,24 @@ def sprout_leaves(t, leaves):
           2
     """
     "*** YOUR CODE HERE ***"
-    if is_leaf(t):
-        return tree(label(t), [tree(leaf) for leaf in leaves])
-    else:
-        new_branches = []
-        for branch in branches(t):
-            new_branches.append(sprout_leaves(branch, leaves))
-        return tree(label(t), new_branches)
+    if is_leaf(t): # [!code ++]
+        return tree(label(t), [tree(leaf) for leaf in leaves]) # [!code ++]
+    else: # [!code ++]
+        new_branches = [] # [!code ++]
+        for branch in branches(t): # [!code ++]
+            new_branches.append(sprout_leaves(branch, leaves)) # [!code ++]
+        return tree(label(t), new_branches) # [!code ++]
 ```
 :::
 
 ### Q8: Partial Reverse
-Partially reversing the list [1, 2, 3, 4, 5] starting from index 2 until the end of the list will give [1, 2, 5, 4, 3].
+从索引 2 开始部分反转列表 `[1, 2, 3, 4, 5]` 直到列表末尾，将得到 `[1, 2, 5, 4, 3]` 。
 
-Implement the function partial_reverse which reverses a list starting from index start until the end of the list. This reversal should be in-place, meaning that the original list is modified. Do not create a new list inside your function, even if you do not return it. The partial_reverse function returns None.
+实现函数 `partial_reverse` ，该函数将从索引 `start` 开始反转列表直到列表末尾。此反转应该是就地的，这意味着原始列表已被修改。不要在函数内创建新列表，即使您不返回它。 `partial_reverse` 函数返回 `None` 。
 
-Hint: You can swap elements at index i and j in list s with multiple assignment: s[i], s[j] = s[j], s[i]
-
+::: tip 提示
+您可以使用多个赋值交换列表 `s` 中索引 `i` 和 `j` 处的元素：`s[i], s[j] = s[j], s[i]`
+:::
 ```py
 def partial_reverse(s, start):
     """Reverse part of a list in-place, starting with start up to the end of
@@ -915,7 +912,7 @@ def partial_reverse(s, start):
     "*** YOUR CODE HERE ***"
 ```
 
-Use Ok to test your code:
+使用 Ok 来测试你的代码：
 ```bash
 python ok -q partial_reverse
 ```
@@ -934,11 +931,11 @@ def partial_reverse(s, start):
     [1, 2, 7, 6, 5, 3, 4]
     """
     "*** YOUR CODE HERE ***"
-    i = start
-    j = len(s) - 1
-    while i < j:
-        s[i], s[j] = s[j], s[i]
-        i += 1
-        j -= 1
+    i = start # [!code ++]
+    j = len(s) - 1 # [!code ++]
+    while i < j: # [!code ++]
+        s[i], s[j] = s[j], s[i] # [!code ++]
+        i += 1 # [!code ++]
+        j -= 1 # [!code ++]
 ```
 :::
