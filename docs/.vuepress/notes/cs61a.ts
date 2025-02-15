@@ -22,6 +22,7 @@ export default defineNoteConfig({
         'lab05.md',
         'lab06.md',
         'lab07.md',
+        'lab08.md',
       ]
     },
     {
