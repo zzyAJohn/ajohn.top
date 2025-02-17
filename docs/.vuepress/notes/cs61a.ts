@@ -19,6 +19,7 @@ export default defineNoteConfig({
       prefix: 'lab', 
       items: [
         'lab00.md',
+        'lab04.md',
         'lab05.md',
         'lab06.md',
         'lab07.md',
