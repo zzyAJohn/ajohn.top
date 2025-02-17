@@ -351,7 +351,32 @@ class FreeChecking(Account):
 :::
 
 ## Linked Lists
+如果您需要复习一下链接列表，请查看下拉菜单。如果遇到困难，可以直接跳到问题部分，然后再回头查看。
+::: details Linked Lists
+链表是一种用于存储一系列值的数据结构。对于某些操作，例如在长列表中间插入值，它比常规内置列表更有效。链表不是内置的，因此我们定义一个名为 `Link` 的类来表示它们。链表是 `Link` 实例或 `Link.empty`（表示空链表）。
 
+`Link` 实例有两个实例属性， `first` 和 `rest` 。
+
+`Link` 实例的 `rest` 属性应始终是链表：另一个 `Link` 实例或 `Link.empty` 。它绝不应为 `None` 。
+
+要检查链表是否为空，请将其与 `Link.empty` 进行比较。由于只有一个空列表，我们可以使用 `is` 进行比较，但 `==` 也可以。
+
+```py
+def is_empty(s):
+    """Return whether linked list s is empty."""
+    return s is Link.empty:
+```
+您可以通过两种方式改变 `Link` 对象 `s` ：
+
+- 使用 `s.first = ...` 更改第一个元素
+- 使用 `s.rest = ... ` 更改其余元素
+
+您可以通过调用 `Link` 创建一个新 `Link` 对象：
+
+- `Link(4)` 创建一个长度为 1 且包含 4 的链接列表。
+
+- `Link(4, s)` 创建一个以 4 开头的链接列表，后面跟着链接列表 `s` 的元素。
+:::
 ### Q4: WWPD: Linked Lists
 
 阅读 `Link` 类。确保您理解 doctests 。
