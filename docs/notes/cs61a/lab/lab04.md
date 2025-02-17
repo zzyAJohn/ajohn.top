@@ -7,7 +7,15 @@ tags:
 createTime: 2025/02/17 19:26:54
 permalink: /cs61a/r02tk16t/
 ---
+## Starter Files
 
+Download [lab04.zip](https://cs61a.org/lab/lab04/lab04.zip).
+
+如果官方链接失效，你也可以通过我的 github 仓库 [CS61A_Fall2024](https://github.com/zzyAJohn/CS61A_Fall2024)来获取我的代码。
+
+::: important 重要
+请注意，该代码包含答案，因此如果你想独立完成请务必提前将 lab04.py 中的答案删除！
+:::
 
 ## Required Questions
 
