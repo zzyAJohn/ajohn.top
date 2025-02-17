@@ -20,6 +20,44 @@ Download [lab05.zip](https://cs61a.org/lab/lab05/lab05.zip).
 ## Required Questions
 
 ## Mutability
+如果您需要复习可变性，请查阅下拉菜单。如果遇到困难，可以直接跳到问题并返回此处查看。
+
+::: details List Mutation
+Python 中的某些对象（例如列表和字典）是**可变的**，这意味着它们的内容或状态可以更改。其他对象（例如数字类型、元组和字符串）是**不可变的**，这意味着它们一旦创建就无法更改。
+
+列表的两个最常见的变异操作是项目分配和 `append` 方法。
+```bash
+>>> s = [1, 3, 4]
+>>> t = s  # A second name for the same list
+>>> t[0] = 2  # this changes the first element of the list to 2, affecting both s and t
+>>> s
+[2, 3, 4]
+>>> s.append(5)  # this adds 5 to the end of the list, affecting both s and t
+>>> t
+[2, 3, 4, 5]
+```
+
+还有许多其他列表变异方法：
+
+- `append(elem)` ：将 `elem` 添加到列表末尾。返回 `None` 。
+- `extend(s)` ：将可迭代对象 `s` 的所有元素添加到列表末尾。返回 `None` 。
+- `insert(i, elem)` ：在索引 `i` 处插入 `elem` 。如果 `i` 大于或等于列表的长度，则将 `elem` 插入到末尾。这不会替换任何现有元素，而只会添加新元素 `elem` 。返回 `None` 。
+- `remove(elem)` ：删除列表中第一次出现的 `elem` 。返回 `None` 。如果 `elem` 不在列表中，则会出现错误。
+- `pop(i)` ：删除并返回索引 `i` 处的元素。
+- `pop()` ：删除并返回最后一个元素。
+字典还有项目分配（经常使用）和 `pop` （很少使用）。
+```bash
+>>> d = {2: 3, 4: 16}
+>>> d[2] = 4
+>>> d[3] = 9
+>>> d
+{2: 4, 4: 16, 3: 9}
+>>> d.pop(4)
+16
+>>> d
+{2: 4, 3: 9}
+```
+:::
 ### Q1: WWPD: List-Mutation
 ::: tip 提示
 对于所有 WWPD 问题，如果您认为答案是 `<function...>` ，则输入 `Function` ；如果答案错误，则输入 `Error` ；如果没有显示任何内容，则输入 `Nothing` 。
@@ -315,6 +353,71 @@ def group_by(s, fn):
 :::
 
 ## Iterators
+如果您需要复习迭代器，请查看下拉菜单。如果遇到困难，可以直接跳到问题部分并返回此处查看。
+::: details Iterators
+**可迭代对象**是可以迭代的任何值，即每次迭代一个元素。我们用来迭代可迭代对象的一种构造是 for 语句：
+```py
+for elem in iterable:
+    # do something
+```
+一般来说，可迭代对象是一个对象，调用其内置的 `iter` 函数会返回一个迭代器。**迭代器**是一个对象，调用其内置的 `next` 函数会返回下一个值。
+
+例如，列表就是一个可迭代值。
+```bash
+>>> s = [1, 2, 3, 4]
+>>> next(s)       # s is iterable, but not an iterator
+TypeError: 'list' object is not an iterator
+>>> t = iter(s)   # Creates an iterator
+>>> t
+<list_iterator object ...>
+>>> next(t)       # Calling next on an iterator
+1
+>>> next(t)       # Calling next on the same iterator
+2
+>>> next(iter(t)) # Calling iter on an iterator returns itself
+3
+>>> t2 = iter(s)
+>>> next(t2)      # Second iterator starts at the beginning of s
+1
+>>> next(t)       # First iterator is unaffected by second iterator
+4
+>>> next(t)       # No elements left!
+StopIteration
+>>> s             # Original iterable is unaffected
+[1, 2, 3, 4]
+```
+
+您还可以在 `for` 语句中使用迭代器，因为所有迭代器都是可迭代的。但请注意，由于迭代器会保持其状态，因此它们只能迭代一次：
+```bash
+>>> t = iter([4, 3, 2, 1])
+>>> for e in t:
+...     print(e)
+4
+3
+2
+1
+>>> for e in t:
+...     print(e)
+```
+这些是返回迭代器的内置函数。
+```bash
+>>> m = map(lambda x: x * x, [3, 4, 5])
+>>> next(m)
+9
+>>> next(m)
+16
+>>> f = filter(lambda x: x > 3, [3, 4, 5])
+>>> next(f)
+4
+>>> next(f)
+5
+>>> z = zip([30, 40, 50], [3, 4, 5])
+>>> next(z)
+(30, 3)
+>>> next(z)
+(40, 4)
+```
+:::
 ### Q4: WWPD: Iterators
 ::: tip 提示
 如果发生 `StopIteration` 异常，则输入 `StopIteration` ；如果您认为发生了其他错误，则输入 `Error` ；如果输出是迭代器对象，则输入 `Iterator` 。
