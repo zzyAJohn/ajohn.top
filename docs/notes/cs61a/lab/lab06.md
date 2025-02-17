@@ -21,7 +21,74 @@ Download [lab06.zip](https://cs61a.org/lab/lab06/lab06.zip).
 ## Required Questions
 
 ## Object-Oriented Programming
+以下是面向对象编程的复习内容。如果遇到困难，可以直接跳到问题部分，然后再回头参考。
+::: details Object-Oriented Programming
+**面向对象编程** (OOP) 使用对象和类来组织程序。以下是类的示例：
+```py
+class Car:
+    max_tires = 4
 
+    def __init__(self, color):
+        self.tires = Car.max_tires
+        self.color = color
+
+    def drive(self):
+        if self.tires < Car.max_tires:
+            return self.color + ' car cannot drive!'
+        return self.color + ' car goes vroom!'
+
+    def pop_tire(self):
+        if self.tires > 0:
+            self.tires -= 1
+```
+**类**：对象的类型。 `Car` 类（如上所示）描述了所有 `Car` 对象的特征。
+
+**对象**：类的单个实例。在 Python 中，通过调用类来创建新对象。
+
+```bash
+>>> ferrari = Car('red')
+```
+
+此处， `ferrari` 是绑定到 `Car` 对象的名称。
+
+**类属性**：属于某个类的变量，可通过点符号访问。 `Car` 类具有 `max_tires` 属性。
+```bash
+>>> Car.max_tires
+4
+```
+**实例属性**：属于特定对象的变量。每个 `Car` 对象都有一个 `tires` 属性和一个 `color` 属性。与类属性一样，实例属性也可通过点符号访问。
+```bash
+>>> ferrari.color
+'red'
+>>> ferrari.tires
+4
+>>> ferrari.color = 'green'
+>>> ferrari.color
+'green'
+```
+**方法**：属于某个对象并通过点符号调用的函数。按照惯例，方法的第一个参数是 `self` 。
+
+当调用某个对象的方法之一时，该对象会隐式地作为 `self` 的参数提供。例如， `ferrari` 对象的 `drive` 方法使用空括号调用，因为 `self` 隐式地绑定到 `ferrari` 对象。
+
+```bash
+>>> ferrari = Car('red')
+>>> ferrari.drive()
+'red car goes vroom!'
+```
+我们也可以调用原始的 `Car.drive` 函数。原始函数不属于任何特定的 `Car` 对象，因此我们必须为 `self` 提供一个显式参数。
+
+```bash
+>>> ferrari = Car('red')
+>>> Car.drive(ferrari)
+'red car goes vroom!'
+```
+`__init__` ：创建类的新实例时自动调用的特殊函数。
+
+请注意 `drive` 方法如何将 `self` 作为参数，但看起来我们并没有传入！这是因为点符号隐式地将 `ferrari` 作为 `self` 传递给我们。因此，在此示例中， `self` 绑定到全局框架中名为 `ferrari` 的对象。
+
+为了评估表达式 `Car('red')` ，Python 创建了一个新的 `Car` 对象。然后，Python 调用 Car 类的 `__init__` 函数，将 `self` 绑定到新对象，将 `color` 绑定到 `'red'` 。
+
+:::
 ### Q1: Bank Account
 扩展 `BankAccount` 类以包含 `transactions` 属性。此属性应为一个列表，用于跟踪账户上进行的每笔交易。每当调用 `deposit` 或 `withdraw` 方法时，都应创建一个新的 `Transaction` 实例并将其添加到列表中，**即使操作未成功**。
 
