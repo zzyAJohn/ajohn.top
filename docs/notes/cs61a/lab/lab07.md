@@ -17,7 +17,35 @@ Download [lab07.zip](https://cs61a.org/lab/lab07/lab07.zip).
 ## Required Questions
 
 ## Inheritance
+如果您需要复习继承，请查看下拉菜单。如果遇到困难，可以直接跳到问题部分，然后再回头查看。
+::: details Inheritance
+为了避免为类似的类重新定义属性和方法，我们可以编写一个**基类**，让更专业的类从中**继承**。例如，我们可以编写一个名为 `Pet` 的类，并将 `Dog` 定义为 `Pet` 的**子类**：
+```py
+class Pet:
 
+    def __init__(self, name, owner):
+        self.is_alive = True    # It's alive!!!
+        self.name = name
+        self.owner = owner
+
+    def eat(self, thing):
+        print(self.name + " ate a " + str(thing) + "!")
+
+    def talk(self):
+        print(self.name)
+
+class Dog(Pet):
+
+    def talk(self):
+        super().talk()
+        print('This Dog says woof!')
+```
+继承表示两个或多个类之间的层次关系，其中一个类**是另一个**类的更具体版本：狗**是一种**宠物（我们使用**是一个**来描述 OOP 语言中的这种关系，而不是指 Python 的 `is` 运算符）。
+
+由于 `Dog` 继承自 `Pet` ，因此 `Dog` 类也将继承 `Pet` 类的方法，因此我们不必重新定义 `__init__` 或 `eat` 。我们确实希望每只 `Dog` 都以特定于 `Dog` 的方式说话，因此我们可以**覆盖** `talk` 方法。
+
+我们可以使用 `super()` 来引用 `self` 的超类，并像访问超类实例一样访问任何超类方法。例如， `Dog` 类中的 `super().talk()` 将调用 `Pet` 类中的 `talk` 方法，但将 `Dog` 实例作为 `self` 传递。
+:::
 ### Q1: WWPD: Inheritance ABCs
 ::: tip 提示
 对于所有 WWPD 问题，如果您认为答案是 <function...>，请输入 `Function` ；如果答案是错误，请输入 `Error` ；如果未显示任何内容，请输入 `Nothing` 。
