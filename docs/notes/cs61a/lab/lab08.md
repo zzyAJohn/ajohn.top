@@ -19,6 +19,96 @@ Download [lab08.zip](https://cs61a.org/lab/lab08/lab08.zip).
 
 ## Mutable Trees
 
+::: details Mutable Trees
+`Tree` 实例有两个实例属性：
+
+- `label` 是存储在树根的值。
+- `branches` 是 `Tree` 实例的列表，其中包含树其余部分的标签。
+`Tree` 类（省略了 `__repr__` 和 `__str__` 方法）定义如下：
+```py
+class Tree:
+    """A tree has a label and a list of branches.
+
+    >>> t = Tree(3, [Tree(2, [Tree(5)]), Tree(4)])
+    >>> t.label
+    3
+    >>> t.branches[0].label
+    2
+    >>> t.branches[1].is_leaf()
+    True
+    """
+    def __init__(self, label, branches=[]):
+        self.label = label
+        for branch in branches:
+            assert isinstance(branch, Tree)
+        self.branches = list(branches)
+
+    def is_leaf(self):
+        return not self.branches
+```
+要从标签 `x` （任意值）和分支列表 `bs` （ `Tree` 实例列表）构造 `Tree` 实例并将其命名为 `t` ，请写入 `t = Tree(x, bs)` 。
+
+对于树 `t` ：
+
+- 其根标签可以是任意值， `t.label` 的计算结果为该值。
+- 其分支始终是 `Tree` 实例， `t.branches` 的计算结果为其分支列表。
+- 如果 `t.branches` 为空，则` t.is_leaf()` 返回 `True` ，否则返回 `False` 。
+- 要构造带有标签 `x` 的叶子，请写入 `Tree(x)` 。
+
+显示树 `t` ：
+
+- `repr(t)` 返回一个 Python 表达式，该表达式的计算结果为等效树。
+- `str(t)` 为每个标签返回一行，比其父级缩进一次，子级在其父级之下。
+
+```bash
+>>> t = Tree(3, [Tree(1, [Tree(4), Tree(1)]), Tree(5, [Tree(9)])])
+
+>>> t         # displays the contents of repr(t)
+Tree(3, [Tree(1, [Tree(4), Tree(1)]), Tree(5, [Tree(9)])])
+
+>>> print(t)  # displays the contents of str(t)
+3
+  1
+    4
+    1
+  5
+    9
+```
+更改（也称为变异）树 `t` ：
+
+- `t.label = y` 将 `t` 的根标签更改为 `y`（任何值）。
+- `t.branches = ns` 将 `t` 的分支更改为 `ns`（Tree 实例列表）。
+- `t.branches` 的变异将改变 `t` 。例如， `t.branches.append(Tree(y))` 将添加一个标记为 `y` 的叶子作为最右边的分支。
+- `t` 中任何分支的变异都将改变 `t` 。例如， `t.branches[0].label = y` 将最左边分支的根标签更改为 `y` 。
+
+```bash
+>>> t.label = 3.0
+>>> t.branches[1].label = 5.0
+>>> t.branches.append(Tree(2, [Tree(6)]))
+>>> print(t)
+3.0
+  1
+    4
+    1
+  5.0
+    9
+  2
+    6
+```
+
+以下是作为功能抽象实现的树数据抽象与作为类实现的树数据抽象之间的差异总结：
+
+
+| -       | 树构造函数和选择器函数          | Tree 类  |
+| ------------- |-------------| -----|
+| 构造树     | 要根据给定的 `label` 和 `branches` 列表构造树，我们调用 `tree(label, branchs)` | 要根据给定的 `label` 和 `branches` 列表构造树对象，我们调用 `Tree(label, branchs)`（调用 `Tree.__init__` 方法）。 |
+| 标签和分支     | 要获取树 `t` 的标签或分支，我们分别调用 `label(t)` 或 `branchs(t)`     |   要获取树 `t` 的标签或分支，我们分别访问实例属性 `t.label` 或 `t.branches` 。 |
+| 可变性 | 函数式树数据抽象是不可变的（不违反其抽象屏障），因为我们无法为调用表达式赋值     |    `Tree` 实例的 `label` 和 `branchs` 属性可以重新分配，从而改变树。 |
+| 检查树是否为叶子 | 要检查树 `t` 是否为叶子，我们调用函数 `is_leaf(t)`   |   要检查树 `t` 是否为叶子，我们调用方法 `t.is_leaf()` 。此方法只能在 `Tree` 对象上调用。 |
+
+
+:::
+
 ### Q1: WWPD: Trees
 阅读 `lab08.py` 中的 `Tree` 类。确保您理解 doctests 。
 ::: tip 提示
