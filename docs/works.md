@@ -10,8 +10,8 @@ draft: true
 <CardGrid>
     <ImageCard
     image="https://cdn.jsdelivr.net/gh/zzyAJohn/Works-Image/2025-02-08/DSC_2105_(2).jpg"
-    title="红发魔女"
-    description="照片摄于武汉市国际博览中心暨梦乡漫展"
+    title="明日方舟-史尔特尔"
+    description="照片摄于武汉市国际博览中心暨梦乡漫展。“神秘的萨卡兹少女史尔特尔，或因矿石病影响导致缺失性记忆障碍，其情况在矿石病病理中也极其少见，现于罗德岛接受治疗中。在测试过程中展现出了原因不详的强大战斗能力，很快成为了作战干员。”"
     href="/"
     author="AJohn"
     date="2025/02/08"
