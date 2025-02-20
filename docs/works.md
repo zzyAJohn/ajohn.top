@@ -4,43 +4,57 @@ permalink: /works/
 draft: true
 ---
 
+<!-- 导出设置高画质8即可 -->
+
+## 人像
+<CardGrid>
+    <ImageCard
+    image="https://cdn.jsdelivr.net/gh/zzyAJohn/Works-Image/2025-02-08/DSC_2105_(2).jpg"
+    title="红发魔女"
+    description="照片摄于武汉市国际博览中心暨梦乡漫展"
+    href="/"
+    author="AJohn"
+    date="2025/02/08"
+    />
+</CardGrid>
 
 
-<!-- <ImageCard v-for="item in list" :key="item.image" v-bind="item" /> -->
+## 城市建筑
 
-<!-- <ImageCard
-  image="https://cdn.jsdelivr.net/gh/zzyAJohn/Image/works/202502191846839.jpg"
-  title="乡村振兴号"
-  description="照片中的火车位于武汉蔡甸区花博汇"
-  href="/"
-  author="AJohn"
-  date="2025/01/19"
-/> -->
-## 风光
+
+## 自然风光
 
 <CardGrid>
     <ImageCard
-    image="https://cdn.jsdelivr.net/gh/zzyAJohn/Image/works/202502191846839.jpg"
+    image="https://cdn.jsdelivr.net/gh/zzyAJohn/Works-Image/2025-01-19/DSC_0928.jpg"
     title="乡村振兴号"
-    description="照片中的火车位于武汉蔡甸区花博汇"
+    description="照片中的火车位于武汉市蔡甸区"
     href="/"
     author="AJohn"
     date="2025/01/19"
     />
-  <!-- <ImageCard
-    image="https://cn.bing.com/th?id=OHR.AlfanzinaLighthouse_ZH-CN9704515669_1920x1080.webp"
-    title="阿尔凡齐纳灯塔，阿尔加维，葡萄牙"
-    description="..."
+    <ImageCard
+    image="https://cdn.jsdelivr.net/gh/zzyAJohn/Works-Image/2025-01-19/DSC_0913.jpg"
+    title="牡丹，花之富贵者也"
+    description="照片中的花朵摄于武汉市蔡甸区花博汇"
     href="/"
-    author="Andreas Kunz"
-    date="2024/08/16"
-  />
-  <ImageCard
-    image="https://cn.bing.com/th?id=OHR.AlfanzinaLighthouse_ZH-CN9704515669_1920x1080.webp"
-    title="阿尔凡齐纳灯塔，阿尔加维，葡萄牙"
-    description="..."
+    author="AJohn"
+    date="2025/01/19"
+    />
+    <ImageCard
+    image="https://cdn.jsdelivr.net/gh/zzyAJohn/Works-Image/2025-01-19/DSC_0919.jpg"
+    title="娇艳欲滴的花朵"
+    description="照片中的花朵摄于武汉市蔡甸区花博汇"
     href="/"
-    author="Andreas Kunz"
-    date="2024/08/16"
-  /> -->
+    author="AJohn"
+    date="2025/01/19"
+    />
+    <ImageCard
+    image="https://cdn.jsdelivr.net/gh/zzyAJohn/Works-Image/2025-01-19/DSC_0917.jpg"
+    title="紫色心情"
+    description="照片中的花朵摄于武汉市蔡甸区花博汇"
+    href="/"
+    author="AJohn"
+    date="2025/01/19"
+    />
 </CardGrid>
