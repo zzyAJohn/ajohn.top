@@ -65,13 +65,13 @@ permalink: /article/ayx5589t/
 
 但是使用 xshell 可以连上远程服务器
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-16/202412161033950.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-16/202412161033950.png)
 
 尝试在远程服务器上清除 VSCode 缓存
 
 使用 `ls -a` 查看所有文件
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-16/202412161034742.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-16/202412161034742.png)
 
 使用 `rm -r .vscode-server` 清除 VSCode 缓存文件 `.vscode-server`
 
@@ -83,7 +83,7 @@ permalink: /article/ayx5589t/
 ssh ubuntu@36.103.199.74
 ```
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-16/202412161027479.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-16/202412161027479.png)
 
 
 连接失败，报错提示目标主机的 SSH 主机密钥与之前存储在本地 known_hosts 文件中的密钥不一致。

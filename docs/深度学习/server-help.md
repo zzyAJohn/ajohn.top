@@ -18,7 +18,7 @@ permalink: /article/bes1sa4i/
 :::
 
 打开VSCode
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-20/202412201402272.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-20/202412201402272.png)
 
 点击左下角的 `打开远程窗口` （蓝色矩形区域）
 
@@ -529,7 +529,12 @@ fatal: no email was given and auto-detection is disabled
 2024-12-20 18:22:56.896 [info] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [2ms]
 ```
 
-设置全局用户名和电子邮件：
+使用以下命令可以存储 git 信息，避免每次推送都要输入密码
+```bash
+git config --global credential.helper store
+```
+
+<!-- 设置全局用户名和电子邮件：
 ```bash
 git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
@@ -538,4 +543,28 @@ git config --global user.email "you@example.com"
 ```bash
 git config user.name "Your Name"
 git config user.email "you@example.com"
+``` -->
+
+## 8.pip换源（可跳过，已经全局加入）
+创建 pip 配置文件
+```bash
+mkdir -p ~/.pip
+```
+编辑
+```bash
+vim ~/.pip/pip.conf
+```
+加入以下内容
+```
+[global]
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+输入
+```bash
+pip config list
+```
+出现：
+```bash
+global.index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 ```

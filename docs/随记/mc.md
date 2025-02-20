@@ -143,7 +143,7 @@ active (running)
 
 去阿里云开放 23333 和 24444（MCSManager端口），以及 25565（我的世界端口）
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-28/202412281627981.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-28/202412281627981.png)
 
 ## 3. 使用 MCSManager 创建实例
 
@@ -153,16 +153,16 @@ active (running)
 
 依次点击 `应用实例` - `新建应用-Minecraft Java版游戏服务器` - `localhost:24444()` - `上传单个服务端软件` 。
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-28/202412281835129.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-28/202412281835129.png)
 
 随便填写一个名称，点击 `选择文件`，上传我们刚才下好的 `server.jar`，即可创建实例
 
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-28/202412281837222.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-28/202412281837222.png)
 
 点击上图红色矩形 `服务端配置文件`，出现：
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-28/202412281838169.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-28/202412281838169.png)
 
 编辑 `eula.txt` ，将选项改为是，即同意 Minecraft EULA 协议，如果您要启动 Minecraft 服务器，则此选项是必须开启。
 
@@ -195,7 +195,21 @@ gamemode creative
 
 <!-- ## 6. 域名解析
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-28/202412281905534.png) -->
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-28/202412281905534.png) -->
+
+
+
+出现弹窗：
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-29/202412291148126.png)
+
+
+
+
+
+
+
+
+
 
 ## 参考资料：
 - [【MC】从零开始使用云服务器搭建Minecraft服务器](https://www.bilibili.com/video/BV1pa411G7zy?spm_id_from=333.788.videopod.episodes&vd_source=a12b120a91b36ce38ce8755fef7348d7)

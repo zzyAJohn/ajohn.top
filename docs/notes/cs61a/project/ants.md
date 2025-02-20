@@ -4,7 +4,7 @@ createTime: 2024/12/10 21:20:41
 permalink: /cs61a/91gmdeq1/
 ---
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-10/202412102124480.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-10/202412102124480.png)
 
 <div align="center">
     The bees are coming!<br>
@@ -66,7 +66,7 @@ which will produce an output in your terminal without causing OK tests to fail w
 ## The Game
 A game of Ants Vs. SomeBees consists of a series of turns. In each turn, new bees may enter the ant colony. Then, new ants are placed to defend their colony. Finally, all insects (ants, then bees) take individual actions. Bees either try to move toward the end of the tunnel or sting ants in their way. Ants perform a different action depending on their type, such as collecting more food or throwing leaves at the bees. The game ends either when a bee reaches the end of the tunnel (ants lose), the bees destroy a `QueenAnt` if it exists (ants lose), or the entire bee fleet has been vanquished (ants win).
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-10/202412102138932.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-10/202412102138932.png)
 
 ## Core concepts
 **The Colony**. This is where the game takes place. The colony consists of several `Places` that are chained together to form tunnels through which the bees travel. The colony also has some quantity of food which can be expended in order to place an ant in a tunnel.
@@ -94,7 +94,7 @@ AntHomeBase: Represents the place `Ant`s are defending (on the left of the tunne
 ## Game Layout
 Below is a visualization of a GameState.
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-15/202412152005014.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-15/202412152005014.png)
 
 To help visualize how all the classes fit together, here is a diagram of all of the classes and their inheritance relationships.
 
@@ -269,8 +269,8 @@ PS D:\Github\CS61A_Fall2024\proj\ants>
 
 |Class|Food Cost|Initial Health|
 |:-:|:-:|:-:|
-|![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-15/202412152010482.png) <br> HarvesterAnt|2|1|
-|![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-15/202412152011061.png) <br> ThrowerAnt|3|1|
+|![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-15/202412152010482.png) <br> HarvesterAnt|2|1|
+|![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-15/202412152011061.png) <br> ThrowerAnt|3|1|
 
 
 **Part B**: Now that placing an Ant costs food, we need to be able to gather more food! To fix this issue, implement the HarvesterAnt class. A HarvesterAnt is a type of Ant that adds one food to the gamestate.food total as its action.
@@ -495,7 +495,7 @@ Hint: Try drawing out two `Place` s next to each other if things get confusing. 
 
 Hint: Remember that `Place` s are not stored in a list, so you can't index into anything to access them. This means that you can't do something like `colony[index + 1]` to access an adjacent `Place`. How can you move from one place to another?
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-15/202412152017811.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-15/202412152017811.png)
 
 Before writing any code, unlock the tests to verify your understanding of the question:
 ```bash

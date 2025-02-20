@@ -9,7 +9,7 @@ export default defineUserConfig({
   title: 'AJohn Blog',
   description: '',
   head: [
-    ['link', { rel: 'icon', href: 'https://cdn.jsdelivr.net/gh/zzyAJohn/Image/blog-favicon.png' }]
+    ['link', { rel: 'icon', href: 'https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/blog-favicon.png' }]
   ],
  
   bundler: viteBundler(),
@@ -25,10 +25,10 @@ export default defineUserConfig({
        * Shiki 代码高亮
        * @see https://theme-plume.vuejs.press/config/plugins/code-highlight/
        */
-      // shiki: {
-           // 强烈建议预设代码块高亮语言，插件默认加载所有语言会产生不必要的时间开销
-      //   languages: ['shell', 'bash', 'typescript', 'javascript'],
-      // },
+      shiki: {
+          //  强烈建议预设代码块高亮语言，插件默认加载所有语言会产生不必要的时间开销
+        languages: ["bash","py","json","python","c","js","ts","html","css","java","shell"],
+      },
 
       /**
        * markdown enhance

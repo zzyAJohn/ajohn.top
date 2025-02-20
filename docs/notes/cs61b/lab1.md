@@ -31,7 +31,7 @@ git remote add skeleton https://github.com/Berkeley-CS61B/skeleton-sp21.git
 ```bash
 git remote -v
 ```
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-11/202412111918757.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-11/202412111918757.png)
 
 
 4. 从远程 “pull” 获取起始代码，它的作用是从名为 skeleton 的存储库中获取所有远程文件，并将其复制到当前文件夹中。
@@ -52,7 +52,7 @@ git pull --rebase --allow-unrelated-histories skeleton master
 
 你好 Numbers！
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-11/202412111924795.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-11/202412111924795.png)
 
 
 ## C. 设置 Snaps(可选)
@@ -70,7 +70,7 @@ Snaps 存储库将作为您工作的安全备份，以防您忘记实际使用 g
 git status
 ```
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-11/202412111937483.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-11/202412111937483.png)
 
 可以看到，我有 45 个未上传的文件和 1 个冲突的文件
 
@@ -79,7 +79,7 @@ git status
 git pull origin main --allow-unrelated-histories
 ```
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-11/202412111939639.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-11/202412111939639.png)
 
 
 3. Git 会提示你解决冲突，本地提交合并
@@ -91,7 +91,7 @@ git commit -m "Merge branch 'main' of https://github.com/zzyAJohn/CS61B_SP21"
 ```bash
 git push origin main
 ```
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-11/202412111940776.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-11/202412111940776.png)
 
 现在，你的远端应该有所有作业的初始版本
 
@@ -121,7 +121,7 @@ After writing nextNumber, fill in the main method so that it prints out the Coll
 Fun fact: For all numbers, the Collatz sequence appears to terminate at 1. So far, however, nobody has been able to prove that this is true for all possible starting values, but all values up to approximately 2^68 have been checked. As noted in the wikipedia article, mathematician Jeffrey Lagarias noted that the Collatz conjecture “is an extraordinarily difficult problem, completely out of reach of present day mathematics.”
 
 
-::: warning 答案警告
+::: warning 以下内容包含答案
 ```java
 /** Class that prints the Collatz sequence starting from a given number.
  *  @author YOUR NAME HERE
@@ -225,6 +225,6 @@ To https://github.com/zzyAJohn/CS61B_SP21.git
 
 选择通过 github 提交。
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-11/202412111958747.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-11/202412111958747.png)
 
 通过了！congratulation！

@@ -16,8 +16,8 @@ permalink: /cs61a/vb2a74f4/
 
 做2020年lab00的时候一直出现ModuleNotFoundError: No module named  'url1ib3.packages.six.moves'错误，在群友的建议下更换为2024年lab00，成功解决
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/202410291905599.png)
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/202410291907239.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/202410291905599.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/202410291907239.png)
 
 更换为2024年lab00后使用：
 
@@ -25,13 +25,13 @@ permalink: /cs61a/vb2a74f4/
 python ok -q python-basics -u --local
 ```
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/202410291908358.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/202410291908358.png)
 
 ```shell
 python ok
 ```
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/202410291910291.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/202410291910291.png)
 
 可以使用谷歌邮箱登录
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/202410291911746.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/202410291911746.png)

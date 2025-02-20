@@ -51,7 +51,7 @@ permalink: /photography/dvno2v6v/
 
 画幅指传感器的大小，中画幅 > 全画幅 > 半画幅 > m43
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-25/202412252117985.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-25/202412252117985.png)
 
 画幅越大，成像质量越好，越贵
 
@@ -167,7 +167,7 @@ vlog：16-30mmF2.8
 ## 焦段
 
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-17/202412172247192.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-17/202412172247192.png)
 
 ### 广角：10~35mm
 
@@ -175,18 +175,18 @@ vlog：16-30mmF2.8
 - 近距离也能让画面有更多画面元素
 - 低角度仰拍
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-17/202412172250796.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-17/202412172250796.png)
 
 - 线条纵深感
 - 排除互动感
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-17/202412172251430.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-17/202412172251430.png)
 
 不要拍特写，容易把头拍大
 
 硬要拍的话，一定要加一些前景，比如这张35mm的，找到一些特殊的角度还是不错的，很有视觉张力
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-17/202412172252598.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-17/202412172252598.png)
 
 tips：人物尽可能居中构图，广角会把照片边缘畸变，导致变形
 
@@ -199,20 +199,20 @@ tips：人物尽可能居中构图，广角会把照片边缘畸变，导致变�
 - 但是拍出来视角会比较平淡
 
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-17/202412172256602.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-17/202412172256602.png)
 
 - 拍出互动感
 - 男友视角
 - 把脸拍好看
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-17/202412172257293.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-17/202412172257293.png)
 
 
 - 进可攻，退可守
 - 能胜任大部分景别
 - 脚贴画面边缘，头顶留空
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-17/202412172258069.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-17/202412172258069.png)
 
 
 ### 中长焦：85~135mm
@@ -223,13 +223,13 @@ tips：人物尽可能居中构图，广角会把照片边缘畸变，导致变�
 - 空间压缩感
 - 背景虚化
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-23/202412232210291.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-23/202412232210291.png)
 
 
 - 局部特写
 - 边缘不会畸变
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-23/202412232211966.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-23/202412232211966.png)
 
 - 画面更简洁
 
@@ -248,12 +248,12 @@ tips：人物尽可能居中构图，广角会把照片边缘畸变，导致变�
 
 透视：
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-23/202412232236250.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-23/202412232236250.png)
 
 
 ## 尼康 z 系列
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-26/202412262244140.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-26/202412262244140.png)
 
 
 

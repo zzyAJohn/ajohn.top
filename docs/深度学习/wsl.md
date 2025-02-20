@@ -17,18 +17,18 @@ permalink: /article/lo7fbj1s/
 
 如果显示 `虚拟化：已启用` 就是默认开启了，如果显示未启用则需要通过 `bios` 设置开启<!-- more -->
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-17/202412170920562.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-17/202412170920562.png)
 
 ### 0.2 开启两个windows功能
 
 在任务栏搜索 `点击启用或关闭windows功能`
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-17/202412170924010.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-17/202412170924010.png)
 
 
 勾选如图所示两个框框
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-17/202412170925452.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-17/202412170925452.png)
 
 配置完可以重启一下电脑
 
@@ -80,7 +80,7 @@ wsl --unregister Ubuntu
 wsl --import Ubuntu D:\wsl D:\wsl\Ubuntu.tar
 ```
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-16/202412162116458.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-16/202412162116458.png)
 
 
 ## 3.下载 Anaconda
@@ -168,7 +168,7 @@ source  ~/.bashrc
 ```bash
 nvcc -V
 ```
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-16/202412162237115.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-16/202412162237115.png)
 
 ## 5.安装 cudnn
 
@@ -192,7 +192,7 @@ sudo chmod a+r /usr/local/cuda-11.8/include/cudnn*
 cat /usr/local/cuda-11.8/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 ```
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-16/202412162256646.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-16/202412162256646.png)
 
 ## 6.torch 安装
 

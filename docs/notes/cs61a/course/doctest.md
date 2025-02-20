@@ -37,6 +37,6 @@ py -m doctest -v del.py
 ```
 查看是否通过编写的样例测试
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-11-01/202411011251789.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-11-01/202411011251789.png)
 
 

@@ -8,5 +8,5 @@
   驱动
 </p>
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/zzyAJohn/Image/blog-preview.png">
+  <img src="https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/blog-preview.png">
 </p>

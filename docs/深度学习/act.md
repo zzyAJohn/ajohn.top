@@ -10,7 +10,7 @@ permalink: /article/z3du3x1x/
 
 一种非对称协同训练（ACT）方法，可用于减轻标签噪声的有害影响。
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-17/202412172028143.png) 
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-17/202412172028143.png) 
 <!-- more -->
 ---
 
@@ -63,7 +63,7 @@ tar -xzvf cifar-100-python.tar.gz
 
 解压后如图所示
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-16/202412161358510.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-16/202412161358510.png)
 
 ## 二、环境配置
 
@@ -148,7 +148,7 @@ pip install easydict
 python main.py --gpu 0  --noise-type symmetric --closeset-ratio 0.2 --dataset cifar100nc
 ```
 经历了数不清的失败后，小宝贝终于跑起来了！
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-04/202412041942237.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-04/202412041942237.png)
 
 更多命令可参考 [六、实验结果](#六实验结果)。
 
@@ -385,7 +385,7 @@ from torch.utils.data import DataLoader
 ### 5.3 超参数：
 - 我们使用七层CNN网络作为我们的RTM和NTM的骨干在合成数据集上进行实验。 因此，模型使用动量为 0.9 的 SGD 训练 150 个时期（包括 50 个预热时期）。 为了进一步促进两个模型之间的不对称性，我们将 RTM 和 NTM 的学习率分别设置为 0.01 和 0.08。 批量大小为 128，学习率以余弦退火方式衰减。 
 
-- 在对现实世界数据集进行实验时，我们利用预先训练的 ResNet50 ImageNet-1K 作为我们的骨干。 批量大小、初始学习率和权重衰减分别为 16、0.005 和 0.0005。 评估指标：我们采用测试准确性作为评估模型性能的主要指标。 此外，为了进行更全面的分析，我们还使用精度、召回率和 F1 分数指标来评估样本选择的结果。 我们报告的性能是五次重复运行的平均结果。 
+- 在对现实世界数据集进行实验时，我们利用预先训练的 ResNet50 Blog-ImageNet-1K 作为我们的骨干。 批量大小、初始学习率和权重衰减分别为 16、0.005 和 0.0005。 评估指标：我们采用测试准确性作为评估模型性能的主要指标。 此外，为了进行更全面的分析，我们还使用精度、召回率和 F1 分数指标来评估样本选择的结果。 我们报告的性能是五次重复运行的平均结果。 
 
 
 
@@ -489,7 +489,7 @@ valid epochs: [149, 148, 147, 146, 145, 144, 143, 142, 141, 140]
 mean: 60.4700, std: 0.0933
 ```
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-09/202412091556573.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-09/202412091556573.png)
 
 #### 6.1.2 Sym-80%
 ```bash
@@ -569,7 +569,7 @@ valid epochs: [149, 148, 147, 146, 145, 144, 143, 142, 141, 140]
 mean: 60.8660, std: 0.1392
 ```
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-09/202412091558457.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-09/202412091558457.png)
 
 ### 6.2 CIFAR80N
 
@@ -612,7 +612,7 @@ valid epochs: [149, 148, 147, 146, 145, 144, 143, 142, 141, 140]
 mean: 66.3820, std: 0.1444
 ```
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-09/202412091600239.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-09/202412091600239.png)
 
 
 #### 6.2.2 Sym-80%
@@ -659,4 +659,4 @@ valid epochs: [149, 148, 147, 146, 145, 144, 143, 142, 141, 140]
 mean: 63.2590, std: 0.1166
 ```
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-09/202412091604828.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-09/202412091604828.png)

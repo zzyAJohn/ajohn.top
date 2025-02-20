@@ -98,7 +98,7 @@ zzy@user:~/.ssh$ cat id_rsa.pub >> authorized_keys
 
 使用 WinSCP、SFTP 等工具将私钥文件 `id_rsa` 下载到客户端机器上 `C:\Users\AJohn\.ssh\id_rsa`
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2025-01-15/202501151134510.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2025-01-15/202501151134510.png)
 
 在 `VSCode` 中配置密钥登录路径 `IdentityFile C:\Users\AJohn\.ssh\id_rsa`
 ```

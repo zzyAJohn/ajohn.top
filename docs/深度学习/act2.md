@@ -11,7 +11,7 @@ permalink: /article/r0g0ypv4/
 
 一种非对称协同训练（ACT）方法，可用于减轻标签噪声的有害影响。
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-06/202412061241982.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-06/202412061241982.png)
 <!-- more -->
 ---
 
@@ -87,7 +87,7 @@ tar -xzvf web-aircraft.tar.gz
 
 解压后如图所示
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2024-12-16/202412161404021.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-16/202412161404021.png)
 
 ## 二、环境配置
 

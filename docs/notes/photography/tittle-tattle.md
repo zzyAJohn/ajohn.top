@@ -25,21 +25,21 @@ permalink: /photography/b0dlmzvl/
 
 - 身体部位尽量完整，不要从关节处截断
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2025-01-17/202501171755570.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2025-01-17/202501171755570.png)
 
 ## 摆姿错误示范
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2025-01-17/202501171806191.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2025-01-17/202501171806191.png)
 
 - 手臂90°
 - 手抢镜头
 
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2025-01-17/202501171805358.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2025-01-17/202501171805358.png)
 
 - 摆姿缺乏气质，公主裙+欧式建筑，可以做一些优雅的动作
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2025-01-17/202501171807343.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2025-01-17/202501171807343.png)
 
 - 手抢戏份了，臃肿
 
@@ -49,11 +49,11 @@ permalink: /photography/b0dlmzvl/
 
 使用道具：根据主题准备道具
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2025-01-17/202501171811532.png)
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2025-01-17/202501171811428.png)
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2025-01-17/202501171811723.png)
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2025-01-17/202501171812378.png)
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2025-01-17/202501171812749.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2025-01-17/202501171811532.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2025-01-17/202501171811428.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2025-01-17/202501171811723.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2025-01-17/202501171812378.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2025-01-17/202501171812749.png)
 
 ## 眼神
 
@@ -101,8 +101,35 @@ permalink: /photography/b0dlmzvl/
 
 ## 曝光三要素
 
-感光度：相机内部的“灯泡”，6400亮，大
 
-光圈：控制进光量，f1.8亮，小
+### 光圈：控制进光量和景深，
+- 大光圈：进光亮多，画面亮，背景模糊，适合拍人像、近物特写，可以突出主体。f1.8
 
-快门：光进入的时间，1秒亮，大
+- 小光圈：进光亮少，画面暗，背景清晰，适合拍风光、星空。f9
+
+
+### 快门：控制进光进入的时间和，1秒亮，大
+
+- 慢速快门：进光多，记录物体运动轨迹，足球比赛、星空。
+
+瀑布水流、车轨：5-20s
+
+- 高速快门：进光少，抓拍快速定格动物，子弹。1/2000
+
+- 安全快门：手持情况下，一般认为是焦距的倒数
+
+### 感光度：相机内部的“灯泡”，6400亮，大
+- 高ISO：亮但是噪点多
+
+- 低感光度：暗但是画质好
+
+高 ISO 会产生噪点，尽量保持亮度的同时拉低 ISO，光线充足常用100，没光400-800，夜景800以上，确实高了会影响画质，但是起码能拍到（）
+
+
+## 档位
+
+A：光圈优先：适合人像，能背景虚化；白天扫街，快门都很安全
+
+T/S：快门优先：适合夜景扫街，能保证照片不糊
+
+
