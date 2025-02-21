@@ -1,10 +1,12 @@
 ---
 title: 搭建国内博客
+tags:
+    - Linux
 createTime: 2025/02/18 09:38:49
 permalink: /article/l5qbaepk/
 ---
 
-AJohn Blog 创建之初本是打算记录所学，同时给予来者之参考借鉴，主要面向程序员学习交流，故而白嫖了很久 Github 的服务器，使用起来也是非常丝滑，从未罢工。怎奈随着时光流逝，有时分享于其他行业之友人却是稍有不便，遂将博客同时部署于 Github 服务器与国内服务器。特别感谢[YOYO](https://www.yoake.cc/)的技术支持。
+AJohn Blog 创建之初本是打算记录所学，同时给予来者之参考借鉴，主要面向程序员学习交流，故而白嫖了很久 Github 的服务器，使用起来也是非常丝滑，从未罢工。怎奈随着时光流逝，有时分享于其他行业之友人却是稍有不便，遂将博客同时部署于 Github 服务器与国内服务器。特别感谢 [YOAKE](https://github.com/YOYOYOAKE.png) 的技术支持。
 <!-- more -->
 ## 1. 购买服务器
 
@@ -164,12 +166,13 @@ tips：记得把 `ajohn.top` 文件夹重命名为宝塔的 `www.ajohn.top` ，�
 
 等待解析完成，在浏览器输入 `www.ajohn.top` ，已经可以访问了。
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2025-02-18/202502181755901.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2025-02-18/202502181755901.png)
 ## 5. 备案
 
 但再次点击后不可访问
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Image/2025-02-18/202502181757755.png)
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2025-02-18/202502181757755.png)
 
 后面自行备案即可。
 
+自此， `ajohn.top` 使用 Github 服务器， `www.ajohn.top` 使用华为云服务器，国际与国内用户体验大大提升。
