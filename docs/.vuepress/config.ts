@@ -18,7 +18,7 @@ export default defineUserConfig({
     notes,
     // 添加您的部署域名
     hostname: 'https://ajohn.top',
-    footer: { message: "Copyright © 2024 AJohn" },
+    footer: { message: "Copyright © 2024-2025 AJohn" },
 
     plugins: {
       /**
