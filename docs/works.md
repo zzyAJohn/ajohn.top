@@ -4,6 +4,16 @@ permalink: /works/
 draft: true
 ---
 
+### 2025 行程：
+- [x] 1.10 黄鹤楼
+- [x] 1.16 东湖
+- [x] 1.19 花博汇
+- [x] 1.21 珞珈山剧院
+- [x] 2.7 长江大桥
+- [x] 2.8 梦乡
+- [ ] 3.15 超电
+- [ ] 4月底 五岳
+- [ ] 五一 国防科技展
 
 ## 人像
 <CardGrid>
@@ -26,20 +36,58 @@ draft: true
 </CardGrid>
 
 
-## 城市建筑
+<!-- ## 城市建筑 -->
 
-
-## 自然风光
-
-<CardGrid>
-    <ImageCard
+## 街拍
+<ImageCard
     image="https://cdn.jsdelivr.net/gh/zzyAJohn/Works-Image/2025-01-19/DSC_0928.jpg"
-    title="乡村振兴号"
-    description="照片中的火车位于武汉市蔡甸区"
+    title="前行中的复古律动"
+    description="照片中的火车位于武汉市蔡甸区。一辆标有 “乡村振兴号” 的老式蒸汽火车正行驶在轨道上。复古的黑色车身、高耸的烟囱，尽显历史韵味。火车周围树木和房屋相伴，蒸汽火车运行时带来的动态感，与周边静谧的环境形成独特对比，仿佛在诉说着乡村发展的奋进故事 。"
     href="/"
     author="AJohn"
     date="2025/01/19"
     />
+<!-- <CardGrid>
+    <ImageCard
+    image="https://cdn.jsdelivr.net/gh/zzyAJohn/Works-Image/2025-01-19/DSC_0928.jpg"
+    title="前行中的复古律动"
+    description="照片中的火车位于武汉市蔡甸区。一辆标有 “乡村振兴号” 的老式蒸汽火车正行驶在轨道上。复古的黑色车身、高耸的烟囱，尽显历史韵味。火车周围树木和房屋相伴，蒸汽火车运行时带来的动态感，与周边静谧的环境形成独特对比，仿佛在诉说着乡村发展的奋进故事 。"
+    href="/"
+    author="AJohn"
+    date="2025/01/19"
+    />
+</CardGrid> -->
+
+
+## 纪实
+<ImageCard
+    image="https://cdn.jsdelivr.net/gh/zzyAJohn/Works-Image/2025-01-21/DSC_0989.webp"
+    title="弦上的和声盛宴"
+    description="照片中的舞台位于武汉市武昌区珞狮路84号附近珞珈山剧院。舞台之上，一群身着正装的演奏者端坐于椅。手中的小提琴、大提琴在光影交错间被轻轻拨弄、拉响，如灵动的精灵在琴弦上跳跃。他们沉浸于音乐的世界，周围静谧无声，唯有悠扬弦音潺潺流淌，似在诉说着一个个动人的故事，编织出一场沉浸式的听觉盛宴 。"
+    href="/"
+    author="AJohn"
+    date="2025/01/21"
+    />
+<!-- <CardGrid>
+    <ImageCard
+    image="https://cdn.jsdelivr.net/gh/zzyAJohn/Works-Image/2025-01-21/DSC_0989.webp"
+    title="弦上的和声盛宴"
+    description="照片中的火车位于武汉市武昌区珞狮路84号附近珞珈山剧院。舞台之上，一群身着正装的演奏者端坐于椅。手中的小提琴、大提琴在光影交错间被轻轻拨弄、拉响，如灵动的精灵在琴弦上跳跃。他们沉浸于音乐的世界，周围静谧无声，唯有悠扬弦音潺潺流淌，似在诉说着一个个动人的故事，编织出一场沉浸式的听觉盛宴 。"
+    href="/"
+    author="AJohn"
+    date="2025/01/19"
+    />
+</CardGrid> -->
+
+<!-- ## 野生动物 -->
+
+<!-- ## 夜景摄影 -->
+
+<!-- ## 旅行摄影 -->
+
+## 自然
+
+<CardGrid>
     <ImageCard
     image="https://cdn.jsdelivr.net/gh/zzyAJohn/Works-Image/2025-01-19/DSC_0913.jpg"
     title="牡丹，花之富贵者也"
