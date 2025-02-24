@@ -7,7 +7,9 @@ createTime: 2025/01/15 11:28:00
 permalink: /article/1y2edp62/
 ---
 
-## 1 介绍
+省流：用户配置密钥请直接从第三节开始。
+
+## 1. 介绍
 
 ### 1.1 密钥是什么
 密钥（`key`）是一个非常大的数字，通过加密算法得到。对称加密只需要一个密钥，非对称加密需要两个密钥成对使用，分为公钥（`public key`）和私钥（`private key`）。
@@ -58,49 +60,82 @@ user@user:~/.ssh$ sudo service sshd restart
 
 ## 3. 用户制作密钥对
 ### 3.1 制作密钥对
+
+在==本地电脑==的 cmd 使用下面命令建立密钥对：
+
 ```bash
-zzy@user:~$ ssh-keygen # <== 建立密钥对
+ssh-keygen -t rsa
+```
+
+输入下面的命令以后，ssh-keygen 会要求用户回答一些问题。
+
+密钥锁码在使用私钥时必须输入，这样就可以保护私钥不被盗用。
+
+当然，也可以留空，实现无密码登录，懒人直接按三次空格即可。
+
+
+```bash
+C:\Users\AJohn\.ssh>ssh-keygen -t rsa # <== 建立密钥对
 Generating public/private rsa key pair.
-Enter file in which to save the key (/home/zzy/.ssh/id_rsa): # <== 按 Enter
-Created directory '/home/zzy/.ssh'.
+Enter file in which to save the key (C:\Users\AJohn/.ssh/id_rsa): # <== 按 Enter
 Enter passphrase (empty for no passphrase): # <== 输入密钥锁码，或直接按 Enter 留空
 Enter same passphrase again: # <== 再输入一遍密钥锁码
-Your identification has been saved in /home/zzy/.ssh/id_rsa # <== 私钥
-Your public key has been saved in /home/zzy/.ssh/id_rsa.pub # <== 公钥
+Your identification has been saved in C:\Users\AJohn/.ssh/id_rsa # <== 私钥
+Your public key has been saved in C:\Users\AJohn/.ssh/id_rsa.pub # <== 公钥
 The key fingerprint is:
-SHA256:******************************************* zzy@user
+SHA256:***************** ajohn@DESKTOP
 The key's randomart image is:
 +---[RSA 3072]----+
-|   ..E++*.       |
-|  . ++.o o       |
-| . *.=o o        |
-|. * @. o         |
-|oo X *  S        |
-|=.o O o          |
-|+=o  +           |
-|+*..             |
-|B++              |
+|                 |
+|                 |
+|                 |
+|                 |
+|   + .  S  .     |
+|  + = ==.oo      |
+| . . B**ooo.     |
+|  . *++B+.=.o .  |
+|  .*===+BB+*ooE. |
 +----[SHA256]-----+
+
+C:\Users\AJohn\.ssh>
 ```
 
-密钥锁码在使用私钥时必须输入，这样就可以保护私钥不被盗用。当然，也可以留空，实现无密码登录。
+rsa 算法会生成两个密钥文件： `~/.ssh/id_rsa`（私钥）和 `~/.ssh/id_rsa.pub`（公钥）。
 
-现在，在 `zzy` 用户的家目录中生成了一个 `.ssh` 的隐藏目录，内含两个密钥文件。`id_rsa` 为私钥，`id_rsa.pub` 为公钥。
+![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2025-02-24/202502241647112.png)
 
-### 3.2 在服务器上安装公钥
-键入以下命令，在服务器上安装公钥：
+### 3.2 查看公钥内容
+
+可以前往文件所在位置，使用记事本打开，也可以通过==本地电脑== PowerShell 使用命令：
+
 ```bash
-zzy@user:~$ cd .ssh
-zzy@user:~/.ssh$ cat id_rsa.pub >> authorized_keys
+cat ~/.ssh/id_rsa.pub
 ```
 
-### 3.3 将私钥下载到客户端
+来查看公钥内容：
+```bash
+ssh-rsa AAAAB3Nza********= ajohn@DESKTOP
+```
 
-使用 WinSCP、SFTP 等工具将私钥文件 `id_rsa` 下载到客户端机器上 `C:\Users\AJohn\.ssh\id_rsa`
+末尾的 `ajohn@DESKTOP` 是公钥的注释，用来识别不同的公钥，表示这是哪台主机（DESKTOP）的哪个用户（ajohn）的公钥，不是必需项。
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2025-01-15/202501151134510.png)
+请保留窗口打开，一会需要复制公钥到服务器。
 
-在 `VSCode` 中配置密钥登录路径 `IdentityFile C:\Users\AJohn\.ssh\id_rsa`
+### 3.3 上传公钥到服务器
+在==服务器==创建目录：
+```bash
+mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys
+```
+
+
+将下行的 `ssh-rsa AAAAB3Nza********= ajohn@DESKTOP` 替换成你的公钥后，在==服务器==执行写入：
+```bash
+echo "ssh-rsa AAAAB3Nza********= ajohn@DESKTOP" >> ~/.ssh/authorized_keys
+```
+
+### 3.4 VSCode 配置
+
+在==本地电脑== `VSCode` 中配置密钥登录路径 `IdentityFile C:\Users\AJohn\.ssh\id_rsa` ，注意是私钥。
 ```
 Host ************
   HostName ************
@@ -113,3 +148,4 @@ Host ************
 - [设置 SSH 通过密钥登录](https://www.runoob.com/w3cnote/set-ssh-login-key.html)
 - [SSH 密钥登录](https://wangdoc.com/ssh/key)
 - [如何让 vscode 使用 ssh密钥 (key) 来连接到远程Linux上](https://blog.csdn.net/surfirst/article/details/114311394)
+- [Linux系列 | SSH 如何使用密钥登录服务器](https://cloud.tencent.com/developer/article/1780788)
