@@ -105,7 +105,33 @@ sudo apt install p7zip-full
 ```
 
 ## 二、环境配置
+::: details 为了方便，我写了一个懒人脚本：
+```bash
+#!/bin/bash
 
+# 创建 conda 环境
+conda create --name core python=3.9 -y
+
+# 激活 conda 环境并安装依赖
+conda run -n core pip install torch==2.5.0 torchvision==0.20.0 torchaudio==2.5.0 --index-url https://pypi.tuna.tsinghua.edu.cn/simple
+
+# 检查 CUDA 是否可用
+conda run -n core python -c "import torch; print(torch.cuda.is_available())"
+
+echo "开始安装其他依赖："
+conda run -n core pip install tensorboardX scipy matplotlib easydict kornia
+
+echo "所有依赖项安装完成！"
+```
+
+可以创建sh脚本执行：
+```bash
+touch core.sh
+vim core.sh
+# 复制进去保存
+bash ./core.sh
+```
+:::
 查看当前 cuda 版本
 
 ```bash
@@ -159,6 +185,15 @@ pip install scipy
 ```bash
 pip install matplotlib
 ```
+
+```bash
+pip install easydict
+```
+
+```bash
+pip install kornia
+```
+
 管理员安装
 ```bash
 sudo apt-get install libpython2.7
