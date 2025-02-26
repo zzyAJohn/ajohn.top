@@ -2,6 +2,7 @@
 title: 作品
 permalink: /works/
 draft: true
+createTime: 2025/02/19 18:32:10
 ---
 
 ### 2025 行程：
@@ -9,11 +10,14 @@ draft: true
 - [x] 1.16 东湖
 - [x] 1.19 花博汇
 - [x] 1.21 珞珈山剧院
-- [x] 2.7 长江大桥
-- [x] 2.8 梦乡
-- [ ] 3.15 超电
-- [ ] 4月底 五岳
-- [ ] 五一 国防科技展
+- [x] 2.7 长江大桥 （同往：真夜）
+- [x] 2.8 梦乡 （同往：Ans）
+- [ ] 2.？ 肖像（同往：真夜）
+- [ ] 3.8 樱花（同往：无为、Ans、真夜）
+- [ ] 3.15 超电 （同往：Ans）
+- [ ] 3.16 武汉工程大学
+- [ ] 4.23 五岳
+- [ ] 5.9 国防科技展
 
 ## 人像
 <CardGrid>
@@ -29,6 +33,14 @@ draft: true
     image="https://cdn.jsdelivr.net/gh/zzyAJohn/Works-Image/2025-02-08/DSC_2159.webp"
     title="第五人格-红夫人-应许之日"
     description="照片摄于武汉市国际博览中心暨梦乡漫展。“你会获得你想要的，十字架为此作证。”"
+    href="/"
+    author="AJohn"
+    date="2025/02/08"
+    />
+    <ImageCard
+    image="https://cdn.jsdelivr.net/gh/zzyAJohn/Works-Image/2025-02-08/DSC_1723.webp"
+    title="第五人格-艾玛·伍兹-兰闺惊梦"
+    description="照片摄于武汉市国际博览中心暨梦乡漫展。"
     href="/"
     author="AJohn"
     date="2025/02/08"
