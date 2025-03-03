@@ -47,6 +47,22 @@ cn：拾光，日常活跃在武汉，扩列+q3395912296，欢迎家人们来找
     author="AJohn"
     date="2025/02/08"
     />
+    <ImageCard
+    image="https://oss.ajohn.top/works/2025-02-08/DSC_1596.webp"
+    title="少女前线-SPR A3G"
+    description="照片摄于武汉市国际博览中心暨梦乡漫展。不太喜欢运动，大多数时候会在一个地点“监视”着某些东西很长时间，最喜欢“监视”的是指挥官。对待任务时为了注重效率，没有命令时不会耐心等待命令，容易擅自行动按自己方式处理问题。"
+    href="/"
+    author="AJohn"
+    date="2025/02/08"
+    />
+    <ImageCard
+    image="https://oss.ajohn.top/works/2025-02-08/DSC_1600.webp"
+    title="少女前线-SPR A3G"
+    description="照片摄于武汉市国际博览中心暨梦乡漫展。不太喜欢运动，大多数时候会在一个地点“监视”着某些东西很长时间，最喜欢“监视”的是指挥官。对待任务时为了注重效率，没有命令时不会耐心等待命令，容易擅自行动按自己方式处理问题。"
+    href="/"
+    author="AJohn"
+    date="2025/02/08"
+    />
 </CardGrid>
 
 ## 2025/01/21
