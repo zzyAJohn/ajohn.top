@@ -119,7 +119,7 @@ conda run -n core pip install torch==2.5.0 torchvision==0.20.0 torchaudio==2.5.0
 conda run -n core python -c "import torch; print(torch.cuda.is_available())"
 
 echo "开始安装其他依赖："
-conda run -n core pip install tensorboardX scipy matplotlib easydict kornia
+conda run -n core pip install tensorboardX scipy matplotlib easydict kornia ipykernel
 
 echo "所有依赖项安装完成！"
 ```
@@ -192,6 +192,10 @@ pip install easydict
 
 ```bash
 pip install kornia
+```
+
+```bash
+pip install ipykernel
 ```
 
 管理员安装
