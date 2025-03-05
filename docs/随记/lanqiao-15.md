@@ -1,5 +1,5 @@
 ---
-title: 蓝桥杯之赛前总动员
+title: 蓝桥杯之赛前总动员-第十五届真题
 tags:
     - Python
 createTime: 2025/02/26 16:18:05
