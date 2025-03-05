@@ -18,7 +18,7 @@ export default defineUserConfig({
     notes,
     // 添加您的部署域名
     hostname: 'https://ajohn.top',
-    footer: { message: "Copyright © 2024-2025 AJohn" },
+    footer: { message: "<a href='https://beian.miit.gov.cn/'>鄂ICP备2025095120号-1</a>" , copyright: "Copyright © 2024-2025 AJohn"},
 
     plugins: {
       /**

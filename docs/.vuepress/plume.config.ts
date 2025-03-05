@@ -17,9 +17,11 @@ export default defineThemeConfig({
     avatar: 'https://github.com/zzyAJohn.png',
     name: 'AJohn',
     description: 'Never, ever, ever give up',
-    // circle: true,
+    circle: true,
     // location: '',
+    location: "WuHan, China",
     // organization: '',
+    organization: 'vai-lab',
   },
 
   // 注释 navbar 保存后 取消注释 再保存 可以更新笔记下拉栏状态
