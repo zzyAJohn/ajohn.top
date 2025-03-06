@@ -24,4 +24,9 @@ list:
     link: https://www.simengweb.com/
     avatar: https://oss.ajohn.top/blog/friends/simeng.webp
     desc: 泥嚎~
+  -
+    name: 努力学会月牙天冲
+    link: https://www.corp-sans.top/
+    avatar: https://oss.ajohn.top/blog/friends/nulixuehuiyueyatianchong.webp
+    desc: 施工中ing
 ---
