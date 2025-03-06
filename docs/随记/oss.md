@@ -182,9 +182,11 @@ MinIO 使用 bucket 来组织对象。bucket 类似于文件系统中的文件�
 
 数据无价，为了以防万一，我们可以使用 `Onedrive` 来备份我们的图片。
 
-在宝塔面板的软件商店中搜索 `OneDirve` 并下载，接下来可查阅宝塔教程：
+在宝塔面板的软件商店中搜索 `OneDirve` 并下载，接下来可查阅宝塔教程：[OneDirve 备份插件使用向导](https://www.bt.cn/bbs/thread-54124-1-1.html)
 
-[OneDirve 备份插件使用向导](https://www.bt.cn/bbs/thread-54124-1-1.html)
+创建计划任务时，如下图，任务类型选择 `备份目录` ，备份目录点击右侧小文件夹，定位到你要备份的目录，备份到选择 `微软OneDirve` 。
+
+![](https://oss.ajohn.top/blog/oss/1.webp)
 
 ## 参考资料：
 - [YOAKE](https://github.com/YOYOYOAKE.png) 的脑子
