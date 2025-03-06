@@ -19,4 +19,9 @@ list:
     link: https://moiads.xyz/
     avatar: https://github.com/moiseak.png
     desc: 不要温和地走进那个良夜。
+  -
+    name: 祀梦
+    link: https://www.simengweb.com/
+    avatar: https://oss.ajohn.top/blog/friends/simeng.webp
+    desc: 泥嚎~
 ---
