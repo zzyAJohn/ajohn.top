@@ -8,7 +8,7 @@ config:
     type: image-text
     title: About
     description: Hey，我是 AJohn，你也可以叫我阿囧。
-    image: https://github.com/zzyAJohn.png
+    image: https://oss.ajohn.top/blog/friends/ajohn.webp
     list:
       -
         title: 关于名字：
