@@ -144,6 +144,11 @@ Host ************
 ```
 配置完成后，即可免密登录
 
+::: tip
+配置文件位于 `C:\Users\AJohn\.ssh\config` 。
+
+在 `VSCode` 中打开配置文件，只需点击`左下角小蓝框`-`连接到主机`-`配置SSH主机`-第一个 `C:\Users\AJohn\.ssh\config` 就是。
+:::
 ## 参考资料：
 - [设置 SSH 通过密钥登录](https://www.runoob.com/w3cnote/set-ssh-login-key.html)
 - [SSH 密钥登录](https://wangdoc.com/ssh/key)
