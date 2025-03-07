@@ -17,22 +17,24 @@ permalink: /article/bes1sa4i/
 我们使用用户名 `zzy` 来做演示，请在下文中修改成你的用户名！用户名是你的名字缩写
 :::
 
-打开VSCode
+打开 `VSCode`
 ![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-20/202412201402272.png)
 
 点击左下角的 `打开远程窗口` （蓝色矩形区域）
 
-
-选择连接到主机，输入
+::: tip
+实验室最近更换了网络连接方式，ip 可能会变化。连接不上可能是ip变化了，可以向我询问最新 ip。
+:::
+选择连接到主机，输入：
 ```bash
-ssh zzy@10.162.32.65
+ssh zzy@10.16.3.171
 ```
 
-选择 linux-继续-输入你的初始密码，完成登录
+选择 `linux`-`继续`-输入你的初始密码，完成登录。
 
-如果出现无法建立连接，请查看这篇博客 [VSCode 连接不上远程服务器的解决方法](../随记/vscode-ssh.md)
+如果使用 `cmd` 可以连接，但是 `VScode` 无法建立连接，请查看这篇博客 [VSCode 连接不上远程服务器的解决方法](../随记/vscode-ssh.md)
 
-使用快捷键 `Ctrl` + `~` 打开一个终端
+使用快捷键 `Ctrl` + `~` 打开一个终端。
 
 ## 2.修改初始密码
 
@@ -330,7 +332,7 @@ Build cuda_11.8.r11.8/compiler.31833905_0
 比如，安装 Pytorch 命令可以[参考Pytorch官网](https://pytorch.org/get-started/locally/)
 
 ```bash
-conda install pytorch==2.5.0 torchvision==0.20.0 torchaudio==2.5.0  pytorch-cuda=11.8 -c pytorch -c nvidia
+pip install torch==2.5.0 torchvision==0.20.0 torchaudio==2.5.0 --index-url https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 ~~漫长的等待后~~，检查使用 cuda 的 Pytorch 是否安装成功
@@ -422,32 +424,20 @@ zzy@user:/mnt/data/zzy$
 ```
 
 ## 5. 使用GPU
+
+请按照申请的型号使用 gpu，一共有 0, 1, 2, 3 四张卡，显卡为 2080ti ，每张卡22G 显存。
+
 ::: important 重要
-请按照申请的型号使用 gpu，一共有 0, 1, 2, 3 四张卡
+在跑程序前，请查看当前有哪些卡处于空闲状态，可以使用 `nvitop` 命令来查看：
 :::
-如果你的代码没有 gpu 设置，可以在你的主代码中加入下面 python 代码：
-::: tip 提示
-如果变量名 `args` 不一样，把它修改成你代码中使用的变量名
-:::
-```python
-# 解析 GPU 配置
-str_ids = args.gpu.split(',')  # 获取 GPU IDs（支持多个 GPU）
-gpu_ids = []  # 用于存储有效的 GPU ID
-for str_id in str_ids:
-    gid = int(str_id)
-    if gid >= 0:  # 只有有效的 GPU ID（大于等于0）才会被添加
-        gpu_ids.append(gid)
-
-# 设置 GPU 使用
-if len(gpu_ids) > 0:
-    torch.cuda.set_device(gpu_ids[0])  # 设置当前使用的 GPU（如果有多个 GPU，默认先使用第一个）
-print('-----------当前使用的gpu型号是: {}--------------'.format(gpu_ids))  # 打印使用的 GPU ID
+```bash
+(base) zzy@ubuntu20:/mnt/data/zzy/ajohn-core$ nvitop
 ```
 
-在参数中添加 python 代码：
-```python
-parser.add_argument('--gpu', default='0', type=str, help='gpu ids: e.g. 0  0,1,2  0,2')  # 设置你申请的 GPU ID
-```
+按下回车，出现：
+
+![](https://oss.ajohn.top/blog/server-help/1.webp)
+
 
 ## 6.其他命令
 
@@ -555,7 +545,7 @@ mkdir -p ~/.pip
 vim ~/.pip/pip.conf
 ```
 加入以下内容
-```
+```bash
 [global]
 index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 ```
