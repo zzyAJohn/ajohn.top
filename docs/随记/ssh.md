@@ -67,11 +67,11 @@ user@user:~/.ssh$ sudo service sshd restart
 ssh-keygen -t rsa
 ```
 
-输入下面的命令以后，ssh-keygen 会要求用户回答一些问题。
+输入下面的命令以后，`ssh-keygen` 会要求用户回答一些问题。
 
 密钥锁码在使用私钥时必须输入，这样就可以保护私钥不被盗用。
 
-当然，也可以留空，实现无密码登录，懒人直接按三次空格即可。
+当然，也可以留空，实现无密码登录，懒人直接按三次 `Enter` 即可。
 
 
 ```bash
