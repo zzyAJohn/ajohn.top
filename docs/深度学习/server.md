@@ -5,7 +5,7 @@ tags:
     - Linux
     - Deep Learning
 createTime: 2024/12/21 16:38:48
-permalink: /article/bbaesj4i/
+permalink: /article/server/
 ---
 
 本篇博客主要记录 Ubuntu 深度学习服务器配置 ~~以及从删库到跑路~~
@@ -27,7 +27,7 @@ zzy@user:/mnt/data/bak$ ls
 Anaconda3-2024.10-1-Linux-x86_64.sh  cudnn-linux-x86_64-8.9.7.29_cuda11-archive         NVIDIA-Linux-x86_64-550.142.run
 cuda_11.8.0_520.61.05_linux.run      cudnn-linux-x86_64-8.9.7.29_cuda11-archive.tar.xz  rjsupplicant
 ```
-
+2025.2.10更新：开学来不知怎的又黑屏了，重装！
 ## 1. 重装系统 Ubuntu20.04
 
 准备：一个u盘，一台能联网的windows电脑
