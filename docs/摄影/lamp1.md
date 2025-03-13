@@ -1,5 +1,5 @@
 ---
-title: lamp1
+title: 5条摄影灯光的基础原理
 createTime: 2025/03/13 19:17:37
 permalink: /article/lamp1/
 ---
