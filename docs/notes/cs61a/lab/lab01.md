@@ -67,6 +67,89 @@ print("DEBUG:", x)
 [使用 OK 页面](https://hqhq1025.github.io/cs61a-24fa-backup/articles/using-ok.html) 上描述了更多功能。您可以在 [ok-help](https://go.cs61a.org/ok-help) 中快速生成大多数 ok 命令。
 :::
 
+::: details Division, Floor Div, and Modulo
+以下是 Python 3 中与除法相关的运算符的示例：
+
+真除法：`/`（小数除法）：
+```bash
+>>> 1 / 5
+0.2
+
+>>> 25 / 4
+6.25
+
+>>> 4 / 2
+2.0
+
+>>> 5 / 0
+ZeroDivisionError
+```
+向下取整除法： `//`（整数除法）：
+
+```bash
+>>> 1 // 5 # truncate result of true division
+0
+
+>>> 25 // 4
+6
+
+>>> 4 // 2
+2
+
+>>> 5 // 0
+ZeroDivisionError
+```
+
+（整数除法）模数：`%`（余数）：
+
+```bash
+>>> 1 % 5
+1
+
+>>> 25 % 4
+1
+
+>>> 4 % 2
+0
+
+>>> 5 % 0
+ZeroDivisionError
+```
+
+除以 0 时会发生 `ZeroDivisionError` 。
+
+涉及 `%` 运算符的一项有用技术是检查数字 `x` 是否可以被另一个数字 `y` 整除：
+
+```bash
+x % y == 0
+```
+
+例如，为了检查 `x` 是否为偶数：`x % 2 == 0`
+:::
+
+
+::: details Return and Print
+您定义的大多数函数都包含一个 `return` 语句，该语句提供用于调用该函数的调用表达式的值。
+当 Python 执行 `return` 语句时，函数调用会立即终止。如果 Python 到达函数体的末尾而没有执行 `return` 语句，则函数返回 `None` 。
+
+相反， `print` 函数用于显示值。与 `return` 语句不同，当 Python 评估对 `print` 的调用时，该函数不会立即终止。
+
+```py
+def what_prints():
+    print('Hello World!')
+    return 'Exiting this function.'
+    print('61A is awesome!')
+
+>>> what_prints()
+Hello World!
+'Exiting this function.'
+```
+
+::: tip
+`print` 将显示不带引号的文本，但 `return` 将保留引号。
+:::
+
+
 ## What Would Python Display? (WWPD)
 
 ### Q1: Return and Print
