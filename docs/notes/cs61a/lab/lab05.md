@@ -5,7 +5,7 @@ tags:
   - Berkeley
   - Python
 createTime: 2024/12/05 20:30:59
-permalink: /cs61a/va2a24a4/
+permalink: /cs61a/lab-lab05/
 ---
 
 ## Starter Files
@@ -754,7 +754,7 @@ def repeated(t, k):
 python ok --score
 ```
 
-我的得分：
+::: details 我的得分：
 ```bash
 PS D:\Github\CS61A_Fall2024\lab\lab05> python ok --score 
 =====================================================================
@@ -875,7 +875,7 @@ URL: https://okpy.org/cal/cs61a/fa24/lab05/backups/NpDOp8
 
 OK is up to date
 ```
-
+:::
 这不会提交作业！当您对分数满意时，请将作业提交给 Gradescope 以获得学分。
 
 ## Optional Questions

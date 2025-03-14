@@ -5,7 +5,7 @@ tags:
   - Berkeley
   - Python
 createTime: 2024/11/09 16:26:29
-permalink: /cs61a/ekpww5bn/
+permalink: /cs61a/lab-lab01/
 ---
 
 ## Starter Files
@@ -499,7 +499,7 @@ def middle(a, b, c):
 python ok --score
 ```
 
-我的得分：
+::: details 我的得分：
 ```bash
 PS D:\Github\CS61A_Fall2024\lab\lab01> python ok --score
 =====================================================================
@@ -568,7 +568,7 @@ URL: https://okpy.org/cal/cs61a/fa24/lab01/backups/3O6EYR
 OK is up to date
 PS D:\Github\CS61A_Fall2024\lab\lab01>
 ```
-
+:::
 这不会提交作业！当您对分数满意时，请将作业提交给 Gradescope 以获得学分。
 
 ## Optional Questions

@@ -1,7 +1,11 @@
 ---
 title: 'Lab 7: Inheritance, Linked Lists'
+tags:
+  - CS61A
+  - Berkeley
+  - Python
 createTime: 2025/01/03 16:30:17
-permalink: /cs61a/9fgtcinp/
+permalink: /cs61a/lab-lab07/
 ---
 
 ## Starter Files
@@ -696,6 +700,7 @@ python3 ok --score
 在本地检查此作业每个问题的得分
 
 这不会提交作业！当您对分数满意时，请将作业提交给 Gradescope 以获得学分。
+::: details 我的得分：
 ```bash
 PS D:\Github\CS61A_Fall2024\lab\lab07> python ok --score 
 =====================================================================
@@ -804,3 +809,4 @@ URL: https://okpy.org/cal/cs61a/fa24/lab07/backups/8O8V7j
 OK is up to date
 PS D:\Github\CS61A_Fall2024\lab\lab07>
 ```
+:::

@@ -5,7 +5,7 @@ tags:
   - Berkeley
   - Python
 createTime: 2024/11/21 18:19:07
-permalink: /cs61a/hrjn4nud/
+permalink: /cs61a/lab-lab02/
 ---
 
 

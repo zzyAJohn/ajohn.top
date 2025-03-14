@@ -5,7 +5,7 @@ tags:
   - Berkeley
   - Python
 createTime: 2024/11/28 19:26:54
-permalink: /cs61a/r02tk16t/
+permalink: /cs61a/lab-lab04/
 ---
 ## Starter Files
 
@@ -518,7 +518,7 @@ PS D:\Github\CS61A_Fall2024\lab\lab04>
 python ok --score
 ```
 
-我的得分：
+::: details 我的得分：
 ```bash
 PS D:\Github\CS61A_Fall2024\lab\lab04> python ok --score
 =====================================================================
@@ -621,5 +621,5 @@ URL: https://okpy.org/cal/cs61a/fa24/lab04/backups/GgZOPy
 OK is up to date
 PS D:\Github\CS61A_Fall2024\lab\lab04> 
 ```
-
+:::
 这不会提交作业！当您对分数满意时，请将作业提交给 Gradescope 以获得学分。

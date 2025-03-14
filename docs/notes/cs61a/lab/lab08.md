@@ -1,7 +1,11 @@
 ---
 title: 'Lab 8: Mutable Trees'
+tags:
+  - CS61A
+  - Berkeley
+  - Python
 createTime: 2025/02/15 19:51:55
-permalink: /cs61a/p1a8opee/
+permalink: /cs61a/lab-lab08/
 ---
 
 
@@ -398,6 +402,7 @@ python ok --score
 在本地检查此作业每个问题的得分
 
 这不会提交作业！当您对分数满意时，请将作业提交给 Gradescope 以获得学分。
+::: details 我的得分：
 ```bash
 PS D:\Github\CS61A_Fall2024\lab\lab08> python ok --score
 =====================================================================
@@ -482,6 +487,7 @@ URL: https://okpy.org/cal/cs61a/fa24/lab08/backups/z9m82q
 OK is up to date
 PS D:\Github\CS61A_Fall2024\lab\lab08> 
 ```
+:::
 
 
 ## Optional Questions

@@ -5,7 +5,7 @@ tags:
   - Berkeley
   - Python
 createTime: 2024/12/29 16:19:59
-permalink: /cs61a/v2da4ag4/
+permalink: /cs61a/lab-lab06/
 ---
 
 ## Starter Files
@@ -581,6 +581,7 @@ python3 ok --score
 在本地检查此作业每个问题的得分
 
 这不会提交作业！当您对分数满意时，请将作业提交给 Gradescope 以获得学分。
+::: details 我的得分：
 ```bash
 PS D:\Github\CS61A_Fall2024\lab\lab06> python ok --score
 =====================================================================
@@ -696,3 +697,4 @@ URL: https://okpy.org/cal/cs61a/fa24/lab06/backups/9O6W7J
 OK is up to date
 PS D:\Github\CS61A_Fall2024\lab\lab06> 
 ```
+:::
