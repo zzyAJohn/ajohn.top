@@ -103,7 +103,7 @@ ______
 >>> 'mew' in pokemon.keys()
 ______
 ```
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```bash
 PS D:\Github\CS61A_Fall2024\lab\lab04> python ok -q pokemon -u 
 =====================================================================
@@ -194,7 +194,7 @@ def divide(quotients, divisors):
 ```bash
 python ok -q divide
 ```
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```py
 def divide(quotients, divisors):
     """Return a dictonary in which each quotient q is a key for the list of
@@ -269,7 +269,7 @@ def display(fruit, count):
 ```bash
 python ok -q buy
 ```
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```py
 def buy(fruits_to_buy, prices, total_amount):
     """Print ways to buy some of each fruit so that the sum of prices is amount.
@@ -392,7 +392,7 @@ def distance(city_a, city_b):
 python ok -q distance
 ```
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```py
 from math import sqrt
 def distance(city_a, city_b):
@@ -439,7 +439,7 @@ def closer_city(lat, lon, city_a, city_b):
 ```bash
 python ok -q closer_city
 ```
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```py
 def closer_city(lat, lon, city_a, city_b):
     """

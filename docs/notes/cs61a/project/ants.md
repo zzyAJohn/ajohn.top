@@ -111,7 +111,7 @@ If you get stuck while answering these questions, you can try reading through `a
 
 A note on unlocking tests: If you'd like to review the unlocking questions after you have completed the unlocking test, you can navigate to (within the `ants` folder), the `tests` folder. For example, after unlocking Problem 0, you can review the unlocking test at `tests/00.py`.
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```bash
 PS D:\Github\CS61A_Fall2024\proj\ants> python ok -q 00 -u
 =====================================================================
@@ -281,7 +281,7 @@ Before writing any code, unlock the tests to verify your understanding of the qu
 python ok -q 01 -u
 ```
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```bash
 PS D:\Github\CS61A_Fall2024> cd .\proj\ants\
 PS D:\Github\CS61A_Fall2024\proj\ants> python ok -q 01 -u 
@@ -427,7 +427,7 @@ python ok -q 01
 ```
 
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 
 ```py
 # ants.py
@@ -502,7 +502,7 @@ Before writing any code, unlock the tests to verify your understanding of the qu
 python ok -q 02 -u
 ```
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```bash
 PS D:\Github\CS61A_Fall2024\proj\ants> python ok -q 02 -u 
 =====================================================================
@@ -612,7 +612,7 @@ Once you are done unlocking, begin implementing your solution. You can check you
 python ok -q 02
 ```
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```py
 class Place:
     """A Place holds insects and has an exit to another Place."""
@@ -678,7 +678,7 @@ Before writing any code, unlock the tests to verify your understanding of the qu
 python ok -q 03 -u
 ```
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```bash
 PS D:\Github\CS61A_Fall2024\proj\ants> python ok -q 03 -u 
 =====================================================================
@@ -878,7 +878,7 @@ Once you are done unlocking, begin implementing your solution. You can check you
 python3 ok -q 03
 ```
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```py
 class ThrowerAnt(Ant):
     """ThrowerAnt throws a leaf each turn at the nearest Bee in its range."""

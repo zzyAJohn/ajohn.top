@@ -147,7 +147,7 @@ ______
 ______
 ```
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```bash
 PS D:\Github\CS61A_Fall2024\lab\lab08> python ok -q trees-wwpd -u
 =====================================================================
@@ -238,7 +238,7 @@ def cumulative_mul(t):
 ```bash
 python ok -q cumulative_mul
 ```
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```py
 def cumulative_mul(t):
     """Mutates t so that each node's label becomes the product of its own
@@ -298,7 +298,7 @@ def prune_small(t, n):
 ```bash
 python ok -q prune_small
 ```
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```py
 def prune_small(t, n):
     """Prune the tree mutatively, keeping only the n branches
@@ -359,7 +359,7 @@ def delete(t, x):
 ```bash
 python ok -q delete
 ```
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```py
 def delete(t, x):
     """Remove all nodes labeled x below the root within Tree t. When a non-leaf
@@ -501,7 +501,7 @@ def max_path_sum(t):
 ```bash
 python ok -q max_path_sum
 ```
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```py
 def max_path_sum(t):
     """Return the maximum path sum of the tree.

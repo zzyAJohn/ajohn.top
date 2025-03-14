@@ -193,7 +193,7 @@ ______
 ______
 ```
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```bash
 PS D:\Github\CS61A_Fall2024\lab\lab03> python ok -q lists-wwpd -u 
 =====================================================================
@@ -304,7 +304,7 @@ def print_if(s, f):
 python ok -q print_if
 ```
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```py
 def print_if(s, f):
     """Print each element of s for which f returns a true value.
@@ -355,7 +355,7 @@ def close(s, k):
 python ok -q close
 ```
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```py
 def close(s, k):
     """Return how many elements of s that are within k of their index.
@@ -404,7 +404,7 @@ ______
 ______
 ```
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```bash
 PS D:\Github\CS61A_Fall2024\lab\lab03> python ok -q list-comprehensions-wwpd -u
 =====================================================================
@@ -476,7 +476,7 @@ def close_list(s, k):
 python ok -q close_list
 ```
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```py
 def close_list(s, k):
     """Return a list of the elements of s that are within k of their index.
@@ -521,7 +521,7 @@ def squares(s):
 python ok -q squares
 ```
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```py
 from math import sqrt
 
@@ -578,7 +578,7 @@ def double_eights(n):
 python ok -q double_eights
 ```
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```py
 def double_eights(n):
     """Returns whether or not n has two digits in row that
@@ -657,7 +657,7 @@ def make_onion(f, g):
 python ok -q make_onion
 ```
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```py
 def make_onion(f, g):
     """Return a function can_reach(x, y, limit) that returns

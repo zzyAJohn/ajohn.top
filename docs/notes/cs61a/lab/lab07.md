@@ -89,7 +89,7 @@ ______
 ______
 ```
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```bash
 PS D:\Github\CS61A_Fall2024\lab\lab07> python ok -q inheritance-abc -u 
 =====================================================================
@@ -221,7 +221,7 @@ class Account:
 python ok -q Account
 ```
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```py
 class Account:
     """An account has a balance and a holder.
@@ -311,7 +311,7 @@ class FreeChecking(Account):
 ```bash
 python ok -q FreeChecking
 ```
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```py
 class FreeChecking(Account):
     """A bank account that charges for withdrawals, but the first two are free!
@@ -450,7 +450,7 @@ ______
 ______
 ```
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```bash
 PS D:\Github\CS61A_Fall2024\lab\lab07> python ok -q link -u
 =====================================================================
@@ -595,7 +595,7 @@ def without(s, i):
 ```bash
 python ok -q without
 ```
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```py
 def without(s, i):
     """Return a new linked list like s but without the element at index i.
@@ -658,7 +658,7 @@ def duplicate_link(s, val):
 python ok -q duplicate_link
 ```
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```py
 def duplicate_link(s, val):
     """Mutates s so that each element equal to val is followed by another val.

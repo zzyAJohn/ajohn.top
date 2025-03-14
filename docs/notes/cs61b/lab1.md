@@ -121,7 +121,7 @@ After writing nextNumber, fill in the main method so that it prints out the Coll
 Fun fact: For all numbers, the Collatz sequence appears to terminate at 1. So far, however, nobody has been able to prove that this is true for all possible starting values, but all values up to approximately 2^68 have been checked. As noted in the wikipedia article, mathematician Jeffrey Lagarias noted that the Collatz conjecture “is an extraordinarily difficult problem, completely out of reach of present day mathematics.”
 
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```java
 /** Class that prints the Collatz sequence starting from a given number.
  *  @author YOUR NAME HERE

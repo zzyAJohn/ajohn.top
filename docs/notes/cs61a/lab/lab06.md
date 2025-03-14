@@ -196,7 +196,7 @@ class BankAccount:
 python ok -q BankAccount
 ```
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```py
 class Transaction:
     def __init__(self, id, before, after):
@@ -385,7 +385,7 @@ python ok -q Client
 ```
 
 
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```py
 class Server:
     """Each Server has one instance attribute called clients that is a
@@ -507,7 +507,7 @@ class Dime(Coin):
 ```bash
 python ok -q Mint
 ```
-::: warning 以下内容包含答案
+::: details 点击查看答案
 ```py
 class Mint:
     """A mint creates coins by stamping on years.
