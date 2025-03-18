@@ -1,14 +1,14 @@
 ---
-title: Lab 0
+title: 'Lab 0: Getting Started'
 tags:
   - CS61A
   - Berkeley
   - Python
 createTime: 2024/10/29 08:42:59
-permalink: /cs61a/vb2a74f4/
+permalink: /cs61a/lab-lab00/
 ---
 
->做lab00的时候遇到了一些问题，特此记录
+>做lab00的时候遇到了一些问题
 ——AJohn
 
 # lab00
