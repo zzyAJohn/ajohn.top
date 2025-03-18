@@ -27,7 +27,13 @@ zzy@user:/mnt/data/bak$ ls
 Anaconda3-2024.10-1-Linux-x86_64.sh  cudnn-linux-x86_64-8.9.7.29_cuda11-archive         NVIDIA-Linux-x86_64-550.142.run
 cuda_11.8.0_520.61.05_linux.run      cudnn-linux-x86_64-8.9.7.29_cuda11-archive.tar.xz  rjsupplicant
 ```
+
+---
 2025.2.10更新：开学来不知怎的又黑屏了，重装！
+
+---
+2025.3.17 更新：驱动掉了，显示 `Driver Not Loaded`，解决方法跳转 [11. Driver Not Loaded](#11-driver-not-loaded)
+
 ## 1. 重装系统 Ubuntu20.04
 
 准备：一个u盘，一台能联网的windows电脑
@@ -982,7 +988,56 @@ global.index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 
 这时候就可以敲命令了，~~不过最后还是没救回来~~。
 
----
+
+
+
+## 11. Driver Not Loaded
+
+### 11.1 关闭重启更新驱动
+
+首先先把重启更新驱动这个设定关闭：
+```bash
+sudo vim /etc/apt/apt.conf.d/50unattended-upgrades
+```
+
+把下面这两行注释掉：
+```bash
+"${distro id}:${distro codename}"
+"$fdistro id}:$fdistro codename}-security"
+```
+
+`sudo reboot` 重启一下试试，如果重启后可以正常用了那可太好了
+
+### 11.2 重新安装驱动
+
+但很显然不行，重新安装驱动
+
+首先先卸载之前nvidia相关的驱动：
+```bash
+sudo apt-get purge nvidia*
+sudo apt-get autoremove
+```
+
+添加nvidia源：
+```bash
+sudo add-apt-repository ppa:graphics-drivers/ppa
+```
+
+
+进入到 `/mnt/data/bak/` ，这里有我之前放的备份文件，
+
+```bash
+(base) user@ubuntu20:/mnt/data/bak$ ls
+Anaconda3-2024.10-1-Linux-x86_64.sh  cudnn-linux-x86_64-8.9.7.29_cuda11-archive         NVIDIA-Linux-x86_64-550.142.run
+cuda_11.8.0_520.61.05_linux.run      cudnn-linux-x86_64-8.9.7.29_cuda11-archive.tar.xz  rjsupplicant
+(base) user@ubuntu20:/mnt/data/bak$ 
+```
+
+安装驱动：
+```bash
+sudo bash ./NVIDIA-Linux-x86_64-550.142.run
+```
+
 
 ## 参考资料：
 - [Linux下使用锐捷客户端连接网络，以及遇到的问题](https://blog.csdn.net/weixin_44012745/article/details/114787967)
@@ -991,3 +1046,4 @@ global.index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 - [揭秘Ubuntu深度学习服务器配置：新手如何成为专家？](https://blog.csdn.net/qq_30091945/article/details/124555932)
 - [解决Ubuntu安装NVIDIA显卡驱动导致的黑屏问题](https://blog.csdn.net/Fengdf666/article/details/135888549?spm=1001.2101.3001.6650.6&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-6-135888549-blog-132233930.235%5Ev43%5Epc_blog_bottom_relevance_base7&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-6-135888549-blog-132233930.235%5Ev43%5Epc_blog_bottom_relevance_base7&utm_relevant_index=13)
 - [Ubuntu 20.04安装显卡驱动、CUDA、Miniconda和Pytorch（2024.09最新）-Ubuntu从零搭建深度学习环境](https://blog.csdn.net/sdbyp/article/details/139853774) 注意这个博客的顺序是错误的！
+- [【Linux】服务器重启之后nvidia-smi报错 “Impossible to initialize nvidia nvml : Driver Not Loaded”](https://blog.csdn.net/double_ZZZ/article/details/124683618)
