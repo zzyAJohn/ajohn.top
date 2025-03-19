@@ -1,8 +1,10 @@
 ---
-title: Ants Vs. SomeBees
+title: 'Project 3: Ants'
 createTime: 2024/12/10 21:20:41
-permalink: /cs61a/91gmdeq1/
+permalink: /cs61a/project-ants/
 ---
+
+## Ants Vs. SomeBees
 
 ![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-10/202412102124480.png)
 

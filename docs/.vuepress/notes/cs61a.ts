@@ -45,6 +45,8 @@ export default defineNoteConfig({
       text: 'Project',
       prefix: 'project', 
       items: [
+        'hog.md',
+        'cats.md',
         'ants.md',
       ]
     },
