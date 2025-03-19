@@ -8,6 +8,12 @@ createTime: 2024/10/29 11:10:09
 permalink: /cs61a/
 ---
 
+::: tip
+目前CS61A已经开始下一个学期（Spring 2025），官方自己的存档需要UCB的账号才能访问，Fall 2024的一个备份可见 [hqhq1025](https://github.com/hqhq1025/cs61a-24fa-backup) 的 [CS61A备份网站](https://hqhq1025.github.io/cs61a-24fa-backup/index.html)。
+:::
+
+----
+
 注：此简介搬运自 [CS自学指南](https://csdiy.wiki/%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/Python/CS61A/)
 
 课程简介
