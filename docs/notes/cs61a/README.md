@@ -8,6 +8,8 @@ createTime: 2024/10/29 11:10:09
 permalink: /cs61a/
 ---
 
+注：此简介搬运自 [CS自学指南](https://csdiy.wiki/%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/Python/CS61A/)
+
 课程简介
 - 所属大学：UC Berkeley
 - 先修要求：无
@@ -35,6 +37,8 @@ CS61 系列是伯克利 CS 专业的入门课，其中：
 - [课程教材中文翻译](https://composingprograms.netlify.app/)
 - 课程作业: 课程网站会有每个作业对应的文档链接以及代码框架的下载链接。
 
+----
+
 本文主要记录学习 CS61A 课程的一些心得
 
 因为是课程笔记，所以基础知识不再赘述，仅记录一些有意思的想法
@@ -42,13 +46,25 @@ CS61 系列是伯克利 CS 专业的入门课，其中：
 实验，作业，项目可见本博客：
 
 Lab:
+- [Lab 0: Getting Started](./lab/lab00.md)
+- [Lab 1: Functions](./lab/lab01.md)
+- [Lab 2: Higher-Order Functions, Lambda Expressions](./lab/lab02.md)
+- [Lab 3: Recursion, Python Lists](./lab/lab03.md)
+- [Lab 4: Tree Recursion, Data Abstraction](./lab/lab04.md)
 - [Lab 5: Mutability, Iterators](./lab/lab05.md)
 - [Lab 6: OOP](./lab/lab06.md)
+- [Lab 7: Inheritance, Linked Lists](./lab/lab07.md)
+- [Lab 8: Mutable Trees](./lab/lab08.md)
 
 Homework:
 - [Homework 1: Functions, Control](./homework/hw01.md)
+- [Homework 2: Higher-Order Functions](./homework/hw02.md)
+- [Homework 3: Recursion, Tree Recursion](./homework/hw03.md)
+<!-- - [Homework 1: Functions, Control](./homework/hw01.md) -->
 - [Homework 5: Generators](./homework/hw05.md)
 - [Homework 6: OOP, Linked Lists](./homework/hw06.md)
+
+
 
 你也可以通过我的 github 仓库 [CS61A_Fall2024](https://github.com/zzyAJohn/CS61A_Fall2024)来获取我的代码。
 
