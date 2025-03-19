@@ -34,6 +34,9 @@ export default defineNoteConfig({
       prefix: 'homework', 
       items: [
         'hw01.md',
+        'hw02.md',
+        'hw03.md',
+        'hw04.md',
         'hw05.md',
         'hw06.md',
       ]
