@@ -76,7 +76,7 @@ zzy@ajohn-top:~$
 
 创建目录：
 ```bash
-mkdir /www/wwwroot
+sudo mkdir -p /www/wwwroot
 ```
 
 进入到目录：
@@ -113,7 +113,7 @@ sudo git clone -b blog_pages https://ghfast.top/https://github.com/zzyAJohn/ajoh
 
 我的操作系统是 ubuntu ，因此使用：
 ```bash
-wget -O install_panel.sh https://download.bt.cn/install/install_panel.sh && sudo bash install_panel.sh ed8484bec
+sudo wget -O install_panel.sh https://download.bt.cn/install/install_panel.sh && sudo bash install_panel.sh ed8484bec
 ```
 
 经过漫长的等待，安装完成后，出现：
@@ -222,7 +222,7 @@ sudo bt
 ![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2025-02-22/202502221246365.png)
 
 
-等待解析生效，即可在宝塔页面将证书部署到服务器，并打开 `强制HTTPS`。
+等待解析生效，点击`验证`，验证成功后，点击`部署`，即可在宝塔页面将证书部署到服务器，并打开 `强制HTTPS`。
 
 ![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2025-02-22/202502221248380.png)
 

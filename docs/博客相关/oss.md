@@ -13,6 +13,13 @@ permalink: /article/oss/
 
 ## 1. 使用 Docker 启动 MinIO
 
+::: tip
+如果是阿里云服务器，还需：
+```bash
+sudo apt install snapd
+```
+:::
+
 登录服务器，安装 `Docker` ：
 ```bash
 sudo snap install docker
