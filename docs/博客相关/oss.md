@@ -60,6 +60,7 @@ services:
       - MINIO_ROOT_PASSWORD=***
 ```
 
+
 `MINIO_ROOT_USER=` 后填入服务器当前用户名
 
 `MINIO_ROOT_PASSWORD=` 后填入服务器当前用户名的密码
@@ -67,6 +68,14 @@ services:
 其中 9000 端口用于访问，9001 端口用于控制台
 
 保存退出
+
+::: tip
+2025年3月24更新：
+如果执行 `sudo docker compose up` 很慢可以将 `quay.io/minio/minio` 更换为国内镜像，[镜像来源](https://docker.aityp.com/image/quay.io/minio/minio:latest)：
+```bash
+swr.cn-north-4.myhuaweicloud.com/ddn-k8s/quay.io/minio/minio:latest
+```
+:::
 
 启动！
 ```bash
