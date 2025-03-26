@@ -1,7 +1,7 @@
 ---
 title: 热靴闪光灯的“傻瓜说明书”
 createTime: 2025/03/13 19:58:03
-permalink: /article/c7rj6aqz/
+permalink: /photography/c7rj6aqz/
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: 夜景人像补光教程
 createTime: 2025/03/23 21:00:42
-permalink: /article/lamp6/
+permalink: /photography/lamp6/
 ---
 
 

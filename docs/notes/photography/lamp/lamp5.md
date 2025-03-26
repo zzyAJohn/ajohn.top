@@ -1,7 +1,7 @@
 ---
 title: 发丝光原理与神明少女布光
 createTime: 2025/03/14 22:15:06
-permalink: /article/lamp5/
+permalink: /photography/lamp5/
 ---
 
 
@@ -39,4 +39,4 @@ permalink: /article/lamp5/
 
 - 在上面的基础，模特正面朝向摄影师，
 
-- 后面灯放低，实验室俯拍
+- 后面灯放低，摄影师俯拍

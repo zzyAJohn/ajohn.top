@@ -1,7 +1,7 @@
 ---
 title: 在户外结合自然光和闪光灯的简单方法
 createTime: 2025/03/23 21:24:33
-permalink: /article/lamp8/
+permalink: /photography/lamp8/
 ---
 
 ### 手动模式

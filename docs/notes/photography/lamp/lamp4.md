@@ -1,7 +1,7 @@
 ---
 title: 人像摄影:一盏灯的神奇改变
 createTime: 2025/03/14 21:52:37
-permalink: /article/lamp4/
+permalink: /photography/lamp4/
 ---
 
 

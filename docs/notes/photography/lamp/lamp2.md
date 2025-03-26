@@ -1,7 +1,7 @@
 ---
 title: 千元以下的摄影新手灯光设备推荐
 createTime: 2025/03/13 19:43:42
-permalink: /article/lamp2/
+permalink: /photography/lamp2/
 ---
 
 

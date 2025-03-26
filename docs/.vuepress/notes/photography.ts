@@ -10,6 +10,21 @@ export default defineNoteConfig({
       items: [
         'buy.md',
         'tittle-tattle.md',
+        'ps.md',
+      ]
+    },
+    {
+      text: '灯光教学',
+      prefix: 'lamp', 
+      items: [
+        'lamp1.md',
+        'lamp2.md',
+        'lamp3.md',
+        'lamp4.md',
+        'lamp5.md',
+        'lamp6.md',
+        'lamp7.md',
+        'lamp8.md',
       ]
     },
     {
@@ -18,5 +33,6 @@ export default defineNoteConfig({
         'dr5.md',
       ]
     },
+
   ]
 })

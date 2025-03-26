@@ -1,7 +1,7 @@
 ---
 title: 闪光灯和常亮灯的特性与应用场景
 createTime: 2025/03/23 21:10:20
-permalink: /article/lamp7/
+permalink: /photography/lamp7/
 ---
 
 
