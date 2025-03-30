@@ -5,6 +5,7 @@ import cs61b from './cs61b'
 import photography from './photography'
 import read from './read'
 import record from './record'
+import works from './works'
 
 export default defineNotesConfig({
   // 声明所有笔记的目录，(默认配置，通常您不需要声明它)
@@ -18,5 +19,6 @@ export default defineNotesConfig({
     photography,
     read,
     record,
+    works,
   ]
 })
