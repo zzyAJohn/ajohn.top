@@ -6,6 +6,13 @@ export default defineNoteConfig({
   sidebar: [
     'README.md',
     {
+      text: '2025-04',
+      prefix: '2025-04', 
+      items: [
+        '2025-04-03.md',
+      ]
+    },
+    {
       text: '2025-03',
       prefix: '2025-03', 
       items: [
