@@ -11,6 +11,7 @@ export default defineNoteConfig({
         'buy.md',
         'tittle-tattle.md',
         'ps.md',
+        'nikon-cloud.md',
       ]
     },
     {
