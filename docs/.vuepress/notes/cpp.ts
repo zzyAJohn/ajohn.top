@@ -24,6 +24,10 @@ export default defineNoteConfig({
       prefix: 'core', 
       items: [
         '1-内存分区模型.md',
+        '2-引用.md',
+        '3-函数提高.md',
+        '4-类和对象.md',
+        '5-文件操作.md',
       ]
     },
   ]
