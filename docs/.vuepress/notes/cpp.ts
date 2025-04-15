@@ -6,7 +6,7 @@ export default defineNoteConfig({
   sidebar: [
     'README.md',
     {
-      text: 'C++基础语法',
+      text: '一、C++基础语法',
       prefix: 'base', 
       items: [
         '1-初识C++.md',
@@ -20,7 +20,7 @@ export default defineNoteConfig({
       ]
     },
     {
-      text: 'C++核心编程',
+      text: '二、C++核心编程',
       prefix: 'core', 
       items: [
         '1-内存分区模型.md',
