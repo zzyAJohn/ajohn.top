@@ -6,10 +6,19 @@ export default defineNoteConfig({
   sidebar: [
     'README.md',
     {
+      text: 'CS',
+      prefix: 'cs', 
+      items: [
+        'How is the network connected.md',
+        'C++ Primer.md',
+      ]
+    },
+    {
       text: '文学',
       prefix: 'literature', 
       items: [
         'weicheng.md',
+        'The Great Gatsby.md',
       ]
     },
     {
