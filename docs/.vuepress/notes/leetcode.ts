@@ -47,6 +47,14 @@ export default defineNoteConfig({
       prefix: '8.common-data-structures', 
       items: [
         '0.common-enumeration-techniques.md',
+        '1.prefix-sum.md',
+      ]
+    },
+    {
+      text: '十、贪心与思维',
+      prefix: '10.greedy', 
+      items: [
+        '1.greedy-algorithm.md',
       ]
     },
   ]
