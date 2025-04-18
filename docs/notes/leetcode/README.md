@@ -126,6 +126,59 @@ permalink: /leetcode/
 
 注：实际做题时，注意常数因子的影响。例如哈希表比数组要慢。
 
+
+## 阿囧的一些刷题小tip
+
+
+### 常量
+最大值最小值：
+```py
+max_value = float('inf')
+min_value = float('-inf')
+```
+
+### 排序
+`list.sort()`：空间复杂度：O(1)，原地排序，节省内存
+```py
+boxTypes.sort(key = lambda x: x[1], reverse=True)
+```
+
+`sorted(list)`：空间复杂度：O(n)，保留原列表，用于不可修改数据或链式操作
+```py
+sort_boxTypes = sorted(boxTypes, key = lambda x: x[1], reverse=True)
+```
+
+### 数学
+`comb`：计算从 n 个不同元素中选出 k 个元素的组合数（不考虑顺序）。
+```py
+from math import comb
+print(comb(5, 2))  # 输出 10
+```
+
+### 计数器
+`Counter`：
+```py
+arr = [3,2,1]
+from collections import Counter
+Counter(arr)
+```
+输出：
+```
+Counter({3: 1, 2: 1, 1: 1})
+```
+
+`defaultdict`：
+```py
+from collections import defaultdict
+```
+
+
+
+
+
+
+
+
 END.
 
 <!-- - [1.【题单】滑动窗口与双指针（定长/不定长/至多/至少/恰好/单序列/双序列/三指针）](./1.sliding-window.md)
