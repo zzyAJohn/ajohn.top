@@ -155,6 +155,12 @@ from math import comb
 print(comb(5, 2))  # 输出 10
 ```
 
+`ceil`：上取整函数，返回 大于或等于 x 的最小整数。
+```py
+from math import ceil
+print(math.ceil(2.3))   # 输出 3
+```
+
 ### 计数器
 `Counter`：
 ```py
@@ -170,6 +176,7 @@ Counter({3: 1, 2: 1, 1: 1})
 `defaultdict`：
 ```py
 from collections import defaultdict
+dic = defaultdict(int) # 初始一个默认 value 为 0 的词典
 ```
 
 
