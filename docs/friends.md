@@ -34,4 +34,9 @@ list:
     link: https://www.touchsky.my/
     avatar: https://oss.ajohn.top/blog/friends/touchsky.webp
     desc: 打工人
+  -
+    name: Mori
+    link: https://www.moriyang.site/
+    avatar: https://oss.ajohn.top/blog/friends/ys.webp
+    desc: FE Engineer
 ---
