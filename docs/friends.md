@@ -39,4 +39,9 @@ list:
     link: https://www.moriyang.site/
     avatar: https://oss.ajohn.top/blog/friends/ys.webp
     desc: FE Engineer
+  -
+    name: wbing00
+    link: https://wbing00.github.io/My_blog/
+    avatar: https://oss.ajohn.top/blog/friends/wb.webp
+    desc: 施工中
 ---
