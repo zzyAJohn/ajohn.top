@@ -30,5 +30,16 @@ export default defineNoteConfig({
         '5-文件操作.md',
       ]
     },
+    {
+      text: '三、C++提高编程',
+      prefix: 'improve', 
+      items: [
+        '1-模板.md',
+        '2-STL初识.md',
+        '3-STL常用容器.md',
+        '4-STL函数对象.md',
+        '5-STL常用算法.md',
+      ]
+    },
   ]
 })
