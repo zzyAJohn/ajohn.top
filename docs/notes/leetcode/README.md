@@ -130,25 +130,63 @@ permalink: /leetcode/
 ## 阿囧的一些刷题小tip
 
 
-### 常量
-最大值最小值：
+### 内置函数
+
+- 最大值最小值：
 ```py
 max_value = float('inf')
 min_value = float('-inf')
 ```
 
-### 排序
-`list.sort()`：空间复杂度：O(1)，原地排序，节省内存
+
+- `list.sort()`：空间复杂度：O(1)，原地排序，节省内存
 ```py
 boxTypes.sort(key = lambda x: x[1], reverse=True)
 ```
 
-`sorted(list)`：空间复杂度：O(n)，保留原列表，用于不可修改数据或链式操作
+- `sorted(list)`：空间复杂度：O(n)，保留原列表，用于不可修改数据或链式操作
 ```py
 sort_boxTypes = sorted(boxTypes, key = lambda x: x[1], reverse=True)
 ```
 
-### 数学
+- `ord(character)`：用于将单个字符转换为其对应的Unicode 编码整数值。
+```py
+print(ord('A'))    # 输出 65
+print(ord('a'))    # 输出 97
+print(ord('中'))   # 输出 20013
+```
+
+- `chr()`：用于将 Unicode 编码转换为对应字符：
+
+```py
+print(chr(65))     # 输出 'A'
+print(chr(20013))  # 输出 '中'
+```
+
+
+- `all(iterable)`：用于判断一个可迭代对象（如列表、元组、集合等）中的所有元素是否都为 True。
+
+iterable：可以是列表、元组、字符串、生成器等。
+
+返回值：
+
+如果所有元素的布尔值都为 True，返回 True；
+
+只要有一个元素为 False，则返回 False；
+
+如果 iterable 是空的，返回 True（这是约定俗成的逻辑，称为“真空为真”）。
+
+```py
+all([True, True, True])          # 返回 True
+all([True, False, True])         # 返回 False
+all([])                          # 返回 True
+all([1, 2, 3])                   # 返回 True（非零数值都视为 True）
+all([1, 0, 3])                   # 返回 False（0 为 False）
+```
+
+
+
+### 数学 math
 `comb`：计算从 n 个不同元素中选出 k 个元素的组合数（不考虑顺序）。
 ```py
 from math import comb
@@ -161,7 +199,7 @@ from math import ceil
 print(math.ceil(2.3))   # 输出 3
 ```
 
-### 计数器
+### 计数器 collections
 `Counter`：
 ```py
 arr = [3,2,1]
@@ -178,11 +216,6 @@ Counter({3: 1, 2: 1, 1: 1})
 from collections import defaultdict
 dic = defaultdict(int) # 初始一个默认 value 为 0 的词典
 ```
-
-
-
-
-
 
 
 
