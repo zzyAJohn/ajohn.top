@@ -6,6 +6,10 @@ createTime: 2025/02/26 16:18:05
 permalink: /article/lanqiao-15/
 ---
 ## 第十五届真题
+
+[第十五届真题](https://www.lanqiao.cn/paper/4407/result/?backPath=%2Fcup%2F)
+
+
 ### 1. 劲舞团
 
 [劲舞团蓝桥页面](https://www.lanqiao.cn/problems/19697/learning/)
