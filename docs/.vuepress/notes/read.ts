@@ -28,5 +28,12 @@ export default defineNoteConfig({
         'How to Win Friends & Influence People.md',
       ]
     },
+    {
+      text: '摄影',
+      prefix: 'photography', 
+      items: [
+        'Take stunning photos.md',
+      ]
+    },
   ]
 })
