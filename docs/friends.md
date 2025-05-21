@@ -33,15 +33,15 @@ list:
     name: touchsky
     link: https://www.touchsky.my/
     avatar: https://oss.ajohn.top/blog/friends/touchsky.webp
-    desc: 打工人
+    desc: We can know and we will know.
   -
     name: Mori
     link: https://www.moriyang.site/
     avatar: https://oss.ajohn.top/blog/friends/ys.webp
-    desc: FE Engineer
+    desc: Stay Hungry. Stay Foolish.
   -
     name: wbing00
     link: https://wbing00.github.io/My_blog/
     avatar: https://oss.ajohn.top/blog/friends/wb.webp
-    desc: 施工中
+    desc: Through Her Eyes
 ---
