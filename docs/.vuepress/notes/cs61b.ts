@@ -10,6 +10,7 @@ export default defineNoteConfig({
       items: [
         '1.Intro, Hello World Java.md',
         '2.Defining and Using Classes.md',
+        '3.Testing.md',
       ]
     },
     {
