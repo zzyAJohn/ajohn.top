@@ -27,6 +27,8 @@ permalink: /cs61b/lh3p7o3e/
 - 课程教材：无
 - 课程作业：每年略有不同，18 年春季学期有 14 个 Lab，10 个 Homework以及 3 个 Project，具体要求详见课程网站。
 
+[参考仓库](https://github.com/cscourage/cs61b?tab=readme-ov-file)
+
 <!-- 本文主要记录学习 CS61A 课程的一些心得
 
 因为是课程笔记，所以基础知识不再赘述，仅记录一些有意思的想法
