@@ -56,6 +56,7 @@ export default defineNoteConfig({
       items: [
         '1.greedy-algorithm.md',
         '2.interval-greed.md',
+        '3.string-greed.md',
       ]
     },
   ]
