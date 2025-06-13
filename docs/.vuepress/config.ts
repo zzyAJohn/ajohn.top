@@ -15,6 +15,10 @@ export default defineUserConfig({
   bundler: viteBundler(),
 
   theme: plumeTheme({
+    markdown: {
+      annotation: true, 
+      bilibili: true, 
+    },
     notes,
     // 添加您的部署域名
     hostname: 'https://ajohn.top',

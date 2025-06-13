@@ -26,6 +26,7 @@ export const navbar = defineNavbarConfig([
             // { text: '示例', link: '/notes/demo/README.md' },
             { text: 'Read', link: '/notes/read/README.md' },
             { text: 'Record', link: '/notes/record/README.md' },
+            { text: 'Music', link: '/notes/music/README.md' },
             { text: 'Plant', link: '/notes/plant/README.md' },
     ]
   },
