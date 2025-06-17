@@ -6,5 +6,6 @@ export default defineNoteConfig({
   sidebar: [
     'README.md',
     'closer.md',
+    'counting stars.md',
   ]
 })

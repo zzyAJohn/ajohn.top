@@ -18,6 +18,7 @@ export default defineUserConfig({
     markdown: {
       annotation: true, 
       bilibili: true, 
+      youtube: true, 
     },
     notes,
     // 添加您的部署域名
