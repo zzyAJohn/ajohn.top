@@ -1,5 +1,5 @@
 ---
-title: Counting Stars
+title: OneRepublic - Counting Stars 2013
 createTime: 2025/06/17 09:46:57
 permalink: /music/counting-stars/
 ---
@@ -10,7 +10,14 @@ permalink: /music/counting-stars/
   <b>OneRepublic - Counting Stars 2013</b>
 </p>
 
->该曲是瑞恩·泰德一次新鲜大胆的尝试。在木吉他的伴奏下，他以慵懒缠绵的嗓音唱着“最近我总是辗转反侧，难以入眠”，如同失眠者呓语。突然音乐节奏转快，鼓和贝司欢快加入，歌词也配合节奏快速流动。无论旋律、节奏还是歌词，这都是一首朗朗上口、明快轻松的歌，扫除了年轻人的迷茫不安，注入昂扬能量。歌曲告诉人们生活不是关于身边的物质，而是关于内心和思想。当遇到问题的时候，要思考自己所想。歌曲运用反讽的手法，让人们思考生命的真谛。不管酸甜苦辣，每一个人都要继续坚持走下去。
+《Counting Stars》不仅是一首节奏强烈的流行摇滚，更是一种对物质世界与精神信仰的反思。歌词在律动中传达出一种“挣脱现实枷锁、寻找灵魂归宿”的渴望。
+
+>“Everything that kills me makes me feel alive.”
+>
+>“一切让我痛苦的事情，却让我感觉到活着。”
+
+这句歌词直击人心，它挑战了我们对“好生活”的刻板印象。不是金钱、不是地位，而是那些真实经历的挫折、挑战与爱，才构成了一个真正鲜活的人生。
+整首歌就像一场夜晚的狂奔，我们在星光下奔跑、呐喊，不再被账单束缚，不再为明天焦虑，只想用力地去感受、去燃烧。它唱的是一种年轻的悖论：我们在矛盾中成长，在撕裂中重生。
 
 ## 网易云歌曲
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=28575553&auto=0&height=66"></iframe>

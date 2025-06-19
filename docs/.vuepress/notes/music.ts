@@ -7,5 +7,9 @@ export default defineNoteConfig({
     'README.md',
     'closer.md',
     'counting stars.md',
+    'monsters.md',
+    "We Don't Talk Anymore.md",
+    "The Nights.md",
+    "Sugar.md",
   ]
 })
