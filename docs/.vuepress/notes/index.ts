@@ -9,6 +9,7 @@ import works from './works'
 import plant from './plant'
 import cpp from './cpp'
 import music from './music'
+import tv from './tv'
 
 export default defineNotesConfig({
   // 声明所有笔记的目录，(默认配置，通常您不需要声明它)
@@ -26,5 +27,6 @@ export default defineNotesConfig({
     plant,
     cpp,
     music,
+    tv,
   ]
 })
