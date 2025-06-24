@@ -1,5 +1,5 @@
 ---
-title: EdgeOne Pages 初体验
+title: EdgeOne Pages 系列（一）：博客部署初体验
 createTime: 2025/06/10 17:48:17
 permalink: /article/fekx940x/
 ---
