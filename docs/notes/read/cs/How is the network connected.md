@@ -1,5 +1,5 @@
 ---
-title: 《网络是怎样连接的》——在读
+title: 《网络是怎样连接的》
 createTime: 2025/04/01 19:19:45
 permalink: /read/rt9tvct3/
 ---
@@ -586,7 +586,7 @@ PPPoA 方式不添加 MAC 头部和 PPPoE 头部，而是直接将包装入信�
 - （2）使用描述符这一种信息比较简单
 :::
 
-## 6.2 服务器的接收操作
+### 6.2 服务器的接收操作
 
 ::: note 
 网卡的 MAC 模块将网络包从信号还原为数字信息，校验 FCS 并存入缓冲区。
@@ -631,6 +631,6 @@ PPPoA 方式不添加 MAC 头部和 PPPoE 头部，而是直接将包装入信�
 :::
 
 
-![](https://oss.ajohn.top/blog/blog/read/network/end1.webp)
+![](https://oss.ajohn.top/blog/read/network/end1.webp)
 
-![](https://oss.ajohn.top/blog/blog/read/network/end2.webp)
+![](https://oss.ajohn.top/blog/read/network/end2.webp)
