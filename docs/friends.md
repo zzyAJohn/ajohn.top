@@ -44,4 +44,9 @@ list:
     link: https://wbing00.github.io/My_blog/
     avatar: https://oss.ajohn.top/blog/friends/wb.webp
     desc: Through Her Eyes
+  -
+    name: 婚礼作品展示
+    link: https://wedding.ajohn.top/
+    avatar: https://oss.ajohn.top/blog/xi-favicon.png
+    desc: 酒店婚宴·阿囧作品集
 ---
