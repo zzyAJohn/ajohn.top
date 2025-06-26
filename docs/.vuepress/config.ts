@@ -36,7 +36,7 @@ export default defineUserConfig({
     },
     notes,
     // 添加您的部署域名
-    hostname: 'https://ajohn.top',
+    hostname: 'https://www.ajohn.top',
     // footer: { message: "<a href='https://beian.miit.gov.cn/'>鄂ICP备2025095120号-1</a>   <a href='https://beian.mps.gov.cn/#/query/webSearch?code=42011102005705'>鄂公网安备42011102005705号</a>" , copyright: "Copyright © 2024-2025 AJohn"},
     // footer: { message: '<a href="https://beian.miit.gov.cn/ ">鄂ICP备2025095120号-1</a> <a href="https://beian.mps.gov.cn/#/query/webSearch?code=42011102005705" target="_blank" style="display: inline-flex; align-items: center;"><img src="https://oss.ajohn.top/blog/beian.png" style="height: 20px; margin-right: 5px;" />鄂公网安备42011102005705号</a>' , copyright: "Copyright © 2024-2025 AJohn"},
     footer: { 
