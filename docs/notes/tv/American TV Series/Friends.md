@@ -4,6 +4,10 @@ createTime: 2025/06/24 14:54:17
 permalink: /tv/d7dyq25j/
 ---
 
+<p align="center">
+  <img src="https://img0.baidu.com/it/u=2708283891,3503820852&fm=253&fmt=auto&app=120&f=JPEG?w=800&h=1200" width="300"><br>
+  <b>《老友记》（Friends）</b>
+</p>
 
 >“I'll be there for you.”
 >——六个人，一首歌，一段关于青春、友情与生活的永恒记忆。
@@ -16,4 +20,8 @@ permalink: /tv/d7dyq25j/
 
 ### 观影记录
 
-2025-06-24 第四季 P16
+- [x] 2025-06-28 第四季 P16
+- [x] 2025-06-29 第四季 P17
+- [x] 2025-06-30 第四季 P18
+- [x] 2025-07-01 第四季 P19
+- [x] 2025-07-02 第四季 P20
