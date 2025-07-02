@@ -29,6 +29,13 @@ export default defineNoteConfig({
       ]
     },
     {
+      text: '科幻',
+      prefix: 'sci-fi', 
+      items: [
+        'Ball Lightning.md',
+      ]
+    },
+    {
       text: '摄影',
       prefix: 'photography', 
       items: [

@@ -4,8 +4,15 @@ createTime: 2024/12/29 20:14:45
 permalink: /read/i3spwa6t/
 ---
 
+<p align="center">
+  <img src="https://gips3.baidu.com/it/u=2110219332,2560087050&fm=3074&app=3074&f=JPEG" width="300"><br>
+  <b>《人性的弱点》 - [美]戴尔.卡耐基</b>
+</p>
 
-<LinkCard title="《人性的弱点：增订全译版》" href="https://openzlib.link/book/11000042/9d6763/%E4%BA%BA%E6%80%A7%E7%9A%84%E5%BC%B1%E7%82%B9%E5%A2%9E%E8%AE%A2%E5%85%A8%E8%AF%91%E7%89%88.html"/>
+>人们都想获得成功，但由于人性的弱点，使得通向成功之路布满了荆棘。《人性的弱点》就是要告诉人们，正视每一个人都有的本性上的一些“弱点”，以充满热情的赞誉、理解和宽容，去适应别人的这些“弱点”，这样才能有效地避免与人交往中存在的一些误区，获得家庭和事业上的支持，因为每个人都有这样那样的缺陷，只有能够包容，才能彼此认同。
+
+
+<LinkCard title="Z-Library: 《人性的弱点：增订全译版》" href="https://openzlib.link/book/11000042/9d6763/%E4%BA%BA%E6%80%A7%E7%9A%84%E5%BC%B1%E7%82%B9%E5%A2%9E%E8%AE%A2%E5%85%A8%E8%AF%91%E7%89%88.html"/>
 
 ## 第一篇　基本技巧
 
