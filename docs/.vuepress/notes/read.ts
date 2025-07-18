@@ -26,6 +26,7 @@ export default defineNoteConfig({
       prefix: 'psychology', 
       items: [
         'How to Win Friends & Influence People.md',
+        'Cognitive Awakening.md',
       ]
     },
     {
