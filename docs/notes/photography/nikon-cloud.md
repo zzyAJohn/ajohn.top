@@ -150,20 +150,6 @@ permalink: /photography/dtunc2ym/
 暂未发现适合场景。
 :::
 
-### 10. Tender Clear by Fuka Kamata
-
-<ImageCard
-  image="https://oss.ajohn.top/blog/photography/nikon-cloud/tender.webp"
-  title="Tender Clear"
-  description="该色彩方案是基于我自己柔和而具透明感的摄影风格而创建的。以强调蓝色和绿色的色彩为基础，阴影略带蓝色调。它提供的色调整体更柔和，而清晰度有所降低。推荐在半背光条件下拍摄时使用该色彩方案，因为这样可以摄入更多的光线，展现出更具透明感的效果。它在拍摄植物和风景时效果较佳，同时也能为室内照片表现出柔和、宁静的氛围。如果您觉得蓝色太强烈，可以调整白平衡以达到您喜欢的平衡。"
-  href="/"
-  author="Fuka Kamata"
-  date="2024/09/30"
-/>
-
-::: tip
-暂未发现适合场景。
-:::
 
 
 
