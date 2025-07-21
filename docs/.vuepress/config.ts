@@ -21,6 +21,7 @@ export default defineUserConfig({
         // '前端/基础.md': '123456',
         // // 可以是 文件夹的路径，对该目录下所有文章加密
         '/cs61b/': '密码',
+        '/plant/': '密码',
         // // 可以是 访问地址的请求路径，对该访问路径下所有文章加密
         // '/vuepress-theme-plume/': '123456',
         // // 可以是 具体的某个页面的请求路径，对该页面加密
@@ -30,6 +31,7 @@ export default defineUserConfig({
       }
     },
     markdown: {
+      timeline: true, 
       annotation: true, 
       bilibili: true, 
       youtube: true, 
