@@ -9,6 +9,7 @@ export default defineNoteConfig({
       text: '2025-07',
       prefix: '2025-07', 
       items: [
+        '2025-07-21.md',
         '2025-07-14.md',
         '2025-07-07.md',
       ]
