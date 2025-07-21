@@ -43,6 +43,13 @@ export default defineNoteConfig({
       ]
     },
     {
+      text: '七、动态规划',
+      prefix: '7.dynamic-programming', 
+      items: [
+        '1.Beginner DP.md',
+      ]
+    },
+    {
       text: '八、常用数据结构',
       prefix: '8.common-data-structures', 
       items: [
