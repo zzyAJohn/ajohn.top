@@ -11,6 +11,7 @@ export default defineNoteConfig({
       items: [
         'How is the network connected.md',
         'C++ Primer.md',
+        'Effective C++.md',
       ]
     },
     {
