@@ -114,7 +114,7 @@ if(a *b= c).. //喔欧，其实是想做一个比较(comparison)动作!
 ::: tip
 - 为内置型对象进行手工初始化，因为C++不保证初始化它们。
 - 构造函数最好使用成员初值列(memberinitializationlist)，而不要在构造函数本体内使用赋值操作(assignment)。初值列列出的成员变量，其排列次序应该和它们在 class 中的声明次序相同。
-- 为免除“跨编译单元之初始化次序”问题，请以1ocalstatic 对象替换 non-localstatic 对象。
+- 为免除“跨编译单元之初始化次序”问题，请以localstatic 对象替换 non-localstatic 对象。
 :::
 
 ## 2 构造/析构/赋值运算
@@ -124,4 +124,69 @@ if(a *b= c).. //喔欧，其实是想做一个比较(comparison)动作!
 ::: note 什么时候 empty class(空类)不再是个empty class 呢?当C++ 处理过它之后是的，如果你自己没声明，编译器就会为它声明(编译器版本的)一个copy构造函数、一个 copy assignment操作符和一个析构函数。此外如果你没有声明任何构造函数,编译器也会为你声明一个 defaut构造函数。所有这些函数都是 public目 inline(见条款 30)。
 :::
 
+::: note 面对这个难题，C++的响应是拒绝编译那一行赋值动作。如果你打算在一个“内含reference成员”的class内支持赋值操作(assignment)，你必须自己定义coPyassignment操作符。面对“内含const成员”(如本例之obiectValue)的 classes,编译器的反应也一样。更改const成员是不合法的，所以编译器不知道如何在它自已生成的赋值函数内面对它们。最后还有一种情况:如果某个basecasses将coPassignment操作符声明为private，编译器将拒绝为其derived classes生成一个 copyassignment 操作符。毕竟编译器为derived classes所生的 copy assignment操作符想象中可以处理 base class 成分(见条款12)，但它们当然无法调用 derived class 无权调用的成员函数。编译器两手一摊，无能为力。
+:::
 
+::: tip
+编译器可以暗自为 class 创建 default构造函数、copy构造函数、copyassignment 操作符，以及析构函数。
+:::
+
+### 条款 06：若不想使用编译器自动生成的函数，就该明确拒绝
+
+::: note 答案的关键是,所有编译器产出的函数都是 public。为阻止这些函数被创建出来你得自行声明它们，但这里并没有什么需求使你必须将它们声明为public。因此你可以将copy构造函数或copyassignment操作符声明为 private。藉由明确声明一个成员函数，你阻止了编译器暗自创建其专属版本;而令这些函数为private，使你得以成功阻止人们调用它。
+:::
+
+::: note 一般而言这个做法并不绝对安全，因为member 函数和 friend 函数还是可以调用你的 private 函数。除非你够聪明，不去定义它们，那么如果某些人不慎调用任何一个，会获得一个连接错误(linkage error)。“将成员函数声明为private而且故意不实现它们”这一伎俩是如此为大家接受，因而被用在C++ iostream 程序库中阻止copying行为。是的，看看你手上的标准程序库实现码中的ios_base,basic_ios 和sentry。你会发现无论哪一个，其copy构造函数和copy assignment操作符都被声明为 private 而且没有定义。
+:::
+
+::: tip
+为驳回编译器自动(暗自)提供的机能，可将相应的成员函数声明为private并且不予实现。使用像 Uncopyable这样的 base class 也是一种做法。
+:::
+
+### 条款 07：为多态基类声明 virtual 析构函数
+
+::: note 因此，无端地将所有classes的析构函数声明为virtual，就像从未声明它们为virtual一样，都是错误的。许多人的心得是:只有当 class内含至少一个 virtual 函数,才为它声明 virtual 析构函数。
+:::
+
+::: tip
+- polymorphic(带多态性质的)base classes应该声明一个virtual析构函数。如果class 带有任何 virtual函数，它就应该拥有一个 virtual析构函数。
+- Classes的设计目的如果不是作为base classes使用，或不是为了具备多态性(polymorphically)，就不该声明 virtual 析构函数。
+:::
+
+### 条款 08：别让异常逃离析构函数
+
+::: note 因为析构函数吐出异常就是危险，总会带来“过早结束程序”或“发生不明确行为”的风险。本例要说的是，由客户自己调用close并不会对他们带来负担，而是给他们一个处理错误的机会，否则他们没机会响应。如果他们不认为这个机会有用(或许他们坚信不会有错误发生)，可以忽略它，倚赖 DBConn 析构函数去调用close。如果真有错误发生-如果 close的确抛出异常--而且 DBConn吞下该异常或结束程序,客户没有立场抱怨，毕竟他们曾有机会第一手处理问题，而他们选择了放弃。
+:::
+
+::: tip
+析构函数绝对不要吐出异常。如果一个被析构函数调用的函数可能抛出异常，析构函数应该捕捉任何异常，然后吞下它们(不传播)或结束程序。如果客户需要对某个操作函数运行期间抛出的异常做出反应，那么class应该提供一个普通函数(而非在析构函数中)执行该操作。
+:::
+
+### 条款 09：绝不在构造和析构过程中调用vitual函数
+
+::: tip
+在构造和析构期间不要调用 virtual函数，因为这类调用从不下降至 derived class(比起当前执行构造函数和析构函数的那层)。
+:::
+
+### 条款 10：令operator= 返回一个 reference to *this
+
+::: tip
+令赋值(assignment)操作符返回一个reference to *this。
+:::
+
+### 条款 11：在operator= 中处理“自我赋值”
+
+::: tip
+- 确保当对象自我赋值时 operator=有良好行为。其中技术包括比较“来源对象”和“目标对象”的地址、精心周到的语句顺序、以及 copy-and-swap。
+- 确定任何函数如果操作一个以上的对象，而其中多个对象是同一个对象时，其行为仍然正确。
+:::
+
+### 条款 12：复制对象时勿忘其每一个成分
+
+::: note 这时候既有的 copying函数执行的是局部拷贝(partialcopy):它们的确复制了顾客的 name，但没有复制新添加的lastTransaction。大多数编译器对此不出任何怨言——即使在最高警告级别中(见条款53)。这是编译器对“你自己写出copying函数”的复仇行为:既然你拒绝它们为你写出copying函数，如果你的代码不完全，它们也不告诉你。结论很明显:如果你为class添加一个成员变量，你必须同时修改copying函数。(你也需要修改 class 的所有构造函数(见条款4和条款 45)以及任何非标准形式的operator=(条款10有个例子)。如果你忘记，编译器不太可能提醒你。)
+:::
+
+::: tip
+- Copying函数应该确保复制“对象内的所有成员变量”及“所有base class 成分”。
+- 不要尝试以某个copying函数实现另一个copying函数。应该将共同机能放进第三个函数中，并由两个 coping函数共同调用。
+:::
