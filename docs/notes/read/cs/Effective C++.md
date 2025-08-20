@@ -245,3 +245,55 @@ if(a *b= c).. //喔欧，其实是想做一个比较(comparison)动作!
 如果你在 new表达式中使用[ ]，必须在相应的 delete表达式中也使用[ ]。如果你在 new表达式中不使用[]，一定不要在相应的 delete 表达式中使用[]。
 :::
 
+### 条款17：以独立语句将 newed 对象置入智能指针
+
+::: note 
+```C++
+processwidget(std::trl::shared_ptr<Widget>(new Widget), priority());
+```
+1.执行"new widget"
+2.调用 priority
+3.调用 tr1::shared ptr构造函数
+
+现在请你想想，万一对 priority的调用导致异常，会发生什么事?在此情况下"new Widget"返回的指针将会遗失，因为它尚未被置入tr1::shared ptr内，后者是我们期盼用来防卫资源泄漏的武器。是的，在对processwidget的调用过程中可能引发资源泄漏，因为在“资源被创建(经由"new Widget")”和“资源被转换为资源管理对象”两个时间点之间有可能发生异常干扰，
+
+避免这类问题的办法很简单:使用分离语句，分别写出(1)创建widge，(2)将它置入一个智能指针内，然后再把那个智能指针传给processwidget:
+```C++
+std::trl::shared_ptr<Widget> pw(new Widget); //在单独语句内以智能指针存储 newed 所得对象。
+processwidget(pw, priority()); //这个调用动作绝不至于造成泄漏。
+```
+:::
+
+::: tip
+以独立语句将 newed 对象存储于(置入)智能指针内。如果不这样做，一旦异常被抛出，有可能导致难以察觉的资源泄漏。
+:::
+
+## 4 设计与声明
+
+### 条款18：让接口容易被正确使用，不易被误用
+
+::: tip
+- 好的接口很容易被正确使用，不容易被误用。你应该在你的所有接口中努力达成这些性质。
+- “促进正确使用”的办法包括接口的一致性，以及与内置类型的行为兼容。
+- “阻止误用”的办法包括建立新类型、限制类型上的操作，束缚对象值，以及消除客户的资源管理责任。
+- tr1::shared ptr支持定制型删除器(custom deleter)。这可防范 DLL问题，可被用来自动解除互斥锁(mutexes;见条款14)等等。
+:::
+
+### 条款19：设计 class 犹如设计 type
+
+::: tip
+Class的设计就是 type 的设计。在定义一个新type 之前，请确定你已经考虑过本条款覆盖的所有讨论主题。
+:::
+
+### 条款20：宁以 pass-by-reference-to-const 替换 pass-by-value
+
+::: tip
+- 尽量以 pass-by-reference-to-const替换 pass-by-value。前者通常比较高效，并可避免切割问题(slicing problem)
+- 以上规则并不适用于内置类型，以及STL的迭代器和函数对象。对它们而言pass-by-value往往比较适当。
+:::
+
+### 条款21：必须返回对象时，别妄想返回其 reference
+
+::: tip
+绝不要返回 pointer 或reference 指向一个 local stack对象，或返回reference 指向一个 heap-allocated 对象，或返回pointer 或reference 指向一个 local static 对象而有可能同时需要多个这样的对象。条款4已经为“在单线程环境中合理返回reference指向一个 local static 对象”提供了一份设计实例。
+:::
