@@ -18,7 +18,7 @@ export default defineNoteConfig({
       text: '文学',
       prefix: 'literature', 
       items: [
-        'weicheng.md',
+        // 'weicheng.md',
         'The Great Gatsby.md',
       ]
     },
@@ -35,6 +35,7 @@ export default defineNoteConfig({
       prefix: 'sci-fi', 
       items: [
         'Ball Lightning.md',
+        'Supporting humanity.md',
       ]
     },
     {
