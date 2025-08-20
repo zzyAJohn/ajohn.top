@@ -12,6 +12,13 @@ export default defineNoteConfig({
         'Friends.md',
       ]
     },
+    {
+      text: '国产剧',
+      prefix: 'Chinese domestic TV series', 
+      items: [
+        'Ming Dynasty 1566.md',
+      ]
+    },
     // {
     //   text: '电影',
     //   // prefix: 'literature', 
