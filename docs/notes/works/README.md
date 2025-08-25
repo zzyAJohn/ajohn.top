@@ -28,21 +28,50 @@ permalink: /works/
 为了方便浏览，婚礼摄影作品现已单独归档展示，欢迎移步查看：[酒店婚宴·阿囧作品集](https://wedding.ajohn.top/works/)
 :::
 
+未来计划：九寨沟、黄山、京都、318
+
+
+<!-- 竖屏 -->
+<Swiper
+  :items="[
+  'https://oss.ajohn.top/blog/works/2025-07-27/DSC_1284.webp',
+  'https://oss.ajohn.top/blog/works/2025-07-25/DSC_0515.webp',
+  'https://oss.ajohn.top/blog/works/2025-07-25/DSC_0586.webp',
+  'https://oss.ajohn.top/blog/works/2025-05-30/DSC_2879.webp',
+  ]"
+  mode="carousel"
+  :slides-per-view="3"
+  :space-between="20"
+  :speed="5500"
+/>
+
+<!-- 横屏 -->
+<Swiper :items="[
+  'https://oss.ajohn.top/blog/works/2025-08-09/DSC_1459.webp',
+  'https://oss.ajohn.top/blog/works/2025-05-11/DSC_9975.webp',
+  'https://oss.ajohn.top/blog/works/2025-04-03/DSC_5770.webp',
+  'https://oss.ajohn.top/blog/works/2025-01-16/DSC_0704.webp',
+  ]" 
+  effect="coverflow" 
+/>
+
 ## 2025 行迹：
 
 ### 2025-10
 
-- [ ] 10.3 婚礼
+- [ ] 10.3 婚礼摄像
+- [ ] 10.2 婚礼摄像
+- [ ] 10.1 婚礼摄像
 
 ### 2025-09
 
-- [ ] 9.30 婚礼
 - [ ] 9.20 黄山
 
 ### 2025-08
 
 
-- [x] [8.9 ab漫展（武汉光谷）](./2025-08/2025-08-09.md)
+- [x] 8.21 林中木屋（武汉汉口江滩）
+- [x] 8.9 [ab漫展（武汉光谷）](./2025-08/2025-08-09.md)
 
 ### 2025-07
 
