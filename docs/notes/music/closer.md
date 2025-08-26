@@ -1,7 +1,7 @@
 ---
 title: The Chainsmokers - Closer 2016
 createTime: 2025/06/13 15:42:33
-permalink: /music/closer/
+permalink: /music/33iedjd5/
 ---
 
 
