@@ -31,11 +31,12 @@ export default defineNoteConfig({
       ]
     },
     {
-      text: '科幻',
+      text: '科幻/科普',
       prefix: 'sci-fi', 
       items: [
         'Ball Lightning.md',
         'Supporting humanity.md',
+        'Does God roll dice.md',
       ]
     },
     {
