@@ -105,7 +105,7 @@ permalink: /music/vb943dsa/
 |----------|----------|
 | Bo==y, I=='m(bo yang) **holdi**==ng on==(nang) to **something** | 我还仍未放手 |
 | Won'~~t~~ le~~t~~ go o==f y==ou for **nothing** | 我怎会让你就这样溜走 |
-| I'm **running**, **running**, jus~~t~~ to^停^ kee~~p~~ my^停^ hands^停^ on you | 我不停地奔跑 只是为了不松开握住你的手 |
+| I'm **running**, **running**, jus~~t~~ to(de)^停^ kee~~p~~ my^停^ hands^停^ on you | 我不停地奔跑 只是为了不松开握住你的手 |
 | There wa==s a== **time** tha==t I== wa==s s==o **blue** | 曾经的我是那样忧郁 |
 | Wha==t I== **go**~~t~~ to do to **show you** | 但我该如何向你表露 |
 | I'm running, running, just to keep my hands on you | 我不停地奔跑 只是为了不松开握住你的手 |

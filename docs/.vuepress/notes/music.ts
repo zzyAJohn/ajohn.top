@@ -13,5 +13,6 @@ export default defineNoteConfig({
     'sugar.md',
     'see-you-again.md',
     'there-for-you.md',
+    'what-makes-you-beautiful.md',
   ]
 })
