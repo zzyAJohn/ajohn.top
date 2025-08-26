@@ -5,13 +5,13 @@ export default defineNoteConfig({
   link: '/music/',
   sidebar: [
     'README.md',
-    'Closer.md',
-    'Counting Stars.md',
-    'Monsters.md',
-    "We Don't Talk Anymore.md",
-    "The Nights.md",
-    "Sugar.md",
-    "See You Again.md",
-    "There For You.md",
+    'closer.md',
+    'counting-stars.md',
+    'monsters.md',
+    'we-dont-talk-anymore.md',
+    'the-nights.md',
+    'sugar.md',
+    'see-you-again.md',
+    'there-for-you.md',
   ]
 })
