@@ -483,3 +483,172 @@ public 继承”意味is-a。适用于base classes身上的每一件事情一定
 - 为了让被遮掩的名称再见天日，可使用using声明式或转交函数(forwardingfunctions )
 :::
 
+### 条款34：区分接口继承和实现继承
+
+::: tip
+- 接口继承和实现继承不同。在public继承之下,derived classes总是继承 base class的接口。
+- pure virtual函数只具体指定接口继承。
+- 简朴的(非纯)impure virtual函数具体指定接口继承及缺省实现继承。
+- non-virtual函数具体指定接口继承以及强制性实现继承。
+:::
+
+### 条款35：考虑 virtual函数以外的其他选择
+
+::: note
+本条款的根本忠告是,当你为解决问题而寻找某个设计方法时,不妨考虑 virtual函数的替代方案。下面快速重点复习我们验证过的几个替代方案:
+
+- 使用 non-virtual interface(NVI)手法，那是 Template Method 设计模式的一种特殊形式。它以 public non-virtual 成员函数包裹较低访问性(private 或protected)的 virtual 函数。
+- 将 virtual函数替换为“函数指针成员变量”，这是Strafegy 设计模式的一种分解表现形式。
+- 以tr1::function成员变量替换virtual函数，因而允许使用任何可调用物(callable entity)搭配一个兼容于需求的签名式。这也是 Strategy 设计模式的某种形式。
+- 将继承体系内的virtual函数替换为另一个继承体系内的virtual函数。这是Strategy 设计模式的传统实现手法。
+
+以上并未彻底而详尽地列出 virtual函数的所有替换方案,但应该足够让你知道的确有不少替换方案。此外，它们各有其相对的优点和缺点，你应该把它们全部列入考虑。
+为避免陷入面向对象设计路上因常规而形成的凹洞中，偶而我们需要对着车轮猛推一把。这个世界还有其他许多道路，值得我们花时间加以研究。
+:::
+
+::: tip
+virtual 函数的替代方案包括 NVI手法及 Strategy 设计模式的多种形式。NVI手法自身是一个特殊形式的 Template Method 设计模式。将机能从成员函数移到class外部函数，带来的一个缺点是，非成员函数无法访问 class 的 non-public 成员。
+tr1::function 对象的行为就像一般函数指针。这样的对象可接纳“与给定之目标签名式(target signature)兼容”的所有可调用物(callable entities)。
+:::
+
+### 条款36：绝不重新定义继承而来的 non-virtual函数
+
+::: note 现在，如果了重新定义mf，你的设计便出现矛盾。如果D真有必要实现出与B不同的 mf,并且如果每一个B对象--不管多么特化--真的必须使用B所提供的mf实现码，那么“每个D都是一个 B”就不为真。既然如此D就不该以 public 形式继承 B。另一方面，如果D真的必须以public方式继承B，并且如果D真有需要实现出与B不同的mf，那么m就无法为B反映出“不变性凌驾特异性”的性质。既然这样 mf应该声明为 virtual 函数。最后，如果每个D真的是一个 B，并且如果 mf真的为B反映出“不变性凌驾特异性”的性质，那么D便不需要重新定义mf，而且它也不应该尝试这样做。
+:::
+
+::: tip
+绝对不要重新定义继承而来的 non-virtual函数。
+:::
+
+### 条款37：绝不重新定义继承而来的缺省参数值
+
+::: note 这种情况下，本条款成立的理由就非常直接而明确了:virtual函数系动态绑定(dynamically bound)，而缺省参数值却是静态绑定(statically bound)。那是什么意思?你说你那负荷过重的脑袋早已忘记静态绑定和动态绑定之间的差异?(为了正式记录在案，容我再说一次，静态绑定又名前期绑定，earbinding;动态绑定又名后期绑定,late binding。)现在让我们来一趟复习之旅吧!
+:::
+
+::: note 但是当你考虑带有缺省参数值的 virtual 函数，花样来了，因为就如我稍早所说，virtual 函数是动态绑定，而缺省参数值却是静态绑定。意思是你可能会在“调用一个定义于 derived class 内的 virtual 函数”的同时，却使用 base class 为它所指定的缺省参数值。
+:::
+
+::: note
+当你想令 virtual 函数表现出你所想要的行为但却遭遇麻烦，聪明的做法是考虑替代设计。条款 35列了不少 virtual函数的替代设计，其中之一是NVI(non-virtualinterace)手法:令base class 内的一个 public non-virtual 函数调用 private virtual 函数，后者可被 derived classes 重新定义。这里我们可以让 non-virtual 函数指定缺省参数，而private virtual函数负责真正的工作:
+```C++
+class Shape {
+public:
+  enum ShapeColor{Red，Green，Blue};
+  void draw(ShapeColor color=Red) const //如今它是 non-virtual
+  {
+    doDraw(color); //调用一个 virtual
+  }
+private:
+  virtual void doDraw(shapeColor color) const = 0;//真正的工作//在此处完成
+};
+
+class Rectangle:public Shapepublic {
+private:
+
+virtual void doDraw(ShapeColor color)const; //注意，不须指定缺省参数值。
+}
+
+```
+由于 non-virtual函数应该绝对不被derived classes覆写(见条款36)，这个设计很清楚地使得 draw函数的 color 缺省参数值总是为 Red。
+:::
+
+::: tip
+绝对不要重新定义一个继承而来的缺省参数值，因为缺省参数值都是静态绑定而 virtual 函数——你唯一应该覆写的东西——却是动态绑定。
+:::
+
+### 条款38：通过复合塑模出 has-a或"根据某物实现出"
+
+::: note 条款 32曾说，“public继承”带有is-a(是一种)的意义。复合也有它自己的意义。实际上它有两个意义。==复合意味 has-a(有一个)或 is-implemented-in-terms-of(根据某物实现出)==。那是因为你正打算在你的软件中处理两个不同的领域(domains)。程序中的对象其实相当于你所塑造的世界中的某些事物，例如人、汽车、一张张视频画面等等。这样的对象属于应用域(applicalion domain)部分。其他对象则纯粹是实现细节上的人工制品,像是缓冲区(bufers)、互斥器(mutexes)、查找树(searchtrees)等等。这些对象相当于你的软件的实现域(implementation domain)。当复合发生于应用域内的对象之间，表现出has-a的关系:当它发生于实现域内则是表现is-implemented-in-terms-of 的关系。
+:::
+
+::: tip
+- 复合(composition)的意义和public 继承完全不同在应用域(application domain)，复合意味has-a(有一个)。
+- 在实现域(implementation domain)，复合意味is-implemented-in-terms-of(根据某物实现出)。
+:::
+
+### 条款39：明智而审慎地使用 private 继承
+
+::: note 够了，现在让我们开始讨论其意义。==Private 继承意味implemented-in-terms-of(根据某物实现出)==。如果你让classD以private形式继承 class B，你的用意是为了采用 classB内已经备妥的某些特性,不是因为B对象和D对象存在有任何观念上的关系。private 继承纯粹只是一种实现技术(这就是为什么继承自一个private baseclass的每样东西在你的class内都是 private:因为它们都只是实现枝节而已)。借用条款 34 提出的术语，private 继承意味只有实现部分被继承，接口部分应略去。==如果 D以 private 形式继承 B，意思是D对象根据B对象实现而得==，再没有其他意涵了。Private 继承在软件“设计”层面上没有意义，其意义只及于软件实现层面。
+:::
+
+::: note Private 继承意味 is-implemented-in-terms-of(根据某物实现出)，这个事实有点令人不安，因为条款38才刚指出复合(composition)的意义也是这样。你如何在两者之间取舍?答案很简单：==尽可能使用复合，必要时才使用private 继承==。何时才是必要?主要是当 protected 成员和/或 virtual 函数牵扯进来的时候。其实还有一种激进情况，那是当空间方面的利害关系足以踢翻 private 继承的支柱时。稍后我们再来操这个心，毕竟它只是一种激进情况。
+:::
+
+::: note
+
+以 private 形式继承 Timer:
+```C++
+class widget: private Timer {
+private:
+  virtual void onTick() const; //查看 widget 的数据...等等
+};
+```
+
+以复合形式继承 Timer:
+```C++
+class widget {
+private:
+  class WidgetTimer: public Timer {
+  public:
+    virtual void onTick() const;
+  };
+  WidgetTimer timer;
+};
+```
+
+首先，你或许会想设计 widget 使它得以拥有 derived classes，但同时你可能会想阻止 derived classes 重新定义 onTick。如果 Widget继承自 Timer，上面的想法就不可能实现,即使是 private 继承也不可能。(还记得吗,条款 35 曾说 derived classes可以重新定义 virtual 函数,即使它们不得调用它。)但如果 widgetrimer是 widget 内部的一个private成员并继承Timer，widget的derived classes 将无法取用widgetTimer，因此无法继承它或重新定义它的 virtual 函数。如果你曾经以 Java 或C# 编程并怀念“阻止 derived classes重新定义 virtual函数”的能力(也就是 Java的 final和 C#的sealed)，现在你知道怎么在 C++ 中模拟它了。
+
+第二，你或许会想要将widget的编译依存性降至最低。如果widget继承Timer，当 widget 被编译时 Timer的定义必须可见，所以定义 widget 的那个文件恐怕必须#include rimer.h,但如果 widgetrimer 移出 widget 之外而 widget 内含指针指向一个 widgetTimer，widget 可以只带着一个简单的 widgetTimer 声明式,不再需要#include任何与Timer有关的东西。对大型系统而言，如此的解耦(decouplings)可能是重要的措施。关于编译依存性的最小化，详见条款31。
+:::
+
+::: note
+有一种激进情况涉及空间最优化，可能会促使你选择“private 继承”而不是“继承加复合”。空类的复合会产生额外内存，而private继承一个空类不会增加额外空间。
+:::
+
+::: tip Private 继承意味is-implemented-in-termsof(根据某物实现出)。它通常比复合(composition)的级别低。但是当derived class需要访问 protected base class 的成员，或需要重新定义继承而来的 virtual函数时，这么设计是合理的。和复合(composition)不同，private继承可以造成emptybase最优化。这对致力于“对象尺寸最小化”的程序库开发者而言，可能很重要。
+:::
+
+### 条款40：明智而审慎地使用多重继承
+
+::: note 注意此例之中对 checkOut 的调用是歧义(模棱两可)的，即使两个函数之中只有一个可取用(BorrowableItem内的checkOut是public，ElectronicGadget内的却是 private)。这与C++用来解析(resolving)重载函数调用的规则相符:在看到是否有个函数可取用之前，C++首先确认这个函数对此调用之言是最佳匹配。找出最佳匹配函数后才检验其可取用性。本例的两个checkouts有相同的匹配程度(译注:因此才造成歧义),没有所谓最佳匹配。因此ElectronicGadget::checkOut的可取用性也就从未被编译器审查。
+:::
+
+::: tip
+多重继承比单一继承复杂。它可能导致新的歧义性，以及对virtual 继承的需要virtual 继承会增加大小、速度、初始化(及赋值)复杂度等等成本。如果 virtualbase classes不带任何数据，将是最具实用价值的情况。多重继承的确有正当用途。其中一个情节涉及“public继承某个Interface class和“private 继承某个协助实现的 class”的两相组合。
+:::
+
+## 7 模板与泛型编程
+
+### 条款41：了解隐式接口和编译期多态
+
+::: note 注意此例之中对 checkOut 的调用是歧义(模棱两可)的，即使两个函数之中只有一个可取用(BorrowableItem内的checkOut是public，ElectronicGadget内的却是 private)。这与C++用来解析(resolving)重载函数调用的规则相符:在看到是否有个函数可取用之前，C++首先确认这个函数对此调用之言是最佳匹配。找出最佳匹配函数后才检验其可取用性。本例的两个checkouts有相同的匹配程度(译注:因此才造成歧义),没有所谓最佳匹配。因此ElectronicGadget::checkOut的可取用性也就从未被编译器审查。
+:::
+
+::: tip
+- classes和templates都支持接口(interfaces)和多态(polymorphism)。
+- 对 classes 而言接口是显式的(explicit),以函数签名为中心。多态则是通过 virtual函数发生于运行期。
+- 对 template 参数而言，接口是隐式的(implicit)，奠基于有效表达式。多态则是通过 template 具现化和函数重载解析(function overloadingresolution)发生于编译期。
+:::
+
+### 条款42：了解 typename 的双重意义
+
+::: note 一般性规则很简单:任何时候当你想要在template中指涉一个嵌套从属类型名称，就必须在紧临它的前一个位置放上关键字typename。(再提醒一次，很快我会谈到一个例外。)
+:::
+
+::: note typename 必须作为嵌套从属类型名称的前缀词”这一规则的例外是，typename 不可以出现在base classes list 内的嵌套从属类型名称之前，也不可在member initialization list(成员初值列)中作为 base class 修饰符。
+:::
+
+::: tip
+- 声明 template 参数时，前缀关键字 class和 typename 可互换。
+- 请使用关键字 typename标识嵌套从属类型名称;但不得在 base class lists(基类列)或 member initialization list(成员初值列)内以它作为 base class 修饰符。
+:::
+
+### 条款43：学习处理模板化基类内的名称
+
+::: note 注意 class 定义式最前头的"template<>'语法象征这既不是 template 也不是标准 class，而是个特化版的 MsgSender template，在 template 实参是 Companyz 时被使用。这是所谓的模板全特化(total template specialization):template MsgSender针对类型Companyz特化了，而且其特化是全面性的，也就是说一旦类型参数被定义为 Company2，再没有其他 template 参数可供变化。
+:::
+
+::: tip
+可在 derived class templates 内通过"this->" 指涉 base class templates 内的成员名称，或藉由一个明白写出的“base class 资格修饰符”完成。
+:::
+
