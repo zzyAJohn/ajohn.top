@@ -14,5 +14,6 @@ export default defineNoteConfig({
     'see-you-again.md',
     'there-for-you.md',
     'what-makes-you-beautiful.md',
+    'viva-la-vida.md',
   ]
 })

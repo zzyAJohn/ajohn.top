@@ -67,7 +67,7 @@ permalink: /music/vb943dsa/
 | 英文歌词 | 中文翻译 |
 |----------|----------|
 | Las==t y==ear(jir) too==k a== to==ll on==(long) me | 去年的我并不如意 |
-| Bu==t I== ma==d~~e~~ i==(di)~~t~~ wi==th y==ou nex~~t~~ to me | 但如今我的身旁有着你 |
+| [Bu==t I==] ma==d~~e~~ i==(di)~~t~~ with you nex~~t~~ to me | 但如今我的身旁有着你 |
 | Aroun~~d~~ the worl==d an==~~d~~ bac==k a==(ke)gain | 一遍又一遍 周游这世界 |
 | I ho==pe y==ou're *waiti*(ding)==ng a==~~t~~(nai) the(they) end | 希望你等候着我 在那旅途的终点 |
 
@@ -94,7 +94,7 @@ permalink: /music/vb943dsa/
 |----------|----------|
 | I go==t y==ou, I **promise** | 我保证 我会用心爱你 |
 | Le~~t~~ me **be** ~~h~~ones~~t~~ | 就让我坦诚一切 |
-| Lo==ve i== ==s a== roa~~d~~ tha~~t~~ **goes** **both** ways | 爱总会是一条路 延伸向两边 |
+| Love is a roa~~d~~ tha~~t~~ **goes** **both** ways | 爱总会是一条路 延伸向两边 |
 | When your tears roll down your pillow like a river | 每每你的泪水成股流下 我会守候在你身边 |
 | I'll be there for you | 我会在那儿守候着你 |
 | But you gotta be there for me too | 我想你也一定会陪伴着我吧 |
