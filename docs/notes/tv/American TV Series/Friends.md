@@ -20,4 +20,16 @@ permalink: /tv/d7dyq25j/
 
 ### 观影记录
 
-- [x] 2025-07-10 第五季 start
+::: timeline
+- 《老友记》第五季 start
+  time=2025-07-10 type=success
+
+
+- 《老友记》第五季 end
+  time=2025-08-20 type=warning
+
+- 《老友记》第六季 start
+  time=2025-08-26 type=success
+
+
+:::

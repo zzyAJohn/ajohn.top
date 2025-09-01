@@ -23,5 +23,6 @@ permalink: /tv/2cyytl3j/
 ### 观影记录
 
 ::: timeline
-- 2025-08-13 start
+- 《大明王朝1566》 start
+  time=2025-08-13 type=success
 :::
