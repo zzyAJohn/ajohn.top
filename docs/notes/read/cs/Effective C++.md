@@ -652,3 +652,78 @@ private:
 可在 derived class templates 内通过"this->" 指涉 base class templates 内的成员名称，或藉由一个明白写出的“base class 资格修饰符”完成。
 :::
 
+### 条款44：将与参数无关的代码抽离 templates
+
+::: tip
+- Templates生成多个 classes 和多个函数,所以任何 template 代码都不该与某个造成膨胀的 template 参数产生相依关系。
+- 因非类型模板参数(non-type templateparameters)而造成的代码膨胀，往往可消除，做法是以函数参数或class成员变量替换template 参数。
+- 因类型参数(typeparameters)而造成的代码膨胀，往往可降低，做法是让带有完全相同二进制表述(binary representations)的具现类型(instantiation types)共享实现码。
+:::
+
+### 条款45：运用成员函数模板接受所有兼容类型
+
+::: tip
+- 请使用 member function templates(成员函数模板)生成“可接受所有兼容类型的函数。
+- 如果你声明 member templates 用于“泛化 copy构造”或“泛化 assignment操作”你还是需要声明正常的copy构造函数和copyassignment操作符。
+:::
+
+### 条款46：需要类型转换时请为模板定义非成员函数
+
+::: note 这项技术的一个趣味点是，我们虽然使用fiend，却与fiend的传统用途“访问 class 的 non-public 成分”毫不相干。为了让类型转换可能发生于所有实参身上我们需要一个 non-member函数(条款24);为了令这个函数被自动具现化，我们需要将它声明在 class 内部;而在class 内部声明non-member 函数的唯一办法就是令它成为一个 fiend。因此我们就这样做了。不习惯?是的。有效吗?不必怀疑。
+:::
+
+::: tip
+当我们编写一个 class template，而它所提供之“与此 template 相关的”函数支持“所有参数之隐式类型转换”时，请将那些函数定义为“classtemplate 内部的 friend 函数”
+:::
+
+### 条款47：请使用 traits classes 表现类型信息
+
+::: tip
+Traits classes 使得“类型相关信息”在编译期可用。它们以templates 和“templates特化”完成实现。
+整合重载技术(overloading)后，traitsclasses有可能在编译期对类型执行if...else 测试。
+:::
+
+### 条款48：认识 template 元编程
+
+::: tip
+- Template metaprogramming(TMP,模板元编程)可将工作由运行期移往编译期，因而得以实现早期错误侦测和更高的执行效率。
+- TMP 可被用来生成“基于政策选择组合”(basedoncombinations ofpolicychoices)的客户定制代码，也可用来避免生成对某些特殊类型并不适合的代码。
+:::
+
+## 8 定制 new 和 delete
+
+::: note 另外要记住的是，operatornew和operator delete只适合用来分配单一对象。Arrays 所用的内存由 operator new[]分配出来，并由operator delete[]归还(注意两个函数名称中的11)。除非特别表示，我所写的每一件关于operatornew和 operator delete的事也都适用于operator new[]和 operator delete[]。
+:::
+
+::: note 最后请注意，STL容器所使用的heap内存是由容器所拥有的分配器对象(allocator objects)管理，不是被 new和 delete直接管理。本章并不讨论 STL 分配器。
+:::
+
+### 条款49：了解 new-handler 的行为
+
+::: note
+```C++
+int main() {
+  std::set_new_handler(outOfMem);
+  int* pBigDataArray = new int[100000000L];
+}
+```
+就本例而言，如果 operator new无法为 100,000,000个整数分配足够空间，outofMem 会被调用，于是程序在发出一个信息之后天折(abort)。（顺带一提如果在写出错误信息至cerr过程期间必须动态分配内存，考虑会发生什么事…）
+
+当 operator new无法满足内存申请时，它会不断调用 new-handler 函数，直到找到足够内存。引起反复调用的代码显示于条款51，这里的高级描述已足够获得一个结论，那就是一个设计良好的new-handler函数必须做以下事情:
+
+- 让更多内存可被使用。这便造成 operatornew内的下一次内存分配动作可能成功。实现此策略的一个做法是，程序一开始执行就分配一大块内存，而后当new-handler 第一次被调用，将它们释还给程序使用。
+- 安装另一个 new-handler。如果目前这个 new-handler 无法取得更多可用内存,或许它知道另外哪个 new-handler有此能力。果真如此，目前这个new-handler就可以安装另外那个 new-handler 以替换自己(只要调用set new handler)下次当 operator new调用 new-handler，'调用的将是最新安装的那个。(这个旋律的变奏之一是让 new-handler 修改自己的行为，于是当它下次被调用，就会做某些不同的事。为达此目的，做法之一是令new-handler 修改“会影响new-handler 行为”的 static 数据、namespace 数据或 global 数据。)
+- 卸除new-handler，也就是将null指针传给set new handler。一旦没有安装任何 new-handler，operator new会在内存分配不成功时抛出异常，
+- 抛出 bad alioc(或派生自 bad alloc)的异常。这样的异常不会被 operatornew捕捉，因此会被传播到内存索求处。
+- 不返回，通常调用 abort或exit。
+
+:::
+
+::: note 需要结论吗?结论就是:使用nothrow new只能保证operator new不抛掷异常，不保证像"new(std::nothrow)widget"这样的表达式绝不导致异常。因此你其实没有运用 nothrow new的需要。
+:::
+
+::: tip
+- set_new_handler允许客户指定一个函数，在内存分配无法获得满足时被调用。
+- Nothrow new是一个颇为局限的工具，因为它只适用于内存分配;后继的构造函数调用还是可能抛出异常。
+:::
+
