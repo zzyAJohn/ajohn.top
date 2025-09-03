@@ -1,5 +1,5 @@
 ---
-title: 《Effective C++》——在读
+title: 《Effective C++》
 createTime: 2025/08/07 15:44:56
 permalink: /read/w5p9tijn/
 ---
@@ -725,5 +725,113 @@ int main() {
 ::: tip
 - set_new_handler允许客户指定一个函数，在内存分配无法获得满足时被调用。
 - Nothrow new是一个颇为局限的工具，因为它只适用于内存分配;后继的构造函数调用还是可能抛出异常。
+:::
+
+### 条款50：了解 new 和 delete 的合理替换时机
+
+::: note 现实存在这么些个对内存管理器的要求，因此编译器所带的operator news和 operator deletes 采取中庸之道也就不令人惊讶了。它们的工作对每个人都是适度地好，但不对特定任何人有最佳表现。如果你对你的程序的动态内存运用型态有深刻的了解，通常可以发现，定制版之operator new和operator delete性能胜过缺省版本。说到胜过，我的意思是它们比较快，有时甚至快很多，而且它们需要的内存比较少，最高可省50%。对某些(虽然不是所有)应用程序而言，将旧有的(编译器自带的)new和delete替换为定制版本，是获得重大效能提升的办法之一。
+:::
+
+::: tip
+有许多理由需要写个自定的 new和 delete,包括改善效能、对 heap 运用错误进行调试、收集 heap 使用信息。
+:::
+
+### 条款51：编写 new 和 delete 时需固守常规
+
+::: note operatornew的返回值十分单纯。如果它有能力供应客户申请的内存，就返回一个指针指向那块内存。如果没有那个能力，就遵循条款49描述的规则，并抛出-个bad alloc异常。
+:::
+
+::: note 条款 49 谈到 operator new内含一个无穷循环，而上述伪码明白表明出这个循环;"while(true)"就是那个无穷循环。退出此循环的唯一办法是:内存被成功分配或 new-handling 函数做了一件描述于条款49的事情:让更多内存可用、安装另一个 new-handler、卸除 new-handler、抛出 bad alloc异常(或其派生物)，或是承认失败而直接returm。现在，对于new-handler为什么必须做出其中某些事你应该很清楚了。如果不那么做，operatornew内的while循环永远不会结束。
+:::
+
+::: tip
+- operator new应该内含一个无穷循环，并在其中尝试分配内存，如果它无法满足内存需求，就该调用new-handler。它也应该有能力处理0bytes申请。Class专属版本则还应该处理“比正确大小更大的(错误)申请”。
+- operator delete应该在收到 nul! 指针时不做任何事。Class 专属版本则还应该处理“比正确大小更大的(错误)申请”。
+:::
+
+### 条款52：写了placementnew也要写placementdelete
+
+::: note 就如上一行注释所言,调用的是正常形式的operator delete,而非其 placement版本。placement delete只有在“伴随 placement new调用而触发的构造函数”出现异常时才会被调用。对着一个指针(例如上述的pw)施行delete绝不会导致调用placement delete。不，绝对不会。
+:::
+
+::: note 以上说明意味术语 placement new有多重定义。当人们谈到 placement new，大多数时候他们谈的是此一特定版本，也就是“唯一额外实参是个 “void*” 少数时候才是指接受任意额外实参之operator new。上下文语境往往也能够使意义不明确的含糊话语清晰起来，但了解这一点相当重要：一般性术语"placement意味带任意额外参数的 new，因为另一个术语"placement delete”直接派生自它。稍后我们即将遭遇后者。
+:::
+
+::: note
+条款 33 更详细地讨论了这种名称遮掩问题。对于撰写内存分配函数，你需要记住的是，缺省情况下C++在 global作用域内提供以下形式的operator new:
+```C++
+void* operator new(std::size_t) throw(std::bad_alloc); //normalnew
+void* operator new(std::size_t,void*) throw(); //piacement new
+void* operator new(std::size_t,  //nothrownew
+                      const std::nothrow_t&) throw();//见条款49。
+```
+如果你在 class 内声明任何operator news，它会遮掩上述这些标准形式。除非你的意思就是要阻止class的客户使用这些形式，否则请确保它们在你所生成的任何定制型 operator new之外还可用。对于每一个可用的 operator new也请确定提供对应的 operator delete。如果你希望这些函数有着平常的行为，只要令你的class 专属版本调用global版本即可。
+:::
+
+::: note
+完成以上所言的一个简单做法是，建立一个baseclass，内含所有正常形式的 new 和 delete:
+```C++
+class StandardNewDeleteForms {
+public:
+  // normal new/delete
+  static void* operator new(std::size t size) throw(std: :bad alloc)
+  {return ::operator new(size);}
+  static void operator delete(void* pMemory) throw()
+  {::operator delete(pMemory);
+  //placementnew/delete
+  static void*operator new(std::size_t size, void* ptr)throw()
+  {return::operator new(size,ptr);}static void operator delete(void* pMemory, void* ptr) throw()
+  {return ::operator delete(pMemory,ptr);}
+  // nothrow new/delete
+  static void* operator new(std::size_t size, const std::nothrow t& nt) throw()
+  {return ::operator new(size，nt);}
+  static void operator delete(void *pMemory, const std::nothrow t&)throw()
+  {::operator delete(pMemory);}
+}
+```
+凡是想以自定形式扩充标准形式的客户，可利用继承机制及using声明式(见条款 33)取得标准形式:
+```C++
+class Widget:public StandardNewDeleteForms {  //继承标准形式
+public:
+  using StandardNewDeleteForms::operator new; //让这些形式可见
+  using StandardNewDeleteForms::operator delete;
+  
+  static void*operator new(std::size_t size,//添加一个自定的
+                            std::ostream& logStream)//placement new
+    throw(std::bad alloc);
+  static void operator delete(void* pMemory,//添加一个对应的
+                            std::ostream& logStream)//placement delete
+    throw();
+}
+```
+:::
+
+::: tip
+- 当你写一个 placement operator new，请确定也写出了对应的 placement operator delete。如果没有这样做，你的程序可能会发生隐微而时断时续的内存泄漏。
+- 当你声明 placement new和 placement delete，请确定不要无意识(非故意)地遮掩了它们的正常版本。
+:::
+
+## 9 杂项讨论
+
+### 条款53：不要轻忽编译器的警告
+
+::: tip
+- 严肃对待编译器发出的警告信息。努力在你的编译器的最高(最严苛)警告级别下争取“无任何警告”的荣誉。
+- 不要过度倚赖编译器的报警能力，因为不同的编译器对待事情的态度并不相同-旦移植到另一个编译器上，你原本倚赖的警告信息有可能消失。
+:::
+
+### 条款54：让自己熟悉包括 TR1 在内的标准程序库
+
+::: tip
+- C++ 标准程序库的主要机能由STL、iostreams、locales组成。并包含C99 标准程序库。
+- TR1 添加了智能指针(例如tr1::sharedptr)、一般化函数指针(tr1::function)、hash-based 容器、正则表达式(regular expressions)以及另外 10个组件的支持。
+- TR1自身只是一份规范。为获得TR1提供的好处，你需要一份实物。一个好的实物来源是 Boost。
+:::
+
+### 条款55：让自己熱悉 Boost
+
+::: tip
+- Boost是一个社群，也是一个网站。致力于免费、源码开放、同僚复审的C++程序库开发。
+- Boost在C+标准化过程中扮演深具影响力的角色。Boost提供许多TR1组件实现品，以及其他许多程序库。
 :::
 
