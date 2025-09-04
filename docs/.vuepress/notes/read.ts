@@ -12,6 +12,7 @@ export default defineNoteConfig({
         'How is the network connected.md',
         'C++ Primer.md',
         'Effective C++.md',
+        'Effective STL.md',
       ]
     },
     {
