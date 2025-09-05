@@ -16,7 +16,7 @@ export const navbar = defineNavbarConfig([
             { text: 'LeetCode', link: '/notes/leetcode/README.md' },
             { text: 'CS61A', link: '/notes/cs61a/README.md' },
             { text: 'C++', link: '/notes/cpp/README.md' },
-            { text: 'CS61B', link: '/notes/cs61b/README.md' },
+            // { text: 'CS61B', link: '/notes/cs61b/README.md' },
             { text: 'Photography', link: '/notes/photography/README.md' },
     ]
   },
@@ -28,7 +28,7 @@ export const navbar = defineNavbarConfig([
             { text: 'Record', link: '/notes/record/README.md' },
             { text: 'Music', link: '/notes/music/README.md' },
             { text: 'TV', link: '/notes/tv/README.md' },
-            { text: 'Plant', link: '/notes/plant/README.md' },
+            // { text: 'Plant', link: '/notes/plant/README.md' },
     ]
   },
 ])
