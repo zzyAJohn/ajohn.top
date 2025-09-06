@@ -19,6 +19,13 @@ export default defineNoteConfig({
         'Ming Dynasty 1566.md',
       ]
     },
+    {
+      text: '电影',
+      prefix: 'movie', 
+      items: [
+        'Interstellar.md',
+      ]
+    },
     // {
     //   text: '电影',
     //   // prefix: 'literature', 
