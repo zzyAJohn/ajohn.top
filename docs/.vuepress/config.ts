@@ -36,6 +36,8 @@ export default defineUserConfig({
       annotation: true, 
       bilibili: true, 
       youtube: true, 
+      mermaid: true, 
+      pdf: true, 
     },
     notes,
     // 添加您的部署域名
@@ -55,19 +57,6 @@ export default defineUserConfig({
       shiki: {
           //  强烈建议预设代码块高亮语言，插件默认加载所有语言会产生不必要的时间开销
         languages: ["bash","py","json","python","c","cpp","js","ts","html","css","java","shell"],
-      },
-
-      /**
-       * markdown enhance
-       * @see https://theme-plume.vuejs.press/config/plugins/markdown-enhance/
-       */
-      markdownEnhance: {
-        demo: true,
-      //   include: true,
-      //   chart: true,
-      //   echarts: true,
-      //   mermaid: true,
-      //   flowchart: true,
       },
 
       /**
