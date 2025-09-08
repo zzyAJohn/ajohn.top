@@ -55,6 +55,10 @@ export default defineNoteConfig({
         '8-堆，栈与内存管理.md',
         '9-复习String类的实现过程.md',
         '10-扩展补充：类模板，函数模板，及其他.md',
+        '11-组合与继承.md',
+        '12-虚函数与多态.md',
+        '13-委托相关设计.md',
+        'oop2.md',
       ]
     },
   ]

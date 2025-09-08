@@ -38,6 +38,7 @@ export default defineUserConfig({
       youtube: true, 
       mermaid: true, 
       pdf: true, 
+      plantuml: true, 
     },
     notes,
     // 添加您的部署域名
