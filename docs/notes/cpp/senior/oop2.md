@@ -229,7 +229,7 @@ for (decl:coll) {
 
 ### 12.2 关于this
 
-之前也讲过，省流：只用 vitual 重写我需要重写的方法，其他的按照 base 类提前写好的执行。
+之前也讲过，省流：只用 virtual 重写我需要重写的方法，其他的按照 base 类提前写好的执行。
 
 
 ## 13. 谈谈const
@@ -244,3 +244,60 @@ for (decl:coll) {
 
 
 出错的情况：如果客户想使用一个 const 对象，而我们没有提供const成员函数，那么这种情况会报错。但反过来客户不使用const对象，而我们设计成员函数使用 const ，这是允许的，因此经常要考虑给成员函数加 const 。
+
+## 14. 关于 new, deldete
+
+@[pdf 61](https://oss.ajohn.top/blog/pdf/oop2.pdf)
+
+同前
+
+### 14.1 重载::operator new, ::operator delete, ::operator new[], ::operator deletel[]
+
+@[pdf 62](https://oss.ajohn.top/blog/pdf/oop2.pdf)
+
+这里的重载是在全局作用域，会影响到全局函数。
+
+>详情见《Effective C++》条款50：了解 new 和 delete 的合理替换时机
+
+
+### 14.2 重载 member operator new/delete
+
+@[pdf 63](https://oss.ajohn.top/blog/pdf/oop2.pdf)
+
+
+这里是在类内重载，创建该类的对象时会重载。
+
+### 14.3 示例，接口
+
+@[pdf 65](https://oss.ajohn.top/blog/pdf/oop2.pdf)
+
+和变量作用域的逻辑一样，如果有类内重载先使用类内重载，没有则使用全局重载。
+
+`::new` 会绕过类内重载的new，转而强制使用 globals 。
+
+### 14.4 创建 Array 类的大小分析
+
+@[pdf 66](https://oss.ajohn.top/blog/pdf/oop2.pdf)
+
+来分析Foo的大小，结合上页ppt，一个int占4个byte，long也是，string内部是一个指针也是4，因此一个Foo的大小是12byte，`Foo* pArray = new Foo[5]` 创建了一个包含五个Foo的数组，那么按理说大小应该是 5 * 12 = 60byte，但是代码显示占了64byte，为什么这里多了4个字节？因为多出来的是一个Counter（计数器），这里数值为5，表示有5个元素，这样编译器才能知道要调用5次构造（析构）。
+
+
+下面是一个包含虚函数的例子，有虚函数就有虚指针，虚指针也是4byte，带有虚函数的Foo占用大小是16 byte，16 * 5 + 4 = 84byte，很合理。
+
+### 14.5 重载new(), delete()
+
+@[pdf 68](https://oss.ajohn.top/blog/pdf/oop2.pdf)
+
+
+new和delete依靠参数列表来重载，并且第一个参数必须是size_t，其余参数就是所谓的placement argument。
+
+当你写一个 placement operator new，请确定也写出了对应的 placement operator delete。如果没有这样做，你的程序可能会发生隐微而时断时续的内存泄漏。当你声明 placement new和 placement delete，请确定不要无意识(非故意)地遮掩了它们的正常版本。
+
+>详情见《Effective C++》条款52：写了placement new也要写placement delete
+
+### 14.6 basic_string 使用 new(extra) 扩充申请量
+
+@[pdf 71](https://oss.ajohn.top/blog/pdf/oop2.pdf)
+
+
+一个小应用：用 new(extra) 多申请一些资源
