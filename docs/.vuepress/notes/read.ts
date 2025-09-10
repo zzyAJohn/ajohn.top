@@ -29,6 +29,7 @@ export default defineNoteConfig({
       items: [
         'How to Win Friends & Influence People.md',
         'Cognitive Awakening.md',
+        'Intimate relationship.md',
       ]
     },
     {
