@@ -268,9 +268,91 @@ delete [] 泄露的不是整块内存空间，而是array内部元素的析构�
 
 ### 9.1 String编程示例
 
-::: danger
-待完成...
+
+这是一个有关 Class with pointer member(s) 的例子，要求：
+
+- 定义String class，声明默认构造、拷贝构造、拷贝赋值、析构函数、获取字符串函数，字符指针m_data。
+- 实现默认构造：如果传进来的有初值，创建字符串大小+1的空间，再把字符串拷贝到开辟的空间；如果无初值，则开辟一个大小存放"\0"。
+- 拷贝构造：类似默认构造，把str的数据复制到m_data。
+- 拷贝赋值：先自检，通过自检删除自己的数据，然后类似拷贝构造。
+- 析构函数：直接删除数据。
+
+测试用例：
+
+```C++
+int main() {
+    cout << "hello" <<endl;
+    String str1("str1");
+    String str2(str1);
+    String str3 = str2;
+    cout << str1 << str2 << str3 << endl;
+}
+```
+
+::: details 参考答案
+```C++
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+class String {
+public:
+    String(const char* str = 0);
+    String(const String &cstr);
+    String& operator=(const String& cstr);
+    ~String();
+    char* get_str() const {return m_data;}
+    
+private:
+    char* m_data;
+};
+
+ostream& operator<<(ostream& os, const String &cstr) {
+        return os << cstr.get_str();
+    }
+
+inline String::String(const char* str) {
+    if (str) {
+        m_data = new char[strlen(str) + 1];
+        strcpy(m_data, str);
+    }
+    else {
+        m_data = new char[1];
+        strcpy(m_data, "\0");
+    }
+}
+
+inline String::String(const String &cstr) {
+    m_data = new char[strlen(cstr.m_data) + 1];
+    strcpy(m_data, cstr.m_data);
+}
+
+inline String& String::operator=(const String &cstr) {
+    if (&cstr == this) {
+        return *this;
+    }
+    else {
+        delete[] m_data;
+        m_data = new char[strlen(cstr.m_data) + 1];
+        strcpy(m_data, cstr.m_data);
+    }
+}
+
+String::~String() {
+    delete[] m_data;
+}
+
+int main() {
+    cout << "hello" <<endl;
+    String str1("str1");
+    String str2(str1);
+    String str3 = str2;
+    cout << str1 << str2 << str3 << endl;
+}
+```
 :::
+
+
 
 ### 9.2 copy assignment operator (拷贝赋值函數)
 
