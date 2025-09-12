@@ -1,7 +1,10 @@
 ---
-title: 《拍出绝世美姿》——在读
+title: 《拍出绝世美姿》
 createTime: 2025/05/20 19:48:30
 permalink: /read/cu25gdcy/
+badge:
+  type: tip
+  text: 新
 ---
 
 <p align="center">
