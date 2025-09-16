@@ -665,3 +665,63 @@ insert调用需要一个IntWidgetMap::value_type类型的参数（即`pair<int,W
 ::: tip
 当效率至关重要时，你应该在map::operator[]和map::insert之间仔细做出选择。如果要更新一个已有的映射表元素，则应该优先选择operator[]；但如果要添加一个新的元素，那么最好还是选择insert
 :::
+
+### 第25条：熟悉非标准的散列容器。
+
+::: note 作为这些实现的使用者，你实际上可能会关心的是，SGI的实现把表的元素放在一个单向链表中，而Dinkumware的实现则使用了双向链表。这一区别值得注意，因为它影响到两个实现的迭代器类型。SGI的散列容器提供了前向迭代器（forward iterator），所以你失去了做逆向遍历的能力；在SGI的散列表实现中没有rbegin和rend成员函数。Dinkumware的散列容器的迭代器是双向的，所以它们同时提供了前向和逆向的遍历功能。从内存使用的角度来说，SGI的设计比Dinkumware的设计要节省一些。
+:::
+
+::: tip
+哪种设计对你的应用最适合呢？我不可能知道，只有你才能决定。本条款没有试图给出足够的信息能让你得出适当的结论。相反，本条款的目的是为了让大家明白，尽管STL本身没有散列容器，但是与STL兼容的散列容器（只是其接口、能力和行为各有不同）却不难得到。对于SGI和STLport的实现，你甚至可以免费获得，因为它们提供免费下载。
+:::
+
+## 第4章　迭代器
+
+::: note 本章旨在寻求上述问题的答案，并且将介绍一种在实践中没有得到足够关注的迭代器类型：istreambuf iterator。如果你喜欢使用STL，却对使用istream_iterator读取字符流的性能不很满意，那么istreambuf_iterator正是你所需要的工具。
+:::
+
+### 第26条：iterator优先于const_iterator、reverse_iterator以及const_reverse_iterator。
+
+::: note
+让我们来看两点。首先看一下`vector<T>`容器中insert和erase函数的原型：
+```C++
+iterator insert(iterator position, const T& x);
+iterator erase(iterator position);
+iterator erase(iterator rangeBegin, iterator rangeEnd);
+```
+每个标准容器都提供了类似的函数，只不过对于不同的容器类型，返回值有所不同。需要注意的是：这些函数仅接受iterator类型的参数，而不是const_iterator、reverse_iterator或者const_reverse_iterator。总是iterator！虽然容器类支持4种不同的迭代器类型，但其中有一种迭代器有着特殊的地位。这就是iterator。所以，iterator与其他的迭代器有所不同。
+:::
+
+::: note 从图中还可以看出，我们没有办法从const_iterator转换得到iterator，也无法从const_reverse_iterator得到reverse_iterator。这一点非常重要，因为这意味着，如果你得到了一个const_iterator或者const_reverse_iterator，你就会发现很难将这些迭代器与容器的某些成员函数一起使用。这些成员函数要求iterator作为参数，却无法从常量类型的迭代器中直接得到iterator。如果你需要利用迭代器来指定插入或者删除元素的位置，则常量类型的迭代器往往是没有用处的。
+:::
+
+::: note
+- 有些版本的insert和erase函数要求使用iterator。如果你需要调用这些函数，那你就必须使用iterator。const和reverse型的迭代器不能满足这些函数的要求。
+
+- 要想隐式地将一个const_iterator转换成iterator是不可能的，第27条中讨论的将const_iterator转换成iterator的技术并不普遍适用，而且效率也不能保证。
+
+- 从reverse_iterator转换而来的iterator在使用之前可能需要相应的调整，第28条讨论了为什么需要调整以及何时进行调整。
+:::
+
+::: note
+对于设计良好的STL实现而言，情况确实如此。但对于其他一些实现，这段代码甚至无法通过编译。原因在于，这些STL实现将const_iterator的等于操作符（operator==）作为一个成员函数而不是一个非成员函数。而问题的解决办法却非常有意思：只要交换两个iterator的位置，就万事大吉了：
+```C++
+if (ci == i) //当上面的比较不能编译的时候，这是解决方法
+```
+不仅在进行相等比较的时候会发生这样的问题，只要在同一个表达式中混用iterator和const_iterator（或者reverse_iterator和const_reverse_iterator），这样的问题就会出现。例如，当试图在两个随机访问迭代器之间进行减法操作时：
+```C++
+if(i-ci >= 3) //如果i与ci之间至少有3个元素
+```
+如果迭代器的类型不同，你（完全正确）的代码也可能会被（无理地）拒绝。你期望的解决办法是交换i和ci的位置，但这一次，你要考虑的就不仅仅是用ci-i来代替i-ci了：
+```C++
+if( ci + 3 <=i) //当上面的if语句不能编译的时候，这是解决方法
+```
+而且，这样的变换并不总是正确的，ci+3也许不是一个有效的迭代器，它可能会超出容器的有效范围。而变换前的表达式中则不存在这样的问题。
+:::
+
+::: tip
+避免这种问题的最简单办法是减少混用不同类型的迭代器的机会，尽量使用iterator来代替const_iterator。从const正确性的角度（这确实是一个很值得考虑的角度）来看，仅仅为了避免一些可能存在的STL实现缺陷（而且，这些缺陷都有较为直接的解决途径）而放弃const_iterator显得有欠公允。但考虑到在容器类的某些成员函数中指定使用iterator的现状，得出iterator较之const_iterator更为实用的结论也就不足为奇了。更何况，从实践的角度来看，并不总是值得卷入const_iterator的麻烦中。
+:::
+
+### 第27条：使用distance和advance将容器的const_iterator转换成iterator。
+
