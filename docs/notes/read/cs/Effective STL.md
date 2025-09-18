@@ -725,3 +725,68 @@ if( ci + 3 <=i) //当上面的if语句不能编译的时候，这是解决方法
 
 ### 第27条：使用distance和advance将容器的const_iterator转换成iterator。
 
+::: note
+如果你得到了一个const_iterator并且可以访问它所在的容器，那么这里有一条安全的、可移植的途径能得到对应的iterator，而且用不着涉及类型系统的强制转换。下面是这种方案的本质，不过，这段代码还需要稍做修改才能通过编译。
+```C++
+typedef deque<int> IntDeque; //同前
+typedef IntDeque::iterator lter;
+typedef IntDeque::const_iterator Constlter;
+IntDeque d;
+Constlter ci;
+... //使ci指向d
+lter i(d.begin()); //使i指向d的起始位置
+advance(i, distance(i, ci)); //移动i，使它指向ci所指的位置//(下面说明了为什么需要修改才能编译)
+```
+这种方法看上去非常简单和直接，也很令人惊奇。为了得到一个与const_iterator指向同一位置的iterator，首先创建一个新的iterator，将它指向容器的起始位置，然后取得const_iterator距离容器起始位置的偏移量，并将iterator向前移动相同的偏移量即可。这项任务是通过`<iterator>`中声明的两个函数模板来实现的：distance用以取得两个迭代器（它们指向同一个容器）之间的距离；advance则用于将一个迭代器移动指定的距离。如果i和ci指向同一个容器，则表达式advance(i,distance(i,ci))会使i和ci指向容器中相同的位置。
+:::
+
+::: note
+要想让distance调用顺利地通过编译，你需要排除这里的二义性。最简单的办法是显式地指明distance所使用的类型参数，从而避免让编译器来推断该类型参数。
+```C++
+advance(i, distance<Constlter>(i, ci)) //将i和ci都当作const iterator,
+                                      //计算出它们之间的距离，然后将i移动//这段距离
+```
+:::
+
+::: note 现在我们知道了如何使用advance和distance来从const_iterator获得iterator。但另一个值得认真考虑的问题是，这项技术的效率如何？答案很简单，它的效率取决于你所使用的迭代器。对于随机访问的迭代器（如vector、string和deque产生的迭代器）而言，它是一个常数时间的操作；对于双向迭代器（所有其他标准容器的迭代器，以及某些散列容器实现（见第25条）的迭代器）而言，它是一个线性时间的操作。
+:::
+
+::: tip
+这种从const_iterator获得iterator的转换技术可能需要线性时间的代价，并且需要访问const_iterator所属的容器，否则可能就无法完成，所以，你或许应该重新审视你的设计：是否真的需要从const_iterator到iterator的转换呢？实际上，这样的考虑也恰好激发了第26条的建议：在使用容器的时候，尽量用iterator来代替const或reverse型的迭代器。
+:::
+
+### 第28条：正确理解由reverse_iterator的base()成员函数所产生的iterator的用法。
+
+::: note 第26条指出了容器类的有些成员函数仅接受iterator作为迭代器参数。所以，对于上面的例子，如果你希望在ri指定的位置上插入一个新的元素，那么你就不能直接这样做，因为insert函数不接受reverse_iterator作为参数。如果你要删除ri所指的元素，则也存在同样的问题。erase成员函数也拒绝接受reverse_iterator，但可以接受iterator参数。为了执行插入或删除操作，你必须首先通过base成员函数将reverse_iterator转换成iterator，然后用iterator来完成插入或删除。
+:::
+
+::: note 如果要在一个reverse_iterator ri指定的位置上插入新元素，则只需在ri.base()位置处插入元素即可。对于插入操作而言，ri和ri.base()是等价的，ri.base()是真正与ri对应的iterator。
+:::
+
+::: note 如果要在一个reverse_iterator ri指定的位置上删除一个元素，则需要在ri.base()前面的位置上执行删除操作。对于删除操作而言，ri和ri.base()是不等价的，ri.base()不是与ri对应的iterator。
+:::
+
+::: note
+我们还是有必要来看一看执行这样一个删除操作的实际代码，其中暗藏着惊奇之处：
+```C++
+vector<int> v;
+... //同上，插入1到5
+vector<int>::reverse iterator ri = find(v.rbegin(), v.rend(), 3); //同上，使ri指向 3
+v.erase(--ri.base()); //试图删除ri.base()前面位置上的元素;对于vector，往往编译通不过
+```
+这段代码并不存在设计问题，表达式--ri.base()确实指出了我们希望删除的元素。而且，对于除了vector和string之外的所有标准容器，这段代码都能够正常工作。对于vector和string，这段代码或许也能工作，但对于vector和string的许多实现，它无法通过编译。这是因为在这样的实现中，iterator（和const_iterator）是以内置指针的方式来实现的，所以，ri.base()的结果是一个指针。
+
+C和C++都规定了从函数返回的指针不应该被修改，所以，如果在你的STL平台上string和vector的iterator是指针的话，那么，类似--ri.base()这样的表达式就无法通过编译。因此，出于通用性和可移植性的考虑，要想在一个reverse_iterator指定的位置上删除一个元素，你应该避免直接修改base()的返回值。这没有问题。既然不能对base()的结果做递减操作，那么只要先递增reverse_iterator，然后再调用base()函数即可！
+```C++
+... //同上
+v.erase((++ri).base()); //删除ri所指的元素;这下编译没问题了!
+```
+因为这种方法对于所有的标准容器都是适用的，所以，当需要删除一个由reverse_iterator指定的元素时，应该首选这种技术。
+:::
+
+::: tip
+由此可见，通过base()函数可以得到一个与reverse_iterator“相对应的”iterator的说法并不准确。对于插入操作，这种对应关系确实存在；但是对于删除操作，情况却并非如此简单。当你将一个reverse_iterator转换成iterator的时候，很重要的一点是，你必须很清楚你将要对该iterator执行什么样的操作，因为只有在此基础上，你才能够确定这个iterator是不是你所需要的iterator。
+:::
+
+### 第29条：对于逐个字符的输入请考虑使用istreambuf_iterator。
+
