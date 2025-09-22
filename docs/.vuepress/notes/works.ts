@@ -26,6 +26,7 @@ export default defineNoteConfig({
       items: [
         '2025-07-27.md',
         '2025-07-25.md',
+        '2025-07-22.md',
       ]
     },
     {
