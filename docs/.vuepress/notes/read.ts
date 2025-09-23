@@ -9,7 +9,7 @@ export default defineNoteConfig({
       text: 'CS',
       prefix: 'cs', 
       items: [
-        'How is the network connected.md',
+        'How Networks Are Connected.md',
         'C++ Primer.md',
         'Effective C++.md',
         'Effective STL.md',
@@ -21,15 +21,16 @@ export default defineNoteConfig({
       items: [
         // 'weicheng.md',
         'The Great Gatsby.md',
+        'Selected Works of Mao Tse-tung.md',
       ]
     },
     {
       text: '心理学',
       prefix: 'psychology', 
       items: [
-        'How to Win Friends & Influence People.md',
+        'How to Win Friends and Influence People.md',
         'Cognitive Awakening.md',
-        'Intimate relationship.md',
+        'Intimate Relationships.md',
       ]
     },
     {
@@ -37,15 +38,15 @@ export default defineNoteConfig({
       prefix: 'sci-fi', 
       items: [
         'Ball Lightning.md',
-        'Supporting humanity.md',
-        'Does God roll dice.md',
+        'For the Benefit of Mankind.md',
+        'Does God Play Dice.md',
       ]
     },
     {
       text: '摄影',
       prefix: 'photography', 
       items: [
-        'Take stunning photos.md',
+        'Picture Perfect Posing.md',
       ]
     },
   ]
