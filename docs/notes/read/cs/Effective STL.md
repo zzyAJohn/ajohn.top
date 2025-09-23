@@ -790,3 +790,148 @@ v.erase((++ri).base()); //删除ri所指的元素;这下编译没问题了!
 
 ### 第29条：对于逐个字符的输入请考虑使用istreambuf_iterator。
 
+::: note 你应该会很快意识到这段代码并没有把文件中的空白字符复制到string对象中。因为istream_iterator使用operator>>函数来完成实际的读操作，而默认情况下operator>>函数会跳过空白字符。
+:::
+
+::: note 请注意，这一次我们用不着清除输入流的skipws标志，因为istreambuf_iterator不会跳过任何字符，它只是简单地取回流缓冲区中的下一个字符，而不管它们是什么字符。
+:::
+
+::: note 与istream_iterator相比，使用istreambuf_iterator的方案要快得多——我执行的一个简单测试表明，速度提高了近40％，当然，不同的STL实现其速度提高也会有所不同。而且，随着时间的推移，这种速度的提升可能会更加明显。由于istreambuf_iterator存在于STL中一个很少被访问的角落里，所以，大多数的STL实现者并没有花费更多的时间对它进行优化。例如，在我所使用的一个STL实现中，对于一次基本的测试，使用istreambuf_iterator仅仅比使用istream_iterator快5％左右。很显然，对于这样的实现，istreambuf_iterator的性能仍然有很大的提升空间。
+:::
+
+::: tip
+如果你需要从一个输入流中逐个读取字符，那么就不必使用格式化输入；如果你关心的是读取流的时间开销，那么使用istreambuf_iterator取代istream_iterator只是多输入了3个字符，却可以获得明显的性能改善。对于非格式化的逐个字符输入过程，你总是应该考虑使用istreambuf_iterator。
+
+同样地，对于非格式化的逐个字符输出过程，你也应该考虑使用ostreambuf_iterator。它可以避免因使用ostream_iterator而带来的额外负担（但同时也损失了格式化输出的灵活性），从而具有更为优越的性能。
+:::
+
+## 第5章　算法
+
+### 第30条：确保目标区间足够大。
+
+::: note 在这个例子中，transform的任务是，对values的每个元素调用transmogrify，并且将结果写到从results.end()开始的目标区间中。与其他使用目标区间的算法类似，transform通过赋值操作将结果写到目标区间中。于是，transform首先以values[0]为参数调用transmogrify，并将结果赋给* result.end()。然后，再以values[1]为参数调用transmogrify，并将结果赋给* (results.end()+1)。这可能会引起灾难性的后果！因为在* results.end()中并没有对象，* (results.end()+1）就更没有对象了。这种transform调用是错误的，因为它导致了对无效对象的赋值操作。（第50条将会解释调试版本的STL实现是如何在运行时检测到这种问题的。）
+:::
+
+::: tip
+本条款讲述了同一个问题的各种变化形式，需要牢记的是：无论何时，如果所使用的算法需要指定一个目标区间，那么必须确保目标区间足够大，或者确保它会随着算法的运行而增大。要在算法执行过程中增大目标区间，请使用插入型迭代器，比如ostream_iterator，或者由back_inserter、front_inserter和inserter返回的迭代器。这些都是你需要记住的。
+:::
+
+### 第31条：了解各种与排序有关的选择。
+
+::: note sort、stable_sort、partial_sort和nth_element算法都要求随机访问迭代器，所以这些算法只能被应用于vector、string、deque和数组。对标准关联容器中的元素进行排序并没有实际意义，因为这样的容器总是使用比较函数来维护内部元素的有序性。list是唯一需要排序却无法使用这些排序算法的容器，为此，list特别提供了sort成员函数。（有趣的是，list::sort执行的是稳定排序。）如果希望对一个list进行完全排序，那可以用sort成员函数来做到这一点；但是，如果需要对list中的对象使用partial_sort或者nth_element算法的话，你就只能通过间接途径来完成了。一种间接做法是，将list中的元素复制到一个提供随机访问迭代器的容器中，然后对该容器执行你所期望的算法；另一种间接做法是，先创建一个list::iterator的容器，再对该容器执行相应的算法，然后通过其中的迭代器访问list的元素。第三种方法是利用一个包含迭代器的有序容器中的信息，通过反复地调用splice成员函数，将list中的元素调整到期望的目标位置。可以看到，你会有很多种选择。
+:::
+
+::: note 总结一下所有这些排序选择
+如果需要对vector、string、deque或者数组中的元素执行一次完全排序，那么可以使用sort或者stable_sort。
+
+- 如果有一个vector、string、deque或者数组，并且只需要对等价性最前面的n个元素进行排序，那么可以使用partial_sort。
+
+- 如果有一个vector、string、deque或者数组，并且需要找到第n个位置上的元素，或者，需要找到等价性最前面的n个元素但又不必对这n个元素进行排序，那么，nth_element正是你所需要的函数。
+
+- 如果需要将一个标准序列容器中的元素按照是否满足某个特定的条件区分开来，那么，partition和stable_partition可能正是你所需要的。
+
+- 如果你的数据在一个list中，那么你仍然可以直接调用partition和stable_partition算法；你可以用list::sort来替代sort和stable_sort算法。但是，如果你需要获得partial_sort或nth_element算法的效果，那么，正如前面我所提到的那样，你可以有一些间接的途径来完成这项任务。
+:::
+
+::: note
+我们可以依照算法的时间、空间效率将本条款中讨论过的算法列出如下，其中消耗资源较少的算法排在前面
+1. partition
+2. stable_partition
+3. nth element
+4. partial_sort
+5. sort
+6. stable_sort
+:::
+
+::: tip
+我的建议是，对排序算法的选择应该更多地基于你所需要完成的功能，而不是算法的性能。如果你选择的算法恰好能完成你所需要的功能（例如，使用partition而不是sort），那么多数情况下，这不仅可以使你的代码更加清晰，而且也是用STL来完成相应功能的最有效途径。
+:::
+
+### 第32条：如果确实需要删除元素，则需要在remove这一类算法之后调用erase。
+
+::: note 简而言之，remove移动了区间中的元素，其结果是，“不用被删除”的元素移到了区间的前部（保持原来的相对顺序）。它返回的一个迭代器指向最后一个“不用被删除”的元素之后的元素。这个返回值相当于该区间“新的逻辑结尾”。
+:::
+
+::: note 把remove返回的迭代器作为区间形式的erase的第一个实参是很常见的，这是个习惯用法。事实上，remove和erase的配合是如此紧密，以致它们被合并起来融入到了list的remove成员函数中。这是STL中唯一一个名为remove并且确实删除了容器中元素的函数。坦率地说，调用这个remove函数其实是STL中一个不一致的地方。在关联容器中类似的函数被称为erase。照理来说，list的remove也应该被称为erase。然而它并没有被命名为erase，所以我们只好习惯这种不一致。我们乐于其中的这个世界可能不是最好的，但这是我们所拥有的。（另一方面，在第44条中将会谈到，对于list，调用remove成员函数比使用erase-remove习惯用法更为高效。）
+:::
+
+::: tip
+remove和remove_if的相似性是很显然的，无须我多说了；但是unique也和remove行为相似。它也需要在没有任何容器信息的情况下，从容器中删除一些元素（相邻的、重复的值）。所以，如果你真想从容器中删除元素的话，就必须在调用unique之后再调用erase。unique与list的结合也与remove的情形类似。如同list::remove会真正删除元素（并且比使用erase-remove习惯用法更为高效）一样，list::unique也会真正删除元素（而且比使用erase-unique更为高效）。
+:::
+
+### 第33条：对包含指针的容器使用remove这一类算法时要特别小心。
+
+::: tip
+无论你如何处理那些存放动态分配的指针的容器，你总是可以这样来进行：或者通过引用计数的智能指针，或者在调用remove类算法之前先手工删除指针并将它们置为空，或者用你自己发明的其他某项技术。本条款的指导原则是一致的：对包含指针的容器使用remove类算法时需要特别警惕。如果你不留意这条警告的话，其后果就是资源泄漏。
+:::
+
+### 第34条：了解哪些算法要求使用排序的区间作为参数。
+
+::: note
+这里我先罗列出那些要求排序区间的STL算法：
+`binary_search` `lower_bound` `upper_bound` `equal_range` `set_union` `set_intersection` `set_difference` `set_symmetric_difference` `merge` `inplace_merge` `includes`  
+另外，下面的算法并不一定要求排序的区间，但通常情况下会与排序区间一起使用：
+`unique` `unique_copy`
+:::
+
+::: tip
+这11个算法之所以要求排序的区间，目的是为了提供更好的性能。只要确保提供给它们排序的区间，并保证这些算法所使用的比较函数与排序所使用的比较函数一致，你就可以有效地使用这些与查找、集合操作以及区间合并有关的算法，并且你会惊喜地发现，unique和unique_copy如愿地删除了所有重复的值。
+:::
+
+### 第35条：通过mismatch或lexicographical_compare实现简单的忽略大小写的字符串比较。
+
+::: tip
+关于mismatch和lexicographical_compare已经讲得够多了。虽然我在本书中把焦点集中在可移植性上，但是，忽略大小写的字符串比较函数也普遍存在于标准C库的非标准扩展中，如果我不提及这一点的话，就显得有点不负责任了。这些忽略大小写的字符串比较函数往往具有像strcmp或者strcmpi这样的名字，而且它们在国际化支持方面也不会比本条款中的函数更好。如果你愿意牺牲一点移植性，并且你知道你的字符串中不会包含内嵌的空字符，而且你不考虑国际化支持，那么你可能会发现，实现一个忽略大小写的字符串比较函数最容易的方法根本就不需要使用STL。相反，你可以把两个string转化成const char* 指针（见第16条），然后调用strcmp或strcmpi。有人可能会把这认为是一种取巧，但是，strcmp/strcmpi通常是被优化过的，它们在长字符串的处理上一般要比通用算法mismatch和lexicographical_compare快得多。如果对你来说这很重要，那么，你也许并不在意用非标准的C函数来代替标准的STL算法。有时候，最有效使用STL的途径是认识到其他的途径更加有效。
+:::
+
+### 第36条：理解copy_if算法的正确实现。
+
+::: note
+下面是copy_if的正确实现：
+```C++
+template<typename Inputlterator //copy if的一个正确实现
+        typename Outputlterator,
+        typename Predicate>
+Outputlterator copy_if(Inputlterator begin,
+                      Inputlterator end,
+                      Outputlterator destBegin,
+                      Predicate p)
+{
+  while (begin != end) {
+  if (p(*begin)) *destBegin++ = *begin;
+  ++begin;
+  }
+  return destBegin;
+}
+```
+:::
+
+::: tip
+其实copy_if是很有用的，很多STL程序员都希望有这个算法。你可以把这个正确的copy_if放到你本地的STL相关的工具库中，然后在适当的地方使用这个算法。
+:::
+
+### 第37条：使用accumulate或者for_each进行区间统计。
+
+::: note
+```C++
+double sum= accumulate(ld.begin(), ld.end(), 0.0); //计算它们的和,初始值为0.0
+```
+在这个例子中，请注意初始值被指定为0.0，而不是简单的0。这非常重要，因为0.0的类型是double，所以accumulate的内部使用一个double类型的变量来保存它所计算的总和。
+```C++
+double sum= accumulate(ld.begin(), ld.end(), 0); //计算它们的和,初始值为0
+```
+那么因为这里的初始值为int 0，所以accumulate的内部将使用一个int变量来保存它所计算的总和。而且这个int值最终将成为accumulate的返回值，然后再被用来初始化变量sum。这段代码既能够通过编译，也可以正常运行，但是sum的值不正确。它的结果不是这些double值的真正总和，而是把每次加法的结果都转换成整数之后得到的总和。
+:::
+
+::: note 这段代码能够工作，但是，因为我有时候会跟一些狂热分子（他们中很多人是标准委员会的）打交道，所以我练就了一种本领：能够预想出STL的实现中哪里会失败。无论如何，PointAverage和标准中26.4.1节的第二段内容有冲突。我想你也应该知道，那就是，传给accumulate的函数不允许有副作用。而修改numPoints、xSum、ySum的值会带来副作用，所以从技术上说，刚才给出的代码其结果是不可预测的。从实践来说，很难想象它不能工作。但在这里，有很多语言专家们不允许我这么做，所以我没有选择，只好搬出标准来了。
+:::
+
+::: note 先忽略副作用的问题不谈，for_each和accumulate在两个方面有所不同。首先，名字accumulate暗示着这个算法将会计算出一个区间的统计信息。而for_each听起来就好像是对一个区间的每个元素做一个操作，当然，这也正是算法的主要应用。用for_each来统计一个区间是合法的，但是不如accumulate来得清晰。
+:::
+
+::: note 其次，accumulate直接返回我们所要的统计结果，而for_each却返回一个函数对象，我们必须从这个函数对象中提取出我们所要的统计信息。在C++中，这意味着我们必须在函数子类中加入一个成员函数，以便获得我们想要的统计信息。
+:::
+
+::: tip
+从我个人的观点来看，我宁愿使用accumulate，因为我认为它很清楚地表达了所要做的事情，当然for_each也能工作，而且副作用的问题对于for_each来说，也没有accumulate那样严重。两个算法都能用于统计区间。你可以从中挑选最适合你的算法。
+:::
