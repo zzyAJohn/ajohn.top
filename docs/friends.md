@@ -26,6 +26,11 @@ list:
     desc: 泥嚎~
   -
     name: 努力学会月牙天冲
+    link: https://www.corp-sans.top/
+    avatar: https://oss.ajohn.top/blog/friends/nulixuehuiyueyatianchong.webp
+    desc: We reach for the stars, acted like man（corp-sans版）
+  -
+    name: 努力学会月牙天冲
     link: https://zxy.ajohn.top/blog/
     avatar: https://oss.ajohn.top/blog/friends/nulixuehuiyueyatianchong.webp
     desc: We reach for the stars, acted like man
