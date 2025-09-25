@@ -9,7 +9,7 @@ import AboutMeText from './AboutMeText.vue'
       <p class="about-me-card-title-normal">网站总访问量</p>
       <div class="count-wrapper">
         <img 
-          class="kitten-sign" 
+          class="view-counter-sign" 
           src="https://count.getloli.com/@ajohn?name=ajohn&theme=gelbooru&padding=7&offset=0&align=top&scale=1&pixelated=1&darkmode=auto" 
           alt="访问人数"
         />
@@ -26,13 +26,13 @@ import AboutMeText from './AboutMeText.vue'
   margin-top: 0.5rem;
 }
 
-.kitten-sign {
+.view-counter-sign {
   width: 70%;        /* 放大：原先 50% 改成 70% */
   max-width: 400px;  /* 限制最大宽度，避免太大溢出 */
   transition: transform 0.3s ease;
 }
 
-.kitten-sign:hover {
+.view-counter-sign:hover {
   transform: scale(1.1); /* hover 时再放大 */
 }
 </style>

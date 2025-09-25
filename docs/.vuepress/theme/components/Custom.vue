@@ -19,7 +19,7 @@
       </a> -->
     </div>
     <div class="about-me">
-      <div class="card-content grid-row-3-2">
+      <div class="card-content grid-row-1-1-1">
         <AboutMeName />
         <AboutMeText>
           <template #motto>
@@ -30,6 +30,7 @@
             </slot>
           </template>
         </AboutMeText>
+        <AboutMeCharacter />
       </div>
       <div class="card-content grid-row-3-2">
         <AboutMeSkill />
@@ -47,7 +48,7 @@
           </template>
         </AboutMeText> -->
         <ViewedCount />
-        <AboutMeCharacter />
+        <GithubHeatmap />
       </div>
       <div class="card-content grid-row-1">
         <AboutMeFriendLink />
@@ -139,6 +140,10 @@ canvas {
 
 .grid-row-1-1 {
   grid-template-columns: 1fr 1fr;
+}
+
+.grid-row-1-1-1 {
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .grid-row-1 {
