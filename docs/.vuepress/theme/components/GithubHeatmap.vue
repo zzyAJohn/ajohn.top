@@ -2,7 +2,6 @@
 <script setup>
 import AboutMeText from './AboutMeText.vue'
 
-// 替换成你的 GitHub 用户名
 const username = 'zzyAJohn'
 </script>
 
@@ -11,7 +10,6 @@ const username = 'zzyAJohn'
     <template #motto>
       <p class="about-me-card-title-normal">GitHub 贡献热力图</p>
       <div class="heatmap-container">
-        <!-- 使用 ghchart 服务 -->
         <img
           class="github-heatmap"
           :src="`https://ghchart.rshah.org/3a5ccc/${username}`"
@@ -28,17 +26,20 @@ const username = 'zzyAJohn'
   justify-content: center;
   align-items: center;
   margin-top: 0.5rem;
-  overflow-x: auto; /* 避免图太宽溢出 */
+  overflow: hidden; /* 避免放大出现滚动条 */
 }
 
 .github-heatmap {
-  width: 100%;
-  max-width: 800px; /* 限制最大宽度 */
+  width: 98%;
+  max-width: 800px;
+  max-height: 400px; /* 控制高度 */
   border-radius: 8px;
   transition: transform 0.3s ease;
+  transform-origin: center;
+  object-fit: contain;
 }
 
 .github-heatmap:hover {
-  transform: scale(1.05); /* hover 时放大 */
+  transform: scale(1.01);
 }
 </style>
