@@ -2,6 +2,10 @@
 title: 'Dirichlet-Based Prediction Calibration for Learning with Noisy Labels'
 createTime: 2025/03/19 18:27:23
 permalink: /article/2sfixt7r/
+tags:
+    - Deep Learning
+    - LNL
+    - Python
 ---
 
 一种基于 Dirichlet 的预测校准(DPC)方法，实现更可靠的模型预测。

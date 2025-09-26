@@ -2,6 +2,9 @@
 title: EdgeOne Pages 系列（二）：轻松搭建个人图床
 createTime: 2025/06/24 10:58:35
 permalink: /article/rzxkl2vi/
+tags:
+    - EdgeOne
+    - OSS
 cover: https://img0.baidu.com/it/u=3505072417,867264446&fm=253&fmt=auto&app=120&f=JPEG?w=1600&h=800
 ---
 
