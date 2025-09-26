@@ -9,8 +9,9 @@ permalink: /article/dagep2xy/
 ---
 
 一种具有动态相互学习功能的在线协同精炼（CORE）框架，其中网络和标签预测通过从其他对等网络中提取知识来在线协作优化。
-
+::: center
 ![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-19/202412191341410.png)
+:::
 <!-- more -->
 ---
 
