@@ -5,9 +5,14 @@ tags:
     - Linux
 createTime: 2024/12/28 11:16:38
 permalink: /article/31au2d1x/
+cover: https://img0.baidu.com/it/u=791897993,2162355287&fm=253&fmt=auto&app=120&f=JPEG?w=800&h=500
 ---
 
-突然想和小伙伴玩一下 Minecraft，遂搭建了一个服务器<!-- more -->
+突然想和小伙伴玩一下 Minecraft，遂搭建了一个服务器
+
+<!-- ![](https://img0.baidu.com/it/u=791897993,2162355287&fm=253&fmt=auto&app=120&f=JPEG?w=800&h=500) -->
+
+<!-- more -->
 ## 1. 购买云服务器
 
 
@@ -182,7 +187,7 @@ active (running)
 ### 5.1 MCSManager 终端
 将用户 `zzy` 设置为管理员
 
-op zzy
+`op zzy`
 
 
 ### 5.2 游戏内
@@ -191,17 +196,17 @@ op zzy
 
 创造模式
 
-gamemode creative
+`gamemode creative`
 
 <!-- ## 6. 域名解析
 
 ![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-28/202412281905534.png) -->
 
 
-
+<!-- 
 出现弹窗：
 ![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-29/202412291148126.png)
-
+ -->
 
 
 

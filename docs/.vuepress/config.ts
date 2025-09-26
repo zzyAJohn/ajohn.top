@@ -15,6 +15,16 @@ export default defineUserConfig({
   bundler: viteBundler(),
 
   theme: plumeTheme({
+    blog: {
+      // 配置 封面图 布局位置
+      // postCover: 'left', // 'left' | 'right' | 'odd-left' | 'odd-right' | 'top'
+      postCover: {
+        layout: 'left',
+        ratio: '16:9',
+        width: 300,
+        compact: true
+      }
+    },
     encrypt: {
       rules: {
         // // 可以是 md 文件的相对路径，对该文件加密
