@@ -4,6 +4,7 @@ tags:
     - VSCode
 createTime: 2024/12/16 10:24:05
 permalink: /article/ayx5589t/
+cover: https://oss.ajohn.top/blog/vscode-ssh/cover.webp
 ---
 
 省流：打开 `C:\Users\AJohn\.ssh\` 路径，直接删除 `known_hosts` 文件。
