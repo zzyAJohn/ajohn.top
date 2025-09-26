@@ -49,5 +49,12 @@ export default defineNoteConfig({
         'oop2.md',
       ]
     },
+    {
+      text: '五、STL标准库和泛型编程',
+      prefix: 'STL', 
+      items: [
+        'stl.md',
+      ]
+    },
   ]
 })
