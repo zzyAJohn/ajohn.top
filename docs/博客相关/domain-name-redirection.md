@@ -2,6 +2,7 @@
 title: 域名重定向
 createTime: 2024/11/18 17:10:13
 permalink: /article/bytzx028/
+cover: https://img2.baidu.com/it/u=2384218989,740600721&fm=253&fmt=auto&app=138&f=JPEG?w=970&h=500
 ---
 
 通过域名重定向，把博客地址重定向到 `https://ajohn.top/`<!-- more -->
