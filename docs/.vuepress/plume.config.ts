@@ -8,8 +8,14 @@ import notes from './notes/index'
 export default defineThemeConfig({
   logo: 'https://oss.ajohn.top/blog/friends/ajohn.webp',
   // your git repo url
-  docsRepo: '',
+  /* 文档仓库配置，用于 editLink */
+  docsRepo: 'https://github.com/zzyAJohn/ajohn.top',
   docsDir: 'docs',
+  docsBranch: 'main',
+
+  /* 页内信息 */
+  editLink: true,
+  editLinkText: '帮助我修改错误',
 
   appearance: true,
 
