@@ -5,9 +5,10 @@ tags:
     - WSL
 createTime: 2024/12/16 20:50:52
 permalink: /article/lo7fbj1s/
+cover: https://img0.baidu.com/it/u=1312246635,1450695287&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500
 ---
 
->开发人员可以通过适用于 Linux 的 Windows 子系统 (WSL)，直接在 Windows 上使用 Linux 系统的一切
+>开发人员可以通过适用于 Linux 的 Windows 子系统 (WSL)，直接在 Windows 上使用 Linux 系统的一切<!-- more -->
 
 ## 0.前置配置
 
@@ -15,7 +16,7 @@ permalink: /article/lo7fbj1s/
 
 打开任务管理器，点击CPU
 
-如果显示 `虚拟化：已启用` 就是默认开启了，如果显示未启用则需要通过 `bios` 设置开启<!-- more -->
+如果显示 `虚拟化：已启用` 就是默认开启了，如果显示未启用则需要通过 `bios` 设置开启
 
 ![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-17/202412170920562.png)
 
