@@ -12,6 +12,8 @@ export default defineNoteConfig({
         'tittle-tattle.md',
         'ps.md',
         'nikon-cloud.md',
+        'time-lapse photography.md',
+        'composition.md',
       ]
     },
     {
@@ -34,6 +36,5 @@ export default defineNoteConfig({
         'dr5.md',
       ]
     },
-
   ]
 })

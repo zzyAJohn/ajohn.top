@@ -4,6 +4,9 @@ createTime: 2024/12/17 22:45:45
 permalink: /photography/dvno2v6v/
 ---
 
+下面这个视频很客观了
+
+@[bilibili](BV1QS411P7h7)
 
 ## 相机类型
 
