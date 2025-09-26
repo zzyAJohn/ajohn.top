@@ -4,6 +4,7 @@ tags:
     - Linux
 createTime: 2025/02/18 09:38:49
 permalink: /article/l5qbaepk/
+cover: https://img1.baidu.com/it/u=1809007649,1296379443&fm=253&fmt=auto&app=138&f=JPEG?w=849&h=500
 ---
 
 AJohn Blog 创建之初本是打算记录所学，同时给予来者之参考借鉴，主要面向程序员学习交流，故而白嫖了很久 Github 的服务器，使用起来也是非常丝滑，从未罢工。怎奈随着时光流逝，有时分享于其他行业之友人却是稍有不便，遂将博客同时部署于 Github 服务器与国内服务器。特别感谢 [YOAKE](https://github.com/YOYOYOAKE.png) 的技术支持。
