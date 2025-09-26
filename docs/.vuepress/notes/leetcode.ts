@@ -66,5 +66,18 @@ export default defineNoteConfig({
         '3.string-greed.md',
       ]
     },
+    {
+      text: '其它',
+      items: [
+        'hot100.md',
+      ]
+    },
+    {
+      text: '蓝桥杯之赛前总动员',
+      items: [
+        'lanqiao-14.md',
+        'lanqiao-15.md',
+      ]
+    },
   ]
 })
