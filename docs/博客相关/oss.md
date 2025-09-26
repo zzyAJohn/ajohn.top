@@ -6,6 +6,7 @@ tags:
     - Linux
 createTime: 2025/03/03 09:30:21
 permalink: /article/oss/
+cover: https://img0.baidu.com/it/u=3837149030,1305388847&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500
 ---
 
 [MinIO](https://min.io/) 是一个高性能的轻量级对象存储服务器。它具有分布式，高可用性和水平扩展的特点，它非常适合用于大规模数据存储和分析。其优点包括低延迟、高吞吐量、易于部署和管理。

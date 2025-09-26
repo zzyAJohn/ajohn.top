@@ -1,9 +1,10 @@
 ---
-title: VSCode 快捷键
+title: 你真的会用 VSCode 吗？
 tags:
     - VSCode
 createTime: 2024/11/07 00:00:00
 permalink: /article/ayskep62/
+cover: https://img1.baidu.com/it/u=3550883277,3233325513&fm=253&fmt=auto&app=138&f=JPEG?w=946&h=500
 ---
 
 记录一些 VSCode 快捷键<!-- more -->

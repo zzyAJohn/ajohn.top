@@ -2,10 +2,13 @@
 title: EdgeOne Pages 系列（二）：轻松搭建个人图床
 createTime: 2025/06/24 10:58:35
 permalink: /article/rzxkl2vi/
+cover: https://img0.baidu.com/it/u=3505072417,867264446&fm=253&fmt=auto&app=120&f=JPEG?w=1600&h=800
 ---
 
-在这个流量飞速奔涌的时代，一张图片，几行代码，便能串起世界的每个角落。腾讯云 EdgeOne Pages 的免费全球 CDN 加速服务恰如其分，为我们打造个人图床插上了翅膀。相比 Cloudflare Pages 那些或多或少的访问次数限制，EdgeOne Pages 为我们提供了更自由、更便捷的部署体验——我们只需按下“开始部署”，即可将图片托管飞速上线。
+在这个流量飞速奔涌的时代，一张图片，几行代码，便能串起世界的每个角落。腾讯云 EdgeOne Pages 的免费全球 CDN 加速服务恰如其分，为我们打造个人图床插上了翅膀。
 <!-- more -->
+相比 Cloudflare Pages 那些或多或少的访问次数限制，EdgeOne Pages 为我们提供了更自由、更便捷的部署体验——我们只需按下“开始部署”，即可将图片托管飞速上线。
+
 
 ## 1. 创建 Github 仓库
 

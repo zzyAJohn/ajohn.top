@@ -6,6 +6,7 @@ tags:
     - Deep Learning
 createTime: 2024/12/20 14:10:48
 permalink: /article/bes1sa4i/
+cover: https://img2.baidu.com/it/u=1640780831,735657335&fm=253&fmt=auto&app=120&f=JPEG?w=714&h=500
 ---
 
 **实验室的小伙伴，请先填写在线表格，申请一个用户**

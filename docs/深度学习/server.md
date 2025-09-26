@@ -6,22 +6,24 @@ tags:
     - Deep Learning
 createTime: 2024/12/21 16:38:48
 permalink: /article/server/
+cover: https://img1.baidu.com/it/u=751575883,1849556738&fm=253&fmt=auto&app=138&f=JPEG?w=750&h=500
 ---
 
-本篇博客主要记录 Ubuntu 深度学习服务器配置 ~~以及从删库到跑路~~
-
-PS ：在昨天12月20日下午本来一切配置妥当，但是晚上输入 `nvidia-smi` 突然报错
-
-原因可能是没有把自动更新关掉，系统自动更新了 NVIDIA 库文件，和驱动不匹配
-
-我尝试更新驱动，失败了，导致服务器差点成砖了，后续重装了四次系统，终于在12月21日下午4点恢复正常使用
-
-特此记录，可为以后的服务器管理员重装作参考
+本篇博客主要记录 Ubuntu 深度学习服务器配置 ~~以及从删库到跑路~~。
 
 <!-- more -->
 
 ---
-2025.1.4 更新：又重装了，这次把需要下载的东西都备份到机械硬盘 `/mnt/data/bak` 文件夹下了，万一下次需要重装，直接 cp 到 `/home/user/Downloads` 就可以了
+PS ：在昨天12月20日下午本来一切配置妥当，但是晚上输入 `nvidia-smi` 突然报错。
+
+原因可能是没有把自动更新关掉，系统自动更新了 NVIDIA 库文件，和驱动不匹配。
+
+我尝试更新驱动，失败了，导致服务器差点成砖了，后续重装了四次系统，终于在12月21日下午4点恢复正常使用。
+
+特此记录，可为以后的服务器管理员重装作参考。
+
+---
+2025.1.4 更新：又重装了，这次把需要下载的东西都备份到机械硬盘 `/mnt/data/bak` 文件夹下了，万一下次需要重装，直接 cp 到 `/home/user/Downloads` 就可以了。
 ```bash
 zzy@user:/mnt/data/bak$ ls
 Anaconda3-2024.10-1-Linux-x86_64.sh  cudnn-linux-x86_64-8.9.7.29_cuda11-archive         NVIDIA-Linux-x86_64-550.142.run
@@ -34,9 +36,12 @@ cuda_11.8.0_520.61.05_linux.run      cudnn-linux-x86_64-8.9.7.29_cuda11-archive.
 ---
 2025.3.17 更新：驱动掉了，显示 `Driver Not Loaded`，解决方法跳转 [11. Driver Not Loaded](#11-driver-not-loaded)
 
+---
+2025.9.25 更新：没有程序运行但是cpu爆了，疑似有僵尸把cpu占满了，接到通知又要重装一次，所幸环境皆有备份，还算容易。其实很早我就在想要不要写个脚本，以后重装直接一行命令执行全部操作，一劳永逸，感觉有点搞头，怎奈最近空闲时间不多，遂搁置了（期待以后实验室哪位继承人发扬光大）。
+
 ## 1. 重装系统 Ubuntu20.04
 
-准备：一个u盘，一台能联网的windows电脑
+准备：一个u盘，一台能联网的windows电脑。
 
 ### 1.1 下载 Ubuntu20.04 
 
@@ -576,6 +581,7 @@ sudo vim ~/.bashrc
 ```
 在最下面添加：
 ```bash
+# Anaconda setup
 export PATH=/home/user/anaconda3/bin:$PATH
 ```
 
@@ -634,10 +640,21 @@ sudo apt update
 
 下载 cuda 11.8，地址为 [Installer for Linux Ubuntu 20.04 x86_64](https://developer.nvidia.com/cuda-11-8-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=20.04&target_type=runfile_local) （2025.1.4 更新 现在可以直接使用机械硬盘 `/mnt/data/bak` 中的存档文件 `cuda_11.8.0_520.61.05_linux.run` ）
 
+下载
 ```bash
 wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda_11.8.0_520.61.05_linux.run
+```
+
+安装
+
+::: tip
+```bash
 sudo sh cuda_11.8.0_520.61.05_linux.run
 ```
+这里会提示选择安装内容，选择 + 的三个cuda包即可，驱动我们已经下过了，记得取消驱动选项。
+:::
+
+
 
 编辑环境变量
 ```bash
@@ -646,6 +663,7 @@ sudo vim ~/.bashrc
 
 按 `i` 进入编辑模式，在末尾将以下代码复制进去，然后按`esc`推出编辑模式，输入`:wq`保存并退出 
 ```bash
+# CUDA setup
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.8/lib64
 export PATH=$PATH:/usr/local/cuda-11.8/bin
 export CUDA_HOME=$CUDA_HOME:/usr/local/cuda-11.8
