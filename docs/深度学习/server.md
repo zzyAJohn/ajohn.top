@@ -623,10 +623,30 @@ sudo vim /etc/apt/sources.list
 i进入编辑模式，将原有软件源开头全部用 # 注释掉，然后将以下代码复制进去，然后按esc推出编辑模式，输入:wq保存并退出，
 
 ```bash
-deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse
-deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
-deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
-deb http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
+# 官方源
+deb http://archive.ubuntu.com/ubuntu jammy main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu jammy-updates main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu jammy-backports main restricted universe multiverse
+deb http://security.ubuntu.com/ubuntu jammy-security main restricted universe multiverse
+
+# 阿里云
+deb http://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse
+
+# 中科大
+deb http://mirrors.ustc.edu.cn/ubuntu/ jammy main restricted universe multiverse
+deb http://mirrors.ustc.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
+deb http://mirrors.ustc.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
+deb http://mirrors.ustc.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
+
+# 163
+deb http://mirrors.163.com/ubuntu/ jammy main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ jammy-updates main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ jammy-backports main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ jammy-security main restricted universe multiverse
+
 ```
 
 
@@ -925,7 +945,7 @@ user@user:~$ git --version
 git version 2.34.1
 user@user:~$ 
 ```
-### 9.2 为所有用户配置 pip 清华源
+### 9.2 为所有用户配置 pip 镜像源
 ```bash
 sudo touch /etc/pip.conf
 sudo vim /etc/pip.conf
@@ -934,6 +954,11 @@ sudo vim /etc/pip.conf
 ```
 [global]
 index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+extra-index-url =
+    https://mirrors.aliyun.com/pypi/simple/
+    https://pypi.mirrors.ustc.edu.cn/simple/
+    https://pypi.doubanio.com/simple/
+    https://mirrors.huaweicloud.com/repository/pypi/simple/
 ```
 输入
 ```bash
@@ -941,7 +966,10 @@ pip config list
 ```
 出现：
 ```bash
-global.index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+(base) user@user-server:~$ pip config list
+global.extra-index-url='\nhttps://mirrors.aliyun.com/pypi/simple/\nhttps://pypi.mirrors.ustc.edu.cn/simple/\nhttps://pypi.doubanio.com/simple/\nhttps://mirrors.huaweicloud.com/repository/pypi/simple'
+global.index-url='https://pypi.tuna.tsinghua.edu.cn/simple'
+(base) user@user-server:~$ 
 ```
 
 

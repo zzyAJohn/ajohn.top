@@ -199,6 +199,10 @@ pip install kornia
 pip install ipykernel
 ```
 
+```bash
+pip install scikit-learn
+```
+
 管理员安装
 ```bash
 sudo apt-get install libpython2.7
