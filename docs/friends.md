@@ -50,6 +50,11 @@ list:
     avatar: https://oss.ajohn.top/blog/friends/wb.webp
     desc: Through Her Eyes
   -
+    name: virtualguard
+    link: https://blog.virtualguard101.com/
+    avatar: https://oss.ajohn.top/blog/friends/virtualguard101.webp
+    desc: 
+  -
     name: 婚礼作品展示
     link: https://wedding.ajohn.top/
     avatar: https://oss.ajohn.top/blog/xi-favicon.png
