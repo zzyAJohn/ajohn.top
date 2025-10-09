@@ -5,10 +5,18 @@ export default defineNoteConfig({
   link: '/record/',
   sidebar: [
     'README.md',
+    // {
+    //   text: '2025-10',
+    //   prefix: '2025-10', 
+    //   items: [
+    //     '2025-10-06.md',
+    //   ]
+    // },
     {
       text: '2025-09',
       prefix: '2025-09', 
       items: [
+        '2025-09-29.md',
         '2025-09-22.md',
         '2025-09-15.md',
         '2025-09-08.md',
