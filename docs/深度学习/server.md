@@ -60,16 +60,16 @@ cuda_11.8.0_520.61.05_linux.run      cudnn-linux-x86_64-8.9.7.29_cuda11-archive.
 ### 1.3 刻录到u盘
 
 在左侧打开 Ubuntu 镜像：
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221113181.png)
+![](https://oss.ajohn.top/blog/article/server/1.webp)
 
 启动-写入硬盘镜像，磁盘启动器选择自己U盘，映像文件选择 Ubuntu 系统镜像，写入方式选择 USB-HDD+，点击写入即可。
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221113911.png)
+![](https://oss.ajohn.top/blog/article/server/2.webp)
 
 刻录校验不选
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221121124.png)
+![](https://oss.ajohn.top/blog/article/server/3.webp)
 
 等待十分钟左右，u盘变成：
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221123252.jpg)
+![](https://oss.ajohn.top/blog/article/server/4.webp)
 
 ### 1.3 u盘启动
 
@@ -77,51 +77,51 @@ cuda_11.8.0_520.61.05_linux.run      cudnn-linux-x86_64-8.9.7.29_cuda11-archive.
 
 
 进入主板：
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221125254.jpg)
+![](https://oss.ajohn.top/blog/article/server/5.webp)
 
 按小键盘的 `→` 移动到 `Boot`
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221126172.jpg)
+![](https://oss.ajohn.top/blog/article/server/6.webp)
 
 按 `↓` 移动到 `Boot Option #1` 按 `-` 可以切换启动项，直到启动项是u盘即可：
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221126366.jpg)
+![](https://oss.ajohn.top/blog/article/server/7.webp)
 
 按 `f10` 保存，之后会自己启动 ubuntu，什么都不要按：
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221129971.jpg)
+![](https://oss.ajohn.top/blog/article/server/8.webp)
 
 ### 1.4 安装 Ubuntu
 选择 `Install Ubuntu`
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221129758.jpg)
+![](https://oss.ajohn.top/blog/article/server/9.webp)
 
 
 默认英语，直接 `Continue`：
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221129104.jpg)
+![](https://oss.ajohn.top/blog/article/server/10.webp)
 
 默认 `Normal installation` 直接 `Continue`：
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221130356.jpg)
+![](https://oss.ajohn.top/blog/article/server/11.webp)
 
 选择 `Erase disk and install Ubuntu`
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221131358.jpg)
+![](https://oss.ajohn.top/blog/article/server/12.webp)
 
 选择 2t 盘
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221131569.jpg)
+![](https://oss.ajohn.top/blog/article/server/13.webp)
 
 `Continue`
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221132621.jpg)
+![](https://oss.ajohn.top/blog/article/server/14.webp)
 
 随便点个国内点，默认上海就行，`Continue`
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221132013.jpg)
+![](https://oss.ajohn.top/blog/article/server/15.webp)
 
 设置主机名和管理员，`Continue`
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221132952.jpg)
+![](https://oss.ajohn.top/blog/article/server/16.webp)
 
 ### 1.5 2t固态启动
 之后会自动重启，出现：
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221133079.jpg)
+![](https://oss.ajohn.top/blog/article/server/17.webp)
 
 提示你弹出u盘，然后按回车，这时候又会重启，疯狂按 `del`，去修改启动项为2t盘（修改启动方式上面教过了，不再赘述）
 
 启动成功：
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221134189.jpg)
+![](https://oss.ajohn.top/blog/article/server/18.webp)
 
 
 ### 1.6 关闭自动更新
@@ -346,7 +346,7 @@ sudo apt-get install make
 
 选择如图所示：
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-21/202412212118150.png)
+![](https://oss.ajohn.top/blog/article/server/19.webp)
 
 下好的文件应该是 `NVIDIA-Linux-x86_64-550.142.run`
 
@@ -503,7 +503,7 @@ user@user:~$
 lsblk
 ```
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-21/202412212131404.png)
+![](https://oss.ajohn.top/blog/article/server/20.webp)
 
 可以看到，我们的 `sda1` 位于 `/media/user/afdb377b-dod3-48dc-8fe3-001c1370db65` 路径下
 
@@ -527,14 +527,14 @@ sudo mount /dev/sda1 /mnt/data
 blkid
 ```
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-21/202412212134195.jpg)
+![](https://oss.ajohn.top/blog/article/server/21.webp)
 
 查看挂载情况：
 ```bash
 df -Th
 ```
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-21/202412212135880.png)
+![](https://oss.ajohn.top/blog/article/server/22.webp)
 
 可以看到，已经切换成功了，设置开机自动挂载
 
@@ -544,7 +544,7 @@ sudo -i
 sudo echo "/dev/sda1 /mnt/data ext4 defaults  0 0" >> /etc/fstab
 ```
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-21/202412212138327.png)
+![](https://oss.ajohn.top/blog/article/server/23.webp)
 
 
 输入命令验证一下，如果没有输出就是成功了
@@ -978,19 +978,19 @@ global.index-url='https://pypi.tuna.tsinghua.edu.cn/simple'
 ### 10.1 问题
 在重启ubuntu的过程中发现2种情况的黑屏：
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221044073.jpg)
+![](https://oss.ajohn.top/blog/article/server/24.webp)
 
 1. 在grub引导菜单选择ubuntu后进入黑屏后，左上角有 `-` 光标一直在闪烁，操作无反应且一直进不去系统。
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221040405.jpg)
+![](https://oss.ajohn.top/blog/article/server/25.webp)
 
 2. 在grub引导菜单选择 `Advanced options for Ubuntu`，以救援模式启动:
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221047821.jpg)
+![](https://oss.ajohn.top/blog/article/server/26.webp)
 
 卡在这里操作无反应且一直进不去系统，如下图所示的报错
 
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221040576.jpg)
+![](https://oss.ajohn.top/blog/article/server/27.webp)
 
 ### 10.2 原因分析
 
@@ -1002,34 +1002,34 @@ global.index-url='https://pypi.tuna.tsinghua.edu.cn/simple'
 1. 我尝试了这个方法没用，你看一下就行：
 
 在第二行按e进入编辑
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221047821.jpg)
+![](https://oss.ajohn.top/blog/article/server/26.webp)
 
 
 出现：
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221052287.jpg)
+![](https://oss.ajohn.top/blog/article/server/28.webp)
 
 `ro` 后面改成 `rw single quiet splash nomodeset init=/bin/bash`
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221054139.jpg)
+![](https://oss.ajohn.top/blog/article/server/29.webp)
 
 可以出现命令行，但是按什么键都没有反应
 
 2. 你需要按照这个方法：
 
 尝试在第一行按e进入编辑
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221047821.jpg)
+![](https://oss.ajohn.top/blog/article/server/26.webp)
 
 
 
 
 出现：
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221059286.jpg)
+![](https://oss.ajohn.top/blog/article/server/30.webp)
 
 
 `ro` 后面改成 `rw single init=/bin/bash`：
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221101863.jpg)
+![](https://oss.ajohn.top/blog/article/server/31.webp)
 
 出现：
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-22/202412221100630.jpg)
+![](https://oss.ajohn.top/blog/article/server/32.webp)
 
 
 这时候就可以敲命令了，~~不过最后还是没救回来~~。
