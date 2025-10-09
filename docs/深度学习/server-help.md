@@ -19,7 +19,7 @@ cover: https://img2.baidu.com/it/u=1640780831,735657335&fm=253&fmt=auto&app=120&
 :::
 
 打开 `VSCode`
-![](https://cdn.jsdelivr.net/gh/zzyAJohn/Blog-Image/2024-12-20/202412201402272.png)
+![](https://oss.ajohn.top/blog/article/server-help/1.webp)
 
 点击左下角的 `打开远程窗口` （蓝色矩形区域）
 
@@ -437,7 +437,7 @@ zzy@user:/mnt/data/zzy$
 
 按下回车，出现：
 
-![](https://oss.ajohn.top/blog/server-help/1.webp)
+![](https://oss.ajohn.top/blog/article/server-help/2.webp)
 
 
 ## 6.其他命令
