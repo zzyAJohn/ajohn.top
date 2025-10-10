@@ -24,6 +24,8 @@ export default defineNoteConfig({
       prefix: 'movie', 
       items: [
         'Interstellar.md',
+        'the-shadows-edge.md',
+        'Nobody.md',
       ]
     },
     // {

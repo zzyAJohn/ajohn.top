@@ -11,3 +11,19 @@ permalink: /tv/
 无论是紧张刺激的美剧，还是温柔动人的电影，它们都是时间的容器，盛放着思想、情感和记忆。在这里，我将写下看过的剧与片，分享那些让我心动的瞬间、值得回味的情节，或者只是简单说一句：“这部，真好。”
 
 欢迎你与我一起，在光影之中，走过世界，走进自己。
+
+
+<CardGrid cols="4">
+  <ImageCard
+    image="https://img1.baidu.com/it/u=2559542315,3369447634&fm=253&app=138&f=JPEG?w=800&h=841"
+  />
+  <ImageCard
+    image="https://img0.baidu.com/it/u=2790732359,617067529&fm=253&app=138&f=JPEG?w=500&h=666"
+  />
+  <ImageCard
+    image="https://img0.baidu.com/it/u=1496715106,1314717563&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=743"
+  />
+  <ImageCard
+    image="https://img0.baidu.com/it/u=818995517,1803237279&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=833"
+  />
+</CardGrid>
