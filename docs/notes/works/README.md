@@ -48,6 +48,7 @@ permalink: /works/
 
 <!-- 横屏 -->
 <Swiper :items="[
+  'https://oss.ajohn.top/blog/works/2025-08-24/DSC_1667.webp',
   'https://oss.ajohn.top/blog/works/2025-08-09/DSC_1459.webp',
   'https://oss.ajohn.top/blog/works/2025-07-22/DSC_5922.webp',
   'https://oss.ajohn.top/blog/works/2025-05-11/DSC_9975.webp',
@@ -75,6 +76,7 @@ permalink: /works/
 ### 2025-08
 
 
+- [x] 8.24 [孝感文化中心](./2025-08/2025-08-24.md)
 - [x] 8.21 林中木屋（武汉汉口江滩）
 - [x] 8.9 [ab漫展（武汉光谷）](./2025-08/2025-08-09.md)
 
