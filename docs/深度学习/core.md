@@ -2,7 +2,7 @@
 title: 'Collaborative Refining for Person Re-Identification With Label Noise'
 tags:
     - Deep Learning
-    - Re-id
+    - Re-ID
     - Python
 createTime: 2024/12/17 13:47:32
 permalink: /article/dagep2xy/
