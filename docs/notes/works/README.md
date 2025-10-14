@@ -34,6 +34,8 @@ permalink: /works/
 <!-- 竖屏 -->
 <Swiper
   :items="[
+  'https://oss.ajohn.top/blog/works/2025-09-17/DSC_1837.webp',
+  'https://oss.ajohn.top/blog/works/2025-09-17/DSC_1769.webp',
   'https://oss.ajohn.top/blog/works/2025-09-17/DSC_1752.webp',
   'https://oss.ajohn.top/blog/works/2025-07-27/DSC_1284.webp',
   'https://oss.ajohn.top/blog/works/2025-07-25/DSC_0515.webp',
