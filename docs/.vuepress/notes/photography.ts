@@ -17,6 +17,14 @@ export default defineNoteConfig({
       ]
     },
     {
+      text: 'LR',
+      prefix: 'lr', 
+      items: [
+        'transparent-photos.md',
+        'cloudy-day.md',
+      ]
+    },
+    {
       text: '灯光教学',
       prefix: 'lamp', 
       items: [
