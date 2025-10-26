@@ -16,7 +16,7 @@ list:
     desc: Birds are born with no shackles.
   -
     name: Zephyr
-    link: https://moiads.xyz/
+    link: https://zephyrus612.netlify.app/
     avatar: https://oss.ajohn.top/blog/friends/zephyr.webp
     desc: 不要温和地走进那个良夜。
   -
