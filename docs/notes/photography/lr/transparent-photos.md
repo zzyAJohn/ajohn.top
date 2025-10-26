@@ -2,7 +2,15 @@
 title: LR调色务实教程 | 如何调出照片的通透感
 createTime: 2025/10/24 18:29:29
 permalink: /photography/g14u02eq/
+badge:
+  type: tip
+  text: 新
 ---
+
+## 交作业
+
+![](https://oss.ajohn.top/blog/photography/lr/transparent-photos/hw.webp)
+
 
 照片通透的三个要素：
 

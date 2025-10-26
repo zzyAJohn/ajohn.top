@@ -2,9 +2,6 @@
 title: 延时摄影
 createTime: 2025/07/22 16:12:01
 permalink: /photography/uypp1p5t/
-badge:
-  type: tip
-  text: 新
 ---
 
 

@@ -2,6 +2,9 @@
 title: 「调色日记」阴天画面沉闷？不要认为是废片啦！1个技巧让你的画面秒变通透！
 createTime: 2025/10/26 18:37:43
 permalink: /photography/8umn4erz/
+badge:
+  type: tip
+  text: 新
 ---
 
 ## 交作业
