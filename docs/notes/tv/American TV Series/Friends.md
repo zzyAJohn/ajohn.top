@@ -31,5 +31,10 @@ permalink: /tv/d7dyq25j/
 - 《老友记》第六季 start
   time=2025-08-26 type=success
 
+- 《老友记》第六季 end
+  time=2025-10-27 type=warning
+
+- 《老友记》第七季 start
+  time=2025-10-27 type=success
 
 :::
