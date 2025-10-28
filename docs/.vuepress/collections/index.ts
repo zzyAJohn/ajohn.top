@@ -16,7 +16,6 @@ export default defineCollections([
   blog,
   leetcode,
   cs61a,
-  // cs61b,
   photography,
   read,
   record,

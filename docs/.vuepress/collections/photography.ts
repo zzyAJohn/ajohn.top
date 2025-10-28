@@ -18,6 +18,13 @@ export default defineCollection({
       ]
     },
     {
+      text: '摄像技巧',
+      prefix: 'videography', 
+      items: [
+        'stabilizer.md',
+      ]
+    },
+    {
       text: 'LR',
       prefix: 'lr', 
       items: [
