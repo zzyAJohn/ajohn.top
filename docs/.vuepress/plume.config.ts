@@ -1,11 +1,35 @@
 import { defineThemeConfig } from 'vuepress-theme-plume'
 import { navbar } from './navbar'
-import notes from './notes/index'
+import notes from './collections/index'
 
 /**
  * @see https://theme-plume.vuejs.press/config/basic/
  */
 export default defineThemeConfig({
+  // collections: [
+  //     {
+  //       type: 'post', // 替代原博客功能
+  //       dir: 'blog', // 指向 docs/blog 目录
+  //       title: '博客', // 集合显示名称
+  //       // 原博客配置继续保留
+  //       // 配置 封面图 布局位置
+  //       // postCover: 'left', // 'left' | 'right' | 'odd-left' | 'odd-right' | 'top'
+  //       postCover: {
+  //         layout: 'left',
+  //         ratio: '16:9',
+  //         width: 300,
+  //         compact: true
+  //       }
+  //     },
+  //     {
+  //       type: 'doc', // 替代原笔记功能
+  //       dir: 'cs61a',
+  //       title: 'CS61A笔记',
+  //       linkPrefix: '/cs61a/', // 页面链接前缀、侧边栏判断依据
+  //       sidebar: 'auto', // 自动生成侧边栏
+  //     },
+  //   ],
+
   logo: 'https://oss.ajohn.top/blog/friends/ajohn.webp',
   // your git repo url
   /* 文档仓库配置，用于 editLink */
@@ -33,7 +57,7 @@ export default defineThemeConfig({
   // 注释 navbar 保存后 取消注释 再保存 可以更新笔记下拉栏状态
   navbar,
   // 注释 notes 保存后 取消注释 再保存 可以更新笔记内侧边栏状态
-  notes,
+  // notes,
 
   social: [
     { icon: 'github', link: 'https://github.com/zzyAJohn' },

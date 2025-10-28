@@ -1,7 +1,7 @@
 import { viteBundler } from '@vuepress/bundler-vite'
 import { defineUserConfig } from 'vuepress'
 import { plumeTheme } from 'vuepress-theme-plume'
-import notes from './notes/index'
+import collections from './collections'
 
 export default defineUserConfig({
   base: '/',
@@ -15,16 +15,31 @@ export default defineUserConfig({
   bundler: viteBundler(),
 
   theme: plumeTheme({
-    blog: {
-      // 配置 封面图 布局位置
-      // postCover: 'left', // 'left' | 'right' | 'odd-left' | 'odd-right' | 'top'
-      postCover: {
-        layout: 'left',
-        ratio: '16:9',
-        width: 300,
-        compact: true
-      }
-    },
+    // 使用 collections 配置
+    // collections: [
+    //   {
+    //     type: 'post', // 替代原博客功能
+    //     dir: 'blog', // 指向 docs/blog 目录
+    //     title: '博客', // 集合显示名称
+    //     // 原博客配置继续保留
+    //     // 配置 封面图 布局位置
+    //     // postCover: 'left', // 'left' | 'right' | 'odd-left' | 'odd-right' | 'top'
+    //     postCover: {
+    //       layout: 'left',
+    //       ratio: '16:9',
+    //       width: 300,
+    //       compact: true
+    //     }
+    //   },
+    //   {
+    //     type: 'doc', // 替代原笔记功能
+    //     dir: 'cs61a', // 指向 docs/typescript 目录
+    //     title: 'CS61A笔记',
+    //     linkPrefix: '/cs61a/', // 页面链接前缀、侧边栏判断依据
+    //     sidebar: 'auto', // 自动生成侧边栏
+    //   },
+    // ],
+    collections,
     encrypt: {
       rules: {
         // // 可以是 md 文件的相对路径，对该文件加密
@@ -48,7 +63,6 @@ export default defineUserConfig({
       pdf: true, 
       plantuml: true, 
     },
-    notes,
     // 添加您的部署域名
     hostname: 'https://www.ajohn.top',
     // footer: { message: "<a href='https://beian.miit.gov.cn/'>鄂ICP备2025095120号-1</a>   <a href='https://beian.mps.gov.cn/#/query/webSearch?code=42011102005705'>鄂公网安备42011102005705号</a>" , copyright: "Copyright © 2024-2025 AJohn"},
