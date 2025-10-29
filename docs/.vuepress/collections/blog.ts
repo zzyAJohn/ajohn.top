@@ -12,7 +12,7 @@ export default defineCollection({
         ratio: '16:9',
         width: 300,
         compact: true
-    }
+    },
 })
 
 
