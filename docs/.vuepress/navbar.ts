@@ -5,11 +5,12 @@ export const navbar = defineNavbarConfig([
   { text: '博客', link: '/blog/', icon: 'material-symbols:article-rounded' },
   { text: '标签', link: '/blog/tags/', icon: 'material-symbols:label-rounded' },
   { text: '归档', link: '/blog/archives/', icon: 'material-symbols:folder-rounded' },
-  { text: '友链', link: '/friends/', icon: 'material-symbols:linked-services' },
-  { text: '工具', link: '/tools/', icon: 'material-symbols:build-rounded' },
-  { text: '作品', link: '/works/README.md', icon: 'material-symbols:photo-camera-rounded' },
+  // { text: '工具', link: '/tools/', icon: 'material-symbols:build-rounded' },
   { text: '关于', link: '/about/', icon: 'material-symbols:emoji-people-rounded' },
   { text: '近况', link: '/recently/', icon: 'material-symbols:fiber-new-rounded' },
+  { text: 'projects', link: '/projects/README.md', icon: 'material-icon-theme:folder-github' },
+  { text: '作品', link: '/works/README.md', icon: 'material-symbols:photo-camera-rounded' },
+  { text: '友链', link: '/friends/', icon: 'material-symbols:linked-services' },
   {
     text: '笔记',
     items: [
@@ -19,7 +20,7 @@ export const navbar = defineNavbarConfig([
             { text: 'C++', link: '/cpp/README.md' },
             // { text: 'CS61B', link: '/notes/cs61b/README.md' },
             { text: 'Photography', link: '/photography/README.md' },
-            { text: '八股', link: '/eight-legged-essay/README.md' },
+            { text: '八股', link: '/eight/README.md' },
     ]
   },
   {
