@@ -7,10 +7,17 @@ export default defineCollection({
   sidebar: [
     'README.md',
     {
-      text: '博客',
-      prefix: 'blog',
+      text: '深度学习项目',
+      prefix: 'care',
       items: [
-        'blog.md',
+        'intro.md',
+      ]
+    },
+    {
+      text: '高性能服务器项目',
+      prefix: 'webserver',
+      items: [
+        'webserver.md',
       ]
     },
   ]
