@@ -20,6 +20,7 @@ export const navbar = defineNavbarConfig([
             { text: 'C++', link: '/cpp/README.md' },
             // { text: 'CS61B', link: '/notes/cs61b/README.md' },
             { text: 'Photography', link: '/photography/README.md' },
+            { text: 'Qt', link: '/qt/README.md' },
             { text: '八股', link: '/eight/README.md' },
     ]
   },

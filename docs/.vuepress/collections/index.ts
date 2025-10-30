@@ -12,6 +12,7 @@ import music from './music'
 import tv from './tv'
 import eight from './eight'
 import projects from './projects'
+import qt from './qt'
 
 export default defineCollections([
   blog,
@@ -27,4 +28,5 @@ export default defineCollections([
   tv,
   eight,
   projects,
+  qt,
 ])
