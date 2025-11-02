@@ -17,6 +17,7 @@ export default defineCollection({
     'what-makes-you-beautiful.md',
     'viva-la-vida.md',
     'because-of-you.md',
+    'waiting-for-love.md',
   ]
 })
 
