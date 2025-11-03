@@ -14,6 +14,13 @@ export default defineCollection({
       ]
     },
     {
+      text: '操作系统',
+      prefix: 'os',
+      items: [
+        '1.md',
+      ]
+    },
+    {
       text: '计算机网络',
       prefix: 'network',
       items: [
