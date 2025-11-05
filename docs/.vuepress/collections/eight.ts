@@ -17,7 +17,10 @@ export default defineCollection({
       text: '操作系统',
       prefix: 'os',
       items: [
-        '1.md',
+        '1.preface.md',
+        '2.hardware.md',
+        '3.os-structure.md',
+        '4.memory.md',
       ]
     },
     {
