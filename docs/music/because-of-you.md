@@ -39,17 +39,17 @@ permalink: /music/wyi7tbc3/
 |----------|----------|
 | I will no~~t~~ make^换^ the same *mistakes* tha==t you== di~~d~~ | 我不会重蹈你的覆辙 |
 | I^换^ will no~~t~~ le~~t~~ myself^换^ cause my hear~~t~~ so much misery(ze)^换^ | 我不会让自己心烦忧苦 |
-| I^↑^ will no~~t~~ break^换^ the **way** you di~~d~~ | 我不会像你那样崩溃 |
+| I^↑^ will no~~t~~ brea~~k~~^换^ the **way** you di~~d~~ | 我不会像你那样崩溃 |
 | You **fell** so har~~d~~^换^ | 你跌得那么惨 |
-| I learn~~ed~~ the har~~d~~ way^换^, to never le==t i==(di)~~t~~ ge~~t~~ tha~~t~~ far | 我学到了教训，不会让情况恶化 |
+| ^↑^I learn~~ed~~ the har~~d~~ way^换^, to never le==t i==(di)~~t~~ ge~~t~~ tha~~t~~ far | 我学到了教训，不会让情况恶化 |
 
 ### [Chorus]
 | 英文歌词 | 中文翻译 |
 |----------|----------|
 | ^滑^Becau==se o== ==f you==(bi-kazev-you) | 因为你 |
-| I never *stray*(d) too far from the si~~d~~ewalk^换^ | 我从不离人行道太远 |
+| I never *stray*(d) ^停^ too far from the si~~d~~ewalk^换^ | 我从不离人行道太远 |
 | Because of you | 因为你 |
-| I learn~~ed~~ to pla==y on== the **safe side** | 我学会要注意安全 |
+| I learned ~~to~~ pla==y on== the **safe side** | 我学会要注意安全 |
 | S==o I==(wai) don'~~t~~ ge~~t~~ hurt^换^ | 这样才不会受伤 |
 | Because of you | 因为你 |
 | I fin==d i==~~t~~ har~~d~~ to trus~~t~~^换^ | 我很难信任 |
@@ -61,7 +61,7 @@ permalink: /music/wyi7tbc3/
 | 英文歌词 | 中文翻译 |
 |----------|----------|
 | I lose^转^ my way^↑^ | 我迷失了方向 |
-| An~~d~~ it's no~~t~~ too long before you ==point i== ==t out== | 你很快就会提醒我 |
+| And it's no~~t~~ too long before you [==point i== ==t out==] | 你很快就会提醒我 |
 | I canno~~t~~ cry | 我不能哭 |
 | Becau==se I== know that's weaknes==s in== you==r ey==es | 因为在你眼中那是软弱 |
 | ^↑^ I'm force~~d~~ to fake^↑换^ a smile, a laugh^换^ | 我被迫强颜欢笑 |
@@ -86,16 +86,16 @@ permalink: /music/wyi7tbc3/
 ### [Bridge]
 | 英文歌词 | 中文翻译 |
 |----------|----------|
-| I watched you die | 我看着你消逝 |
-| I heard you cry | 我听见你哭泣 |
-| Every night in your sleep | 每晚在梦中 |
-| I was so young | 当时我还那么年轻 |
-| You should have known better than to lean on me | 你本该知道不该依赖我 |
-| You never thought of anyone else | 你从没想过别人 |
-| You just saw your pain | 你只在乎自己的痛苦 |
-| And now I cry | 现在我也哭泣 |
-| In the middle of the night | 在半夜 |
-| Over the same damn thing | 为了同样的原因 |
+| I watche==d you== die | 我看着你消逝 |
+| I hear==d you== cry | 我听见你哭泣 |
+| [Every nigh==t] in==(din) your sleep | 每晚在梦中 |
+| I wa~~s~~ so young | 当时我还那么年轻 |
+| You should ~~h~~ave(def) known *better* than to lea==n on== me | 你本该知道不该依赖我 |
+| You never though~~t~~ o==f a==nyo==ne e==lse | 你从没想过别人 |
+| You jus~~t~~ saw **^↓^your** pain | 你只在乎自己的痛苦 |
+| ^↑^An~~d~~ no==w I== cry | 现在我也哭泣 |
+| In the middle of the nigh~~t~~ | 在半夜 |
+| Over the ^停^ same^停^ damn ^停^thing | 为了同样的原因 |
 
 ### [Chorus]
 | 英文歌词 | 中文翻译 |
