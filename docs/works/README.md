@@ -34,6 +34,7 @@ permalink: /works/
 <!-- 竖屏 -->
 <Swiper
   :items="[
+  'https://oss.ajohn.top/blog/works/2025-10-31/DSC_5887.webp',
   'https://oss.ajohn.top/blog/works/2025-09-17/DSC_1837.webp',
   'https://oss.ajohn.top/blog/works/2025-09-17/DSC_1769.webp',
   'https://oss.ajohn.top/blog/works/2025-09-17/DSC_1752.webp',
@@ -64,8 +65,8 @@ permalink: /works/
 
 ### 2025-10
 
-- [ ] 10.28 活动
-- [x] 10.22 黄鹤楼
+- [ ] 10.31 [万圣节（黎黄陂路、江汉路）](./2025-10/2025-10-31.md)
+- [x] 10.22 黄鹤楼夜景
 - [x] 10.19 杨泗港大桥
 - [x] 10.3 婚礼摄像
 - [x] 10.2 婚礼摄影
