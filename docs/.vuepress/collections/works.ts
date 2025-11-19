@@ -11,6 +11,7 @@ export default defineCollection({
       prefix: '2025-10', 
       items: [
         '2025-10-31.md',
+        '2025-10-22.md',
       ]
     },
     {

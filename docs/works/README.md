@@ -51,6 +51,9 @@ permalink: /works/
 
 <!-- 横屏 -->
 <Swiper :items="[
+  'https://oss.ajohn.top/blog/works/2025-10-22/DSC_5694.webp',
+  'https://oss.ajohn.top/blog/works/2025-10-22/DSC_5691.webp',
+  'https://oss.ajohn.top/blog/works/2025-10-22/DSC_5688.webp',
   'https://oss.ajohn.top/blog/works/2025-08-24/DSC_1667.webp',
   'https://oss.ajohn.top/blog/works/2025-08-09/DSC_1459.webp',
   'https://oss.ajohn.top/blog/works/2025-07-22/DSC_5922.webp',
@@ -66,14 +69,14 @@ permalink: /works/
 ### 2025-11
 
 - [ ] 11.22 二次元汤泉泳池派对（武汉水之恋）
-- [ ] 11.18 室内旗袍摄影会活动（汉缘坊汉服体育馆）
+- [x] 11.18 室内旗袍摄影会活动（汉缘坊汉服体育馆）
 
 
 
 ### 2025-10
 
-- [ ] 10.31 [万圣节（黎黄陂路、江汉路）](./2025-10/2025-10-31.md)
-- [x] 10.22 黄鹤楼夜景
+- [x] 10.31 [万圣节（黎黄陂路、江汉路）](./2025-10/2025-10-31.md)
+- [x] 10.22 [黄鹤楼夜景（司门口黄鹤楼、彭刘杨爬楼）](./2025-10/2025-10-22.md)
 - [x] 10.19 杨泗港大桥
 - [x] 10.3 婚礼摄像
 - [x] 10.2 婚礼摄影
