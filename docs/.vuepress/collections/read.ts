@@ -23,6 +23,7 @@ export default defineCollection({
         // 'weicheng.md',
         'The Great Gatsby.md',
         'Selected Works of Mao Tse-tung.md',
+        'Tunnel to Summer, Goodbye Exit.md',
       ]
     },
     {

@@ -4,7 +4,7 @@ createTime: 2025/09/23 19:02:57
 permalink: /read/knpq0vys/
 badge:
   type: tip
-  text: 新
+  text: 在读
 ---
 
 
