@@ -27,6 +27,7 @@ export default defineCollection({
         'Interstellar.md',
         'the-shadows-edge.md',
         'Nobody.md',
+        'Demon Slayer Blade Gao.md',
       ]
     },
     // {

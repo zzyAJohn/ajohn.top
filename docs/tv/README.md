@@ -26,4 +26,7 @@ permalink: /tv/
   <ImageCard
     image="https://img0.baidu.com/it/u=818995517,1803237279&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=833"
   />
+  <ImageCard
+    image="https://img1.baidu.com/it/u=510567967,1097959760&fm=253&app=138&f=JPEG?w=800&h=1093"
+  />
 </CardGrid>
