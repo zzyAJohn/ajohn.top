@@ -5,7 +5,7 @@ permalink: /read/tcklmszx/
 ---
 
 <p align="center">
-  <img src="https://q3.itc.cn/q_70/images01/20240228/df7b6a75be85422b8fba5729b868992b.png" width="300"><br>
+  <img src="https://img1.baidu.com/it/u=1353512577,563837947&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=612" width="300"><br>
   <b>《了不起的盖茨比》 - [美] 斯科特·菲茨杰拉德 著；邓若虚 译</b>
 </p>
 
