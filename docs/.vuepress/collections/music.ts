@@ -18,6 +18,7 @@ export default defineCollection({
     'viva-la-vida.md',
     'because-of-you.md',
     'waiting-for-love.md',
+    'wellerman.md',
   ]
 })
 
