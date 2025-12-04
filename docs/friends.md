@@ -28,12 +28,12 @@ list:
     name: 努力学会月牙天冲
     link: https://www.corp-sans.top/
     avatar: https://oss.ajohn.top/blog/friends/nulixuehuiyueyatianchong.webp
-    desc: We reach for the stars, acted like man（corp-sans版）
-  -
-    name: 努力学会月牙天冲
-    link: https://zxy.ajohn.top/blog/
-    avatar: https://oss.ajohn.top/blog/friends/nulixuehuiyueyatianchong.webp
     desc: We reach for the stars, acted like man
+  # -
+  #   name: 努力学会月牙天冲
+  #   link: https://zxy.ajohn.top/blog/
+  #   avatar: https://oss.ajohn.top/blog/friends/nulixuehuiyueyatianchong.webp
+  #   desc: We reach for the stars, acted like man
   -
     name: touchsky
     link: https://www.touchsky.my/
@@ -44,11 +44,11 @@ list:
     link: https://www.moriyang.site/
     avatar: https://oss.ajohn.top/blog/friends/ys.webp
     desc: Stay Hungry. Stay Foolish.
-  -
-    name: wbing00
-    link: https://wbing00.github.io/My_blog/
-    avatar: https://oss.ajohn.top/blog/friends/wb.webp
-    desc: Through Her Eyes
+  # -
+  #   name: wbing00
+  #   link: https://wbing00.github.io/My_blog/
+  #   avatar: https://oss.ajohn.top/blog/friends/wb.webp
+  #   desc: Through Her Eyes
   -
     name: virtualguard
     link: https://wiki.virtualguard101.com
