@@ -19,6 +19,7 @@ export default defineCollection({
     'because-of-you.md',
     'waiting-for-love.md',
     'wellerman.md',
+    'zoo.md',
   ]
 })
 
