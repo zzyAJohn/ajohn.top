@@ -34,6 +34,7 @@ permalink: /works/
 <!-- 竖屏 -->
 <Swiper
   :items="[
+  'https://oss.ajohn.top/blog/works/2025-11-18/DSC_6245.webp',
   'https://oss.ajohn.top/blog/works/2025-10-31/DSC_5887.webp',
   'https://oss.ajohn.top/blog/works/2025-09-17/DSC_1837.webp',
   'https://oss.ajohn.top/blog/works/2025-09-17/DSC_1769.webp',
@@ -74,6 +75,7 @@ permalink: /works/
 
 ### 2025-12
 
+- [x] 12.16 昙华林夜景
 - [x] 12.6 圣诞约拍（天街、武昌万象城）
 
 
@@ -81,7 +83,7 @@ permalink: /works/
 
 - [x] 11.24 二拍黄鹤楼夜景（彭刘杨爬楼）
 - [x] 11.22 二次元汤泉泳池派对（武汉水之恋）
-- [x] 11.18 室内旗袍摄影会活动（汉缘坊汉服体育馆）
+- [x] 11.18 [室内旗袍摄影会活动（汉缘坊汉服体育馆）](./2025-11/2025-11-18.md)
 
 
 
