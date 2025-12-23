@@ -85,14 +85,14 @@ permalink: /music/gavbxnu5/
 | To bring us sugar and tea and rum | 带来糖、茶和朗姆酒 |
 | One day, when the tonguin' is done | 当补给耗尽 |
 | We'll take our leave and go | 我们便会离港返航 |
-|  dadadadada |  |
+
 
 ### [Verse 4]
 | 英文歌词 | 中文翻译 |
 |----------|----------|
-| No **line** was **cut**^换^, no whale was freed | 绳索未断，鲸也未逃 |
+| No **line** was **cut**^换^, no whale was free~~d~~ | 绳索未断，鲸也未逃 |
 | The captain's mind was not on greed^换^ | 船长并非出于贪婪 |
-| An~~d~~ he belong~~ed~~ to the whaleman's(well-man-s) creed | 他坚守捕鲸者的信条 |
+| An~~d~~ he belong~~ed~~ to the whaleman's(well-man-s) cree~~d~~ | 他坚守捕鲸者的信条 |
 | She took tha~~t~~ shi==p in== tow, huah | 鲸鱼拖着船前进 |
 
 ### [Chorus]
@@ -102,6 +102,7 @@ permalink: /music/gavbxnu5/
 | To bring us sugar and tea and rum | 带来糖、茶和朗姆酒 |
 | One day, when the tonguin' is done | 当补给耗尽 |
 | We'll take our leave and go | 我们便会离港返航 |
+|  dadadadada |  |
 
 ### [Verse 5]
 | 英文歌词 | 中文翻译 |
@@ -109,7 +110,7 @@ permalink: /music/gavbxnu5/
 | For ***forty*** **days**, or **even** **more** | 四十天，甚至更久 |
 | The **line** wen~~t~~ **slack**, ^换^ then **tight** once **more**^换^ | 绳索忽松忽紧 |
 | All boa==ts w==ere **lost**, there(they) were **only** **four** | 大多数船沉没，只剩四艘 |
-| Bu~~t~~ **still** tha~~t~~ whale di~~d~~s **go**^换^ | 但鲸鱼仍继续挣扎 |
+| Bu~~t~~ **still** tha~~t~~ whale di~~d~~s **go**, huah^换^ | 但鲸鱼仍继续挣扎 |
 
 ### [Chorus]
 | 英文歌词 | 中文翻译 |
@@ -118,13 +119,13 @@ permalink: /music/gavbxnu5/
 | To bring us sugar and tea and rum | 带来糖、茶和朗姆酒 |
 | One day, when the tonguin' is done | 当补给耗尽 |
 | We'll take our leave and go | 我们便会离港返航 |
-|  dadadadada |  |
+
 
 ### [Verse 6]
 | 英文歌词 | 中文翻译 |
 |----------|----------|
 | As **far** as I'~~ve~~ **hear~~d~~**, the **fight**'~~s~~ stil==l **on**== | 据我所知，战斗仍未结束 |
-| The **line**'s not **cut** an~~d~~ the **whale**'s not **gone** | 绳索未断，鲸鱼未逃 |
+| The **line**'s not **cut** an~~d~~ the **whale**'s not **gone**^换^ | 绳索未断，鲸鱼未逃 |
 | The **Wellerman** **makes** ~~h~~is(sis) **regular** **call** | 威勒曼号定期前来 |
 | To **encourage**(ker) the **captain**, **crew** an~~d~~ **all**^换^ | 鼓舞船长及所有船员 |
 | Huah | 哈！ |
