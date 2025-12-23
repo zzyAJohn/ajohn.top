@@ -8,15 +8,6 @@ export default defineCollection({
     'README.md',
     'plan.md',
     {
-      text: '2025-11',
-      prefix: '2025-11', 
-      items: [
-        '2025-11-17.md',
-        '2025-11-10.md',
-        '2025-11-03.md',
-      ]
-    },
-    {
       text: '2025-10',
       prefix: '2025-10', 
       items: [

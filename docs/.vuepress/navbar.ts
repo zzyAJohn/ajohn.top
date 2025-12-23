@@ -29,7 +29,7 @@ export const navbar = defineNavbarConfig([
     items: [
             // { text: '示例', link: '/notes/demo/README.md' },
             { text: 'Read', link: '/read/README.md', icon: 'material-symbols:menu-book-rounded' },
-            { text: 'Record', link: '/record/README.md', icon: 'material-symbols:ink-pen-rounded' },
+            // { text: 'Record', link: '/record/README.md', icon: 'material-symbols:ink-pen-rounded' },
             { text: 'Music', link: '/music/README.md', icon: 'material-symbols:music-note-rounded' },
             { text: 'TV', link: '/tv/README.md', icon: 'material-symbols:live-tv-rounded' },
             // { text: 'Plant', link: '/notes/plant/README.md' },
