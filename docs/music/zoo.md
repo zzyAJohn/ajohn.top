@@ -7,7 +7,7 @@ permalink: /music/yykv7fpx/
 
 <p align="center">
   <img src="https://img0.baidu.com/it/u=3367514499,1702451459&fm=253&fmt=auto&app=120&f=JPEG?w=500&h=500" width="300"><br>
-  <b>Nathan Evans - Wellerman 2021</b>
+  <b>Shakira - Zoo 2025</b>
 </p>
 
 《Zoo》是一首充满原始能量与释放感的狂欢之歌，它唱出了在规则与压力之下，人们对自由、本能与真实自我的渴望。歌词把舞池比作“动物园”，并不是混乱无序，而是一种主动撕下伪装、回归本真的宣言——在音乐响起的那一刻，每个人都可以肆意舞动，做回最真实的自己。
