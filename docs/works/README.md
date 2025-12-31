@@ -34,6 +34,7 @@ permalink: /works/
 <!-- 竖屏 -->
 <Swiper
   :items="[
+  'https://oss.ajohn.top/blog/works/2025-12-28/DSC_6864.webp',
   'https://oss.ajohn.top/blog/works/2025-11-18/DSC_6245.webp',
   'https://oss.ajohn.top/blog/works/2025-10-31/DSC_5887.webp',
   'https://oss.ajohn.top/blog/works/2025-09-17/DSC_1837.webp',
@@ -75,6 +76,7 @@ permalink: /works/
 
 ### 2025-12
 
+- [x] 12.28 起义门汉服（武昌起义门）
 - [x] 12.16 昙华林夜景
 - [x] 12.6 圣诞约拍（天街、武昌万象城）
 
