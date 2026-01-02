@@ -20,6 +20,7 @@ export default defineCollection({
     'waiting-for-love.md',
     'wellerman.md',
     'zoo.md',
+    'that-girl.md',
   ]
 })
 
