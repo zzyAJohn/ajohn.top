@@ -71,7 +71,7 @@ permalink: /music/lenvuamk/
 |---|---|
 | There's a girl but I let her get away | 曾经心爱的女孩，我却让她擦肩而过 |
 | It's my faul~~t~~, cau<u>se I</u> sai<u>d I</u> neede~~d~~(di) space | 是我的错，我说我需要空间 |
-| ~~A~~n~~d~~ I'~~ve~~ been torturing myself ^停^ nigh<u>t an</u>d(dan) day^延^ | 我日夜折磨着自己 |
+| ~~A~~n~~d~~ I'~~ve~~ been tortu^延^ring myself ^停^ nigh<u>t an</u>d(dan) day^延^ | 我日夜折磨着自己 |
 | Abou~~t~~ tha~~t~~ girl, the one I let get away | 关于那个被我错过的女孩 |
 
 
@@ -81,13 +81,17 @@ permalink: /music/lenvuamk/
 | I keep saying no | 我一直否认 |
 | This can't be the way it was supposed to be | 这不该是我们的结局 |
 | I keep saying no | 我一直否认 |
-| There's gotta be a way to get you | 一定还有办法 |
-| Gotta be a way to get you close to me | 一定能让你回到我身边 |
+| There's [gotta be a way to get you] | 一定还有办法 |
+| [Gotta be a way to get you] close to me (you gotta) | 一定能让你回到我身边 |
 | Speak up if you want somebody | 若你心有所爱，就勇敢说出口 |
 | Can't let them get away, oh no | 别让他/她离开 |
 | You don't wanna end up sorry | 你不想留下遗憾 |
-| The way that I'm feeling everyday | 不要像我这样每天痛苦 |
-| There's no home for the broken heart | 破碎的心无处安放 |
+| The way tha~~t~~ I'm feeling everyday(nai) | 不要像我这样每天活在悔恨中 |
+| (Don't you know) | （你难道不知道吗） |
+| No no no no | 不要这样 |
+| There's no home for the broken hear~~t~~ | 破碎的心无处安放 |
+| No no no no | 不要这样 |
+| There's no home for the broken | 心碎之人无家可归 |
 
 ### [Bridge]
 | 英文歌词 | 简体中文翻译 |
@@ -95,11 +99,11 @@ permalink: /music/lenvuamk/
 | No home for me | 我无处可去 |
 | No home <u>cause I</u>'m broken^滑^ | 因为心碎，我无家可归 |
 | No room to breathe | 连呼吸的空间都没有 |
-| [An~~d~~ I go~~t~~] no one to blame^延^ | 一切只能怪我自己 |
+| [An~~d~~ I go~~t~~] no one to blame^延^(ei i ei) | 一切只能怪我自己 |
 | No home for me | 我无处可去 |
-| No home cause I'm broken | 心碎让我无家可归 |
+| No home cause I'm broken—— | 心碎让我无家可归 |
 | About that girl | 关于那个女孩 |
-| The one I let get away | 那个被我错过的人 |
+| The one I let get away(ei) | 那个被我错过的人 |
 
 ### [Chorus]
 | 英文歌词 | 简体中文翻译 |
@@ -108,8 +112,12 @@ permalink: /music/lenvuamk/
 | Speak up if you want somebody | 若你心有所爱，就大声说出来 |
 | You can't let him get away oh no | 别让他离开 |
 | You don't wanna end up sorry | 你不想留下遗憾 |
-| The way that I'm feeling everyday | 不要像我这样每天悔恨 |
-| There's no home for the broken heart | 心碎之人无处安放 |
+| The way tha~~t~~ I'm feeling everyday(nai) | 不要像我这样每天活在悔恨中 |
+| (Don't you know) | （你难道不知道吗） |
+| No no no no | 不要这样 |
+| There's no home for the broken hear~~t~~ | 破碎的心无处安放 |
+| No no no no | 不要这样 |
+| There's no home for the broken(oh!) | 心碎之人无家可归 |
 
 ### [Outro]
 | 英文歌词 | 简体中文翻译 |
@@ -117,7 +125,10 @@ permalink: /music/lenvuamk/
 | You don'~~t~~ wanna lose tha~~t~~ love | 你不想在爱情里失去 |
 | I<u>t's on</u>ly gonna hur~~t~~ too much | 那只会让你更痛 |
 | I'm telling you | 我是在告诉你 |
-| You don't wanna lose that love | 你不想失去那份爱 |
+| You don't wanna lose that^↑^ love | 你不想失去那份爱 |
+| I<u>t's on</u>ly gonna hur~~t~~ too much | 那只会让你更痛 |
+| I'm telling you | 我是在告诉你 |
+| You don'~~t~~ wanna lose tha~~t~~ love | 你不想在爱情里失去 |
 | [Cause there's] ^↑^no home for the broken | 因为心碎的人无家可归 |
 | ~~A~~bou~~t~~ tha~~t~~ girl | 关于那个女孩 |
 | The one I let get away | 那个被我错过的她 |
