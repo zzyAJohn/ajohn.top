@@ -17,18 +17,20 @@ export default defineCollection({
       ]
     },
     {
-      text: '文学',
+      text: '文学小说',
       prefix: 'literature', 
       items: [
         // 'weicheng.md',
         'The Great Gatsby.md',
+        'Ball Lightning.md',
+        'For the Benefit of Mankind.md',
         'Selected Works of Mao Tse-tung.md',
         'Tunnel to Summer, Goodbye Exit.md',
       ]
     },
     {
-      text: '心理学',
-      prefix: 'psychology', 
+      text: '人文社科',
+      prefix: 'social-science', 
       items: [
         'How to Win Friends and Influence People.md',
         'Cognitive Awakening.md',
@@ -37,17 +39,16 @@ export default defineCollection({
       ]
     },
     {
-      text: '科幻/科普',
-      prefix: 'sci-fi', 
+      text: '科学与科普',
+      prefix: 'sci', 
       items: [
-        'Ball Lightning.md',
-        'For the Benefit of Mankind.md',
         'Does God Play Dice.md',
+        'Rich Dad Poor Dad.md',
       ]
     },
     {
-      text: '摄影',
-      prefix: 'photography', 
+      text: '艺术',
+      prefix: 'art', 
       items: [
         'Picture Perfect Posing.md',
       ]

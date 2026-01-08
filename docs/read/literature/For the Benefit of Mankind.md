@@ -2,6 +2,9 @@
 title: 《赡养人类》
 createTime: 2025/08/20 14:34:39
 permalink: /read/f4m3057a/
+badge:
+  type: info
+  text: 小说
 ---
 
 

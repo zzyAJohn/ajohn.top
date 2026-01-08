@@ -2,6 +2,9 @@
 title: 《了不起的盖茨比》
 createTime: 2025/04/02 22:09:15
 permalink: /read/tcklmszx/
+badge:
+  type: info
+  text: 文学
 ---
 
 <p align="center">

@@ -2,6 +2,9 @@
 title: 《亲密关系》
 createTime: 2025/09/05 19:57:35
 permalink: /read/o7oa4gxj/
+badge:
+  type: info
+  text: 心理
 ---
 
 

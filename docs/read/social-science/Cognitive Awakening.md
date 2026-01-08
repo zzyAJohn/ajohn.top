@@ -2,6 +2,9 @@
 title: 《认知觉醒》
 createTime: 2025/07/09 12:38:27
 permalink: /read/37xhooy2/
+badge:
+  type: info
+  text: 心理
 ---
 
 <p align="center">

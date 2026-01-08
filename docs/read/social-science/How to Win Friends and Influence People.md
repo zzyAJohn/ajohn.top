@@ -2,6 +2,9 @@
 title: 《人性的弱点》
 createTime: 2024/12/29 20:14:45
 permalink: /read/i3spwa6t/
+badge:
+  type: info
+  text: 心理
 ---
 
 <p align="center">

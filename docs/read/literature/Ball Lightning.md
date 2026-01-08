@@ -2,6 +2,9 @@
 title: 《球状闪电》
 createTime: 2025/07/02 16:32:07
 permalink: /read/ys0af8uf/
+badge:
+  type: info
+  text: 小说
 ---
 
 <p align="center">

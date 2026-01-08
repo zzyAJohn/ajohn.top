@@ -4,7 +4,7 @@ createTime: 2025/05/20 19:48:30
 permalink: /read/cu25gdcy/
 badge:
   type: tip
-  text: 在读
+  text: 摄影 在读
 ---
 
 <p align="center">
