@@ -2,6 +2,9 @@
 title: 《富爸爸穷爸爸》
 createTime: 2026/01/03 17:14:03
 permalink: /read/04ae0si3/
+badge:
+  type: info
+  text: 金融
 ---
 
 

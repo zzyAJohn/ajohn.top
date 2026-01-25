@@ -2,6 +2,9 @@
 title: 《上帝掷骰子吗？》
 createTime: 2025/08/26 16:01:45
 permalink: /read/o138zh0z/
+badge:
+  type: info
+  text: 物理
 ---
 
 
