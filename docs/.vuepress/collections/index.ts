@@ -13,6 +13,7 @@ import tv from './tv'
 import eight from './eight'
 import projects from './projects'
 import qt from './qt'
+import design_pattern from './design_pattern'
 
 export default defineCollections([
   blog,
@@ -29,4 +30,5 @@ export default defineCollections([
   eight,
   projects,
   qt,
+  design_pattern,
 ])
