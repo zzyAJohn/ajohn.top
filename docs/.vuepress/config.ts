@@ -69,7 +69,7 @@ export default defineUserConfig({
     // footer: { message: '<a href="https://beian.miit.gov.cn/ ">鄂ICP备2025095120号-1</a> <a href="https://beian.mps.gov.cn/#/query/webSearch?code=42011102005705" target="_blank" style="display: inline-flex; align-items: center;"><img src="https://oss.ajohn.top/blog/beian.png" style="height: 20px; margin-right: 5px;" />鄂公网安备42011102005705号</a>' , copyright: "Copyright © 2024-2025 AJohn"},
     footer: { 
       message: "<span style='display: inline-flex; align-items: center; gap: 10px;'><a href='https://beian.miit.gov.cn/'>鄂ICP备2025095120号-1</a> <a href='https://beian.mps.gov.cn/#/query/webSearch?code=42011102005705' target='_blank' style='display: inline-flex; align-items: center;'><img src='https://oss.ajohn.top/blog/beian.png' style='height: 20px; margin-right: 5px;' />鄂公网安备42011102005705号</a></span>", 
-      copyright: "Copyright © 2024-2025 AJohn"
+      copyright: "Copyright © 2024-2026 AJohn"
     },
 
     plugins: {
