@@ -4,108 +4,46 @@ createTime: 2026/02/03 17:36:08
 permalink: /design_pattern/
 ---
 
-## UML符号与PlantUML
-
-### 1. 类（Class）与可见性（visibility）
-
-- 矩形三层：类名 / 属性(字段) / 操作(方法)
-
-- 可见性：+ public，- private，# protected，~ package（默认）
-
-- 抽象类用 abstract class 或在类名/方法上用 {abstract}（PlantUML 会把类名斜体）
+>设计模式（Design Patterns）并不是某种固定的代码模板，也不是必须遵守的“标准答案”。它更像是软件工程中反复被验证过的经验总结，用来描述在特定场景下，如何组织代码结构，使系统更加 可维护、可扩展、可复用。
 
 
-@startuml
-abstract class Animal {
-  +NumberA : double
-  -NumberB : double
-  #NumberC : double
-  +GetResult() : double
-}
-@enduml
+## 设计模式类别
 
-### 2. 继承 / 泛化（Generalization）
+### 1. 创建型设计模式
+创建型设计模式专注于处理对象创建机制，以适合给定情况的方式来创建对象。
 
-- 含义：子类是父类的一种（is-a）。用空心三角箭头指向父类（泛化）。
+创建对象的基本方法可能导致项目复杂性增加，而这些模式旨在通过控制创建过程来解决这种问题。
 
-- PlantUML：`Parent <|-- Child` 或 `Child --|> Parent` 等
+创建型设计模式包括：
 
-@startuml
-class Animal
-class Dog
+- Constructor - 构造器
+- Factory - 工厂
+- Abstract - 抽象
+- Prototype - 原型
+- Singleton - 单例
+- Builder - 生成器
 
-Animal <|-- Dog
-@enduml
+### 2. 结构型设计模式
 
-### 3. 接口实现 / 实现（Realization）
+结构型模式与对象组合有关，通常可以用于找出在不同对象之间建立关系的简单方法。
 
-含义：类实现接口（contract）。用虚线三角箭头指向接口（实现关系通常用虚线）。
+这种模式有助于确保在系统某一部分发生变化时，系统的整个结构不需要同时改变。 同时对于不适合因某个特定目的而改变的系统部分，这种模式也能够帮助它们完成重组。
 
-PlantUML：`Interface <|.. Class` 或 `Class ..|> Interface`
+结构型设计模式包括：
 
-@startuml
-interface IPrinter
-class LaserPrinter
+- Decorator - 装饰器
+- Facade - 外观
+- Flyweight - 享元
+- Adapter - 适配器
+- Proxy - 代理
 
-IPrinter <|.. LaserPrinter
-@enduml
+### 3. 行为型设计模式
 
-### 4. 关联（Association）
+行为模式专注于改善或简化系统中不同对象之间的通信。
 
-含义：两个类“知道”彼此或有连接（弱语义）。用实线表示；可带箭头表示导航方向（单向/双向）、角色名、基数（multiplicity）。
+行为模式包括：
 
-PlantUML：`A -- B`（双向），`A --> B`（单向）
-
-示例（带角色与基数）：
-
-@startuml
-class Customer
-class Order
-
-Customer "1" --> "0..*" Order : places
-@enduml
-
-### 5. 聚合（Aggregation）
-
-含义：弱拥有关系，整体包含部分，但部分可独立存在（空心菱形）。
-
-PlantUML：`Whole o-- Part`
-
-示例：
-
-@startuml
-class Classroom
-class Student
-
-Classroom "1" o-- "0..*" Student : contains
-@enduml
-
-### 6. 组合（Composition）
-
-含义：强拥有关系，部分生命周期依赖整体（实心菱形）。整体销毁时，部分也随之销毁。
-
-PlantUML：`Whole *-- Part`
-
-示例：
-
-@startuml
-class House
-class Room
-
-House "1" *-- "1..*" Room : has
-@enduml
-
-### 7. 依赖（Dependency）
-
-含义：临时使用、调用或参数引用；弱耦合，通常是方法参数或局部变量，绘制为虚线箭头（..>）。
-
-PlantUML：`A ..> B` 或 `A ..> B : uses`
-
-示例：
-
-@startuml
-class Client
-class Service
-
-Client ..> Service : uses
-@enduml
+- Iterator - 迭代器
+- Mediator - 中介者
+- Observer - 观察者
+- Visitor - 访问者

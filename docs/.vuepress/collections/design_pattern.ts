@@ -10,6 +10,7 @@ export default defineCollection({
       text: '设计模式',
       // prefix: 'design_pattern', 
       items: [
+        '0.PlantUML.md',
         '1.Factory.md',
         '2.Strategy.md',
         '3.SRP.md',
