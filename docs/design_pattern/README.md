@@ -4,4 +4,108 @@ createTime: 2026/02/03 17:36:08
 permalink: /design_pattern/
 ---
 
-TODO
+## UML符号与PlantUML
+
+### 1. 类（Class）与可见性（visibility）
+
+- 矩形三层：类名 / 属性(字段) / 操作(方法)
+
+- 可见性：+ public，- private，# protected，~ package（默认）
+
+- 抽象类用 abstract class 或在类名/方法上用 {abstract}（PlantUML 会把类名斜体）
+
+
+@startuml
+abstract class Animal {
+  +NumberA : double
+  -NumberB : double
+  #NumberC : double
+  +GetResult() : double
+}
+@enduml
+
+### 2. 继承 / 泛化（Generalization）
+
+- 含义：子类是父类的一种（is-a）。用空心三角箭头指向父类（泛化）。
+
+- PlantUML：`Parent <|-- Child` 或 `Child --|> Parent` 等
+
+@startuml
+class Animal
+class Dog
+
+Animal <|-- Dog
+@enduml
+
+### 3. 接口实现 / 实现（Realization）
+
+含义：类实现接口（contract）。用虚线三角箭头指向接口（实现关系通常用虚线）。
+
+PlantUML：`Interface <|.. Class` 或 `Class ..|> Interface`
+
+@startuml
+interface IPrinter
+class LaserPrinter
+
+IPrinter <|.. LaserPrinter
+@enduml
+
+### 4. 关联（Association）
+
+含义：两个类“知道”彼此或有连接（弱语义）。用实线表示；可带箭头表示导航方向（单向/双向）、角色名、基数（multiplicity）。
+
+PlantUML：`A -- B`（双向），`A --> B`（单向）
+
+示例（带角色与基数）：
+
+@startuml
+class Customer
+class Order
+
+Customer "1" --> "0..*" Order : places
+@enduml
+
+### 5. 聚合（Aggregation）
+
+含义：弱拥有关系，整体包含部分，但部分可独立存在（空心菱形）。
+
+PlantUML：`Whole o-- Part`
+
+示例：
+
+@startuml
+class Classroom
+class Student
+
+Classroom "1" o-- "0..*" Student : contains
+@enduml
+
+### 6. 组合（Composition）
+
+含义：强拥有关系，部分生命周期依赖整体（实心菱形）。整体销毁时，部分也随之销毁。
+
+PlantUML：`Whole *-- Part`
+
+示例：
+
+@startuml
+class House
+class Room
+
+House "1" *-- "1..*" Room : has
+@enduml
+
+### 7. 依赖（Dependency）
+
+含义：临时使用、调用或参数引用；弱耦合，通常是方法参数或局部变量，绘制为虚线箭头（..>）。
+
+PlantUML：`A ..> B` 或 `A ..> B : uses`
+
+示例：
+
+@startuml
+class Client
+class Service
+
+Client ..> Service : uses
+@enduml
