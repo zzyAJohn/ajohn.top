@@ -13,8 +13,10 @@ export default defineCollection({
         '0.PlantUML.md',
         '1.Factory.md',
         '2.Strategy.md',
-        '3.SRP.md',
+        '3.Simple Responsibility.md',
         '4.Open-Closed.md',
+        '5.Dependence Inversion.md',
+        '6.Decorator.md',
       ]
     },
   ]
