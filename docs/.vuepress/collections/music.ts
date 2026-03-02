@@ -22,6 +22,7 @@ export default defineCollection({
     'zoo.md',
     'that-girl.md',
     'attention.md',
+    'rise.md',
   ]
 })
 
