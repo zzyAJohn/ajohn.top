@@ -17,6 +17,8 @@ export default defineCollection({
         '4.Open-Closed.md',
         '5.Dependence Inversion.md',
         '6.Decorator.md',
+        '7.Proxy.md',
+        '8.Factory Method.md',
       ]
     },
   ]
