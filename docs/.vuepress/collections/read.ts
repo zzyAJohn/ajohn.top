@@ -44,6 +44,7 @@ export default defineCollection({
       items: [
         'Does God Play Dice.md',
         'Rich Dad Poor Dad.md',
+        'Puppy Money.md',
       ]
     },
     {
