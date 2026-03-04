@@ -48,12 +48,14 @@ badge:
 | There's bloo==d on==(dang) the crown ==go an==~~d~~ ta==ke i==~~t~~ | 王冠染血，去把它夺回来 |
 | You ge~~t~~ one sho~~t~~ ^停^ to ma==ke i==~~t~~ ou==t a==live so | 你只有一次机会活着闯出去 |
 
+### [Pre-Chorus]
 | English Lyrics | 中文翻译 |
 |----------------|-----------|
 | (ai)Highe==r an==~~d~~ higher you cha==se i==~~t~~ | 向着更高处不断追逐 |
 | It's dee==p in== your bones ==go an==~~d~~ ta==ke i==~~t~~ | 那力量刻在你的骨血里，去夺取它 |
 | This is your momen~~t~~ now is your time so | 此刻属于你，现在就是你的时机 |
 
+### [Chorus]
 | English Lyrics | 中文翻译 |
 |----------------|-----------|
 | Prove yoursel==f an==~~d~~ | 证明自己，然后 |
@@ -65,13 +67,22 @@ badge:
 | They will remember you | 他们终将铭记你 |
 | RISE | 崛起 |
 
+### [Verse 2]
 | English Lyrics | 中文翻译 |
 |----------------|-----------|
 | Welcome to the cli==m~~b~~ up== reach for the (a)summit | 欢迎踏上攀登之路，向着巅峰伸手 |
 | Visions pray that one false step lead the(they) end so | 幻想低语，一步踏错便是终局 |
+
+### [Pre-Chorus]
+| English Lyrics | 中文翻译 |
+|----------------|-----------|
 | Higher and higher you chase it | 向更高的地方奋力追逐 |
 | It's deep in your blood go and take it | 那渴望在血液中翻涌，去赢得它 |
 | This is your moment take to the skies go | 这是你的时刻，展翅冲向天际 |
+
+### [Chorus]
+| English Lyrics | 中文翻译 |
+|----------------|-----------|
 | Prove yourself and | 证明自己，然后 |
 | RISE RISE | 崛起 崛起 |
 | Make 'em remember you | 让他们记住你 |
@@ -80,16 +91,31 @@ badge:
 | RISE RISE | 崛起 崛起 |
 | They will remember you | 他们会记住你 |
 | RISE | 崛起 |
-| So get along so get along go | 向前走，继续向前 |
-| Get along 'long get a move on up | 别停下脚步，奋力向上 |
-| So get along so get along go | 向前冲，别回头 |
-| Get along 'long get a move on up | 加快步伐，勇敢攀登 |
-| And as you fight among the death beneath the dirt | 当你在尘土与死亡之间厮杀 |
-| Do you know yet | 你是否已经明白 |
-| Do you want it | 你是否真正渴望 |
+
+### [Bridge]
+
+| English Lyrics | 中文翻译 |
+|----------------|-----------|
+| So get along, so get along, go | 向前走，继续向前 |
+| Get along-long get a move on up | 别停下脚步，奋力向上 |
+| So get along, so get along, go | 向前冲，别回头 |
+| Get along-long get a move on up | 加快步伐，勇敢攀登 |
+| And as(i-nis) you fight among the death beneath the dirt | 当你在尘土与死亡之间厮杀 |
+| (So get along, so get along, go / Get along-long get a move on up) | （向前走，继续向前 / 奋力向上） |
+| Well, do you know yet? | 你是否已经明白？ |
+| (So get along, so get along, go) | （向前冲，别停下） |
+| Well, do you want it? | 你是否真正渴望？ |
+| (Get along-long get a move on up) | （继续向上，别停步） |
 | And when the giants call to ask you what you're worth | 当强者质问你的价值 |
-| Do you know if | 你是否知道 |
-| Win or die you'll | 胜或败，你都将 |
+| (So get along, so get along, go / Get along-long get a move on up) | （向前走，继续向前 / 奋力向上） |
+| Do you know if? | 你是否知道？ |
+| (So get along, so get along, go) | （向前冲，别回头） |
+| Win or die, you'll | 无论胜负，你都将—— |
+| (Get along-long—) | （继续向上——） |
+
+### [Chorus]
+| English Lyrics | 中文翻译 |
+|----------------|-----------|
 | Prove yourself and | 证明自己，然后 |
 | RISE RISE | 崛起 崛起 |
 | Make 'em remember you | 让他们记住你 |
@@ -100,10 +126,11 @@ badge:
 | RISE | 崛起 |
 | Prove yourself and | 证明自己，然后 |
 | RISE RISE | 崛起 崛起 |
-| Pick up your weapon and face it | 拿起武器，直面挑战 |
+| (Pick up your weapon and face it) | 拿起武器，直面挑战 |
 | RISE | 崛起 |
-| It's deep in your blood go and take it | 热血在体内沸腾，去赢得它 |
-| Push through hell and | 冲破黑暗，然后 |
+| (It's deep in your blood go and take it) | 热血在体内沸腾，去赢得它 |
 | RISE RISE | 崛起 崛起 |
-| Higher and higher you chase it | 向更高处不断追逐 |
+| (Higher and higher you chase it) | 向更高处不断追逐 |
+| RISE | 崛起 |
+| (So get along so get along go) | 向前走，继续向前 |
 | RISE RISE | 崛起 崛起 |
