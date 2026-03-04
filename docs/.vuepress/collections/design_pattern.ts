@@ -19,6 +19,8 @@ export default defineCollection({
         '6.Decorator.md',
         '7.Proxy.md',
         '8.Factory Method.md',
+        '9.Prototype.md',
+        '10.Template Method.md',
       ]
     },
   ]
