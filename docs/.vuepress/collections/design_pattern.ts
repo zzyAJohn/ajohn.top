@@ -22,6 +22,7 @@ export default defineCollection({
         '9.Prototype.md',
         '10.Template Method.md',
         '11.LoD.md',
+        '12.Facade.md',
       ]
     },
   ]
