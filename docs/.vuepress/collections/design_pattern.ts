@@ -21,6 +21,7 @@ export default defineCollection({
         '8.Factory Method.md',
         '9.Prototype.md',
         '10.Template Method.md',
+        '11.LoD.md',
       ]
     },
   ]
