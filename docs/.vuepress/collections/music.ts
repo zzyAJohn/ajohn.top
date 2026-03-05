@@ -23,6 +23,7 @@ export default defineCollection({
     'that-girl.md',
     'attention.md',
     'rise.md',
+    'la-la-la.md',
   ]
 })
 
