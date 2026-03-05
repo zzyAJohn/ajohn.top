@@ -23,6 +23,7 @@ export default defineCollection({
         '10.Template Method.md',
         '11.LoD.md',
         '12.Facade.md',
+        '13.Bulider.md',
       ]
     },
   ]
