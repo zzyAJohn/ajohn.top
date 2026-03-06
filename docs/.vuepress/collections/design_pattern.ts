@@ -24,6 +24,7 @@ export default defineCollection({
         '11.LoD.md',
         '12.Facade.md',
         '13.Bulider.md',
+        '14.Observer.md',
       ]
     },
   ]
