@@ -50,7 +50,7 @@ badge:
 | Hush^换^, don'~~t~~ speak^换^ | 嘘，别说话 |
 | When you spi~~t~~^换^ your venom, kee==p i==~~t~~ shu~~t~~ I **ha==te i==**~~t(d)~~ | 当你吐出那些恶毒的话时，闭嘴吧，我讨厌那样 |
 | When you hiss^换^ an~~d~~ **preach** | 当你喋喋不休地说教 |
-| Abou~~t~~ your new **messiah**(me-sai-er) cau==se your== **theories** catch **fire** | 讲着你新的信条，仿佛你的理论无比正确 |
+| Abo==u~~t~~ your== new **messiah**(me-sai-er) cau==se your== **theories** catch **fire** | 讲着你新的信条，仿佛你的理论无比正确 |
 
 ### [Pre-Chorus]
 | English Lyrics | 中文翻译 |
@@ -83,8 +83,8 @@ badge:
 |---|---|
 | I==f our== love is running ou==t o==f time^换^ | 如果我们的爱已经所剩无几 |
 | I won'~~t~~ coun~~t~~ the(they) hours rather be a coward | 我宁愿逃避，也不愿数着时间流逝 |
-| Whe==n our== worlds^换^ collide^换^ | 当我们的世界再次冲突 |
-| I'm gonna drown you ou~~t~~ befo==re I== lose my mind^换^ | 在我失去理智之前，我会用声音把你淹没 |
+| When our worlds^换^ collide^换^ | 当我们的世界再次冲突 |
+| I'm gonna drown you ou~~t~~ before I lose my mind^换^ | 在我失去理智之前，我会用声音把你淹没 |
 
 ### [Pre-Chorus]
 | English Lyrics | 中文翻译 |
