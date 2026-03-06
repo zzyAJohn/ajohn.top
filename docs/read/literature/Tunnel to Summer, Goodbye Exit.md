@@ -2,6 +2,9 @@
 title: 《通往夏天的隧道，再见的出口》
 createTime: 2025/11/05 19:54:54
 permalink: /read/r1l5g7kf/
+badge:
+  type: info
+  text: 小说
 ---
 
 <p align="center">

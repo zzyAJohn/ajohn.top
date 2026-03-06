@@ -9,7 +9,7 @@ badge:
 
 <p align="center">
   <img src="https://img1.baidu.com/it/u=1343812043,563600226&fm=253&app=138&f=JPEG?w=500&h=667" width="300"><br>
-  <b>Rich Dad, Poor Dad - [德]Bodo Schäfer</b>
+  <b>Ein Hund namens Money - [德]Bodo Schäfer</b>
 </p>
 
 >吉娅是一个普通的12岁女孩，一次偶然的机会，她救助了一只受伤的小狗，并给它取名叫“钱钱”。没想到，钱钱居然是一位深藏不露的理财高手，它改变了吉娅一家人的财富命运……

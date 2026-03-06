@@ -90,6 +90,9 @@ permalink: /read/
   <ImageCard
     image="https://img0.baidu.com/it/u=1905030783,646658629&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=1064"
   />
+  <ImageCard
+    image="https://miaobi-lite.bj.bcebos.com/miaobi/5mao/b%27LV8xNzMyOTMzMzg0Ljk5NzkwMTc%3D%27/0.png"
+  />
 </CardGrid>
 :::
 
@@ -101,6 +104,9 @@ permalink: /read/
   />
   <ImageCard
     image="https://img2.baidu.com/it/u=38246253,2382094922&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=640"
+  />
+  <ImageCard
+    image="https://img1.baidu.com/it/u=1343812043,563600226&fm=253&app=138&f=JPEG?w=500&h=667"
   />
 </CardGrid>
 :::
