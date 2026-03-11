@@ -26,6 +26,7 @@ export default defineCollection({
         '13.Bulider.md',
         '14.Observer.md',
         '15.Abstract Factory.md',
+        '16.State.md',
       ]
     },
   ]
