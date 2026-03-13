@@ -27,6 +27,7 @@ export default defineCollection({
         '14.Observer.md',
         '15.Abstract Factory.md',
         '16.State.md',
+        '17.Adapter.md',
       ]
     },
   ]
