@@ -28,6 +28,7 @@ export default defineCollection({
         '15.Abstract Factory.md',
         '16.State.md',
         '17.Adapter.md',
+        '18.Memento.md',
       ]
     },
   ]
