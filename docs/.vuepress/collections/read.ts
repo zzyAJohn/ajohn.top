@@ -35,7 +35,8 @@ export default defineCollection({
         'How to Win Friends and Influence People.md',
         'Cognitive Awakening.md',
         'Intimate Relationships.md',
-        'Why do we need to sleep',
+        'Why do we need to sleep.md',
+        'A Global History.md',
       ]
     },
     {
