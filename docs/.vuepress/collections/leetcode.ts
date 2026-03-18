@@ -68,9 +68,17 @@ export default defineCollection({
       ]
     },
     {
-      text: '其它',
+      text: 'hot100',
+      prefix: 'hot100', 
       items: [
-        'hot100.md',
+        '1.hash.md',
+        '2.two-pointers.md',
+        '3.sliding-window.md',
+        '4.substring.md',
+        '5.ordinary-array.md',
+        '6.matrix.md',
+        '7.linked-list.md',
+        '8.binary-tree.md',
       ]
     },
     {
