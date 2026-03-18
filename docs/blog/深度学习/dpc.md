@@ -6,6 +6,7 @@ tags:
     - Deep Learning
     - LNL
     - Python
+draft: true
 ---
 
 一种基于 Dirichlet 的预测校准(DPC)方法，实现更可靠的模型预测。
