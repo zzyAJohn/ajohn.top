@@ -29,6 +29,8 @@ export default defineCollection({
         '16.State.md',
         '17.Adapter.md',
         '18.Memento.md',
+        '19.Composite.md',
+        '20.Iterator.md',
       ]
     },
   ]
