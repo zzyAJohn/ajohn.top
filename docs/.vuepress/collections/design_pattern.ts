@@ -31,6 +31,7 @@ export default defineCollection({
         '18.Memento.md',
         '19.Composite.md',
         '20.Iterator.md',
+        '21.Singleton.md',
       ]
     },
   ]
