@@ -33,6 +33,7 @@ export default defineCollection({
         '20.Iterator.md',
         '21.Singleton.md',
         '22.Bridge.md',
+        '23.Command.md',
       ]
     },
   ]
