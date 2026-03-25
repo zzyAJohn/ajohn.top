@@ -37,17 +37,21 @@ const technology = ref([
   {type: 'JavaScript', icon: 'vscode-icons:file-type-js'},
   {type: 'Git', icon: 'logos:git-icon'},
   {type: 'Shell', icon: 'skill-icons:powershell-light'},
+  {type: 'Cmake', icon: 'devicon:cmake'},
 ]);
 
 // 工具
 const tools = ref([
+  {type: 'Linux', icon: 'logos:linux-tux'},
+  {type: 'Conda', icon: 'logos:conda'},
+  {type: 'Qt', icon: 'logos:qt'},
   {type: 'VSCode', icon: 'vscode-icons:file-type-vscode'},
+  {type: 'VS', icon: 'logos:visual-studio'},
   {type: 'Android Studio', icon: 'devicon:androidstudio'},
   {type: 'PS', icon: 'logos:adobe-photoshop'},
   {type: 'PR', icon: 'logos:adobe-premiere'},
   {type: 'LR', icon: 'logos:adobe-lightroom'},
-  {type: 'Conda', icon: 'logos:conda'},
-  {type: 'Linux', icon: 'logos:linux-tux'},
+
 ]);
 </script>
 
