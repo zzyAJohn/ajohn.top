@@ -35,6 +35,8 @@ export default defineCollection({
         '22.Bridge.md',
         '23.Command.md',
         '24.Chain of Responsibility.md',
+        '25.Mediator.md',
+        '26.Flyweight.md',
       ]
     },
   ]
