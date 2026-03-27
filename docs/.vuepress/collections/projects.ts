@@ -8,18 +8,26 @@ export default defineCollection({
     'README.md',
     {
       text: '深度学习项目',
-      prefix: 'care',
+      prefix: 'deep-learning',
       items: [
-        'intro.md',
+        'care.md',
       ]
     },
     {
-      text: '高性能服务器项目',
-      prefix: 'webserver',
+      text: 'muduo项目',
+      prefix: 'muduo',
       items: [
-        'webserver.md',
+        'muduo.md',
+        'Channel.md',
       ]
     },
+    // {
+    //   text: '高性能服务器项目',
+    //   prefix: 'webserver',
+    //   items: [
+    //     'webserver.md',
+    //   ]
+    // },
   ]
 })
 
