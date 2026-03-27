@@ -13,12 +13,17 @@ permalink: /blog/i0paajes/
 
 ![](https://oss.ajohn.top/blog/article/care/framework.webp)
 <!-- more -->
----
 
 
+
+
+::: important News
+**The paper "CARE" has been accepted for publication in IEEE TMM 2026.**
 
 Comments:	Accepted by IEEE TMM 2026  
 Subjects:	Computer Vision and Pattern Recognition (cs.CV)  
 Cite as:	[arXiv:2602.23133](https://arxiv.org/abs/2602.23133) [cs.CV]
+:::
 
+<LinkCard title="Go to Projects for more information" href="../../projects/deep-learning/care.md" />
 
