@@ -24,6 +24,7 @@ export default defineCollection({
     'attention.md',
     'rise.md',
     'la-la-la.md',
+    'phoenix.md',
   ]
 })
 

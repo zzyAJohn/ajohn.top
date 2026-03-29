@@ -10,7 +10,7 @@ badge:
 
 
 <p align="center">
-  <img src="https://i.ytimg.com/vi/fB8TyLTD7EE/maxresdefault.jpg" width="300"><br>
+  <img src="https://i.ytimg.com/vi/fB8TyLTD7EE/maxresdefault.jpg"><br>
   <b>League of Legends – RISE 2018</b>
 </p>
 
