@@ -79,6 +79,7 @@ export default defineCollection({
         '6.matrix.md',
         '7.linked-list.md',
         '8.binary-tree.md',
+        '9.graph-theory.md',
       ]
     },
     {
