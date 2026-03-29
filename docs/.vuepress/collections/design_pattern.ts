@@ -37,6 +37,8 @@ export default defineCollection({
         '24.Chain of Responsibility.md',
         '25.Mediator.md',
         '26.Flyweight.md',
+        '27.Interpreter.md',
+        '28.Visitor.md',
       ]
     },
   ]
