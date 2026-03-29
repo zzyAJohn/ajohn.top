@@ -7,7 +7,6 @@ export default defineCollection({
   sidebar: [
     'README.md',
     {
-      text: '设计模式',
       // prefix: 'design_pattern', 
       items: [
         '0.PlantUML.md',

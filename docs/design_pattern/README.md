@@ -16,12 +16,12 @@ permalink: /design_pattern/
 
 创建型设计模式包括：
 
-- Constructor - 构造器
-- Factory - 工厂
-- Abstract - 抽象
-- Prototype - 原型
-- Singleton - 单例
-- Builder - 生成器
+- [Factory - 工厂](./1.Factory.md)
+- [Prototype - 原型](./9.Prototype.md)
+- [Builder - 建造者](./13.Bulider.md)
+- [Abstract Factory - 抽象工厂](./15.Abstract%20Factory.md)
+- [Singleton - 单例](./21.Singleton.md)
+
 
 ### 2. 结构型设计模式
 
@@ -31,11 +31,13 @@ permalink: /design_pattern/
 
 结构型设计模式包括：
 
-- Decorator - 装饰器
-- Facade - 外观
-- Flyweight - 享元
-- Adapter - 适配器
-- Proxy - 代理
+- [Decorator - 装饰](./6.Decorator.md)
+- [Proxy - 代理](./7.Proxy.md)
+- [Facade - 外观](./12.Facade.md)
+- [Adapter - 适配器](./17.Adapter.md)
+- [Bridge - 桥接](./22.Bridge.md)
+- [Composite - 组合](./19.Composite.md)
+- [Flyweight - 享元](./26.Flyweight.md)
 
 ### 3. 行为型设计模式
 
@@ -43,7 +45,19 @@ permalink: /design_pattern/
 
 行为模式包括：
 
-- Iterator - 迭代器
-- Mediator - 中介者
-- Observer - 观察者
-- Visitor - 访问者
+- [Template Method - 模板方法](./10.Template%20Method.md)
+- [Observer - 观察者](./14.Observer.md)
+- [State - 状态](./16.State.md)
+- [Command - 命令](./23.Command.md)
+- [Chain of Responsibility - 职责链](./24.Chain%20of%20Responsibility.md)
+- [Strategy - 策略](./2.Strategy.md)
+- [Memento - 备忘录](./18.Memento.md)
+- [Iterator - 迭代器](./20.Iterator.md)
+- [Mediator - 中介者](./25.Mediator.md)
+- [Interpreter - 解释器](./27.Interpreter.md)
+- [Visitor - 访问者](./28.Visitor.md)
+
+
+## 参考资料
+
+- 大话设计模式（最后一章模式大赛写的很有意思，强推！）
