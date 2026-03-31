@@ -44,10 +44,10 @@ badge:
 |---|---|
 | ==What are== you willing to lose | 你愿意付出什么代价 |
 | You cover your wounds bu~~t~~ undernea~~th~~ them | 你掩盖着伤口，但它们依然存在 |
-| (me)A million voice==s in== your hea~~d~~ tha~~t~~ whisper "*Sto~~p~~* now" | 脑海中千万个声音低语着“停下吧” |
-| Another twi==st of== the knife tur==n of== the screws | 仿佛刀刃再度扭转，痛苦不断加深 |
-| It'==s all== in your min~~d~~ an==d it's== *fighting* you | 一切都源于你的内心，并与你对抗 |
-| Arm yourself a stor==m is== coming | 武装自己，风暴即将来临 |
+| (me)A million voice==s in== your hea~~d~~ tha~~t~~ whisper^停^ "*Sto~~p~~* now" | 脑海中千万个声音低语着“停下吧” |
+| Another twi==s~~t~~ of== the ~~k~~nife^停^ tur==n of== the screws | 仿佛刀刃再度扭转，痛苦不断加深 |
+| It'==s all== in your min~~d~~^停^ an==d it's== *fighting* you | 一切都源于你的内心，并与你对抗 |
+| Arm yourself^停^ a stor==m is== coming | 武装自己，风暴即将来临 |
 | Well ki~~d~~ | 听着，孩子 |
 
 ### [Chorus]
@@ -59,16 +59,16 @@ badge:
 | You gotta(d) conquer the monster in your hea==d an==~~d~~ then you'll fly | 你必须战胜内心的怪物，才能飞翔 |
 | Fly Phoenix fly | 飞吧，凤凰，振翅高飞 |
 | It's time for a new empire | 是时候建立新的王朝 |
-| Go bury your demons then tear(ai) down the ceiling | 埋葬你的心魔，打破所有束缚 |
+| Go bury your demon~~s~~ then tear(ai) down the ceiling | 埋葬你的心魔，打破所有束缚 |
 | Phoenix fly | 凤凰展翅飞翔 |
 
 
 ### [Verse 2]
 | English Lyrics | 中文翻译 |
 |----------------|-----------|
-| An~~d~~ now you're playing wi~~th~~ matches^停^ ==come out of== the(they) ashes-- | 你点燃火种，从灰烬中重生 |
+| An~~d~~ now you're playing with matches^停^ ==come out of== the(they) ashes-- | 你点燃火种，从灰烬中重生 |
 | --(z)Undernea==th you==(thya) a million voice==s in== the crow~~d~~ they're screaming "Stop now" | 人群中千万个声音在呐喊“停下吧” |
-| Well le==t 'em== swallow their pri==de you're==^停^ turning the ti~~de~~ to true believers | 让他们吞下骄傲，你正扭转局势 |
+| Well le==t 'em== swallow their pri~~de~~^停^ you're turning the ti~~de~~ to true believer~~s~~--^延^ | 让他们吞下骄傲，你正扭转局势 |
 | Go~~t~~ the==m in== the pal==m of== your han~~d~~ you're playing^停^ Go~~d~~ now | 他们尽在你掌控之中，你如同神明 |
 
 

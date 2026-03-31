@@ -122,6 +122,14 @@ badge:
 
 | English Lyrics | 中文翻译 |
 |---|---|
+| I'm covering my ears like a kid | 我像个孩子一样捂住耳朵 |
+| When your words mean nothing, I go la la la | 当你的话毫无意义时，我只会啦啦啦 |
+| I'm turning up the volume when you speak | 你一开口，我就把音量调大 |
+| Cause if my heart can't stop it | 如果我的心无法阻止 |
+| I find a way to block it, I go | 我会找到办法把它隔绝 |
+
+| English Lyrics | 中文翻译 |
+|---|---|
 | La la la la la la la na na na na na | 啦啦啦啦啦啦啦 呐呐呐呐呐 |
 | La la na na la la la la la na na na na na | 啦啦呐呐 啦啦啦啦啦 呐呐呐呐呐 |
 | La la na na la la la la la na na na na na | 啦啦呐呐 啦啦啦啦啦 呐呐呐呐呐 |
