@@ -19,6 +19,7 @@ export default defineCollection({
       items: [
         'muduo.md',
         'Channel.md',
+        'Poller.md',
       ]
     },
     // {
