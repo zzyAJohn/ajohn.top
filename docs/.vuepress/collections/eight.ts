@@ -29,7 +29,7 @@ export default defineCollection({
       items: [
         '1.preface.md',
         '2.base.md',
-        // '3.http.md',
+        '3.http.md',
         // '4.tcp.md',
         // '5.ip.md',
         // '6.all.md',
