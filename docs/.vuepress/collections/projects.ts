@@ -21,6 +21,7 @@ export default defineCollection({
         '1.Channel.md',
         '2.Poller.md',
         '3.EPollPoller.md',
+        '4.EventLoop.md',
       ]
     },
     // {
