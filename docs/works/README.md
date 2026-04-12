@@ -33,6 +33,7 @@ permalink: /works/
 <!-- 竖屏 -->
 <Swiper
   :items="[
+  'https://oss.ajohn.top/blog/works/2026-03-25/DSC_7836.webp',
   'https://oss.ajohn.top/blog/works/2026-03-12/DSC_7710.webp',
   'https://oss.ajohn.top/blog/works/2025-12-28/DSC_6864.webp',
   'https://oss.ajohn.top/blog/works/2025-11-18/DSC_6245.webp',
@@ -53,6 +54,7 @@ permalink: /works/
 
 <!-- 横屏 -->
 <Swiper :items="[
+  'https://oss.ajohn.top/blog/works/2026-04-11/DSC_8275.webp',
   'https://oss.ajohn.top/blog/works/2025-10-22/DSC_5694.webp',
   'https://oss.ajohn.top/blog/works/2025-10-22/DSC_5691.webp',
   'https://oss.ajohn.top/blog/works/2025-10-22/DSC_5688.webp',
@@ -83,9 +85,14 @@ permalink: /works/
 - [ ] 5.4 武汉梦乡
 
 
+### 2026-04
+
+- [x] 4.12 鹦鹉洲长江大桥（武汉）
+- [x] 4.11 [2026 GOLF 轟掣嘉年华（武汉蔡甸）](./2026-04/2026-04-11.md)
+
 ### 2026-03
 
-- [x] 3.25 樱花节
+- [x] 3.25 [樱花节（武汉黄家湖）](./2026-03/2026-03-25.md)
 - [x] 3.22 剧本杀（武汉光谷）
 - [x] 3.21 欢乐谷（武汉市洪山区东湖生态旅游风景区欢乐大道196号）
 - [x] 3.14 龟山樱花（武汉龟山公园）

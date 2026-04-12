@@ -7,9 +7,17 @@ export default defineCollection({
   sidebar: [
     'README.md',
     {
+      text: '2026-04',
+      prefix: '2026-04', 
+      items: [
+        '2026-04-11.md',
+      ]
+    },
+    {
       text: '2026-03',
       prefix: '2026-03', 
       items: [
+        '2026-03-25.md',
         '2026-03-12.md',
       ]
     },
