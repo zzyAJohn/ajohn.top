@@ -10,7 +10,8 @@ export default defineCollection({
       text: 'C++',
       prefix: 'cpp',
       items: [
-        'cpp.md',
+        '1.preface.md',
+        '2.base.md',
       ]
     },
     // {
@@ -30,7 +31,7 @@ export default defineCollection({
         '1.preface.md',
         '2.base.md',
         '3.http.md',
-        // '4.tcp.md',
+        '4.tcp.md',
         // '5.ip.md',
         // '6.all.md',
       ]
