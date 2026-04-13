@@ -22,6 +22,7 @@ export default defineCollection({
         '2.Poller.md',
         '3.EPollPoller.md',
         '4.EventLoop.md',
+        '5.Acceptor.md',
       ]
     },
     // {
