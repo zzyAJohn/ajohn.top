@@ -23,6 +23,8 @@ export default defineCollection({
         '3.EPollPoller.md',
         '4.EventLoop.md',
         '5.Acceptor.md',
+        '6.Socket.md',
+        // '7.Buffer.md',
       ]
     },
     // {
