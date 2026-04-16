@@ -24,7 +24,7 @@ export default defineCollection({
         '4.EventLoop.md',
         '5.Acceptor.md',
         '6.Socket.md',
-        // '7.Buffer.md',
+        '7.Buffer.md',
       ]
     },
     // {
