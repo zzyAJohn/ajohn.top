@@ -43,4 +43,10 @@ permalink: /tv/d7dyq25j/
 - 《老友记》第八季 end
   time=2026-03-13 type=warning
 
+- 《老友记》第九季 start
+  time=2026-03-14 type=success
+
+- 《老友记》第九季 end
+  time=2026-04-17 type=warning
+
 :::
