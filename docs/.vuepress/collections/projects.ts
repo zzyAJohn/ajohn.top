@@ -25,6 +25,7 @@ export default defineCollection({
         '5.Acceptor.md',
         '6.Socket.md',
         '7.Buffer.md',
+        '8.TcpServer.md',
       ]
     },
     // {
