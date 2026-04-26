@@ -33,6 +33,7 @@ permalink: /works/
 <!-- 竖屏 -->
 <Swiper
   :items="[
+  'https://oss.ajohn.top/blog/works/2026-04-15/DSC_8645.webp',
   'https://oss.ajohn.top/blog/works/2026-03-25/DSC_7836.webp',
   'https://oss.ajohn.top/blog/works/2026-03-12/DSC_7710.webp',
   'https://oss.ajohn.top/blog/works/2025-12-28/DSC_6864.webp',
@@ -51,7 +52,7 @@ permalink: /works/
   mode="carousel"
   :slides-per-view="3"
   :space-between="20"
-  :speed="5500"
+  :speed="4500"
 />
 
 <!-- 横屏 -->
@@ -89,8 +90,8 @@ permalink: /works/
 
 ### 2026-04
 
-- [ ] 4.22 光谷车轨（武汉）
-- [x] 4.15 鹦鹉洲长江大桥夜景（武汉）
+- [x] 4.22 光谷车轨（武汉）
+- [x] 4.15 [鹦鹉洲长江大桥夜景（武汉）](./2026-04/2026-04-15.md)
 - [x] 4.12 鹦鹉洲长江大桥（武汉）
 - [x] 4.11 [2026 GOLF 轟掣嘉年华（武汉蔡甸）](./2026-04/2026-04-11.md)
 

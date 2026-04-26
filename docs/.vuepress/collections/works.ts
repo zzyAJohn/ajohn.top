@@ -10,6 +10,7 @@ export default defineCollection({
       text: '2026-04',
       prefix: '2026-04', 
       items: [
+        '2026-04-15.md',
         '2026-04-11.md',
       ]
     },
