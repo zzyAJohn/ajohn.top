@@ -38,6 +38,7 @@ permalink: /works/
   'https://oss.ajohn.top/blog/works/2025-12-28/DSC_6864.webp',
   'https://oss.ajohn.top/blog/works/2025-11-18/DSC_6245.webp',
   'https://oss.ajohn.top/blog/works/2025-10-31/DSC_5887.webp',
+  'https://oss.ajohn.top/blog/works/2025-09-20/DSC_1996.webp',
   'https://oss.ajohn.top/blog/works/2025-09-17/DSC_1837.webp',
   'https://oss.ajohn.top/blog/works/2025-09-17/DSC_1769.webp',
   'https://oss.ajohn.top/blog/works/2025-09-17/DSC_1752.webp',
@@ -45,6 +46,7 @@ permalink: /works/
   'https://oss.ajohn.top/blog/works/2025-07-25/DSC_0515.webp',
   'https://oss.ajohn.top/blog/works/2025-07-25/DSC_0586.webp',
   'https://oss.ajohn.top/blog/works/2025-05-30/DSC_2879.webp',
+  'https://oss.ajohn.top/blog/works/2025-04-19/DSC_6493.webp',
   ]"
   mode="carousel"
   :slides-per-view="3"
@@ -187,7 +189,7 @@ permalink: /works/
 - [x] 4.26 [婚礼（武汉满江红）](./2025-04/2025-04-26.md)
 - [x] 4.25 月季人像（校内）
 - [x] 4.23 [华山（陕西华阴）](./2025-04/2025-04-23.md)
-- [x] 4.19 汉服（校内）
+- [x] 4.19 [汉服（校内）](./2025-04/2025-04-19.md)
 - [x] 4.13 月湖桥（武汉）
 - [x] 4.5 [解放公园（武汉）](./2025-04/2025-04-05.md)
 - [x] 4.4 [琴台绣球花（武汉）](./2025-04/2025-04-04.md)
