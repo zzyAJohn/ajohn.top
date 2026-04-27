@@ -14,16 +14,17 @@ export default defineCollection({
         '2.base.md',
       ]
     },
-    // {
-    //   text: '操作系统',
-    //   prefix: 'os',
-    //   items: [
-    //     '1.preface.md',
-    //     '2.hardware.md',
-    //     '3.os-structure.md',
-    //     '4.memory.md',
-    //   ]
-    // },
+    {
+      text: '操作系统',
+      prefix: 'os',
+      items: [
+        // '1.preface.md',
+        // '2.hardware.md',
+        // '3.os-structure.md',
+        // '4.memory.md',
+        '9.network-system.md',
+      ]
+    },
     {
       text: '计算机网络',
       prefix: 'network',
