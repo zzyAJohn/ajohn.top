@@ -12,6 +12,7 @@ export default defineCollection({
       items: [
         '1.preface.md',
         '2.base.md',
+        '3.oop.md',
       ]
     },
     {
@@ -35,6 +36,13 @@ export default defineCollection({
         '4.tcp.md',
         // '5.ip.md',
         // '6.all.md',
+      ]
+    },
+    {
+      text: '大模型',
+      prefix: 'LLM',
+      items: [
+        '1.agent.md',
       ]
     },
   ]
