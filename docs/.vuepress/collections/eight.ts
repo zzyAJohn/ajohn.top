@@ -13,6 +13,11 @@ export default defineCollection({
         '1.preface.md',
         '2.base.md',
         '3.oop.md',
+        '4.stl.md',
+        '5.memory.md',
+        '6.cpp11.md',
+        '7.smart-pointer.md',
+        '8.io.md',
       ]
     },
     {
