@@ -12,8 +12,8 @@ import music from './music'
 import tv from './tv'
 import eight from './eight'
 import projects from './projects'
-import qt from './qt'
 import design_pattern from './design_pattern'
+import regimen from './regimen'
 
 export default defineCollections([
   blog,
@@ -29,6 +29,6 @@ export default defineCollections([
   tv,
   eight,
   projects,
-  qt,
   design_pattern,
+  regimen,
 ])

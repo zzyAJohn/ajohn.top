@@ -2,15 +2,14 @@ import { defineCollection } from 'vuepress-theme-plume'
 
 export default defineCollection({
   type: 'doc',
-  dir: 'qt',
-  title: 'qt笔记',
+  dir: 'regimen',
+  title: '救赎之道，就在其中',
   sidebar: [
     'README.md',
     {
-      text: '第一部分',
-      prefix: 'base',
+      text: '开始',
       items: [
-        '1.md',
+        'skin.md',
       ]
     },
   ]

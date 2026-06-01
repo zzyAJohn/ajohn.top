@@ -20,8 +20,8 @@ export const navbar = defineNavbarConfig([
             { text: 'C++', link: '/cpp/README.md' },
             // { text: 'CS61B', link: '/notes/cs61b/README.md' },
             { text: '设计模式', link: '/design_pattern/README.md' },
-            { text: 'Qt', link: '/qt/README.md' },
-            { text: '八股', link: '/eight/README.md' },
+            // { text: 'Qt', link: '/qt/README.md' },
+            // { text: '八股', link: '/eight/README.md' },
             { text: 'Photography', link: '/photography/README.md' },
     ]
   },
@@ -34,6 +34,7 @@ export const navbar = defineNavbarConfig([
             { text: 'Music', link: '/music/README.md', icon: 'material-symbols:music-note-rounded' },
             { text: 'TV', link: '/tv/README.md', icon: 'material-symbols:live-tv-rounded' },
             // { text: 'Plant', link: '/notes/plant/README.md' },
+            { text: 'regimen', link: '/regimen/README.md' },
     ]
   },
 ])
