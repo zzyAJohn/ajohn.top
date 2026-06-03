@@ -2,6 +2,8 @@
 title: 一文带你弄懂 AI 圈爆火的新概念：Harness Engineering
 createTime: 2026/06/03 13:50:20
 permalink: /blog/n2v8oesl/
+tags:
+    - Agent
 ---
 
 ![](https://img2.baidu.com/it/u=3001138049,1172258436&fm=253&fmt=auto&app=120&f=JPEG?w=890&h=500)

@@ -2,6 +2,8 @@
 title: Agent Skills 完全指南：从原理到实战
 createTime: 2026/06/02 14:46:29
 permalink: /blog/vfarszop/
+tags:
+    - Agent
 ---
 
 
