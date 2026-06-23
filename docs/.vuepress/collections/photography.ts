@@ -7,6 +7,12 @@ export default defineCollection({
   sidebar: [
     'README.md',
     {
+      text: '资源分享',
+      items: [
+        'share.md',
+      ]
+    },
+    {
       text: '摄影技巧',
       items: [
         'buy.md',

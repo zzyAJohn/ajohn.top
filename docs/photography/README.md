@@ -11,6 +11,8 @@ permalink: /photography/
 <CardGrid>
   <LinkCard title="Nikon 预设" icon="simple-icons:nikon" href="https://nikonpc.com/" />
   <LinkCard title="格式工厂" href="http://pcgeshi.com/" description="轻松转换一切你想要的格式"/>
+  <LinkCard title="尼康定焦镜头MTF" href="https://memorystill.com/nikon-prime-lens-mtf"/>
+  <LinkCard title="尼康变焦镜头MTF" href="https://memorystill.com/nikon-zoom-lens-mtf"/>
   <!-- <LinkCard title="Naive UI" icon="logos:naiveui" href="https://www.naiveui.com/" />
   <LinkCard title="vuetify" icon="logos:vuetifyjs" href="https://vuetifyjs.com/" />
   <LinkCard title="Bootstrap" icon="skill-icons:bootstrap" href="https://v5.bootcss.com/" />

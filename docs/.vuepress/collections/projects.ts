@@ -26,6 +26,8 @@ export default defineCollection({
         '6.Socket.md',
         '7.Buffer.md',
         '8.TcpServer.md',
+        '9.TcpConnection.md',
+        'expand.md',
       ]
     },
     // {

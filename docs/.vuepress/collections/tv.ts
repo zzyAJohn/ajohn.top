@@ -11,6 +11,7 @@ export default defineCollection({
       prefix: 'American TV Series', 
       items: [
         'Friends.md',
+        'Hannibal.md',
       ]
     },
     {
