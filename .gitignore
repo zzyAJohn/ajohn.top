@@ -4,7 +4,11 @@ docs/.vuepress/.cache
 docs/.vuepress/.temp
 docs/.vuepress/dist
 
+docs/eight
+docs/record/*
+
 .DS_Store
 *.log
 *.ipynb
 .gitignore
+CLAUDE.md
