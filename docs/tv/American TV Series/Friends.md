@@ -49,4 +49,10 @@ permalink: /tv/d7dyq25j/
 - 《老友记》第九季 end
   time=2026-04-17 type=warning
 
+- 《老友记》第十季 start
+  time=2026-04-18 type=success
+
+- 《老友记》第十季 end
+  time=2026-05-25 type=warning
+
 :::
