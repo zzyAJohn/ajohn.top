@@ -6,8 +6,14 @@ draft: true
 ---
 
 ::: timeline
+- 2026年8月，参加 [CSIG 2026 云南](http://youth.csig.org.cn/CSIG2026/index.html) 中国图像图形学会青年科学家会议
+  type=success
+
+- 2026年7月，前往 [CVTE](https://www.cvte.com/) 广州总部进行暑期实习
+  type=success
+
 - 2026年5月，参加 [VALSE 2026 武汉](https://valser.org/2026/#/) 视觉与学习青年学者研讨会
-  type=info
+  type=success
 
 - 2026年2月，论文《CARE》 被 IEEE Transactions on Multimedia 接收
   type=success
@@ -21,7 +27,7 @@ draft: true
 - 2025年9月，论文《CARE》投稿 IEEE Transactions on Multimedia.
   type=info
 
-- 2024年9月，加入 [人工智能实验室(vai-lab)](http://vai-lab.com/index.html)
+- 2024年9月，加入武汉科技大学 [人工智能实验室(vai-lab)](http://vai-lab.com/index.html)
   type=success
 
 - 2024年5月，获计算机技术与软件专业技术资格《软件评测师》证书

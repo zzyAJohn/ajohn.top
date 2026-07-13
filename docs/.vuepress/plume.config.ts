@@ -49,9 +49,9 @@ export default defineThemeConfig({
     description: 'Never, ever, ever give up',
     circle: true,
     // location: '',
-    location: "WuHan, China",
+    location: "GuangZhou, China",
     // organization: '',
-    organization: 'vai-lab',
+    organization: 'CVTE',
   },
 
   // 注释 navbar 保存后 取消注释 再保存 可以更新笔记下拉栏状态
