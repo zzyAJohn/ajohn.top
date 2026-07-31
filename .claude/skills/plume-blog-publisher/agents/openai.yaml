@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plume 博客创作与发布"
+  short_description: "根据大纲生成 Plume 博客文章或系列笔记并完成构建发布"
+  default_prompt: "使用 $plume-blog-publisher，根据我提供的大纲创建或更新博客文章或系列笔记，合理使用 Plume 组件，构建验证后按我的发布要求推送。"

@@ -20,6 +20,7 @@ export default defineCollection({
         'ps.md',
         'nikon-cloud.md',
         'time-lapse photography.md',
+        '星光摄影.md',
         'composition.md',
       ]
     },
