@@ -1,0 +1,1 @@
+import{Fr as e}from"./common-Ds-mLsBd.js";export{e as createPacketServices};
