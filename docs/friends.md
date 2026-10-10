@@ -55,6 +55,11 @@ list:
     avatar: https://oss.ajohn.top/blog/friends/virtualguard101.webp
     desc: 
   -
+    name: Withnoidea
+    link: https://withnoidea.dpdns.org/
+    avatar: https://img.withnoidea.dpdns.org/20261005015304753.png
+    desc: Pick one thing and go deep.
+  -
     name: 婚礼作品展示
     link: https://wedding.ajohn.top/
     avatar: https://oss.ajohn.top/blog/xi-favicon.png
