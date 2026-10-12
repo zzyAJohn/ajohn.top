@@ -33,6 +33,8 @@ permalink: /works/
 <!-- 竖屏 -->
 <Swiper
   :items="[
+  'https://oss.ajohn.top/blog/works/2026-08-04/DSC_0059.webp',
+  'https://oss.ajohn.top/blog/works/2026-08-04/DSC_0016.webp',
   'https://oss.ajohn.top/blog/works/2026-04-15/DSC_8645.webp',
   'https://oss.ajohn.top/blog/works/2026-03-25/DSC_7836.webp',
   'https://oss.ajohn.top/blog/works/2026-03-12/DSC_7710.webp',
@@ -57,6 +59,8 @@ permalink: /works/
 
 <!-- 横屏 -->
 <Swiper :items="[
+  'https://oss.ajohn.top/blog/works/2026-10-07/DSC_1763.webp',
+  'https://oss.ajohn.top/blog/works/2026-08-04/DSC_0091.webp',
   'https://oss.ajohn.top/blog/works/2026-04-11/DSC_8275.webp',
   'https://oss.ajohn.top/blog/works/2025-10-22/DSC_5694.webp',
   'https://oss.ajohn.top/blog/works/2025-10-22/DSC_5691.webp',
@@ -79,13 +83,29 @@ permalink: /works/
 
 ## 2026 行迹：
 
+### 2026-10
+
+- [x] 10.7 [珠海](./2026-10/2026-10-07.md)
+- [x] 10.4 车展
+- [x] 10.4 车展漫展
+
+### 2026-09
+
+- [x] 9.13 佳能三次
+- [x] 9.12 佳能二次
+
 ### 2026-08
 
-- [ ] 8.3-8.6 云南
+- [x] 8.4 云南昆明
+
+### 2026-07
+
+- [x] 7.20 东山口
+- [x] 7.19 广州
+- [x] 7.18 萤火虫漫展
 
 
 ### 2026-06
-
 
 - [x] 6.27 斗鱼嘉年华
 - [x] 6.25 斗鱼嘉年华
