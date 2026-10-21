@@ -6,6 +6,9 @@ draft: true
 ---
 
 ::: timeline
+- 2026年10月，获 2025-2026 学年研究生国家奖学金
+  type=success
+
 - 2026年8月，参加 [CSIG 2026 云南](http://youth.csig.org.cn/CSIG2026/index.html) 中国图像图形学会青年科学家会议
   type=success
 
